@@ -1,0 +1,5 @@
+PyQt5
+nltk
+gensim
+numpy
+pyyaml

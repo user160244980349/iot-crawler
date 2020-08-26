@@ -8,7 +8,7 @@ import gensim
 def prepare_corpus_tfidf(documents):
     dictionary = gensim.corpora.Dictionary(documents)
     doc_term_matrix = [dictionary.doc2bow(doc) for doc in documents]
-    tfidf = gensim.models.TfidfModel(doc_term_matrix, normalize=True)
+    tfidf = gensim.models.TfidfModel(doc_term_matrix, normalize=False)
     doc_term_matrix = tfidf[doc_term_matrix]
     return dictionary, doc_term_matrix
 

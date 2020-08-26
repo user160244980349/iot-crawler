@@ -17,9 +17,6 @@ class Window(QtWidgets.QMainWindow):
         self.setGeometry(self.left, self.top, self.right, self.bot)
         self.center()
 
-        self.tabWidget = TabWidget(self)
-        self.setCentralWidget(self.tabWidget)
-
     def center(self):
         qt_rectangle = self.frameGeometry()
         center_point = QDesktopWidget().availableGeometry().center()

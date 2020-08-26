@@ -1,6 +1,4 @@
 from re import sub
-from nltk import word_tokenize, WordNetLemmatizer
-from nltk.corpus import stopwords
 
 
 def remove_quotes(text):
@@ -9,10 +7,6 @@ def remove_quotes(text):
 
 def remove_br(text):
     return sub(r"<br>", "\n", text)
-
-
-def remove_tags(text):
-    pass
 
 
 def remove_strong(text):

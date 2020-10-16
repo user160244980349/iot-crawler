@@ -1,5 +1,4 @@
 PyQt5
 nltk
-gensim
-numpy
-pyyaml
+numpy == 1.18.5
+tensorflow

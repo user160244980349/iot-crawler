@@ -11,10 +11,12 @@ def main():
 
     initialize()
 
-    sentence = "you give us information about your location"
+    # sentence = "you give us information about your location"
     # sentence = "you give information honestly and immediately"
-    # sentence = "we honestly collecting information"
-    # sentence = "you thinking and we honestly collecting information"
+    # sentence = "we collecting and storing information permanently"
+    # sentence = "you thinking and we are collecting information honestly"
+    sentence = "All work and no play makes jack dull boy"
+    # sentence = "we may also collect technical information to help us identify your device for fraud prevention and diagnostic purposes"
 
     labeled_sentence = do_labeling(sentence, labels.dictionary)
     sentence_dictionary = sentence_to_dictionary(labeled_sentence, dictionary_to_bag(labels.dictionary))

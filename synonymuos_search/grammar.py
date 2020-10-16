@@ -8,7 +8,9 @@ glob = {
     # document
     "DOCUMENT":
         # recursion
-        [["SENTENCE", "DOCUMENT"], ["SENTENCE"]],
+        [["SENTENCE"],
+         ["SENTENCE", "DOCUMENT"],
+         ["SENTENCE", "UNION", "DOCUMENT"]],
 
     # sentence
     "SENTENCE":
@@ -20,7 +22,7 @@ glob = {
         # recursion
         [["VERB_PHRASE"],
          ["VERB_PHRASE", "VERB_PHRASE_GROUP"],
-         ["VERB_PHRASE", "CC", "VERB_PHRASE_GROUP"],
+         ["VERB_PHRASE", "UNION", "VERB_PHRASE_GROUP"],
          # group attributes
          ["VERB_PHRASE", "ADVERB_PHRASE_GROUP"],
          ["VERB_PHRASE", "PREPOSITION_PHRASE_GROUP"],
@@ -31,7 +33,7 @@ glob = {
         # recursion
         [["NOUN_PHRASE"],
          ["NOUN_PHRASE", "NOUN_PHRASE_GROUP"],
-         ["NOUN_PHRASE", "CC", "NOUN_PHRASE_GROUP"],
+         ["NOUN_PHRASE", "UNION", "NOUN_PHRASE_GROUP"],
          # group attributes
          ["ADJECTIVE_PHRASE_GROUP", "NOUN_PHRASE"]],
 
@@ -40,28 +42,25 @@ glob = {
         # recursion
         [["ADJECTIVE"],
          ["ADJECTIVE", "ADJECTIVE_PHRASE_GROUP"],
-         ["ADJECTIVE", "CC", "ADJECTIVE_PHRASE_GROUP"]],
+         ["ADJECTIVE", "UNION", "ADJECTIVE_PHRASE_GROUP"]],
 
     # group of adverb phrases
     "ADVERB_PHRASE_GROUP":
         # recursion
         [["ADVERB"],
          ["ADVERB", "ADVERB_PHRASE_GROUP"],
-         ["ADVERB", "CC", "ADVERB_PHRASE_GROUP"]],
+         ["ADVERB", "UNION", "ADVERB_PHRASE_GROUP"]],
 
     # group of prepositional phrases
     "PREPOSITION_PHRASE_GROUP":
         # recursion
         [["PREPOSITION_PHRASE"],
          ["PREPOSITION_PHRASE", "PREPOSITION_PHRASE_GROUP"],
-         ["PREPOSITION_PHRASE", "CC", "PREPOSITION_PHRASE_GROUP"]],
+         ["PREPOSITION_PHRASE", "UNION", "PREPOSITION_PHRASE_GROUP"]],
 
     # verb phrase
     "VERB_PHRASE":
-        [["VERB"],
-         ["VERB", "ADVERB_PHRASE_GROUP"],
-         ["VERB", "PREPOSITION_PHRASE_GROUP"],
-         ["VERB", "PREPOSITION_PHRASE_GROUP", "ADVERB_PHRASE_GROUP"]],
+        [["VERB"]],
 
     # noun phrase
     "NOUN_PHRASE":
@@ -88,6 +87,9 @@ glob = {
     # ========================================
 
     # nltk determiners
+    "UNION":
+        [["CC"]],
+
     "DETERMINER":
         [["DT"]],
 

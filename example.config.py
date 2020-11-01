@@ -1,11 +1,19 @@
 #!/usr/bin/env python
 
 # Paths to resources
-resources = "/home/user/resources/privacy-ontolicy"
+resources = "D:/source/repos/privacy-ontolicy/resources"
 
-input_files = "input"
+# Paths to resources
+webpages = "D:/source/repos/privacy-ontolicy/resources/original_policies"
 
-converted_files = "converted_files"
+# Paths to resources
+cleanpages = "D:/source/repos/privacy-ontolicy/resources/processed_policies"
 
 # Path to database
 database = "database.db"
+
+# Privacy policy urls
+urls = [
+    "https://august.com/pages/privacy-policy",
+    "https://www.mi.com/global/about/privacy/",
+]

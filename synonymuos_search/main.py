@@ -1,5 +1,6 @@
 
 import nltk
+import nltk.tree
 
 from initialization.initialization import initialize
 from synonymuos_search import grammar, labels
@@ -13,9 +14,9 @@ def main():
 
     # sentence = "you give us information about your location"
     # sentence = "you give information honestly and immediately"
-    # sentence = "we collecting and storing information permanently"
+    sentence = "we collecting and storing information permanently"
     # sentence = "you thinking and we are collecting information honestly"
-    sentence = "All work and no play makes jack dull boy"
+    # sentence = "All work and no play makes jack dull boy"
     # sentence = "we may also collect technical information to help us identify your device for fraud prevention and diagnostic purposes"
 
     labeled_sentence = do_labeling(sentence, labels.dictionary)
@@ -40,3 +41,8 @@ def main():
     labeled_tokens = labeled_sentence.split()
     for tree in rd_parser.parse(labeled_tokens):
         print(tree)
+
+    # labeled_tokens = labeled_sentence.split()
+    # for tree in rd_parser.parse(labeled_tokens):
+    #     for subtree in tree.subtrees():
+    #         print(subtree)

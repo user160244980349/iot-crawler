@@ -1,6 +1,6 @@
 import re
 
-from crawler.downloader.exceptions import UrlNotFound
+from crawler.exceptions import UrlNotFound
 
 
 def url_to_name(url):
@@ -12,6 +12,6 @@ def url_to_name(url):
 
     name = name.group(1)
 
-    name = re.sub(r"[/\\]", "-", name)
+    name = re.sub(r"[&/?=+\\]", "-", name)
 
     return f"{name}.html"

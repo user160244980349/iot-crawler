@@ -1,8 +1,11 @@
 from multiprocessing import Pool, cpu_count
+from os.path import join
 
 from html_sanitizer import Sanitizer
 
-from config import sanitizer_settings
+from config import sanitizer_settings, processed_policies, original_policies, policies_csv, resources
+from crawler.tools import url_to_name
+from tools.read.csv import csv_read
 
 
 def clean_webpage(file: tuple):
@@ -18,12 +21,11 @@ def clean_webpage(file: tuple):
 
 
 def clean(pipe_data: dict):
+    threadpool = pipe_data["threadpool"]
+    policies = csv_read(policies_csv)
+    web_docs = [(join(resources, original_policies, url_to_name(p[0])),
+                 join(resources, processed_policies, url_to_name(p[0]))) for p in policies]
 
-    plain_docs = list(zip(pipe_data["raw_markup"], pipe_data["clean_markup"]))
-
-    with Pool(cpu_count()) as pool:
-        pool.map(clean_webpage, plain_docs)
-        pool.close()
-        pool.join()
+    threadpool.map(clean_webpage, web_docs)
 
     return pipe_data

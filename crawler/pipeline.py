@@ -1,8 +1,8 @@
 
 
-def run_pipeline(pipeline, init_data):
+def run_pipeline(pipeline, data):
 
-    output = init_data
+    output = data
     for pipe in pipeline:
         output = pipe(output)
 

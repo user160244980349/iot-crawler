@@ -2,10 +2,10 @@
 import nltk
 import nltk.tree
 
-from initialization.initialization import initialize
-from synonymuos_search import grammar, labels
-from synonymuos_search.grammatics import combine_grammars, sentence_to_dictionary, convert_grammar
-from synonymuos_search.wordpools import convert_dictionary, dictionary_to_bag, do_labeling
+from legacy.initialization.initialization import initialize
+from legacy.synonymuos_search import grammar, labels
+from legacy.synonymuos_search import combine_grammars, sentence_to_dictionary, convert_grammar
+from legacy.synonymuos_search import convert_dictionary, dictionary_to_bag, do_labeling
 
 
 def main():

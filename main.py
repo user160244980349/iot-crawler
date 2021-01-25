@@ -3,7 +3,7 @@ import sys
 from PyQt5 import QtWidgets
 
 import config
-from initialization.initialization import initialize
+from legacy.initialization.initialization import initialize
 from tools import database, fsys
 from ui.window import Window
 

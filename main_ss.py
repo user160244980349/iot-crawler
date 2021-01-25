@@ -1,4 +1,4 @@
-from synonymuos_search.main import main
+from legacy.synonymuos_search import main
 
 
 if __name__ == '__main__':

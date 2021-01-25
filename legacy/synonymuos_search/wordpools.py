@@ -2,7 +2,7 @@ import re
 
 import nltk
 
-from preprocessing.preprocessing import preprocess_sentence
+from legacy.synonymuos_search import preprocess_sentence
 
 
 def do_labeling(text: str, dictionary: dict):

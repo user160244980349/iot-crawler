@@ -6,13 +6,13 @@ from html_sanitizer.sanitizer import (
 )
 
 # Paths to resources
-resources = "D:/source/repos/privacy-ontolicy/resources"
+resources = "D:/source/repos/iot-dataset/resources"
 
 # Paths to resources
-original_policies = "D:/source/repos/privacy-ontolicy/resources/original_policies"
+original_policies = "D:/source/repos/iot-dataset/resources/original_policies"
 
 # Paths to resources
-processed_policies = "D:/source/repos/privacy-ontolicy/resources/processed_policies"
+processed_policies = "D:/source/repos/iot-dataset/resources/processed_policies"
 
 # Path to database
 database = "database.db"

@@ -1,4 +1,19 @@
-from re import sub
+from re import sub, match
+
+from crawler.exceptions import UrlNotFound
+
+
+def url_to_name(url):
+    name = match(r"^https?://(.*[^/])(/|$)", url)
+
+    if not name:
+        raise UrlNotFound(url)
+
+    name = name.group(1)
+
+    name = sub(r"[&/?=+\\]", "-", name)
+
+    return f"{name}.html"
 
 
 def remove_quotes(text):

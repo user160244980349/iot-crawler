@@ -1,28 +1,42 @@
-from multiprocessing import Pool, cpu_count
+import json
+import logging
+import os
+from multiprocessing import Pool
 from os.path import join
 
-from config import policies_csv, original_policies, resources
-from crawler.exceptions import UrlNotFound
-from crawler.tools import url_to_name
-from crawler.web.driver_factory import DriverFactory
-from tools.read.csv import csv_read
+from config import original_policies, resources, policies_json, downloaded_json
+from crawler.web.driver import Driver
+from tools.text import url_to_name
 
 
-def store(file: tuple):
-    driver = DriverFactory.get()
-    markup = driver.get(file[0])
+def store(item):
+    driver = Driver()
+    markup = driver.get(item["policy"])
 
-    try:
-        with open(file[1], "w", encoding="utf-8") as f:
-            f.write(markup)
-            f.close()
-    except UrlNotFound as e:
-        print(e)
+    item["policy_hash"] = None
+    item["original_policy"] = None
+
+    if markup is None:
+        return item
+
+    item["policy_hash"] = hash(markup)
+    item["original_policy"] = join(resources, original_policies, url_to_name(item["policy"]))
+
+    with open(item["original_policy"], "w", encoding="utf-8") as f:
+        f.write(markup)
+        f.close()
+
+    return item
 
 
-def download(pipe_data: dict):
-    threadpool = pipe_data["threadpool"]
-    policies = csv_read(policies_csv)
-    web_docs = [(p[0], join(resources, original_policies, url_to_name(p[0]))) for p in policies]
-    threadpool.map(store, web_docs)
-    return pipe_data
+def download(p: Pool):
+    logger = logging.getLogger(f"Main process")
+    logger.info("Download")
+
+    with open(os.path.join(resources, policies_json), "r") as f:
+        items = json.load(f)
+
+    downloaded = p.map(store, items)
+
+    with open(os.path.join(resources, downloaded_json), "w") as f:
+        json.dump(downloaded, f)

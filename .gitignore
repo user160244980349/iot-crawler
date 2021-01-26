@@ -1,11 +1,13 @@
 # Resources
-/resources
+/resources/.driver
 
 # External libraries
 /venv
 
 # IDE configuration
 /.idea
+/.vscode
+*.log
 
 # Local configuration
 config.py

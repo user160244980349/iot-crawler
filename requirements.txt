@@ -1,12 +1,4 @@
-PyQt5==5.15.1
-nltk==3.5
-numpy == 1.18.5
-gensim==3.8.3
-pyyaml==5.3.1
 webdriver_manager==3.2.2
-tensorflow==2.3.1
-pathos==0.2.6
 selenium==3.141.0
 beautifulsoup4==4.9.3
-requests==2.25.0
 html-sanitizer==1.9.1

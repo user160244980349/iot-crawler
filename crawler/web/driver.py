@@ -1,80 +1,150 @@
 import logging
-from os import getpid
-from os.path import join
-from time import sleep, time
+import os
+import random
 
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException
+from selenium.webdriver import DesiredCapabilities
+from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.firefox import GeckoDriverManager
 
-from config import resources, request_interval
-from crawler.web.useragent import get_user_agent
+import config
+from crawler.web.proxy import Proxy
+from tools.text import parse_proxy
 
 
-class Driver(object):
+class Driver:
+
+    _instance = None
 
     @classmethod
     def __new__(cls, *args, **kwargs):
-
-        if not hasattr(cls, "_instance"):
-            cls._instance = object.__new__(cls)
-
-            cls._instance._path = None
-            cls._instance._last_request = time()
-            cls._instance._check_installation()
-
-            options = webdriver.FirefoxOptions()
-            options.add_argument("--headless")
-            options.add_argument('--disable-extensions')
-            options.add_argument('--disable-gpu')
-            options.add_argument("--no-sandbox")
-            options.add_argument("--lang=en-US")
-            options.add_argument(f"--user-agent='{get_user_agent()}'")
-
-            cls._instance._driver = webdriver.Firefox(
-                executable_path=cls._instance._path,
-                firefox_options=options,
-            )
-
+        if cls._instance is None:
+            cls._instance = _DriverInstance(config.webdriver_settings)
         return cls._instance
 
     @classmethod
     def close(cls, *args, **kwargs):
-        if hasattr(cls, "_instance"):
-            del cls._instance
+        if cls._instance is not None:
+            cls._instance.__del__()
+            cls._instance = None
+
+
+class _DriverInstance:
+
+    def __init__(self, conf):
+
+        self.config = conf
+
+        self.logger = logging.getLogger(f"pid={os.getpid()} | Webdriver")
+        self.logger.setLevel(self.config["log_level"])
+
+        self._executable_path = None
+        self._service_log_path = os.path.join(os.path.abspath(self.config["log_path"]))
+        self._check_installation()
+
+        self._capabilities = DesiredCapabilities.FIREFOX
+        self._capabilities["unexpectedAlertBehaviour"] = "accept"
+
+        self._profile = webdriver.FirefoxProfile(os.path.abspath(self.config["profile_path"]))
+        if self.config["no_cache"]:
+            self._profile.set_preference("browser.cache.disk.enable", False)
+            self._profile.set_preference("browser.cache.memory.enable", False)
+            self._profile.set_preference("browser.cache.offline.enable", False)
+            self._profile.set_preference("network.http.use-cache", False)
+            self._profile.set_preference("intl.accept_languages", "en-us")
+        self._profile.update_preferences()
+
+        self._options = webdriver.FirefoxOptions()
+        self._options.add_argument(f"--user-agent='{random.choice(self.config['user_agents'])}'")
+        self._options.add_argument("--disable-blink-features")
+        self._options.add_argument("--disable-gpu")
+        self._options.add_argument("--no-sandbox")
+
+        if self.config["headless"]:
+            self._options.add_argument("--headless")
+
+        self._driver = webdriver.Firefox(
+            firefox_profile=self._profile,
+            firefox_options=self._options,
+            executable_path=self._executable_path,
+            capabilities=self._capabilities,
+            service_log_path=self._service_log_path
+        )
 
     def _check_installation(self):
 
-        logger = logging.getLogger(f"pid={getpid()}")
-        logger.info("Checking driver")
+        self.logger.info("Checking installed driver")
 
         try:
-            with open(join(resources, ".driver"), "r") as f:
-                self._path = f.read()
-                f.close()
+            with open(os.path.abspath(self.config["dotfile"]), "r") as f:
+                self._executable_path = f.read()
 
         except FileNotFoundError:
-            logger.info("Driver not found, installing...")
-            with open(join(resources, ".driver"), "w") as f:
-                self._path = GeckoDriverManager().install()
-                f.write(self._path)
-                f.close()
+            self.logger.info("Driver not found, installing...")
+            self._executable_path = GeckoDriverManager().install()
+            with open(os.path.abspath(self.config["dotfile"]), "w") as f:
+                f.write(self._executable_path)
 
-        logger.info(f"Loading driver: {self._path}")
+        self.logger.info(f"Loading driver: {self._executable_path}")
 
-    def get(self, url, delayed=False):
-        try:
-            if delayed:
-                sleep(request_interval - (time() - self._last_request))
-            self._driver.get(url)
-            self._last_request = time()
-        except WebDriverException:
-            logger = logging.getLogger(f"pid={getpid()}")
-            logger.warning("Cant establish the connection")
-            return None
+    def manage(self):
+        return self._driver
+
+    def source(self):
         return self._driver.page_source
 
-    def __del__(self):
-        logger = logging.getLogger(f"pid={getpid()}")
-        logger.info("Closing driver")
+    def get(self, url):
+
+        if url is None:
+            raise ValueError("Null url")
+
+        self.logger.info(f"Going to {url}")
+
+        self._driver.get(url)
+
+        return self._driver.page_source
+
+    def wait(self, event, timeout=15):
+        WebDriverWait(self._driver, timeout).until(event)
+
+    def change_proxy(self):
+
+        if not self.config["use_proxy"]:
+            return
+
+        p_str = Proxy().get_proxy()
+        p = parse_proxy(p_str)
+
+        self.logger.info(f"Switching to {p_str} proxy")
+
+        self._profile.set_preference("network.proxy.type", 1)
+        self._profile.set_preference("network.proxy.http", p[0])
+        self._profile.set_preference("network.proxy.http_port", p[1])
+        self._profile.set_preference("network.proxy.ssl", p[0])
+        self._profile.set_preference("network.proxy.ssl_port", p[1])
+        self._profile.set_preference("network.proxy.ftp", p[0])
+        self._profile.set_preference("network.proxy.ftp_port", p[1])
+
         self._driver.quit()
+        self._driver = webdriver.Firefox(
+            firefox_profile=self._profile,
+            firefox_options=self._options,
+            executable_path=self._executable_path,
+            capabilities=self._capabilities,
+            service_log_path=self._service_log_path
+        )
+
+    def reset(self):
+
+        self._driver.quit()
+        self._driver = webdriver.Firefox(
+            firefox_profile=self._profile,
+            firefox_options=self._options,
+            executable_path=self._executable_path,
+            capabilities=self._capabilities,
+            service_log_path=self._service_log_path
+        )
+
+    def __del__(self):
+        self._driver.quit()
+        self.logger.info("Driver has been closed")

@@ -1,6 +1,6 @@
 import logging
+import os
 import re
-from os import getpid
 
 import requests
 from http_request_randomizer.requests.proxy.ProxyObject import Protocol
@@ -37,7 +37,7 @@ class _Proxy:
             self.proxies_list = self.req_proxy.get_proxy_list()
 
     def get_proxy(self):
-        logger = logging.getLogger(f"pid={getpid()}")
+        logger = logging.getLogger(f"pid={os.getpid()}")
 
         while True:
             p = self.proxies_list.pop(0).get_address()
@@ -68,7 +68,4 @@ class _Proxy:
             except IndexError:
                 logger.info(f"Loading more proxies")
                 self.proxies_list = self.req_proxy.get_proxy_list()
-                pass
-
-            except:
                 pass

@@ -1,4 +1,5 @@
 import logging
+import os
 
 from html_sanitizer.sanitizer import (
     target_blank_noopener, tag_replacer,
@@ -7,35 +8,35 @@ from html_sanitizer.sanitizer import (
 )
 
 # Paths to resources
-from sanitizer.html_sanitizer_functions import div_remover, div_to_p
+from crawler.modules.sanitizer import Sanitization
 
 # Paths to resources
-resources = "./resources"
-products_json = "json/products.json"
-websites_json = "json/websites.json"
-policies_json = "json/policies.json"
-downloaded_json = "json/downloaded.json"
-sanitized_json = "json/sanitized.json"
-explicit_json = "json/explicit.json"
-total_json = "metrics.json"
+resources_abs = os.path.abspath("./resources")
+products_json = f"{resources_abs}/json/products.json"
+websites_json = f"{resources_abs}/json/websites.json"
+policies_json = f"{resources_abs}/json/policies.json"
+downloaded_json = f"{resources_abs}/json/downloaded.json"
+sanitized_json = f"{resources_abs}/json/sanitized.json"
+explicit_json = f"{resources_abs}/explicit.json"
+metrics_json = f"{resources_abs}/metrics.json"
 
-original_policies = "original_policies"
-processed_policies = "processed_policies"
+original_policies = f"{resources_abs}/original_policies"
+processed_policies = f"{resources_abs}/processed_policies"
 
-# Subprocesses count
-sub_proc_count = 6
+# Subprocesses count, 0 for all available
+sub_proc_count = 1
 
-max_timeout_attempts = 2
-max_error_attempts = 2
-max_captcha_attempts = 2
+max_timeout_attempts = 3
+max_error_attempts = 3
+max_captcha_attempts = 3
 
 # Webdriver settings
 webdriver_settings = {
     "profile_path": "C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/pkvhrtp3.default-release",
-    "log_path": f"{resources}/geckodriver.log",
-    "dotfile": f"{resources}/.driver",
-    "log_level": logging.CRITICAL,
-    "no_cache": True,
+    "log_path": f"{resources_abs}/geckodriver.log",
+    "dotfile": f"{resources_abs}/.driver",
+    "log_level": logging.INFO,
+    "no_cache": False,
     "headless": True,
     "use_proxy": False,
     "user_agents": [
@@ -85,8 +86,8 @@ sanitizer_settings = {
     "autolink": False,
     "sanitize_href": sanitize_href,
     "element_preprocessors": [
-        div_remover,
-        div_to_p,
+        Sanitization.div_remover,
+        Sanitization.div_to_p,
         bold_span_to_strong,
         italic_span_to_em,
         tag_replacer("b", "strong"),

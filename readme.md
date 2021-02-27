@@ -10,43 +10,45 @@ Check list
     - [x] Logging in separate process
     - [x] Proper termination
 
-- [ ] Scrapping
+- [x] Scrapping
     - [x] Browser driver
     - [x] Disable cache
     - [x] Working with proxies
     - [x] Real user profile
-    - [ ] Add fake moves
-    - [ ] Scrapping plugins
+    - [x] Scrapping plugins
         - [x] Amazon plugin
-        - [ ] Walmart plugin
-        - [ ] Other
-    - [ ] Searching plugins
-        - [ ] Websites searching
-        - [ ] Websites filtering
+        - [x] Walmart plugin
+        - [ ] Other ???
+    - [x] Searching plugins
+        - [x] Websites searching
+        - [x] Websites filtering
 
 - [ ] Policies
     - [x] Download policies
     - [x] Encoding mistakes
     - [x] Sanitization of policies
+      - [x] Remove links
+      - [x] Remove invisible elements
+      - [x] Remove control elements
+      - [x] Remove headers
+      - [x] Remove footers
     - [x] Hash for policies
+    - [ ] Split by paragraphs
     - [ ] Policies metrics module
         - [x] Efficiency statistics
-        - [ ] Total policy length
-        - [x] Tables yes/no and how many (broken on paragraphs)
-        - [ ] Lists yes/no and how many
+        - [x] Total policy length
+        - [x] Tables yes/no and how many
+        - [x] Lists yes/no and how many
         - [ ] Subsections yes/no how many and how long
-    - [ ] Manually added policies
+    - [x] Manually added policies
 
-- [ ] Bugs
-    - [ ] The error loop appears when cites are not found
+- [x] Bugs
 
 Marketplaces
 ------------
 
     amazon
-    mercadolibre
     walmart
-    ozon
 
 IOT Devices
 -----------

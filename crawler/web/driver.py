@@ -13,7 +13,6 @@ from tools.text import parse_proxy
 
 
 class Driver:
-
     _instance = None
 
     @classmethod
@@ -35,7 +34,7 @@ class _DriverInstance:
 
         self.config = conf
 
-        self.logger = logging.getLogger(f"pid={os.getpid()} | Webdriver")
+        self.logger = logging.getLogger(f"pid={os.getpid()}")
         self.logger.setLevel(self.config["log_level"])
 
         self._executable_path = None
@@ -51,7 +50,7 @@ class _DriverInstance:
             self._profile.set_preference("browser.cache.memory.enable", False)
             self._profile.set_preference("browser.cache.offline.enable", False)
             self._profile.set_preference("network.http.use-cache", False)
-            self._profile.set_preference("intl.accept_languages", "en-us")
+        self._profile.set_preference("intl.accept_languages", "en-us")
         self._profile.update_preferences()
 
         self._options = webdriver.FirefoxOptions()
@@ -99,8 +98,37 @@ class _DriverInstance:
             raise ValueError("Null url")
 
         self.logger.info(f"Going to {url}")
-
         self._driver.get(url)
+
+        self._driver.execute_script("""
+            (function () {
+            
+                function load_script(url, callback) {
+                    var script = document.createElement("script")
+                    script.type = "text/javascript";
+                    script.onload = function () {callback();};
+                    script.src = url;
+                    
+                    document.getElementsByTagName("head")[0].appendChild(script);
+                }
+                
+                function remove_invisible() {
+                    $('*').each(function() {
+                        if($(this).css('visibility') == 'hidden'
+                        || $(this).css('display') == 'none') {
+                            $(this).remove()
+                        }
+                    });
+                }
+                
+                if ($ === undefined) {
+                    load_script("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", remove_invisible);
+                } else {
+                    remove_invisible()
+                }
+            
+            })();
+        """)
 
         return self._driver.page_source
 
@@ -146,5 +174,6 @@ class _DriverInstance:
         )
 
     def __del__(self):
-        self._driver.quit()
-        self.logger.info("Driver has been closed")
+        if self._driver is not None:
+            self._driver.quit()
+            self.logger.info("Driver has been closed")

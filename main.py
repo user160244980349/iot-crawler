@@ -1,19 +1,17 @@
 import logging
+import os
 from logging.handlers import QueueHandler
 from multiprocessing import Process
 from multiprocessing import Queue
 from multiprocessing import cpu_count, Pool
-from os import getpid
 
-from config import sub_proc_count
-from crawler.downloader import download
-from crawler.policies import policies
-from crawler.products import products
+import active_modules
+import config
 from crawler.web.driver import Driver
-from crawler.websites import websites
 from initialization import filesys
-from metrics.efficiency import calculate
-from sanitizer.sanitizer import clean
+
+log_format = "%(asctime)s - [%(name)s] %(levelname)s: %(message)s"
+date_format = "%H:%M:%S"
 
 
 def worker_initializer(queue):
@@ -23,15 +21,22 @@ def worker_initializer(queue):
     root.setLevel(logging.INFO)
 
 
+def local_initializer():
+    logging.basicConfig(
+        format=log_format,
+        datefmt=date_format,
+        level=logging.INFO
+    )
+
+
 def logger_initializer(queue):
-    f = logging.Formatter("%(asctime)s - [%(name)s] %(levelname)s: %(message)s", "%H:%M:%S")
+    f = logging.Formatter(log_format, date_format)
     h = logging.StreamHandler()
     h.setLevel(logging.INFO)
     h.setFormatter(f)
     logging.getLogger().addHandler(h)
 
     while True:
-
         record = queue.get()
 
         if record is None:
@@ -45,53 +50,46 @@ def main():
     filesys.init()
 
     proc_count = cpu_count()
-    if sub_proc_count > 0:
-        proc_count = sub_proc_count
+    if config.sub_proc_count > 1 or config.sub_proc_count == 0:
+        if config.sub_proc_count > 1:
+            proc_count = config.sub_proc_count
 
-    q = Queue(-1)
-    logger_process = Process(target=logger_initializer,
-                             args=(q,))
-    logger_process.start()
+        q = Queue(-1)
+        logger_process = Process(target=logger_initializer,
+                                 args=(q,))
+        logger_process.start()
 
-    worker_initializer(q)
-    logger = logging.getLogger(f"pid={getpid()}")
-    logger.info(f"Using thread count: {proc_count}")
+        p = Pool(proc_count,
+                 initializer=worker_initializer,
+                 initargs=(q,))
 
-    p = Pool(proc_count,
-             initializer=worker_initializer,
-             initargs=(q,))
+        worker_initializer(q)
+        logger = logging.getLogger(f"pid={os.getpid()}")
+        logger.info(f"Using thread count: {config.sub_proc_count}")
+
+    else:
+        p = None
+        q = None
+        logger_process = None
+        local_initializer()
+        logger = logging.getLogger(f"pid={os.getpid()}")
 
     try:
-        products(p)
-
-        # for _ in range(150):
-        #     print(Proxy().get_proxy())
-
-        websites()
-        policies(p)
-        download(p)
-        clean(p)
-        calculate()
-
-    except:
-        import sys
-        import traceback
-        traceback.print_exc()
-        exc_type, value = sys.exc_info()[:2]
-        logger.error(f"{exc_type}\n"
-                     f"{value}\n"
-                     f"{traceback.format_exc()}")
+        for m in active_modules.modules:
+            m.do_job(p)
 
     finally:
-        logger.info(f"Closing process pool")
+        if p is not None:
+            logger.info(f"Closing process pool")
 
-        p.imap(Driver.close, (None for _ in range(proc_count)))
+            q.put_nowait(None)
+            logger_process.join()
 
-        p.close()
-        p.join()
+            p.map_async(Driver.close, (None for _ in range(proc_count)), chunksize=1)
+            p.close()
+            p.join()
 
-        q.put_nowait(None)
-        logger_process.join()
+        Driver.close()
 
 
 if __name__ == "__main__":

@@ -12,6 +12,7 @@ class Product:
             "policy": cls.is_set(kwargs, "policy"),
             "original_policy": cls.is_set(kwargs, "original_policy"),
             "processed_policy": cls.is_set(kwargs, "processed_policy"),
+            "plain_policy": cls.is_set(kwargs, "processed_policy"),
             "policy_hash": cls.is_set(kwargs, "policy_hash"),
             "statistics": {
                 "length": 0,

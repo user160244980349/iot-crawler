@@ -9,7 +9,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 1,
@@ -21,7 +22,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 2,
@@ -33,7 +35,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 3,
@@ -53,7 +56,8 @@
       "li": 0,
       "p": 23,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\leadzm.com-privacy-policy.html.txt"
   },
   {
     "id": 4,
@@ -73,7 +77,8 @@
       "li": 0,
       "p": 46,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\renpho.com-pages-renpho-privacy-policy.html.txt"
   },
   {
     "id": 5,
@@ -93,7 +98,8 @@
       "li": 0,
       "p": 23,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\leadzm.com-privacy-policy.html.txt"
   },
   {
     "id": 6,
@@ -105,7 +111,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 7,
@@ -117,7 +124,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 8,
@@ -129,7 +137,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 9,
@@ -149,7 +158,8 @@
       "li": 0,
       "p": 23,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\leadzm.com-privacy-policy.html.txt"
   },
   {
     "id": 10,
@@ -161,7 +171,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 11,
@@ -173,7 +184,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 12,
@@ -185,7 +197,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 13,
@@ -197,7 +210,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 14,
@@ -217,7 +231,8 @@
       "li": 15,
       "p": 27,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\imosiso.com-pages-privacy-policy.html.txt"
   },
   {
     "id": 15,
@@ -237,7 +252,8 @@
       "li": 0,
       "p": 46,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\renpho.com-pages-renpho-privacy-policy.html.txt"
   },
   {
     "id": 16,
@@ -249,7 +265,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 17,
@@ -261,7 +278,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 18,
@@ -281,7 +299,8 @@
       "li": 15,
       "p": 27,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\imosiso.com-pages-privacy-policy.html.txt"
   },
   {
     "id": 19,
@@ -301,7 +320,8 @@
       "li": 0,
       "p": 46,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\renpho.com-pages-renpho-privacy-policy.html.txt"
   },
   {
     "id": 20,
@@ -313,7 +333,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 21,
@@ -333,7 +354,8 @@
       "li": 15,
       "p": 27,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\imosiso.com-pages-privacy-policy.html.txt"
   },
   {
     "id": 22,
@@ -345,7 +367,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 23,
@@ -357,7 +380,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 24,
@@ -377,7 +401,8 @@
       "li": 20,
       "p": 19,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\rollibot.com-privacy-policy.html.txt"
   },
   {
     "id": 25,
@@ -389,7 +414,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 26,
@@ -401,7 +427,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 27,
@@ -421,7 +448,8 @@
       "li": 0,
       "p": 80,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\kingslim.net-pages-privacy-policy.html.txt"
   },
   {
     "id": 28,
@@ -433,7 +461,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 29,
@@ -445,7 +474,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 30,
@@ -457,7 +487,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 31,
@@ -477,7 +508,8 @@
       "li": 147,
       "p": 79,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\meredith.com-nmg-privacy.html.txt"
   },
   {
     "id": 32,
@@ -497,7 +529,8 @@
       "li": 0,
       "p": 46,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\renpho.com-pages-renpho-privacy-policy.html.txt"
   },
   {
     "id": 33,
@@ -517,7 +550,8 @@
       "li": 0,
       "p": 46,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\renpho.com-pages-renpho-privacy-policy.html.txt"
   },
   {
     "id": 34,
@@ -537,7 +571,8 @@
       "li": 4,
       "p": 310,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\etekcity.com-support-privacypolicy.html.txt"
   },
   {
     "id": 35,
@@ -549,7 +584,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 36,
@@ -561,7 +597,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 37,
@@ -573,7 +610,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 38,
@@ -585,7 +623,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 39,
@@ -597,7 +636,8 @@
     "original_policy": null,
     "processed_policy": null,
     "policy_hash": null,
-    "statistics": null
+    "statistics": null,
+    "plain_policy": null
   },
   {
     "id": 40,
@@ -617,6 +657,7 @@
       "li": 0,
       "p": 39,
       "br": 0
-    }
+    },
+    "plain_policy": "D:\\source\\repos\\iot-crawler\\resources\\plain_policies\\mi.com-global-about-privacy.html.txt"
   }
 ]

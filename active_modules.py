@@ -1,3 +1,4 @@
+from crawler.modules.converter import Converter
 from crawler.modules.downloader import Downloader
 from crawler.modules.efficiency import Efficiency
 from crawler.modules.policies import Policies
@@ -11,7 +12,8 @@ modules = [
     # Websites(),
     # Policies(),
     # Downloader(),
-    Sanitization(),
+    # Sanitization(),
+    Converter(),
     # Efficiency(),
 
 ]

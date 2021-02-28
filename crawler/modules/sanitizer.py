@@ -16,21 +16,24 @@ class Sanitization(Module):
     words = [
         "head", "cart", "foot", "nav", "bar",
         "alert", "modal", "dialog", "popup",
-        "banner", "promo", "side"
+        "banner", "promo", "side", "notify",
+        "notification",
     ]
 
     tags = [
-        "select", "option", "button", "style", "script", "a",
-        # "head", "title",
+        "select", "option", "button", "style", "script", "form", "a"
     ]
 
     regex = re.compile(rf"^.*({'|'.join(words)}).*$", flags=re.IGNORECASE)
+    indentation = re.compile(r'^(\s*)', re.MULTILINE)
 
     def __init__(self):
+
         super(Sanitization, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
 
     def run(self, p: Pool = None):
+
         self.logger.info("Sanitization")
 
         if p is None:
@@ -54,6 +57,7 @@ class Sanitization(Module):
 
     @classmethod
     def clean_webpage(cls, item):
+
         if item is None:
             return item, None, None
 
@@ -65,7 +69,7 @@ class Sanitization(Module):
         for n in cls.tags:
             cls.remove_tags(soup, name=n)
 
-        cls.bs4_remover(soup)
+        cls.bs4_aggressive_remove(soup)
         sanitized = Sanitizer(settings=config.sanitizer_settings).sanitize(str(soup))
         fresh_soup = BeautifulSoup(sanitized, "lxml")
 
@@ -81,18 +85,18 @@ class Sanitization(Module):
 
         sanitized_policy = os.path.join(config.processed_policies, os.path.basename(item))
         with open(sanitized_policy, "w", encoding="utf-8") as output_f:
-            output_f.write(f"<html>"
-                           f"<head>"
-                           f"<meta charset='utf-8'/>"
-                           f"<title></title>"
-                           f"</head>"
-                           f"{fresh_soup.body.prettify()}"
+            output_f.write(f"<html>\n"
+                           f"<head>\n"
+                           f"\t<meta charset=\"utf-8\"/>\n"
+                           f"\t<title></title>\n"
+                           f"</head>\n"
+                           f"{cls.prettify(fresh_soup)}\n"
                            f"</html>")
 
         return item, sanitized_policy, stats
 
     @classmethod
-    def bs4_remover(cls, element):
+    def bs4_aggressive_remove(cls, element):
 
         try:
             s = list(element.get("class"))
@@ -110,7 +114,11 @@ class Sanitization(Module):
             return
 
         for child in element.find_all(recursive=False):
-            cls.bs4_remover(child)
+            cls.bs4_aggressive_remove(child)
+
+    @classmethod
+    def prettify(cls, soup, indent_width=4):
+        return cls.indentation.sub(r"\1" * indent_width, soup.body.prettify())
 
     @classmethod
     def div_to_p(cls, element):
@@ -122,13 +130,15 @@ class Sanitization(Module):
     @classmethod
     def span_to_p(cls, element):
         if element.tag == "span":
-            element.tag = "p"
+            if len(list(element)) == 0:
+                element.tag = "p"
         return element
 
     @classmethod
     def article_to_div(cls, element):
         if element.tag == "article":
-            element.tag = "div"
+            if len(list(element)) == 0:
+                element.tag = "div"
         return element
 
     @classmethod

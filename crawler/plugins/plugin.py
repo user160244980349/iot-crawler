@@ -38,7 +38,7 @@ class Plugin:
             if p is None:
                 items_urls = [self.scrap_products(url) for url in search_urls]
             else:
-                items_urls = p.map(self.scrap_products, items)
+                items_urls = p.map(self.scrap_products, search_urls)
 
             items_urls = flatten_list(items_urls)
 

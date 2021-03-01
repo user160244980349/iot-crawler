@@ -70,8 +70,8 @@ class Downloader(Module):
                 if net_error > config.max_error_attempts:
                     return policy_url, None, None
 
-        policy = os.path.join(os.path.abspath(config.original_policies),
-                              url_to_name(policy_url))
+        policy = os.path.abspath(os.path.join(config.original_policies,
+                                 url_to_name(policy_url)))
 
         with open(policy, "w", encoding="utf-8") as f:
             f.write(markup)

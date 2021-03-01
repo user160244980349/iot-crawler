@@ -80,7 +80,8 @@ class Sanitization(Module):
             "br": len(fresh_soup.findAll("br")),
         }
 
-        sanitized_policy = os.path.join(config.processed_policies, os.path.basename(item))
+        sanitized_policy = os.path.abspath(os.path.join(config.processed_policies,
+                                                        os.path.basename(item)))
         with open(sanitized_policy, "w", encoding="utf-8") as output_f:
             output_f.write(f"<html>\n"
                            f"<head>\n"

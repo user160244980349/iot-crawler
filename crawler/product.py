@@ -14,15 +14,7 @@ class Product:
             "processed_policy": cls.is_set(kwargs, "processed_policy"),
             "plain_policy": cls.is_set(kwargs, "processed_policy"),
             "policy_hash": cls.is_set(kwargs, "policy_hash"),
-            "statistics": {
-                "length": 0,
-                "table": 0,
-                "ol": 0,
-                "ul": 0,
-                "li": 0,
-                "p": 0,
-                "br": 0
-            }
+            "statistics": cls.is_set(kwargs, "statistics"),
         }
         cls.counter += 1
 

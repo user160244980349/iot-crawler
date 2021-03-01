@@ -1,5 +1,6 @@
 import logging
 import os
+import traceback
 from logging.handlers import QueueHandler
 from multiprocessing import Process
 from multiprocessing import Queue
@@ -77,6 +78,9 @@ def main():
     try:
         for m in active_modules.modules:
             m.do_job(p)
+
+    except:
+        logger.error("traceback.print_exc()")
 
     finally:
         if p is not None:

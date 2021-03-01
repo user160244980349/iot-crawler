@@ -144,19 +144,3 @@ class Converter(Module):
 
         for child in children:
             cls.trim_spaces(child)
-
-    @classmethod
-    def fill_lists(cls, element):
-
-        if len(element.contents) > 1 and \
-                all([isinstance(c, NavigableString)
-                     or c.name == "br" for c in element.contents]):
-            for c in element.contents:
-                e = Tag(name="p")
-                c.wrap(e)
-
-            element.unwrap()
-            return
-
-        for child in element.findAll(recursive=False):
-            cls.fill_lists(child)

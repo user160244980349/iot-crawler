@@ -1,14 +1,10 @@
 import logging
 import os
 
-from html_sanitizer.sanitizer import (
-    target_blank_noopener, tag_replacer,
-    italic_span_to_em, bold_span_to_strong,
-    sanitize_href, anchor_id_to_name
-)
-
-# Paths to resources
-from crawler.modules.sanitizer import Sanitization
+from html_sanitizer.sanitizer import \
+    sanitize_href, anchor_id_to_name, \
+    target_blank_noopener, tag_replacer, \
+    italic_span_to_em, bold_span_to_strong
 
 # Paths to resources
 resources_abs = os.path.abspath("./resources")
@@ -17,11 +13,13 @@ websites_json = f"{resources_abs}/json/websites.json"
 policies_json = f"{resources_abs}/json/policies.json"
 downloaded_json = f"{resources_abs}/json/downloaded.json"
 sanitized_json = f"{resources_abs}/json/sanitized.json"
+plain_json = f"{resources_abs}/json/plain.json"
 explicit_json = f"{resources_abs}/explicit.json"
 metrics_json = f"{resources_abs}/metrics.json"
 
 original_policies = f"{resources_abs}/original_policies"
 processed_policies = f"{resources_abs}/processed_policies"
+plain_policies = f"{resources_abs}/plain_policies"
 
 # Subprocesses count, 0 for all available
 sub_proc_count = 1
@@ -33,7 +31,7 @@ max_captcha_attempts = 3
 # Webdriver settings
 webdriver_settings = {
     "profile_path": "C:/Users/user/AppData/Roaming/Mozilla/Firefox/Profiles/pkvhrtp3.default-release",
-    "log_path": f"{resources_abs}/geckodriver.log",
+    "log_path": f"{resources_abs}/.geckodriver.log",
     "dotfile": f"{resources_abs}/.driver",
     "log_level": logging.INFO,
     "no_cache": False,
@@ -64,18 +62,8 @@ webdriver_settings = {
 # Html-sanitizer settings
 sanitizer_settings = {
     "tags": {
-        "h1",
-        "h2",
-        "h3",
-        "strong",
-        "em",
-        "p",
-        "ul",
-        "ol",
-        "li",
-        "br",
-        "sub",
-        "sup",
+        "h1", "h2", "h3", "strong", "em",
+        "p", "ul", "ol", "li", "br"
     },
     "attributes": {},
     "empty": {"br"},
@@ -86,8 +74,6 @@ sanitizer_settings = {
     "autolink": False,
     "sanitize_href": sanitize_href,
     "element_preprocessors": [
-        Sanitization.div_remover,
-        Sanitization.div_to_p,
         bold_span_to_strong,
         italic_span_to_em,
         tag_replacer("b", "strong"),

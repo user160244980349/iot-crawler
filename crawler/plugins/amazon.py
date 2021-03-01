@@ -8,8 +8,8 @@ from crawler.plugins.plugin import Plugin
 
 class Amazon(Plugin):
 
-    def __init__(self, keywords, pages, cooldown=3.):
-        super().__init__(keywords, pages)
+    def __init__(self, keywords, pages, cooldown=3., sync=False):
+        super().__init__(keywords, pages, sync)
         self.cooldown = cooldown
 
     def gen_search_urls(self, keyword, pages):
@@ -18,7 +18,11 @@ class Amazon(Plugin):
 
     def scrap_products(self, url):
         sleep(self.cooldown)
-        return self.scrap_products_base(url, self.product_template)
+        return self.scrap_products_base(
+            url,
+            self.product_template,
+            captcha=self.captcha
+        )
 
     def get_product(self, product):
         sleep(self.cooldown)

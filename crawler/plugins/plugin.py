@@ -14,9 +14,10 @@ from tools.arrays import flatten_list
 
 class Plugin:
 
-    def __init__(self, keywords, pages):
+    def __init__(self, keywords, pages, sync=False):
         self.keywords = keywords
         self.pages = pages
+        self.sync = sync
 
     def gen_search_urls(self, keyword, pages):
         raise NotImplementedError("Scraper is not implemented!")
@@ -35,7 +36,7 @@ class Plugin:
             keyword_escaped = re.sub(r"\s", "+", keyword)
             search_urls = self.gen_search_urls(keyword_escaped, self.pages)
 
-            if p is None:
+            if p is None or self.sync:
                 items_urls = [self.scrap_products(url) for url in search_urls]
             else:
                 items_urls = p.map(self.scrap_products, search_urls)
@@ -57,7 +58,7 @@ class Plugin:
         return items
 
     @classmethod
-    def scrap_products_base(cls, url, template):
+    def scrap_products_base(cls, url, template, captcha=lambda m: False):
 
         logger = logging.getLogger(f"pid={os.getpid()}")
         logger.info(f"Scrapping page: {url}")
@@ -68,6 +69,10 @@ class Plugin:
         while True:
             try:
                 markup = driver.get(url)
+
+                if captcha(markup):
+                    return []
+
                 soup = BeautifulSoup(markup, "lxml").find("body")
                 return template(soup)
 

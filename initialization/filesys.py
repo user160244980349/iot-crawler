@@ -4,7 +4,6 @@ import config
 
 
 def init():
-
     json = os.path.join(config.resources_abs, "json")
     op = os.path.abspath(config.original_policies)
     pp = os.path.abspath(config.processed_policies)

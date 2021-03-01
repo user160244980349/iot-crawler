@@ -60,7 +60,7 @@ class Downloader(Module):
         while True:
             logger.info(f"Getting for policy to {policy_url}")
             try:
-                markup = driver.get(policy_url)
+                markup = driver.get(policy_url, remove_invisible=True)
                 break
 
             except WebDriverException:

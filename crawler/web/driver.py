@@ -92,7 +92,7 @@ class _DriverInstance:
     def source(self):
         return self._driver.page_source
 
-    def get(self, url):
+    def get(self, url, remove_invisible=False):
 
         if url is None:
             raise ValueError("Null url")
@@ -100,35 +100,50 @@ class _DriverInstance:
         self.logger.info(f"Going to {url}")
         self._driver.get(url)
 
-        self._driver.execute_script("""
-            (function () {
-            
-                function load_script(url, callback) {
+        if remove_invisible:
+            self._driver.execute_script(
+                """
+                (function() {
+                
+                  function load_jq(callback) {
                     var script = document.createElement("script")
                     script.type = "text/javascript";
-                    script.onload = function () {callback();};
-                    script.src = url;
-                    
+                    script.src = "https://code.jquery.com/jquery-3.5.1.min.js";
                     document.getElementsByTagName("head")[0].appendChild(script);
-                }
+                  }
                 
-                function remove_invisible() {
+                  function remove_invisible() {
+                    var $ = window.jQuery;
                     $('*').each(function() {
-                        if($(this).css('visibility') == 'hidden'
-                        || $(this).css('display') == 'none') {
-                            $(this).remove()
-                        }
+                      if ($(this).css('visibility') == 'hidden' ||
+                        $(this).css('display') == 'none') {
+                        $(this).remove()
+                      }
                     });
-                }
+                  }
                 
-                if ($ === undefined) {
-                    load_script("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", remove_invisible);
-                } else {
+                
+                  function try_remove() {
+                
+                    try {
+                      remove_invisible()
+                    } catch (e) {
+                      setTimeout(try_remove, 100)
+                    }
+                
+                  }
+                
+                
+                  try {
                     remove_invisible()
-                }
-            
-            })();
-        """)
+                  } catch (e) {
+                    load_jq()
+                    setTimeout(try_remove, 100)
+                  }
+                
+                })();
+                """
+            )
 
         return self._driver.page_source
 

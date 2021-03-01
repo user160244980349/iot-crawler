@@ -12,12 +12,11 @@ from crawler.modules.module import Module
 
 
 class Sanitization(Module):
-
     words = [
         "head", "cart", "foot", "nav", "bar",
         "alert", "modal", "dialog", "popup",
         "banner", "promo", "side", "notify",
-        "notification",
+        "notification", "toolbar", "menu",
     ]
 
     tags = [
@@ -66,21 +65,19 @@ class Sanitization(Module):
 
         soup = BeautifulSoup(html, "lxml")
 
-        for n in cls.tags:
-            cls.remove_tags(soup, name=n)
-
         cls.bs4_aggressive_remove(soup)
+
         sanitized = Sanitizer(settings=config.sanitizer_settings).sanitize(str(soup))
         fresh_soup = BeautifulSoup(sanitized, "lxml")
 
         stats = {
             "length": len(str(fresh_soup)),
-            "table": len(soup.find_all("table")),
-            "ol": len(fresh_soup.find_all("ol")),
-            "ul": len(fresh_soup.find_all("ul")),
-            "li": len(fresh_soup.find_all("li")),
-            "p": len(fresh_soup.find_all("p")),
-            "br": len(fresh_soup.find_all("br")),
+            "table": len(soup.findAll("table")),
+            "ol": len(fresh_soup.findAll("ol")),
+            "ul": len(fresh_soup.findAll("ul")),
+            "li": len(fresh_soup.findAll("li")),
+            "p": len(fresh_soup.findAll("p")),
+            "br": len(fresh_soup.findAll("br")),
         }
 
         sanitized_policy = os.path.join(config.processed_policies, os.path.basename(item))
@@ -108,12 +105,13 @@ class Sanitization(Module):
 
         m = cls.regex.match(" ".join([i for i in s if i is not None]))
 
-        if m is not None and element.name != "body":
+        if (m is not None or element.name in cls.tags) \
+                and element.name not in ("html", "body"):
             cls.remove_tags(element)
             element.extract()
             return
 
-        for child in element.find_all(recursive=False):
+        for child in element.findAll(recursive=False):
             cls.bs4_aggressive_remove(child)
 
     @classmethod
@@ -143,5 +141,5 @@ class Sanitization(Module):
 
     @classmethod
     def remove_tags(cls, soup, **kwargs):
-        for e in soup.find_all(**kwargs):
+        for e in soup.findAll(**kwargs):
             e.extract()

@@ -18,11 +18,6 @@ class Policies(Module):
         super(Policies, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
 
-        self.templates = (
-            Policies.template1,
-            Policies.template2
-        )
-
     def run(self, p: Pool = None):
         self.logger.info("Searching policies")
 
@@ -47,7 +42,7 @@ class Policies(Module):
     def scrap_policies_urls(self, website_url):
         return self.scrap_policies_urls_base(
             website_url,
-            (self.template1, self.template2),
+            (self.template1,),
         )
 
     @classmethod
@@ -55,27 +50,11 @@ class Policies(Module):
         refs = soup.findAll("a")
 
         for r in reversed(refs):
-            if r.text is not None and re.match(r"Privacy Policy", r.text):
+            if re.match(r"(Privacy)|(Privacy Policy)", r.text):
 
-                if r.get("href") is not None:
-                    pattern = rf"(^http://|^https://|www\.|//)"
-                    return f"https://{re.sub(pattern, '', r.get('href'))}"
-
-                pattern = rf"(^/|/$|//)"
-                return f"{website}/{re.sub(pattern, '', r.get('href'))}"
-
-    @classmethod
-    def template2(cls, website, soup):
-        refs = soup.findAll("a")
-
-        for r in reversed(refs):
-            if r.text is not None and re.match(r"Privacy", r.text):
-                if r.get("href") is not None:
-                    pattern = rf"(^http://|^https://|www\.|//)"
-                    return f"https://{re.sub(pattern, '', r.get('href'))}"
-
-                pattern = rf"(^/|/$|//)"
-                return f"{website}/{re.sub(pattern, '', r.get('href'))}"
+                m = re.match(r"^((https?://)?(www\.)?([\w\d.\-_]+)\.\w+)?(.*$)", r.get("href"))
+                if m is not None:
+                    return f"https://{re.sub('(https?:(//)?)', '', website)}{m.group(5)}"
 
     @classmethod
     def scrap_policies_urls_base(cls, website_url, templates):

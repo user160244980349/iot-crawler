@@ -47,9 +47,8 @@ class Walmart(Plugin):
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
                 tds = tr.findChildren("td")
-                if re.search("^Manufacturer$", re.sub(r"[\n\s]", "", tds[0].text)):
-                    return re.sub(r"[\"\',\n]", "", tds[1].text).lower()
-        return None
+                if re.search("^Manufacturer$", re.sub(r"[^\w+]", "", tds[0].text)):
+                    return re.sub(r"\n", "", tds[1].text).lower()
 
     @classmethod
     def template2(cls, body):
@@ -57,6 +56,5 @@ class Walmart(Plugin):
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
                 tds = tr.findChildren("td")
-                if re.search("^Brand$", re.sub(r"[\n\s]", "", tds[0].text)):
-                    return re.sub(r"[\"\',\n]", "", tds[1].text).lower()
-        return None
+                if re.search("^Brand$", re.sub(r"[^\w+]", "", tds[0].text)):
+                    return re.sub(r"\n", "", tds[1].text).lower()

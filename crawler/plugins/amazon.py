@@ -47,27 +47,21 @@ class Amazon(Plugin):
         if div is not None:
             for li in div.ul.findChildren("li"):
                 spans = li.span.findChildren("span")
-                text = re.sub(r"[\n\s]", "", spans[0].text)
-                if re.match("^Manufacturer:$", text):
-                    return re.sub(r"[\"\',\n]", "", spans[1].text).lower()
-        return None
+                if re.match("^Manufacturer$", re.sub(r"[^\w+]", "", spans[0].text)):
+                    return re.sub(r"\n", "", spans[1].text).lower()
 
     @classmethod
     def template2(cls, body):
         div = body.find("table", {"id": "productDetails_detailBullets_sections1"})
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
-                text = re.sub(r"[\n\s]", "", tr.th.text)
-                if re.search("^Manufacturer$", text):
-                    return re.sub(r"[\"\',\n]", "", tr.td.text).lower()
-        return None
+                if re.search("^Manufacturer$", re.sub(r"[^\w+]", "", tr.th.text)):
+                    return re.sub(r"\n", "", tr.td.text).lower()
 
     @classmethod
     def template3(cls, body):
         div = body.find("table", {"id": "productDetails_techSpec_section_1"})
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
-                text = re.sub(r"[\n\s]", "", tr.th.text)
-                if re.search("^Manufacturer$", text):
-                    return re.sub(r"[\"\',\n]", "", tr.td.text).lower()
-        return None
+                if re.search("^Manufacturer$", re.sub(r"[^\w+]", "", tr.th.text)):
+                    return re.sub(r"\n", "", tr.td.text).lower()

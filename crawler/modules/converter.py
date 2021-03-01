@@ -4,28 +4,45 @@ import os
 import re
 from multiprocessing import Pool
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag, NavigableString
 
 import config
 from crawler.modules.module import Module
+from crawler.modules.sanitizer import Sanitization
 
 
 class Converter(Module):
-
-    subs = [
-        (r"\n+", ""),         # newlines
-        (r"<li>", "** "),        # li_tags
-        (r"<ol>", "-- "),     # ol_tags
-        (r"</em>", ""),    # em_tags
-        (r"</strong>", ""),   # strong_tags
-        (r"<\w+>", ""),       # open_tags
-        (r"</\w+>", "\n\n"),      # close_tags
-        (r"[^A-Za-z0-9,.:\-\n\s()]", ""),  # too_many_ws
-        (r"\n{3,}", "\n\n"),  # too_many_nl
-        (r"\s{2,}", "\n\n"),  # too_many_ws
+    local_subs = [
+        (r"\n+", " "),
+        (r"\s+", " "),
     ]
 
-    regexps = [(re.compile(s[0]), s[1]) for s in subs]
+    global_subs = [
+        (r"[\w\d_\-]+@\w+\.\w+", "e-mail"),
+        (r"(www\.)?[\w\d_\-]+\.\w+", "website"),
+
+        (r"^\s{4}", ""),  # indentation
+
+        (r" ([.,:;!?])", "\g<1>"),  # split punctuation
+        (r"([.,:;!?])(\w+)", "\g<1> \g<2>"),  # split punctuation
+        (r"(\w+)\n", "\g<1>.\n"),  # split punctuation
+
+        (r"\n", "\n\n\n"),  # spacing
+
+        (r"<ul>", ""),  # ol_tags
+        (r"<ol>", ""),  # ol_tags
+        (r"<li>", "***"),  # li_tags
+
+        (r"<\w+/?>", ""),  # open_tags
+        (r"</\w+/?>", "\n\n\n"),  # close_tags
+        (r"^\s+$", "\n\n\n"),  # too_many_nl
+        (r"\n{4,}", "\n\n\n"),  # too_many_nl
+
+        (r"[^A-Za-z0-9,.:;\\/\-\n\s(){}*?!]", ""),  # special characters
+    ]
+
+    global_regexps = [(re.compile(s[0], flags=re.MULTILINE), s[1]) for s in global_subs]
+    local_regexps = [(re.compile(s[0], flags=re.MULTILINE), s[1]) for s in local_subs]
 
     def __init__(self):
         super(Converter, self).__init__()
@@ -62,9 +79,14 @@ class Converter(Module):
             text = f.read()
 
         soup = BeautifulSoup(text, "lxml")
-        text = str(soup.body)
 
-        for r in cls.regexps:
+        cls.wrap_rawtext(soup)
+        cls.unwrap_some(soup)
+        cls.trim_spaces(soup)
+
+        text = Sanitization.prettify(soup)
+
+        for r in cls.global_regexps:
             text = r[0].sub(r[1], text)
 
         policy = os.path.join(os.path.abspath(config.plain_policies), f"{os.path.basename(item)}.txt")
@@ -72,3 +94,69 @@ class Converter(Module):
             f.write(text)
 
         return item, policy
+
+    @classmethod
+    def unwrap_some(cls, element):
+
+        if element.name == "strong" \
+                or element.name == "em" \
+                or element.name == "h1" \
+                or element.name == "h2" \
+                or element.name == "h3":
+            element.replaceWith(NavigableString(element.text.upper()))
+
+        for child in element.findAll(recursive=False):
+            cls.unwrap_some(child)
+
+    @classmethod
+    def wrap_rawtext(cls, element):
+
+        if len(element.contents) > 1 and \
+                all([isinstance(c, NavigableString)
+                     or c.name == "br" for c in element.contents]):
+            for c in element.contents:
+                e = Tag(name="p")
+                c.wrap(e)
+
+            element.unwrap()
+            return
+
+        for child in element.findAll(recursive=False):
+            cls.wrap_rawtext(child)
+
+    @classmethod
+    def trim_spaces(cls, element):
+
+        children = element.findAll(recursive=False)
+
+        if (element.name == "p"
+            or element.name == "li") \
+                and len(children) == 0:
+
+            e = Tag(name=element.name)
+
+            text = element.text
+            for r in cls.local_regexps:
+                text = r[0].sub(r[1], text)
+
+            e.insert(0, NavigableString(text))
+            element.replaceWith(e)
+
+        for child in children:
+            cls.trim_spaces(child)
+
+    @classmethod
+    def fill_lists(cls, element):
+
+        if len(element.contents) > 1 and \
+                all([isinstance(c, NavigableString)
+                     or c.name == "br" for c in element.contents]):
+            for c in element.contents:
+                e = Tag(name="p")
+                c.wrap(e)
+
+            element.unwrap()
+            return
+
+        for child in element.findAll(recursive=False):
+            cls.fill_lists(child)

@@ -38,19 +38,19 @@ class GoogleEngine(Engine):
             try:
                 return self.results(content)
 
-            except TimeoutException as e:
+            except TimeoutException:
                 self.logger.warning("Slow connection")
                 driver.change_proxy()
                 if timeout_attempts > config.max_timeout_attempts:
                     return None
 
-            except CaptchaException as e:
+            except CaptchaException:
                 self.logger.warning("Google knows that this is automation script")
                 driver.change_proxy()
                 if captcha_attempts > config.max_captcha_attempts:
                     return None
 
-            except WebDriverException as e:
+            except WebDriverException:
                 self.logger.warning(f"Web driver exception, potentially net error")
                 driver.change_proxy()
                 if error_attempts > config.max_error_attempts:
@@ -60,7 +60,7 @@ class GoogleEngine(Engine):
         driver = Driver()
 
         sleep(self.delay + random.random() * self.random_delay)
-        driver.get(f"http://www.google.com")
+        driver.get(f"https://www.google.com")
         sleep(self.delay + random.random() * self.random_delay)
 
         search = driver.manage().find_element_by_name("q")
@@ -78,30 +78,31 @@ class GoogleEngine(Engine):
 
     @staticmethod
     def similarity_filter(content, soup, threshold=.6):
-        cut = r"(^https?://|^https?://|www\.|/$)"
         best_url = None
         best_similarity = threshold
 
         for c in soup.find_all("cite"):
 
-            url_match = re.match(r"((^www\.|^)([\w\d.\-_]+)\.w+).*$", c.text)
+            m = re.match(r"^((https?://)?(www\.)?([\w\d.\-_]+)(\.\w+)).*$", c.text)
 
-            content = re.sub(r"[.,:/\\]|\s+", " ", content)
+            content = re.sub(r"([^\w ]+)|(\s{2,})", " ", content)
             content_pieces = content.split()
             if len(content_pieces) > 1:
                 content_pieces.append("".join(content_pieces))
 
             for piece in content_pieces:
-                if url_match is not None:
-                    url = url_match.group(1)
-                    domain = url_match.group(3)
+                if m is not None:
+                    domain = m.group(4)
                     sim = similarity(piece, domain)
 
                     if sim > best_similarity:
-                        best_url = url
+
+                        w3 = m.group(3)
+                        if w3 is None:
+                            w3 = ""
+
+                        best_url = f"https://{w3}{m.group(4)}{m.group(5)}"
                         best_similarity = sim
 
         if best_url is not None:
-            return f"http://{re.sub(cut, '', best_url)}"
-
-        return None
+            return best_url

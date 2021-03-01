@@ -27,11 +27,11 @@ Check list
     - [x] Download policies
     - [x] Encoding mistakes
     - [x] Sanitization of policies
-      - [x] Remove links
-      - [x] Remove invisible elements
-      - [x] Remove control elements
-      - [x] Remove headers
-      - [x] Remove footers
+        - [x] Remove links
+        - [x] Remove invisible elements
+        - [x] Remove control elements
+        - [x] Remove headers
+        - [x] Remove footers
     - [x] Hash for policies
     - [ ] Split by paragraphs
     - [ ] Policies metrics module

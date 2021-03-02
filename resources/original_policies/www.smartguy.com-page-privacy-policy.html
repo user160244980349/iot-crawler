@@ -1,0 +1,364 @@
+<html style="height: 100%;" lang="en-US">
+
+
+<body class="navigation-fixed homepage" style="position: relative; min-height: 100%; top: 0px;">
+    <div class="page-wrapper">
+        <header id="page-header" style="position: fixed;">
+            
+            <!-- The navbar is  -->
+
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-1 col-md-2 col-lg-2 no-padding">
+                            <div class="logo-mainsc">
+                                <div class="navbar-header" style="float: left;">
+                                    <a class="brand" href="https://www.smartguy.com">
+                                        <img src="https://www.smartguy.com/assets/images/SG-logo-white.jpeg" alt="SmartGuy Logo">
+                                        <span class="logo-text">SmartGuy</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="logo-smallsc">
+                                <div class="navbar-header">
+                                    <a class="brand" href="https://www.smartguy.com">
+                                        <img src="https://www.smartguy.com/assets/images/SG-logo-white.jpeg" style="padding-top: 12px;">
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div class="col-xs-8 col-sm-10 col-md-2 col-lg-3 no-padding">
+                            <div>
+                                <form>  
+                                    <!-- Locations drop down --> 
+                                    <div class="input-group">
+                                        <input type="text" id="pac-input" class="controls nav-searchborder form-control pac-target-input" name="" placeholder="Enter City State" required="" autocomplete="off">
+                                       <span class="input-group-btn">
+                                            <a href="https://www.smartguy.com" id="location-js" class="search-icon-input" type="button" style="width: 40px;
+                                            height: 36px; margin-top: 7px;display: block;"></a>&lt;
+                                       </span>
+                                    </div>
+                                    <div id="map" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div style="overflow: hidden;"></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;" class="gm-style"><div style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;" tabindex="0" aria-label="Map" aria-roledescription="map" role="group"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 987; transform: matrix(1, 0, 0, 1, -21, -245);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 987; transform: matrix(1, 0, 0, 1, -21, -245);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;" class="gm-style-pbc"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: medium none;" frameborder="0"></iframe><div style="pointer-events: none; width: 100%; height: 100%; box-sizing: border-box; position: absolute; z-index: 1000002; opacity: 0; border: 2px solid rgb(26, 115, 232);"></div></div></div></div>
+                                    <div id="infowindow-content"></div>   
+                                </form>
+                            </div>  
+                        </div>
+
+                        <div class="col-xs-2 col-sm-1 col-md-8 col-lg-7 no-padding">
+                            <div class="desktopshow">
+                                <div style="float: right;">
+                                    <div class="">
+                                        <ul class="nav navbar-nav">
+                                            <li class="dropdown mega-dropdown">
+                                                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="float: left;color: #fff;">
+                                                    <span>MENU</span>
+                                                </a>
+                                                <ul class="dropdown-menu mega-dropdown-menu row fix-width-450">
+                                                    <li class="col-xs-4 no-padding">
+                                                      <ul>
+                                                        <li class="dropdown-header">Services</li>
+                                                        <li >
+                                                            <a href="https://www.smartguy.com/page/services">Features</a>
+                                                        </li>
+                                                      </ul>
+                                                    </li>
+                                                    <li class="col-xs-4 no-padding">
+                                                      <ul>
+                                                        <li class="dropdown-header">Content</li>
+                                                        <li >
+                                                            <a href="https://www.smartguy.com/articles">Articles</a>
+                                                        </li>
+                                                        <li >
+                                                            <a href="https://www.smartguy.com/page/videos">Videos</a>
+                                                        </li>
+                                                        <li class="dropdown-header">Resources</li>
+                                                        <li >
+                                                            <a href="https://www.smartguy.com/page/keywords">Keywords</a>
+                                                        </li>
+                                                        <li >
+                                                            <a href="https://www.smartguy.com/page/smartguytv">SmartGuyTV</a>
+                                                        </li>
+                                                        <li >
+                                                            <a href="https://www.smartguy.com/groups">Groups</a>
+                                                        </li>
+                                                      </ul>
+                                                    </li>
+                                                    <li class="col-xs-4 no-padding">
+                                                        <ul>
+                                                            <li class="dropdown-header">About</li>
+                                                            <li >
+                                                                <a href="https://www.smartguy.com/page/about">Background</a>
+                                                            </li>
+                                                            <li >
+                                                                <a href="https://www.smartguy.com/page/faqs">FAQs</a>
+                                                            </li>
+                                                            <li >
+                                                                <a href="https://www.smartguy.com/helpdesk">Help Desk</a>
+                                                            </li>
+                                                            <li class="dropdown-header">Network</li>
+                                                            <li >
+                                                                <a href="https://www.smartguy.com/page/partners">Partnerships</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li> 
+                                                </ul>  -->
+
+                                                <div class="secondary-nav" style="float: left;padding-top: 8px; border-right:0px;">
+                                                    
+                                                    <a href="https://www.smartguy.com/page/about" style="color: white; font-size: 14px;" class="">ABOUT</a>
+
+                                                    <span style="color: white"> | </span>
+                                                    <a href="https://www.smartguy.com/page/keywords" style="color: white; font-size: 14px;" class="">KEYWORDS</a>
+
+                                                    <span style="color: white"> | </span>
+                                                    <a href="https://www.smartguy.com/articles" style="color: white; font-size: 14px;" class="">ARTICLES</a>
+
+                                                    <span style="color: white"> | </span>
+                                                    <a href="https://www.smartguy.com/businessNews" style="color: white; font-size: 14px;" class="">Business News</a>
+
+                                                    <span style="color: white"> | </span>
+                                                    <a href="https://www.smartguy.com/affiliate" style="color: white; font-size: 14px;" class="">Affiliates</a>
+                                                    
+                                                    <span style="color: white"> | </span>
+                                                    <a href="https://www.smartguy.com/page/faqs" style="color: white; font-size: 14px;" class="">FAQ’S</a>
+                                                    
+                                                                                                        <span style="margin-left: 40px"></span>
+                                                                                                                
+                                                            <a href="https://www.smartguy.com/signin" style="font-size:14px;color: #fff;" class="">Login</a>
+                                                            <span style="color: white"> |</span>
+                                                            <a href="https://www.smartguy.com/signup" style="font-size:14px;color: #fff;" class="">Join Us</a>
+                                                                                              </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobileshow">
+                                <span><i id="menu-btn" class="fa fa-bars" style="color: #fff;padding-top: 10px;padding-left: 10px; text-align: right;"></i></span>
+                            </div>
+                        </div>
+                           
+                    </div>
+                </div>
+            </nav>
+            <!--end nav-->
+
+            <!-- Mobile menu items -->
+            <div class="mobileshow">
+                <div class="menu-items">
+                    <ul>                        
+                            <li>
+                                <a href="https://www.smartguy.com/page/about">About</a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.smartguy.com/page/keywords">Keywords</a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.smartguy.com/articles">Articles</a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.smartguy.com/businessNews">Business News</a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.smartguy.com/affiliate ">Affiliates</a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.smartguy.com/page/faqs">FAQs</a>
+                            </li>
+
+                                                                                        <li><a href="https://www.smartguy.com/signin">Login</a></li>
+                                <li><a href="https://www.smartguy.com/signup">Join Us</a></li>
+                                                </ul>
+                    <!-- <ul>
+
+                        <li class="dropdown-head"><b class="dropdown-head">Services</b></li>
+                            <li >
+                                <a href="https://www.smartguy.com/page/services">Features</a>
+                            </li>
+                        <li class="dropdown-head">Content</li>
+                            <li >
+                                <a href="https://www.smartguy.com/articles">Articles</a>
+                            </li>
+                            <li >
+                                <a href="https://www.smartguy.com/page/videos">Videos</a>
+                            </li>
+                            <li class="dropdown-head">Resources</li>
+                            <li >
+                                <a href="https://www.smartguy.com/page/keywords">Keywords</a>
+                            </li>
+                            <li >
+                                <a href="https://www.smartguy.com/page/smartguytv">SmartGuyTV</a>
+                            </li>
+                            <li >
+                                <a href="https://www.smartguy.com/groups">Groups</a>
+                            </li>
+                            <li class="dropdown-head">About</li>
+                            <li >
+                                <a href="https://www.smartguy.com/page/about">Background</a>
+                            </li>
+                            <li >
+                                <a href="https://www.smartguy.com/page/faqs">FAQs</a>
+                            </li>
+                        <li class="dropdown-head">Network</li>
+                            <li >
+                                <a href="https://www.smartguy.com/page/partners">Partnerships</a>
+                            </li>
+                            <li >
+                                <a href="https://www.smartguy.com/affiliate ">Affiliates</a>
+                            </li>
+                                                                                         <li><a href="https://www.smartguy.com/signin">Login</a></li>
+                                <li><a href="https://www.smartguy.com/signup">Join Us</a></li>
+                                                </ul> -->
+                </div>
+            </div>
+        </header>
+        <!--end page-header-->
+
+        
+
+        <!-- Script to Add for GOOGLE TRANSLATOR -->
+        
+
+        
+        
+
+        
+
+        <!-- AIzaSyDSLr1ruvh1kaNrlnV37PT-dI70XsKbeQU  -->
+
+    
+			
+	
+	<div style="margin-top: 52px">
+		<div class="container">
+			<div class="pad-15px">
+			    <!--To remove Title  in case page is Help desk-->
+													<h1>Privacy Policy</h1><br>
+								<p class="p1"><span class="s1"><b>SmartGuy.com Privacy Policy</b></span></p><p class="p2"><span class="s1">SmartGuy.com, a division of Cristal Solutions, Inc. (hereinafter collectively "SmartGuy.com"), is committed to protecting the privacy of users of our website. All the terms and definitions in our Website's Terms of Use located at&nbsp;<a href="https://www.smartguy.com/page/terms-of-use"><span class="s2">https://www.smartguy.com/page/terms-of-use</span></a>&nbsp;&nbsp;are incorporated by reference herein. Our Privacy Policy is designed to assist you in understanding how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our Website and our Services (collectively the “<b>Services</b>”). This Privacy Policy applies to our Website and governs data collection and usage at our Website. Please read it in its entirety.</span></p><p class="p2"><span class="s1"><b>Information Provided to Match User with Contractors and Service Professionals</b></span></p><p class="p2"><span class="s1">To provide users (“Users”) with the best possible experience, SmartGuy.com may collect personally identifiable information (“<b>Personal Information</b>”), including, but not limited to, your first and last name, email address, location, including street address, state, and zip code, and phone number. When you submit information to SmartGuy.com requesting our Services, you authorize us to share this information with our network of “<b>Contractors and Service Professionals</b>” (Contractors, Tradesmen, Architects, etc.) in order to try to provide the services you request. For example, when an approved member of our service professional network accepts a lead from a registered user, and that User indicates what personal information they are willing to share so that the Contractor or Service Professional can contact the User, such as telephone numbers and email addresses, that information is shared with our Contractors and Service Professionals who have accepted a service request lead. We may also post and publish users' Ratings and Reviews of Contractors' or Service Professionals' performance, as well as Feedbacks and Testimonials at our sole discretion.</span></p><p class="p2"><span class="s1">If you communicate with us by e-mail, or otherwise complete online forms, surveys, or the like, any information provided in such communication may be collected as Personally Identifiable Information.</span></p><p class="p2"><span class="s1">Further, if you are a Contractor or Service Professional, we will collect your location information, if you enter your business address, to assist Users in identifying you as a potential service provider. You may use the Services without enabling the location feature, however this may affect the overall functionality of the Services. You may delete your location information at any time by contacting us at customerservice@smartguy.com or by following the instructions provided within the Services.<span class="Apple-converted-space">&nbsp;</span></span></p><p class="p2"><span class="s1">In light of the nature of the Services, certain user actions in which you participate may be collected and stored by SmartGuy.com and may be broadcast publicly, and subsequently used or shared by SmartGuy.com, Contractors and Service Providers, or other Users. Such actions include, but are not limited to, posting Feedback and Testimonials, as well as information about your business (collectively “User Generated Content”). By consenting to this Privacy Policy, you hereby consent SmartGuy.com’s and certain User’s and Contractors’ or Service Providers’ of such User Generated Content for any reason in connection with the Services.</span></p><p class="p2"><span class="s1"><b>Other Types of Information We May Collect</b></span></p><p class="p2"><span class="s1">Through the use of cookie technology or otherwise, we may track and collect information about your computer and software when you visit our website. This information can include: (i) your IP address; (ii) domain server; (iii) type of computer; (iv) type of web browser; (v) access times; and (vi) referring websites addresses (collectively "<b>Traffic Data</b>"). Traffic Data is anonymous information that does not personally identify you. Traffic Data helps us to design and deliver the most user-friendly web pages, allows for constant improvement to our Website and enables us to best satisfy the needs of our users, customers and prospective customers.</span></p><p class="p2"><span class="s1"><b>Use of Cookies</b></span></p><p class="p2"><span class="s1">We employ cookie technology to store and sometimes track information about the users of our Website. We use both session cookies, which terminate when a user closes his browser, and persistent cookies, which remain on the user's computer until manually deleted. Most web browsers automatically accept cookies, but you can usually change your browser to prevent the browser from accepting the cookie.</span></p><p class="p2"><span class="s1">SmartGuy.com will not follow any browser, extension, or other application’s Do Not Track signal or any other similar anti-tracking signals. However, we offer other choices with respect to third parties. Many third parties participate in self-regulation to offer you a choice regarding receiving targeted ads. Please note that you’ll still see generic ads after opting out, but they won’t be based on your activities online. On the web, you can opt out of participating companies by visiting the following sites:</span></p><p class="p2"><span class="s1">•<span class="Apple-tab-span">	</span>http://optout.networkadvertising.org/</span></p><p class="p2"><span class="s1">•<span class="Apple-tab-span">	</span>http://optout.aboutads.info/<span class="Apple-converted-space">&nbsp;</span></span></p><p class="p2"><span class="s1">If you wish to similarly opt out of cross-app advertising on mobile devices, you can enable the Limit Ad Tracking flag on the device. Enabling Limit Ad Tracking sends a flag to third parties that you wish to opt out of targeted advertising on that device, and major mobile platforms require companies to honor this flag. Screenshots on how to find these options on various devices are available here: <a href="http://www.networkadvertising.org/mobile-choices"><span class="s3">http://www.networkadvertising.org/mobile-choices</span></a>.</span></p><p class="p2"><span class="s1"><b>What Are Cookies?</b></span></p><p class="p2"><span class="s1">Cookies are a feature of web browser software that allows web servers to recognize the computer used to access a website. Cookies are small pieces of data that are stored by a user's web browser on the user's hard drive. Cookies can remember what information a user accesses on one web page to simplify subsequent interactions with that website by the same user. This makes it easier for a user to move from web page to web page and to complete commercial transactions over the Internet. Cookies should make your online experience easier and more personalized. We use cookies to improve the quality of our Services and provide you with a better, easier and more personalized online experience.</span></p><p class="p2"><span class="s1"><b>Use of Cookies by Third Parties</b></span></p><p class="p2"><span class="s1">We may use third-party advertising companies to serve ads on our behalf and to monitor certain pages of our Website for the purpose of reporting web traffic, statistics, advertisement 'click-throughs', and/or other activities on our Site. These companies, which may include Google and Microsoft, Inc., may employ cookies and action tags (also known as single pixel gifs or web beacons) to measure advertising effectiveness. Any information that these third parties collect via cookies and action tags is completely anonymous.</span></p><p class="p2"><span class="s1">Some of our business partners may use cookies on our Website, e.g. advertisers. We have no access to or control over these cookies once our business partners have been given permission to set cookies. This privacy statement covers the use of cookies by SmartGuy.com only and does not cover the use of cookies by any advertisers.</span></p><p class="p2"><span class="s1"><b>Use of Log Files</b></span></p><p class="p2"><span class="s1">We use log files like most standard website servers. This includes Internet protocol (IP) addresses, browser type, Internet service provider (ISP), referring/exit pages, platform type, date/time stamp, and number of clicks to analyze trends, administer our Website, track user's movement in the aggregate, and gather broad demographic information for aggregate use.</span></p><p class="p2"><span class="s1"><b>Uses and Sharing of Collected Information</b></span></p><p class="p2"><span class="s1">We will keep your Personal Information private, except as otherwise provided in this Privacy Policy, and will not share it with third parties, unless such disclosure is necessary to: (a) comply with legal process (such as a court order) or other legal requirements of any governmental authority; (b) protect our rights or property; (c) act under extreme circumstances to protect the personal safety of Users, our Services, or the public; (d) enforce our Website's Terms of Use or (e) operate or conduct maintenance and repair of our Services and or equipment, as authorized by law. Your Personal Information is stored on secure servers that are not accessible by third parties.</span></p><p class="p2"><span class="s1">If you provide us with the requisite consent, we may use Personal Information to send you information about SmartGuy.com and our Services, or promotional material from some of our business partners, or to contact you when necessary. We may use Traffic Data to analyze trends, administer our Website, track the user's movement, and gather broad demographic information for aggregate use.</span></p><p class="p2"><span class="s1">We may provide Traffic Data and/or other aggregate non-personally identifying information to third parties, including our affiliates and business partners.</span></p><p class="p2"><span class="s1">If you are a Contractor or Service Provider or <b>“City Lead Networker</b>” SmartGuy.com may share your name, address, and other Personal Information with authorize.net or other third party payment providers to process and distribute payments.</span></p><p class="p4"><span class="s1">We may also user your Personal Information and other information collected pursuant to this Privacy Policy for the following purposes:</span></p><ol class="ol1">
+<ol class="ol2">
+<li class="li5"><span class="s1">Initiate, maintain, and identify your Account (“<b>Account</b>”);<span class="Apple-converted-space">&nbsp;</span></span></li>
+<li class="li5"><span class="s1">Resolving disputes;<span class="Apple-converted-space">&nbsp;</span></span></li>
+<li class="li5"><span class="s1">Preventing potentially fraudulent, prohibited, or illegal activities;<span class="Apple-converted-space">&nbsp;</span></span></li>
+<li class="li5"><span class="s1">Enforcing the Terms;<span class="Apple-converted-space">&nbsp;</span></span></li>
+<li class="li5"><span class="s1">Comparing information for accuracy; and<span class="Apple-converted-space">&nbsp;</span></span></li>
+<li class="li5"><span class="s1">Performing other duties as required by law.<span class="Apple-converted-space">&nbsp;</span></span></li>
+</ol>
+</ol><p class="p6"><span class="s1"></span><br></p><p class="p7"><span class="s1">Notwithstanding the foregoing, any and all information collected pursuant to this Privacy Policy, including Personal Information, is considered an asset of SmartGuy.com. In the event SmartGuy.com or some or all of the assets related to the Services are acquired by another entity through a sale, merger, or some other change of ownership transaction, SmartGuy.com reserves the right to transfer or assign the information, collected pursuant to this Privacy Policy, in that event.</span></p><p class="p8"><span class="s1"></span><br></p><p class="p2"><span class="s1"><b>Opt-Out Process</b></span></p><p class="p2"><span class="s1">When SmartGuy.com asks you for information, you are given the opportunity to "opt-out" of having your Personal Information used for purposes not directly related to our Site. For example, our service request form has an opt-out mechanism so users who submit a service request, but do not want any marketing material, can keep their email address off of our marketing lists.</span></p><p class="p2"><span class="s1">Users who no longer wish to receive our newsletter and promotional communications may opt-out of receiving these communications by replying to "unsubscribe" in the email or send an email to us at&nbsp;customerservice@smartguy.com.</span></p><p class="p2"><span class="s1">If you wish to cancel your Account, you can do so by following the applicable instructions in the Services or by contacting us for assistance with the process at the address listed above.<span class="Apple-converted-space">&nbsp;</span></span></p><p class="p2"><span class="s1"><b>Children<span class="Apple-converted-space">&nbsp;</span></b></span></p><p class="p4"><span class="s1">IF YOU ARE NOT AT LEAST 18 YEARS OLD, THEN YOU MUST NOT USE OR ACCESS SERVICES IN ANY MANNER.<span class="Apple-converted-space">&nbsp;</span></span></p><p class="p9"><span class="s1">SmartGuy.com does not knowingly collect or maintain Personal Information from persons under 13 years of age. If SmartGuy.com learns that Personal Information of persons under 13 years of age has been collected on or through the Services, SmartGuy.com will take the necessary and appropriate steps to delete the Personal Information.</span></p><p class="p2"><span class="s1"><b>Links</b></span></p><p class="p2"><span class="s1">Third-party websites may contain links to our Website. Please be aware that we are not responsible for the privacy practices or the content of such other sites.</span></p><p class="p2"><span class="s1">Our Website may contain links to third-party websites. Please be aware that we are not responsible for the privacy practices or the content of such other sites.</span></p><p class="p2"><span class="s1">We encourage our users to be aware when they leave our Website and to read the privacy policies or statements of third-party sites before proceeding. These other sites may send their own cookies to users, collect data, or Personal Information. This Privacy Policy applies solely to information collected at our Website.</span></p><p class="p2"><span class="s1"><b>Security</b></span></p><p class="p2"><span class="s1">Our Website has security measures in place to protect the loss, misuse and alteration of the information under our control. We utilize encryption/security software to safeguard the confidentiality of the Personal Information we collect from unauthorized access or disclosure and accidental loss, alteration or destruction.</span></p><p class="p2"><span class="s1">Unfortunately, no data transmission over the Internet can be guaranteed to be 100% secure. As a result, while we strive to protect your Personal Information, we cannot ensure or warrant the security of any information you transmit to us or from our Website, and you do so at your own risk. Once we receive your transmission, we make reasonable efforts to ensure security on our systems.</span></p><p class="p2"><span class="s1"><b>Notification of Changes</b></span></p><p class="p2"><span class="s1">We reserve the right to change this Privacy Policy at any time in our sole discretion. We will provide you with notice of such a change. Notice of any changes to the Privacy Policy will be accomplished upon us sending you an email to the address listed in your Account notifying you of such changes and/or announcing such changes through the Services. Such changes will go into effect immediately upon your access of the Services after you are given notice, as described herein. Your continued use of the Services following the notice of any changes to this Privacy Policy constitutes your acceptance of such changes. Any information collected by the Services will be dealt with in accordance with the version of this Privacy Policy that was in place at the time of collection..<span class="Apple-converted-space">&nbsp;</span></span></p><p class="p2"><span class="s1"><b>Review and Make Changes to Personal Information</b></span></p><p class="p2"><span class="s1">You have the right to access your Personal Information, and to receive information about our use of the same. You can also ask us to correct, update, or delete any accurate Personal Information we have about you. You understand that Users, including Contractors and Service Providers may retain such Personal Information, in its original form, if your request to update, correct, or delete your Personal Information was transmitted to Company after you transmitted the Personal Information to the Contractor or Service Provider or other User.<span class="Apple-converted-space">&nbsp;</span></span></p><p class="p2"><span class="s1"><b>International Users</b></span></p><p class="p2"><span class="s1"><b>The Services are directed towards and meant for Users located within the United States. These Services are NOT offered to non-United States residents. If you are not located in the United States, you may not use the Services without the direct written permission of SmartGuy.com</b>.<span class="Apple-converted-space">&nbsp;</span></span></p><p class="p2"><span class="s1"><b>Acceptance of Privacy Policy</b></span></p><p class="p2"><span class="s1">By using the Services, you signify your assent to our Privacy Policy. If you do not agree with this Privacy Policy, please do not use the Services.<span class="Apple-converted-space">&nbsp; </span>Your continued use of this Site following posting of changes to these terms will mean you accept this Privacy Policy.</span></p><p class="p2"><span class="s1"><b>Contact Us</b></span></p><p class="p2"><span class="s1">If you have any questions or concerns regarding our Privacy Policy or any questions about the security at our Website, please send an email to&nbsp;<a href="mailto:info@smartguy.com"><span class="s2"><b>info@smartguy.com</b></span></a><b>&nbsp;</b>or contact us in writing at Privacy Department, c/o SmartGuy.com,&nbsp;269 So. Beverly Drive, #642, Beverly Hills, CA 90212</span></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="p10"><span class="s1">]=</span></p>			</div>
+		</div>
+	</div>
+<!-- NON_PUBLIC_WEB_Directory\resources\views\layouts\general\  -->
+        <footer id="page-footer">
+            <div class="footer-wrapper">
+                <div class="footer-navigation">
+                    <div class="container">
+                        <div class="vertical-aligned-elements">
+                                                        <div class="element width-25">© 2021 SmartGuy®, Inc. All right reserved</div>
+                            <div class="element width-15">
+                                <a href="https://www.youtube.com/c/jordanwexler" class="circle-icon" target="_blank" style="width: 25px;height: 25px;line-height: 22px;"><i class="social_youtube" style="margin: 4px;color: #FFFFFF;"></i></a>
+                                <a href="https://twitter.com/smartguyt" class="circle-icon" target="_blank" style="width: 25px;height: 25px;line-height: 22px;"><i class="social_twitter" style="margin: 4px;color: #FFFFFF;"></i></a>
+                                <a href="https://www.facebook.com/SmartGuyInc/" class="circle-icon" target="_blank" style="width: 25px;height: 25px;line-height: 22px;"><i class="social_facebook" style="margin: 4px;color: #FFFFFF;"></i></a>
+                            </div>
+                            <div class="element width-25 text-align-right">
+                                <a href="https://www.smartguy.com">Home</a>
+                                <a href="https://www.smartguy.com/page/disclaimer" target="_blank">Disclaimer</a>
+                                <a href="https://www.smartguy.com/page/terms-of-use" target="_blank">Terms of use</a>
+                                <a href="https://www.smartguy.com/page/privacy-policy" target="_blank">Privacy Policy</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </footer>
+        <!--end page-footer--> 
+
+        <!-- Google Analytics -->
+        
+        
+        
+    </div>
+
+
+
+
+
+<!--end page-wrapper-->
+<a href="#" class="to-top scroll" data-show-after-scroll="600"><i class="arrow_up"></i></a>
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" alt="Google Переводчик" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Исходный текст</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Предложить лучший вариант перевода</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body><!-- Global site tag (gtag.js) - Google Analytics --></html>

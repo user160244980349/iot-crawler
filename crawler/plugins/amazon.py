@@ -35,7 +35,7 @@ class Amazon(Plugin):
     @classmethod
     def captcha(cls, markup):
         logger = logging.getLogger(f"pid={os.getpid()}")
-        if re.search("Sorry, we just need to make sure you're not a robot.", markup):
+        if re.search("sorry, we just need to make sure you're not a robot.", markup.lower()):
             logger.error("Sorry, we just need to make sure you're not a robot.")
             return True
         return False
@@ -51,7 +51,7 @@ class Amazon(Plugin):
         if div is not None:
             for li in div.ul.findChildren("li"):
                 spans = li.span.findChildren("span")
-                if re.match("^Manufacturer$", re.sub(r"[^\w+]", "", spans[0].text)):
+                if re.match("^manufacturer$", re.sub(r"[^\w+]", "", spans[0].text.lower())):
                     return re.sub(r"\n", "", spans[1].text).lower()
 
     @classmethod
@@ -59,7 +59,7 @@ class Amazon(Plugin):
         div = body.find("table", {"id": "productDetails_detailBullets_sections1"})
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
-                if re.search("^Manufacturer$", re.sub(r"[^\w+]", "", tr.th.text)):
+                if re.search("^manufacturer$", re.sub(r"[^\w+]", "", tr.th.text.lower())):
                     return re.sub(r"\n", "", tr.td.text).lower()
 
     @classmethod
@@ -67,5 +67,5 @@ class Amazon(Plugin):
         div = body.find("table", {"id": "productDetails_techSpec_section_1"})
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
-                if re.search("^Manufacturer$", re.sub(r"[^\w+]", "", tr.th.text)):
+                if re.search("^manufacturer$", re.sub(r"[^\w+]", "", tr.th.text.lower())):
                     return re.sub(r"\n", "", tr.td.text).lower()

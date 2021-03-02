@@ -103,7 +103,7 @@
     If you request us to delete your personal information, you acknowledge that you may not be able to access or use our services and that some information may continue to reside in our records for some time in compliance with applicable law, but we will not process that information for commercial purposes. Further, the deletion of your account will cause you to be unable to log on and use any of the services on the App in the future. You understand that, despite your request for deletion, we reserve the right to keep your personal information, or a relevant part of it, according to applicable laws.
 
 
-    If you would like to make a request to access your information, or for more detail about processing, please contact us by email at: e-mail.
+    If you would like to make a request to access your information, or for more detail about processing, please contact us by email at: removed e-mail.
 
 
     INFORMATION SECURITY:
@@ -136,6 +136,6 @@
     MODIFICATIONS.
 
 
-    If you have any concern about privacy at website, please contact us with a thorough description, and we will try to resolve it. Our business changes constantly, and our privacy policy and the terms of use will change also. We may email periodic reminders of our policy and terms, but you should check our website frequently to see recent changes. Unless stated otherwise, our current privacy policy applies to all information that we have about you and your account. We stand behind the promises we make and will never materially change our policies and practices to make them less protective of customer information collected in the past without the consent of affected customers.
+    If you have any concern about privacy at removed hyperref, please contact us with a thorough description, and we will try to resolve it. Our business changes constantly, and our privacy policy and the terms of use will change also. We may email periodic reminders of our policy and terms, but you should check our website frequently to see recent changes. Unless stated otherwise, our current privacy policy applies to all information that we have about you and your account. We stand behind the promises we make and will never materially change our policies and practices to make them less protective of customer information collected in the past without the consent of affected customers.
 
 

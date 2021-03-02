@@ -35,7 +35,7 @@ class Walmart(Plugin):
     @classmethod
     def captcha(cls, markup):
         logger = logging.getLogger(f"pid={os.getpid()}")
-        if re.search("Help us keep your account safe by clicking on the checkbox below.", markup):
+        if re.search("help us keep your account safe by clicking on the checkbox below.", markup.lower()):
             logger.error("Sorry, we just need to make sure you're not a robot.")
             return True
         return False
@@ -51,7 +51,7 @@ class Walmart(Plugin):
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
                 tds = tr.findChildren("td")
-                if re.search("^Manufacturer$", re.sub(r"[^\w+]", "", tds[0].text)):
+                if re.search("^manufacturer$", re.sub(r"[^\w+]", "", tds[0].text.lower())):
                     return re.sub(r"\n", "", tds[1].text).lower()
 
     @classmethod
@@ -60,5 +60,5 @@ class Walmart(Plugin):
         if div is not None:
             for tr in div.tbody.findChildren("tr"):
                 tds = tr.findChildren("td")
-                if re.search("^Brand$", re.sub(r"[^\w+]", "", tds[0].text)):
+                if re.search("^brand$", re.sub(r"[^\w+]", "", tds[0].text.lower())):
                     return re.sub(r"\n", "", tds[1].text).lower()

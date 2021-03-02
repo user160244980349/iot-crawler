@@ -79,9 +79,6 @@ def main():
         for m in active_modules.modules:
             m.do_job(p)
 
-    except:
-        logger.error("traceback.print_exc()")
-
     finally:
         if p is not None:
             logger.info(f"Closing process pool")

@@ -50,7 +50,7 @@ class Policies(Module):
         refs = soup.findAll("a")
 
         for r in reversed(refs):
-            if re.match(r"(Privacy)|(Privacy Policy)", r.text):
+            if re.match(r"privacy(policy)?", re.sub(r"[^\w+]", "", r.text.lower())):
 
                 m = re.match(r"^((https?://)?(www\.)?([\w\d.\-_]+)\.\w+)?(.*$)", r.get("href"))
                 if m is not None:

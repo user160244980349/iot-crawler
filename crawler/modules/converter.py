@@ -18,25 +18,26 @@ class Converter(Module):
     ]
 
     global_subs = [
-        (r"[\w\d_\-]+@\w+\.\w+", "e-mail"),
-        (r"(www\.)?[\w\d_\-]+\.\w+", "website"),
+        (r"[\w\d_\-]+@\w+\.\w+", "removed e-mail"),
+        (r"(https?\.)?(www\.)?[\w\d_\-]+\.\w{2,}", "removed hyperref"),
 
-        (r"^\s{4}", ""),  # indentation
+        (r"^\s{8}", ""),  # indentation
 
-        (r" ([.,:;!?])", "\g<1>"),  # split punctuation
+        (r" ([.,:;!?)])", "\g<1>"),           # split punctuation
         (r"([.,:;!?])(\w+)", "\g<1> \g<2>"),  # split punctuation
-        (r"(\w+)\n", "\g<1>.\n"),  # split punctuation
+        (r"(\w+)\n", "\g<1>.\n"),             # split punctuation
+        (r"\( ", "("),                        # split punctuation
 
         (r"\n", "\n\n\n"),  # spacing
 
-        (r"<ul>", ""),  # ol_tags
-        (r"<ol>", ""),  # ol_tags
+        (r"<ul>", ""),     # ol_tags
+        (r"<ol>", ""),     # ol_tags
         (r"<li>", "***"),  # li_tags
 
-        (r"<\w+/?>", ""),  # open_tags
+        (r"<\w+/?>", ""),         # open_tags
         (r"</\w+/?>", "\n\n\n"),  # close_tags
-        (r"^\s+$", "\n\n\n"),  # too_many_nl
-        (r"\n{4,}", "\n\n\n"),  # too_many_nl
+        (r"^\s+$", "\n\n\n"),     # too_many_nl
+        (r"\n{4,}", "\n\n\n"),    # too_many_nl
 
         (r"[^A-Za-z0-9,.:;\\/\-\n\s(){}*?!]", ""),  # special characters
     ]
@@ -80,8 +81,8 @@ class Converter(Module):
 
         soup = BeautifulSoup(text, "lxml")
 
+        cls.unwrap_accents(soup)
         cls.wrap_rawtext(soup)
-        cls.unwrap_some(soup)
         cls.trim_spaces(soup)
 
         text = Sanitization.prettify(soup)
@@ -96,7 +97,7 @@ class Converter(Module):
         return item, policy
 
     @classmethod
-    def unwrap_some(cls, element):
+    def unwrap_accents(cls, element):
 
         if element.name == "strong" \
                 or element.name == "em" \
@@ -104,22 +105,39 @@ class Converter(Module):
                 or element.name == "h2" \
                 or element.name == "h3":
             element.replaceWith(NavigableString(element.text.upper()))
+            return
 
         for child in element.findAll(recursive=False):
-            cls.unwrap_some(child)
+            cls.unwrap_accents(child)
 
     @classmethod
     def wrap_rawtext(cls, element):
 
-        if len(element.contents) > 1 and \
-                all([isinstance(c, NavigableString)
-                     or c.name == "br" for c in element.contents]):
-            for c in element.contents:
-                e = Tag(name="p")
-                c.wrap(e)
+        if True in [isinstance(c, Tag) for c in element.children]:
 
-            element.unwrap()
-            return
+            groups = []
+            group = []
+            for c in element.children:
+
+                if isinstance(c, NavigableString):
+                    group.append(c)
+
+                if isinstance(c, Tag):
+                    groups.append(group)
+                    group = []
+
+            if len(group) > 0:
+                groups.append(group)
+
+            for g in groups:
+
+                if len(g) == 0:
+                    continue
+
+                par = Tag(name="p")
+                g[0].wrap(par)
+                for i in range(1, len(g)):
+                    par.append(g[i])
 
         for child in element.findAll(recursive=False):
             cls.wrap_rawtext(child)

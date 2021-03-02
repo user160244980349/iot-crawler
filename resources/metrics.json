@@ -1,19 +1,19 @@
 {
-  "items_total": 1,
+  "items_total": 61,
   "products": {
-    "manufacturers": 1,
-    "websites": 1,
-    "policies": 1,
-    "percentile_manufacturers": 1.0,
-    "percentile_websites": 1.0,
-    "percentile_policies": 1.0
+    "manufacturers": 60,
+    "websites": 45,
+    "policies": 34,
+    "percentile_manufacturers": 0.9836065573770492,
+    "percentile_websites": 0.7377049180327869,
+    "percentile_policies": 0.5573770491803278
   },
   "unique": {
-    "manufacturers": 1,
-    "websites": 1,
-    "policies": 1,
-    "percentile_manufacturers": 1.0,
-    "percentile_websites": 1.0,
-    "percentile_policies": 1.0
+    "manufacturers": 40,
+    "websites": 26,
+    "policies": 17,
+    "percentile_manufacturers": 0.6666666666666666,
+    "percentile_websites": 0.65,
+    "percentile_policies": 0.425
   }
 }

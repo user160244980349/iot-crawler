@@ -1,13 +1,15 @@
 
 
+{removed href}
+
+
+Privacy Policy.
+
 
 PRIVACY POLICY.
 
 
-PRIVACY POLICY.
-
-
-This privacy policy discusses the personal information that Dastmalchi obtains from you on removed hyperref or connection with the Loyalty Program, and under the Dastmalchi Community program. When we use the term personal information we are referring to information that is connected to your name or can reasonably connected to your name. This may include things like your IP address, e-mail address, mailing address, birthday, telephone number, photographs, personal images, or beauty profile information you provide that could be used to identify you, or information about the products you purchase, when those pieces of data are stored with your name. Any information that is not connected to your name is not considered personal information.
+This privacy policy discusses the personal information that Dastmalchi obtains from you on {removed hyperref} or connection with the Loyalty Program, and under the Dastmalchi Community program. When we use the term personal information we are referring to information that is connected to your name or can reasonably connected to your name. This may include things like your IP address, e-mail address, mailing address, birthday, telephone number, photographs, personal images, or beauty profile information you provide that could be used to identify you, or information about the products you purchase, when those pieces of data are stored with your name. Any information that is not connected to your name is not considered personal information.
 
 
 WHAT DO WE DO WITH YOUR INFORMATION?
@@ -19,19 +21,19 @@ Dastmalchi uses the personal information that it collects to provide you with pr
 CONSENT.
 
 
-    How do you get my consent?
+How do you get my consent?
 
 
-    When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.
+When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.
 
 
-    If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.
+If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent, or provide you with an opportunity to say no.
 
 
-    How do I withdraw my consent?
+How do I withdraw my consent?
 
 
-    If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at any time, by contacting us at removed e-mail or mailing us at:
+If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at any time, by contacting us at {removed hyperref} or mailing us at:
 
 
 Dastmalchi.
@@ -49,25 +51,25 @@ We do not your personal information. We may share your information to ensure del
 SHOPIFY.
 
 
-    Our store is hosted on Shopify Inc. They provide us with the online e-commerce platform that allows us to sell our products and services to you.
+Our store is hosted on Shopify Inc. They provide us with the online e-commerce platform that allows us to sell our products and services to you.
 
 
-    Your data is stored through Shopifys data storage, databases and the general Shopify application. They store your data on a secure server behind a firewall.
+Your data is stored through Shopifys data storage, databases and the general Shopify application. They store your data on a secure server behind a firewall.
 
 
-    Payment:
+Payment:
 
 
-    If you choose a direct payment gateway to complete your purchase, then Shopify stores your credit card data. It is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS). Your purchase transaction data is stored only as long as is necessary to complete your purchase transaction. After that is complete, your purchase transaction information is deleted.
+If you choose a direct payment gateway to complete your purchase, then Shopify stores your credit card data. It is encrypted through the Payment Card Industry Data Security Standard (PCI-DSS). Your purchase transaction data is stored only as long as is necessary to complete your purchase transaction. After that is complete, your purchase transaction information is deleted.
 
 
-    All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.
+All direct payment gateways adhere to the standards set by PCI-DSS as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover.
 
 
-    PCI-DSS requirements help ensure the secure handling of credit card information by our store and its service providers.
+PCI-DSS requirements help ensure the secure handling of credit card information by our store and its service providers.
 
 
-    For more insight, you may also want to read Shopifys Terms of Service (https://removed hyperref/legal/terms) or Privacy Statement ().
+For more insight, you may also want to read Shopifys Terms of Service ({removed hyperref}) or Privacy Statement ({removed href}).
 
 
 THIRD-PARTY SERVICES.
@@ -85,25 +87,25 @@ Certain third-party service providers, such as payment gateways and other paymen
 For these providers, we recommend that you read their privacy policies so you can understand the manner in which your personal information will be handled by these providers.
 
 
-    In particular, remember that certain providers may be located in or have facilities that are located a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.
+In particular, remember that certain providers may be located in or have facilities that are located a different jurisdiction than either you or us. So if you elect to proceed with a transaction that involves the services of a third-party service provider, then your information may become subject to the laws of the jurisdiction(s) in which that service provider or its facilities are located.
 
 
-    As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.
+As an example, if you are located in Canada and your transaction is processed by a payment gateway located in the United States, then your personal information used in completing that transaction may be subject to disclosure under United States legislation, including the Patriot Act.
 
 
-    Once you leave our stores website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our websites Terms of Service.
+Once you leave our stores website or are redirected to a third-party website or application, you are no longer governed by this Privacy Policy or our websites Terms of Service.
 
 
-    Links.
+Links.
 
 
-    When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.
+When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.
 
 
-    Google analytics:
+Google analytics:
 
 
-    Our store uses Google Analytics to help us learn about who visits our site and what pages are being looked at.
+Our store uses Google Analytics to help us learn about who visits our site and what pages are being looked at.
 
 
 SECURITY.
@@ -118,61 +120,49 @@ If you provide us with your credit card information, the information is encrypte
 COOKIES.
 
 
-    Here is a list of cookies that we use. Weve listed them here so you that you can choose if you want to opt-out of cookies or not.
+Here is a list of cookies that we use. Weve listed them here so you that you can choose if you want to opt-out of cookies or not.
 
 
-    sessionid, unique token, sessional, Allows Shopify to store information about your session (referrer, landing page, etc).
+sessionid, unique token, sessional, Allows Shopify to store information about your session (referrer, landing page, etc).
 
 
-    shopifyvisit, no data held, Persistent for 30 minutes from the last visit, Used by our website providers internal stats tracker to record the number of visits.
+shopifyvisit, no data held, Persistent for 30 minutes from the last visit, Used by our website providers internal stats tracker to record the number of visits.
 
 
-    shopifyuniq, no data held, expires midnight (relative to the visitor) of the next day, Counts the number of visits to a store by a single customer.
+shopifyuniq, no data held, expires midnight (relative to the visitor) of the next day, Counts the number of visits to a store by a single customer.
 
 
-    cart, unique token, persistent for 2 weeks, Stores information about the contents of your cart.
+cart, unique token, persistent for 2 weeks, Stores information about the contents of your cart.
 
 
-    securesessionid, unique token, sessional.
+securesessionid, unique token, sessional.
 
 
-    storefrontdigest, unique token, indefinite If the shop has a password, this is used to determine if the current visitor has access.
+storefrontdigest, unique token, indefinite If the shop has a password, this is used to determine if the current visitor has access.
 
 
-    PREF, persistent for a very short period, Set by Google and tracks who visits the store and from where.
+PREF, persistent for a very short period, Set by Google and tracks who visits the store and from where.
 
 
 In addition to the above, we may use the following technologies to automatically collect information about your activities on our websites.
 
 
-***
+{number list}
 
 
-    Cookies1.
+{list item} Cookies1.
 
 
-***
+{list item} Flash Cookies2.
 
 
-    Flash Cookies2.
+{list item} Web beacons, clear pixels, or pixel tags. 3.
 
 
-***
+{list item} Web server logs. 4.
 
 
-    Web beacons, clear pixels, or pixel tags. 3.
-
-
-***
-
-
-    Web server logs. 4.
-
-
-***
-
-
-    Geo-location technologies. 5.
+{list item} Geo-location technologies. 5.
 
 
 CALIFORNIA PRIVACY NOTICES AND RIGHTS.
@@ -196,55 +186,43 @@ Our services are not directed at children under the age of 13 and we do not know
 CHANGES TO THIS PRIVACY POLICY.
 
 
-    We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.
+We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it.
 
 
-    If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
+If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
 
 
 QUESTIONS AND CONTACT INFORMATION.
 
 
-If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at, or call us on our toll-free number 1-888-358-0331.
+If you would like to: access, correct, amend or delete any personal information we have about you, register a complaint, or simply want more information contact our Privacy Compliance Officer at {removed href}, or call us on our toll-free number 1-888-358-0331.
 
 
-    Dastmalchi.
+Dastmalchi.
 
 
-    Re: Privacy Compliance Officer
+Re: Privacy Compliance Officer.
 
 
-    4490 Von Karman Suite 150, Newport Beach, CA 92660.
+4490 Von Karman Suite 150, Newport Beach, CA 92660.
 
 
-***
+{bullet list}
 
 
-    Cookies are small bits of information that are placed on the hard drive of your computer. Cookies remember information about your activities on the site to make your visits to our website more enjoyable and valuable to you by providing a customized experience and recognizing your preferences when you visit our website. If youve chosen to disable cookies on your browser, some of the functionality of our website may be lost. Certain of our web page, particularly those that require a login and password, require that cookies be enabled in your browser and cannot be used when you have disabled cookies in your browser.
+{list item} Cookies are small bits of information that are placed on the hard drive of your computer. Cookies remember information about your activities on the site to make your visits to our website more enjoyable and valuable to you by providing a customized experience and recognizing your preferences when you visit our website. If youve chosen to disable cookies on your browser, some of the functionality of our website may be lost. Certain of our web page, particularly those that require a login and password, require that cookies be enabled in your browser and cannot be used when you have disabled cookies in your browser.
 
 
-***
+{list item} Flash cookies (also called Local Shared Objects or LSOs) are data files similar to cookies, except that they can store more complex data. Flash cookies are used to remember settings, preferences, and usage, particularly for video, interactive gaming, and other similar services.
 
 
-    Flash cookies (also called Local Shared Objects or LSOs) are data files similar to cookies, except that they can store more complex data. Flash cookies are used to remember settings, preferences, and usage, particularly for video, interactive gaming, and other similar services.
+{list item} Web beacons are small graphic images on a Web page or in an e-mail that can be used for such things as recording the pages and advertisements clicked on by users, or tracking the performance of e-mail marketing campaigns.
 
 
-***
+{list item} Web server logs are records of activity created by the computer that delivers the webpages you request to your browser. For example, a web server log may record the search term you entered or the link you clicked to bring you the webpage. The Web server log also may record information about your browser, such as your IP address and the cookies set on your browser by the server.
 
 
-    Web beacons are small graphic images on a Web page or in an e-mail that can be used for such things as recording the pages and advertisements clicked on by users, or tracking the performance of e-mail marketing campaigns.
-
-
-***
-
-
-    Web server logs are records of activity created by the computer that delivers the webpages you request to your browser. For example, a web server log may record the search term you entered or the link you clicked to bring you the webpage. The Web server log also may record information about your browser, such as your IP address and the cookies set on your browser by the server.
-
-
-***
-
-
-    Geo-location technology refers to technologies that permit us to determine your location. We may ask you to manually provide location information on our website, or to enable your mobile device to send us precise location information. We may also automatically collect general location information from your web browser.
+{list item} Geo-location technology refers to technologies that permit us to determine your location. We may ask you to manually provide location information on our website, or to enable your mobile device to send us precise location information. We may also automatically collect general location information from your web browser.
 
 
 LAST UPDATED APRIL 2020.

@@ -1,6 +1,5 @@
 
 
-
 LETSFIT PRIVACY POLICY.
 
 
@@ -10,82 +9,46 @@ Even though were in this together, you still have the right to your privacy. So 
 Specifically, well cover:
 
 
-***
+{number list}
 
 
-    Information We Collect.
+{list item} Information We Collect.
 
 
-***
+{list item} How We Use Information.
 
 
-    How We Use Information.
+{list item} How Information Is Shared.
 
 
-***
+{list item} Cookies and Similar Tracking Technologies.
 
 
-    How Information Is Shared.
+{list item} Your Rights to Access and Control Your Personal Information.
 
 
-***
+{list item} Data Retention.
 
 
-    Cookies and Similar Tracking Technologies.
+{list item} Our Policies For Children.
 
 
-***
+{list item} Information Security.
 
 
-    Your Rights to Access and Control Your Personal Information.
+{list item} International Data Transfers.
 
 
-***
+{list item} Additional information for European, UK and Swiss residents.
 
 
-    Data Retention.
+{list item} California Privacy Disclosures.
 
 
-***
+{list item} Changes to This Policy.
 
 
-    Our Policies For Children.
-
-
-***
-
-
-    Information Security.
-
-
-***
-
-
-    International Data Transfers.
-
-
-***
-
-
-    Additional information for European, UK and Swiss residents.
-
-
-***
-
-
-    California Privacy Disclosures.
-
-
-***
-
-
-    Changes to This Policy.
-
-
-***
-
-
-    Who We Are and How to Contact Us.
+{list item} Who We Are and How to Contact Us.
 
 
 INFORMATION WE COLLECT When you use the Services, we collect the following types of information.
@@ -94,19 +57,19 @@ INFORMATION WE COLLECT When you use the Services, we collect the following types
 INFORMATION YOU PROVIDE US.
 
 
- ACCOUNT AND CONTACT INFORMATION.
+ACCOUNT AND CONTACT INFORMATION.
 
 
 To create an account for the use of the Services, some information will be required from you, such as your name, email address, password, date of birth, sex, height, weight, and in some cases your mobile telephone number. You may also choose to provide us with additional information, such as a profile photo, biography, country information, and community username. To get the most out of your devices and your Letsfit experience, you may also provide information like your logs for food, weight, height, sleep, water, or female health tracking.
 
 
- COMMUNICATIONS INFORMATION.
+COMMUNICATIONS INFORMATION.
 
 
 We will collect any other information that you voluntarily provide to us, if you subscribe to receive marketing communications from us, submit enquiries or feedback to us, complete online webforms, or communicate with our customer or technical support teams via email, telephone, or webchat. The information we collect may include your name and contact details and details of our communications. We may record our calls for training and monitoring purposes.
 
 
- PROMOTIONS AND EVENTS.
+PROMOTIONS AND EVENTS.
 
 
 We will collect any information that you provide to us in connection with any promotions or competitions that we operate or events that we run.
@@ -118,7 +81,7 @@ The information that you are asked to provide, and the reasons why you are asked
 INFORMATION WE AUTOMATICALLY COLLECT.
 
 
- DEVICE INFORMATION.
+DEVICE INFORMATION.
 
 
 We will collect information from and about the device you use when you use the Services (whether that is your desktop, mobile, tablet or Letsfit device). This may include information like your IP address, browser type, device type, unique device identification numbers, language, operating system, location (depending on the permissions you have granted us), and cookie information.
@@ -127,13 +90,13 @@ We will collect information from and about the device you use when you use the S
 Some of this information may be collected using cookies and Similar tracking technology, as explained further under the Cookies and Similar Tracking Technologies section below.
 
 
- GEOLOCATION INFORMATION.
+GEOLOCATION INFORMATION.
 
 
 Some Services include features that use precise geolocation data, including GPS signals, device sensors, Wi-Fi access points, and mobile mast IDs (for example, when you use functionality that enables you to track your run. We collect this type of data if you grant us access to your location. You can always remove our access using your Letsfit device or mobile device settings but this may affect your ability to use certain location-dependent Services. We may also derive your approximate location from your IP address.
 
 
- INFORMATION GENERATED THROUGH USE OF THE SERVICES.
+INFORMATION GENERATED THROUGH USE OF THE SERVICES.
 
 
 When you access or use the Services, we will collect information about how you or your device interact with our Services, such as the content you access, the referring web page, and pages visited. We receive certain usage or network activity information. This includes information about your interaction with the Services, for example, when you view or search content, install applications or software, create or log into your account, pair your device to your account, or open or interact with an application on your Letsfit device.
@@ -142,7 +105,7 @@ When you access or use the Services, we will collect information about how you o
 INFORMATION WE COLLECT FROM THIRD PARTIES.
 
 
- THIRD-PARTY APPLICATIONS.
+THIRD-PARTY APPLICATIONS.
 
 
 If you choose to connect your account on the Services to your account on another service or third-party application, we may receive information from that third party. For example, if you access our Services through a third-party application such as Facebook or Google, we may collect information about you that you have made public via the privacy settings of that third-party application. This may include your name, profile picture, age range, language, email address, and friend list.
@@ -151,7 +114,7 @@ If you choose to connect your account on the Services to your account on another
 Similarly if you choose to link your account to other third-party applications (such as Strava, Apple Health, and Google Fit), we may collect information about you that you have made public or choose to share with us via those third parties, including exercise or activity data from another service. You can stop sharing the information from the other service with us by removing our access to that other service.
 
 
- THIRD PARTY PARTNERS.
+THIRD PARTY PARTNERS.
 
 
 We may partner with third parties, such as employers and insurance companies that offer Letsfit Services to their employees and customers. In such cases, those companies may provide us with your name, email address, or similar information (like a telephone number or subscriber ID) so that we can invite you to participate or determine your eligibility for particular benefits, such as discounts or free services. HOW WE USE INFORMATION TO PROVIDE AND MAINTAIN THE SERVICES.
@@ -175,13 +138,13 @@ When you allow us to collect precise location information, we use that informati
 We also use your information to make inferences and show you more relevant content. Here are some examples:
 
 
- Information like your height, weight, sex, and age allows us to improve the accuracy of your daily exercise and activity statistics such as the number of calories you burned and the distance you travelled.
+Information like your height, weight, sex, and age allows us to improve the accuracy of your daily exercise and activity statistics such as the number of calories you burned and the distance you travelled.
 
 
- Based on your sleep data, we may make inferences about your sleeping patterns and provide you with customized insights to help you improve your sleep.
+Based on your sleep data, we may make inferences about your sleeping patterns and provide you with customized insights to help you improve your sleep.
 
 
- We may personalize exercise and activity goals for you based on the goals you previously set and your historical exercise or activity data.
+We may personalize exercise and activity goals for you based on the goals you previously set and your historical exercise or activity data.
 
 
 TO SERVE RELEVANT ADVERTISING.
@@ -214,55 +177,55 @@ OTHER LAWFUL BUSINESS PURPOSES.
 We may use your information for other incidental business purposes related to or connected with any of the above, or for any other purpose disclosed to you at the point at which we collect your personal information.
 
 
-COOKIES AND SIMILAR TRACKING TECHNOLOGIES We use cookies and similar technologies (collectively Cookies) to collect and use information for the purposes described above. For further information about the Cookies we use, why we use them, and how you can control them, please see our. HOW INFORMATION IS SHARED We may disclose your information to the following categories of recipients:
+COOKIES AND SIMILAR TRACKING TECHNOLOGIES We use cookies and similar technologies (collectively Cookies) to collect and use information for the purposes described above. For further information about the Cookies we use, why we use them, and how you can control them, please see our {removed href}. HOW INFORMATION IS SHARED We may disclose your information to the following categories of recipients:
 
 
- Group Companies, Third Party Service Providers and Business Partners:
+Group Companies, Third Party Service Providers and Business Partners:
 
 
 We may share your personal information with other members of our group, with our third party service providers and with our business partners who provide services to us (such as IT, analytics, advertising, payment processing, and customer sales, technical support or delivery services), who otherwise process personal information for purposes that are described in this Policy (such as advertising partners and insurance partners) or who are otherwise notified to you when we collect your personal information.
 
 
- Third Party Apps that you link to your Letsfit account:
+Third Party Apps that you link to your Letsfit account:
 
 
 As part of the functionality of the Services, we offer pairing functionality to enable you to connect your Letsfit account with third party applications such as Strava, Apple Health, and Google Fit and similar. If you choose to connect your Letsfit account, we will share certain personal information with the paired application. Dependent on what information you choose to share with such third party apps, the information may include information generated through your use of the Services (i. e. workout information) and other contact and profile information. The processing of your personal information by such third party applications shall be governed by the privacy policies of those third parties.
 
 
- Other Users:
+Other Users:
 
 
 Depending on your use of the Services, we will make certain personal information from your User Profile available for other Letsfit members to see.
 
 
- Competent Law Enforcement Bodies, Regulators, Government Agencies, Courts or other Third Parties:
+Competent Law Enforcement Bodies, Regulators, Government Agencies, Courts or other Third Parties:
 
 
 We may share your personal information with competent law enforcement bodies, regulators, government agencies, courts, or other third parties where we believe disclosure is necessary: (i) to comply with applicable law; (ii) to exercise, establish or defend our legal rights (including to collect amounts owed to us); (iii) to protect your rights or vital interests or those of any other person; or (iv) to detect, prevent, or otherwise address security, fraud, or technical issues.
 
 
- Potential Buyers (and their agents and advisors):
+Potential Buyers (and their agents and advisors):
 
 
 We may share your personal information with actual or potential buyers (and their agents and advisors) in connection with any actual or proposed purchase, merger, acquisition, financing, reorganization, bankruptcy, receivership, sale of company assets, or transition of service to another provider, provided that we inform the buyer or transferee that it must use your personal information only for the purposes disclosed in this Privacy Policy. YOUR RIGHTS TO ACCESS AND CONTROL YOUR PERSONAL INFORMATION We give you USER CENTER and tools to access and control your personal information, as described below, regardless of where you live. If you live in certain jurisdictions, you may have legal rights with respect to your information, which your USER CENTER and tools allow you to exercise, as outlined below. USER CENTER are either presently available, or will be available in an upcoming update.
 
 
- Accessing Data.
+Accessing Data.
 
 
 By logging into your account, you can access much of your personal information, including your dashboard with your daily exercise and activity statistics.
 
 
- Editing and Deleting Data.
+Editing and Deleting Data.
 
 
 By logging into your account and using your USER CENTER, you can change and delete your personal information. For instance, you can edit or delete the profile data you provide and delete your account if you wish.
 
 
- If you choose to delete your account, please note that while most of your information will be deleted within 7 days, we may also preserve data for legal reasons or to prevent harm, including as described in the How Information Is Shared section, above.
+If you choose to delete your account, please note that while most of your information will be deleted within 7 days, we may also preserve data for legal reasons or to prevent harm, including as described in the How Information Is Shared section, above.
 
 
- Objecting to Data Use.
+Objecting to Data Use.
 
 
 We give you USER CENTER and tools to control our data use. For example, using your EMAIL SUBSCRIPTIONS, you can limit the notifications you receive from us; and under your application settings, you can revoke the access of third-party applications that you previously connected to your Letsfit account. You can also use the Letsfit application to unpair your device from your account at any time. USER CENTER are either presently available, or will be made available in an upcoming update. DATA RETENTION We keep the personal information we collect under this Privacy Policy for as long as you use the Services or as necessary to fulfil the purpose(s) for which it was collected as described in the How We Use Information section, such as to provide the Services, resolve disputes, establish legal defenses, conduct audits, pursue legitimate business purposes, enforce our agreements, prevent harm, and comply with applicable laws.
@@ -274,10 +237,10 @@ More specifically, we keep your account information, like your name, email addre
 When we no longer need the personal information as described above, we will destroy, erase, or de-identify it. OUR POLICIES FOR CHILDREN Children under the age of 13 are not permitted to create an account either on our website or on the app. Parents who allow their children to use the website or the app agree to be fully responsible for the conduct of their children. We do not purposely collect any information on or knowingly sell any of the Services to children under the age of 13.
 
 
-If we learn that we have collected the personal information of a child under the age of 13, we will take steps to delete that information as soon as possible. Parents who believe that a child under the age of 13 has submitted personal information to us should contact us at to have it deleted. INFORMATION SECURITY We work hard to keep your data safe. We use a combination of technical, administrative, and physical controls to maintain the security of your data. No method of transmitting or storing data is completely secure, however. If you have a security-related concern, please contact. INTERNATIONAL DATA TRANSFERS We operate internationally and may transfer, process, and/or store your personal information in countries other than the country in which you are resident, including the United States and China.
+If we learn that we have collected the personal information of a child under the age of 13, we will take steps to delete that information as soon as possible. Parents who believe that a child under the age of 13 has submitted personal information to us should contact us at {removed href} to have it deleted. INFORMATION SECURITY We work hard to keep your data safe. We use a combination of technical, administrative, and physical controls to maintain the security of your data. No method of transmitting or storing data is completely secure, however. If you have a security-related concern, please contact {removed href}. INTERNATIONAL DATA TRANSFERS We operate internationally and may transfer, process, and/or store your personal information in countries other than the country in which you are resident, including the United States and China.
 
 
-If you are a resident of the European Economic Area (the  EEA ) or (after European Union law ceases to apply to the United Kingdom (the  UK )) the UK or Switzerland, we take appropriate safeguards to protect your personal information in accordance with this Privacy Policy following any transfer from the EEA, the UK, or Switzerland. This will include implementing the European Commissions Standard Contractual Clauses which require recipients to protect relevant information in accordance with applicable data protection laws.
+If you are a resident of the European Economic Area (the EEA) or (after European Union law ceases to apply to the United Kingdom (the UK)) the UK or Switzerland, we take appropriate safeguards to protect your personal information in accordance with this Privacy Policy following any transfer from the EEA, the UK, or Switzerland. This will include implementing the European Commissions Standard Contractual Clauses which require recipients to protect relevant information in accordance with applicable data protection laws.
 
 
 Further details can be provided upon request. ADDITIONAL INFORMATION FOR EUROPEAN, UK AND SWISS RESIDENTS If you live in the EEA, the UK, or Switzerland, the following additional sections will apply to you.
@@ -301,13 +264,13 @@ OUR LEGAL BASES FOR PROCESSING PERSONAL DATA.
 Our legal bases for collecting and using the personal information described above will depend on the personal information concerned and the specific context in which we collect it. However we will normally collect personal information from you only:
 
 
- When the processing is necessary to perform a contract with you, like the; and.
+When the processing is necessary to perform a contract with you, like the {removed href}; and.
 
 
- Where the processing is in our legitimate business interests, such as in improving, personalizing and developing the Services, marketing new features or products that may be of interest, and promoting safety and security as described in the How We Use Information section; or.
+Where the processing is in our legitimate business interests, such as in improving, personalizing and developing the Services, marketing new features or products that may be of interest, and promoting safety and security as described in the How We Use Information section; or.
 
 
- Where we have your consent to do so.
+Where we have your consent to do so.
 
 
 In some cases we may also have a legal obligation to collect personal information from you or may otherwise need the personal information to protect your vital interests or those of another person.
@@ -322,16 +285,16 @@ YOUR LEGAL RIGHTS.
 In addition to the various controls that we offer under the Your Rights To Access and Control Your Personal Information section above, you have the following rights to your personal information:
 
 
- You can request access, rectification, or deletion of your personal information.
+You can request access, rectification, or deletion of your personal information.
 
 
- You can object to processing of your personal information, ask us to restrict processing of your personal information, or request portability of your personal information.
+You can object to processing of your personal information, ask us to restrict processing of your personal information, or request portability of your personal information.
 
 
- You have the right to opt-out of any marketing communications we send to you at any time. You can do this by clicking on the unsubscribe or opt out link in the marketing communications we send you or by contacting us using the details provided in the Who We Are And How To Contact Us section below.
+You have the right to opt-out of any marketing communications we send to you at any time. You can do this by clicking on the unsubscribe or opt out link in the marketing communications we send you or by contacting us using the details provided in the Who We Are And How To Contact Us section below.
 
 
- You can also complain to a data protection authority about our collection and use of your personal information. For more information, please contact your local data protection authority.
+You can also complain to a data protection authority about our collection and use of your personal information. For more information, please contact your local data protection authority.
 
 
 You can either exercise these rights using the tools described in the Your Rights To Access and Control Your Personal Information section above, or by contacting us using the details provided in the Who We Are And How To Contact Us section below. ADDITIONAL INFORMATION FOR CALIFORNIA RESIDENTS If you are a California resident, please review the following additional privacy disclosures under the California Consumer Privacy Act (CCPA), effective January 1, 2020. Terms used but not defined are as defined in the CCPA.
@@ -442,7 +405,7 @@ You have the right to not be discriminated against in pricing and services becau
 How to Make a Request.
 
 
-You may contact us at, or at the following:
+You may contact us at {removed href}, or at the following:
 
 
 LETSFIT LLC.
@@ -469,40 +432,40 @@ Changes.
 We will update this CCPA Notice from time to time. Any changes will be posted on this page with an updated revision date at the top. CATEGORIES OF INFORMATION WE COLLECT, USE, AND DISCLOSE FOR BUSINESS PURPOSES As described in the Information We Collect section, we collect the categories of personal information listed below. We receive this information from you, your device, your use of the Services, third parties (like the other services you have connected to your Letsfit account, or your employer or insurance company if they offer you Letsfit Services as an employee or customer), and as otherwise described in this policy. We use and disclose these categories of information for the business purposes described in the How We Use Information and How Information Is Shared sections, respectively. The categories are:
 
 
- Identifiers, like your name or username, email address, postal address, phone number, IP address, account ID, device ID, and other similar identifiers.
+Identifiers, like your name or username, email address, postal address, phone number, IP address, account ID, device ID, and other similar identifiers.
 
 
- Demographic information, such as your gender, age, health information, and physical characteristics or description, which may be protected by law.
+Demographic information, such as your gender, age, health information, and physical characteristics or description, which may be protected by law.
 
 
- Commercial information, including records of the Services or devices you purchased, obtained, or considered (for example, if you added them to your shopping basket on the Letsfit online store but did not purchase them).
+Commercial information, including records of the Services or devices you purchased, obtained, or considered (for example, if you added them to your shopping basket on the Letsfit online store but did not purchase them).
 
 
- Biometric information, such as your exercise, activity, sleep or health data, including the number of steps you take, distance travelled, calories burned, weight, heart rate, sleep stages, active minutes, and any similar information to which you grant us access from another service.
+Biometric information, such as your exercise, activity, sleep or health data, including the number of steps you take, distance travelled, calories burned, weight, heart rate, sleep stages, active minutes, and any similar information to which you grant us access from another service.
 
 
- Internet or other electronic network activity information, such as the usage data we receive when you access or use the Services. This includes information about your interactions with the Services and about the devices and computers you use to access the Services.
+Internet or other electronic network activity information, such as the usage data we receive when you access or use the Services. This includes information about your interactions with the Services and about the devices and computers you use to access the Services.
 
 
- Geolocation data, including GPS signals, device sensors, Wi-Fi access points, and mobile mast IDs, if you have granted us access to that information.
+Geolocation data, including GPS signals, device sensors, Wi-Fi access points, and mobile mast IDs, if you have granted us access to that information.
 
 
- Electronic, visual or similar information, such as your profile photo or other photos.
+Electronic, visual or similar information, such as your profile photo or other photos.
 
 
- Professional or employment related information, including any information (like your name, email address, or similar information) that your employer provides to us so that we can invite you to participate in or determine your eligibility for Letsfit Services that they offer to their employees.
+Professional or employment related information, including any information (like your name, email address, or similar information) that your employer provides to us so that we can invite you to participate in or determine your eligibility for Letsfit Services that they offer to their employees.
 
 
- Other information that you provide, including account information such as your biography or country; information for features of the Services, for example, an alarm, information about your friends, and logs for food, weight, sleep, water, or female health tracking; messages on the Services; and information recorded by your device which may vary depending on the device you use.
+Other information that you provide, including account information such as your biography or country; information for features of the Services, for example, an alarm, information about your friends, and logs for food, weight, sleep, water, or female health tracking; messages on the Services; and information recorded by your device which may vary depending on the device you use.
 
 
- Inferences drawn from any of the above, including the number of calories you burned, distance you travelled, sleep insights, and personalized exercise and activity goals.
+Inferences drawn from any of the above, including the number of calories you burned, distance you travelled, sleep insights, and personalized exercise and activity goals.
 
 
-We never sell the personal information of our users. We do work with partners who provide us with advertising services as described in the Analytics and Advertising Services Provided By Others section. To learn more about how these partners collect data and your options for controlling the use of your information for interest-based advertising, please read our statement. CHANGES TO THIS POLICY We may update this Privacy Policy from time to time. When we do, we will take appropriate measures to notify you, consistent with the significance of the changes we make. We will obtain your consent to any material Privacy Policy changes if and where this is required by applicable data protection laws.
+We never sell the personal information of our users. We do work with partners who provide us with advertising services as described in the Analytics and Advertising Services Provided By Others section. To learn more about how these partners collect data and your options for controlling the use of your information for interest-based advertising, please read our {removed href} statement. CHANGES TO THIS POLICY We may update this Privacy Policy from time to time. When we do, we will take appropriate measures to notify you, consistent with the significance of the changes we make. We will obtain your consent to any material Privacy Policy changes if and where this is required by applicable data protection laws.
 
 
-This Privacy Policy was last updated as of the date at the top. WHO WE ARE AND HOW TO CONTACT US If you have questions about this policy, or need help exercising your privacy rights, please contact us at or at our postal address or toll-free telephone number below.
+This Privacy Policy was last updated as of the date at the top. WHO WE ARE AND HOW TO CONTACT US If you have questions about this policy, or need help exercising your privacy rights, please contact us at {removed href} or at our postal address or toll-free telephone number below.
 
 
 In the United States of America:
@@ -535,19 +498,7 @@ Suoling Industrial Zone.
 Xikeng, Guanlan, Longhua, Shenzen, Guangdong, China 518110.
 
 
-***
-
-
-    Other Questions.
-
-
-***
-
-
-    Get the inside scoop on all things Letsfit.
-
-
-Follow Us 1 (855) 296 9981 removed e-mail Mon - Fri: 9AM - 5PM (EST) Copyright  2019-2020 Letsfit Chat is Offline.
+Chat is Offline.
 
 
 Leave a message.

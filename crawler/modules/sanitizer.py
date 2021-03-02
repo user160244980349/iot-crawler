@@ -9,6 +9,7 @@ from html_sanitizer import Sanitizer
 
 import config
 from crawler.modules.module import Module
+from tools.arrays import flatten_list
 
 
 class Sanitization(Module):
@@ -16,11 +17,11 @@ class Sanitization(Module):
         "head", "cart", "foot", "nav", "bar",
         "alert", "modal", "dialog", "popup",
         "banner", "promo", "side", "notify",
-        "notification", "toolbar", "menu",
+        "notification", "toolbar", "menu", "ft", "hd"
     ]
 
     tags = [
-        "select", "option", "button", "style", "script", "form", "a"
+        "select", "option", "button", "style", "script", "form"
     ]
 
     regex = re.compile(rf"^.*({'|'.join(words)}).*$", flags=re.IGNORECASE)
@@ -88,7 +89,7 @@ class Sanitization(Module):
                            f"\t<meta charset=\"utf-8\"/>\n"
                            f"\t<title></title>\n"
                            f"</head>\n"
-                           f"{cls.prettify(fresh_soup)}\n"
+                           f"{cls.prettify(fresh_soup.body)}\n"
                            f"</html>")
 
         return item, sanitized_policy, stats
@@ -101,9 +102,15 @@ class Sanitization(Module):
         except TypeError:
             s = []
 
-        s.append(element.get("id"))
-        s.append(element.name)
+        id_ = element.get("id")
+        if id_ is not None:
+            s.append(id_)
 
+        name = element.name
+        if name is not None:
+            s.append(name)
+
+        s = flatten_list([re.split(r'[^\w]', st) for st in s])
         m = cls.regex.match(" ".join([i for i in s if i is not None]))
 
         if (m is not None or element.name in cls.tags) \
@@ -117,7 +124,7 @@ class Sanitization(Module):
 
     @classmethod
     def prettify(cls, soup, indent_width=4):
-        return cls.indentation.sub(r"\1" * indent_width, soup.body.prettify())
+        return cls.indentation.sub(r"\1" * indent_width, soup.prettify())
 
     @classmethod
     def div_to_p(cls, element):

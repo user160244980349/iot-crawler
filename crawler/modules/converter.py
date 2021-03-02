@@ -13,37 +13,32 @@ from crawler.modules.sanitizer import Sanitization
 
 class Converter(Module):
     local_subs = [
-        (r"\n+", " "),
+        (r"[^A-Za-z0-9,.:;\\/\-\n\s(){}*?!]", ""),  # special characters
+        (r"\n+", ""),
         (r"\s+", " "),
+        (r"^[\n ]+", ""),
     ]
 
     global_subs = [
-        (r"[\w\d_\-]+@\w+\.\w+", "removed e-mail"),
-        (r"(https?\.)?(www\.)?[\w\d_\-]+\.\w{2,}", "removed hyperref"),
+        (r"[\w_\-]+@[a-z]+\.[a-z]{2,}", "{removed e-mail}"),
+        (r"(https?://)?(www\.)?(([\w_\-]+\.)+[a-z]{2,})(/[\w_\-]+)*", "{removed hyperref}"),
 
-        (r"^\s{8}", ""),  # indentation
+        (r"^\s{4}", ""),  # indentation
 
-        (r" ([.,:;!?)])", "\g<1>"),           # split punctuation
+        (r" ([.,:;!?)])", "\g<1>"),  # split punctuation
         (r"([.,:;!?])(\w+)", "\g<1> \g<2>"),  # split punctuation
-        (r"(\w+)\n", "\g<1>.\n"),             # split punctuation
-        (r"\( ", "("),                        # split punctuation
+        (r"(\w+)\n", "\g<1>.\n"),  # split punctuation
+        (r"\( ", "("),  # split punctuation
+        (r"}{", "} {"),  # split punctuation
 
-        (r"\n", "\n\n\n"),  # spacing
+        (r"<\w+/?>", ""),  # open_tags
+        (r"</\w+/?>", ""),  # close_tags
 
-        (r"<ul>", ""),     # ol_tags
-        (r"<ol>", ""),     # ol_tags
-        (r"<li>", "***"),  # li_tags
-
-        (r"<\w+/?>", ""),         # open_tags
-        (r"</\w+/?>", "\n\n\n"),  # close_tags
-        (r"^\s+$", "\n\n\n"),     # too_many_nl
-        (r"\n{4,}", "\n\n\n"),    # too_many_nl
-
-        (r"[^A-Za-z0-9,.:;\\/\-\n\s(){}*?!]", ""),  # special characters
+        (r"\n{4,}", "\n\n\n"),  # recover spacing
     ]
 
-    global_regexps = [(re.compile(s[0], flags=re.MULTILINE), s[1]) for s in global_subs]
-    local_regexps = [(re.compile(s[0], flags=re.MULTILINE), s[1]) for s in local_subs]
+    global_regexps = [(re.compile(s[0], flags=re.MULTILINE | re.IGNORECASE), s[1]) for s in global_subs]
+    local_regexps = [(re.compile(s[0], flags=re.MULTILINE | re.IGNORECASE), s[1]) for s in local_subs]
 
     def __init__(self):
         super(Converter, self).__init__()
@@ -81,11 +76,16 @@ class Converter(Module):
 
         soup = BeautifulSoup(text, "lxml")
 
-        cls.unwrap_accents(soup)
-        cls.wrap_rawtext(soup)
-        cls.trim_spaces(soup)
+        cls.walk(soup, preprocess=(cls.replace_a,))
+        cls.walk(soup, preprocess=(cls.mark_li,))
+        cls.walk(soup, preprocess=(cls.unwrap_accents,))
+        cls.walk(soup, postprocess=(cls.wrap_rawtext,))
+        cls.walk(soup, preprocess=(cls.remove_empty,))
+        cls.walk(soup, preprocess=(cls.clear_paragraphs,))
+        cls.walk(soup, postprocess=(cls.unwrap_nested,))
+        cls.walk(soup, preprocess=(cls.remove_empty,))
 
-        text = Sanitization.prettify(soup)
+        text = Sanitization.prettify(soup.body, indent_width=0)
 
         for r in cls.global_regexps:
             text = r[0].sub(r[1], text)
@@ -97,68 +97,119 @@ class Converter(Module):
         return item, policy
 
     @classmethod
+    def walk(cls, element, preprocess=(), postprocess=(), ignore=("html", "head", "meta", "title")):
+
+        if element.name not in ignore:
+            for p in preprocess:
+                p(element)
+
+        if not isinstance(element, NavigableString):
+            for child in element.children:
+                cls.walk(child, preprocess=preprocess, postprocess=postprocess, ignore=ignore)
+
+        if element.name not in ignore:
+            for p in postprocess:
+                p(element)
+
+    @classmethod
     def unwrap_accents(cls, element):
 
         if element.name == "strong" \
-                or element.name == "em" \
-                or element.name == "h1" \
-                or element.name == "h2" \
-                or element.name == "h3":
+                or element.name == "em":
             element.replaceWith(NavigableString(element.text.upper()))
             return
 
-        for child in element.findAll(recursive=False):
-            cls.unwrap_accents(child)
+    @classmethod
+    def unwrap_nested(cls, element):
+
+        if isinstance(element, NavigableString):
+            return
+
+        for cn in element.children:
+
+            if isinstance(cn, NavigableString):
+                continue
+
+            if all([isinstance(c, Tag) for c in cn]):
+                cn.unwrap()
 
     @classmethod
     def wrap_rawtext(cls, element):
 
-        if True in [isinstance(c, Tag) for c in element.children]:
+        if isinstance(element, NavigableString):
+            return
 
-            groups = []
-            group = []
-            for c in element.children:
+        groups = []
+        group = []
 
-                if isinstance(c, NavigableString):
-                    group.append(c)
+        for c in element.children:
 
-                if isinstance(c, Tag):
-                    groups.append(group)
-                    group = []
+            if isinstance(c, NavigableString):
+                group.append(c)
 
-            if len(group) > 0:
+            if isinstance(c, Tag):
                 groups.append(group)
+                group = []
 
-            for g in groups:
+        if len(group) > 0:
+            groups.append(group)
 
-                if len(g) == 0:
-                    continue
+        for g in groups:
 
-                par = Tag(name="p")
-                g[0].wrap(par)
-                for i in range(1, len(g)):
-                    par.append(g[i])
+            if len(g) == 0:
+                continue
 
-        for child in element.findAll(recursive=False):
-            cls.wrap_rawtext(child)
+            par = Tag(name="p")
+            g[0].wrap(par)
+            for i in range(1, len(g)):
+                par.append(g[i])
 
     @classmethod
-    def trim_spaces(cls, element):
+    def remove_empty(cls, element):
 
-        children = element.findAll(recursive=False)
+        if isinstance(element, NavigableString):
+            return
 
-        if (element.name == "p"
-            or element.name == "li") \
-                and len(children) == 0:
+        if element.name == "br" or re.match(r"^[ \n]*$", element.text):
+            element.extract()
 
-            e = Tag(name=element.name)
+    @classmethod
+    def replace_a(cls, element):
+
+        if isinstance(element, NavigableString):
+            return
+
+        if element.name == "a":
+            element.replaceWith(NavigableString("{removed href}"))
+
+    @classmethod
+    def clear_paragraphs(cls, element):
+
+        if isinstance(element, NavigableString):
+            return
+
+        if all([isinstance(c, NavigableString) for c in element.children]):
 
             text = element.text
             for r in cls.local_regexps:
                 text = r[0].sub(r[1], text)
 
-            e.insert(0, NavigableString(text))
+            e = Tag(name=element.name)
+            e.append(NavigableString(text))
+
             element.replaceWith(e)
 
-        for child in children:
-            cls.trim_spaces(child)
+    @classmethod
+    def mark_li(cls, element):
+
+        if isinstance(element, NavigableString):
+            return
+
+        if element.name == "li":
+            element.insert(0, NavigableString("{list item}"))
+
+        if element.name == "ol":
+            element.insert(0, NavigableString("{bullet list}"))
+
+        if element.name == "ul":
+            element.insert(0, NavigableString("{number list}"))

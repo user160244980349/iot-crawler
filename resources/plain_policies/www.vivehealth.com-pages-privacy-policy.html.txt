@@ -1,7 +1,6 @@
 
 
-
-PRIVACY POLICY.
+Privacy Policy.
 
 
 PRIVACY STATEMENT.
@@ -28,16 +27,13 @@ EXCLUSIONS AND LIMITATIONS.
 The information on this website is provided on an as is basis. To the fullest extent permitted by law, this Company:
 
 
-***
+{number list}
 
 
-    Excludes all representations and warranties relating to this website and its contents or which is or may be provided by any affiliates or any other third party, including in relation to any inaccuracies or omissions in this website and/or the Companys literature; and.
+{list item} Excludes all representations and warranties relating to this website and its contents or which is or may be provided by any affiliates or any other third party, including in relation to any inaccuracies or omissions in this website and/or the Companys literature; and.
 
 
-***
-
-
-    Excludes all liability for damages arising out of or in connection with your use of this website. This includes, without limitation, direct loss, loss of business or profits (whether or not the loss of such profits was foreseeable, arose in the normal course of things or you have advised this company of the possibility of such potential loss), damage caused to your computer, computer software, systems and programs and the data thereon or any other direct or indirect, consequential and incidental damages.
+{list item} Excludes all liability for damages arising out of or in connection with your use of this website. This includes, without limitation, direct loss, loss of business or profits (whether or not the loss of such profits was foreseeable, arose in the normal course of things or you have advised this company of the possibility of such potential loss), damage caused to your computer, computer software, systems and programs and the data thereon or any other direct or indirect, consequential and incidental damages.
 
 
 This Company does not however exclude liability for death or personal injury caused by its negligence. The above exclusions and limitations apply only to the extent permitted by law. None of your statutory rights as a consumer are affected.

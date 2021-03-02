@@ -1,5 +1,10 @@
 
 
+{list item} {removed href}
+
+
+{list item} {removed href}
+
 
 WHAT INFORMATION DO WE COLLECT?
 
@@ -25,6 +30,9 @@ OUR PROMISES TO OUR CUSTERMERS.
 We promise solemnly that your personal information is safe with us. We would not sell, trade, or transfer your personally identifiable information to outside parties for any reasons.
 
 
-If you have any questions about our Privacy Policy, please contact us at removed e-mail.
+If you have any questions about our Privacy Policy, please contact us at {removed hyperref}
+
+
+{removed href}
 
 

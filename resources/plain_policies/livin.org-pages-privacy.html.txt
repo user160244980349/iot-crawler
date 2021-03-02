@@ -1,7 +1,6 @@
 
 
-
-Liquid error: internal.
+Liquid error: internal {removed href} {removed href} {removed href}
 
 
 PRIVACY POLICY.
@@ -13,7 +12,7 @@ TOP LIVIN LIMITED ACN 600 787 513 (LIVIN)
 GENERAL.
 
 
-Livin and its related entities (referred to in this document as  WE ,  US  or  OUR ) works towards its charitable purpose of promoting mental health awareness through speaking engagements and branded clothing and apparel.
+Livin and its related entities (referred to in this document as WE, US or OUR) works towards its charitable purpose of promoting mental health awareness through speaking engagements and branded clothing and apparel.
 
 
 Livin recognises that your privacy is very important and we are committed to protecting the personal information we collect from you when you use the Livin website, social media and any electronic methods of collection we may utilise from time to time (such as mobile applications).
@@ -22,10 +21,13 @@ Livin recognises that your privacy is very important and we are committed to pro
 We provide notice on our website (or, if applicable, a mobile application) in the event that we make any modifications that substantially change your rights under this policy.
 
 
-The Privacy Act 1988 (Cth) ( PRIVACY ACT ), and the Australian Privacy Principles ( APP ) govern the way in which we must manage your personal information and this policy sets out how we collect, use, disclose and otherwise manage personal information about you.
+The Privacy Act 1988 (Cth) (PRIVACY ACT), and the Australian Privacy Principles (APP) govern the way in which we must manage your personal information and this policy sets out how we collect, use, disclose and otherwise manage personal information about you.
 
 
-COLLECTION TYPES OF INFORMATION COLLECTED.
+COLLECTION.
+
+
+TYPES OF INFORMATION COLLECTED.
 
 
 We may collect and hold personal information about you, that is, information that can identify you, and is relevant to providing you with the services you are seeking. This can include your name, date of birth, contact details (including address, email address, phone number), financial information (such as credit card or bank account numbers) and information about how you use our products and services.
@@ -43,34 +45,22 @@ PURPOSE OF COLLECTION.
 The type of personal information that we collect and hold about you depends on your interaction with us. Generally, we will collect, use and hold your personal information for the purposes of:
 
 
-***
+{number list}
 
 
-    providing products or services to you or someone else you know;
+{list item} providing products or services to you or someone else you know;
 
 
-***
+{list item} issuing tax invoices for the products or services we may provide to you from time to time;
 
 
-    issuing tax invoices for the products or services we may provide to you from time to time;
+{list item} providing you with information about other services that we, our related entities and other organisations that we have affiliations with, offer that may be of interest to you;
 
 
-***
+{list item} facilitating our internal business operations, including the fulfilment of any legal requirements; and.
 
 
-    providing you with information about other services that we, our related entities and other organisations that we have affiliations with, offer that may be of interest to you;
-
-
-***
-
-
-    facilitating our internal business operations, including the fulfilment of any legal requirements; and.
-
-
-***
-
-
-    analysing our services and customer needs with a view to developing new or improved services.
+{list item} analysing our services and customer needs with a view to developing new or improved services.
 
 
 METHOD OF COLLECTION.
@@ -79,49 +69,34 @@ METHOD OF COLLECTION.
 Personal information will generally be collected directly from you either by:
 
 
-***
+{number list}
 
 
-    providing us with your story relating to mental health which could be showcased on the Livin website or in the Livin newsletter;
+{list item} providing us with your story relating to mental health which could be showcased on the Livin website or in the Livin newsletter;
 
 
-***
+{list item} you paying fees owed by you to us or our clients using third party payment systems or other electronic payment platforms we may utilise from time to time; or.
 
 
-    you paying fees owed by you to us or our clients using third party payment systems or other electronic payment platforms we may utilise from time to time; or.
-
-
-***
-
-
-    through the use of any of our standard forms (such as when you enter into an agreement with us, contact us with a query or request or submit your details through our website or by email).
+{list item} through the use of any of our standard forms (such as when you enter into an agreement with us, contact us with a query or request or submit your details through our website or by email).
 
 
 We may also collect information other than directly from you where it is unreasonable or impractical to not do so, for example:
 
 
-***
+{number list}
 
 
-    from third parties such as our related entities, business partners, or your representatives;
+{list item} from third parties such as our related entities, business partners, or your representatives;
 
 
-***
+{list item} from publicly available sources of information;
 
 
-    from publicly available sources of information;
+{list item} from our records of how you use our services; and.
 
 
-***
-
-
-    from our records of how you use our services; and.
-
-
-***
-
-
-    from the third parties we list in the section of this policy with the heading Use and disclosure.
+{list item} from the third parties we list in the section of this policy with the heading Use and disclosure.
 
 
 We will usually notify you in advance when we indirectly collect information, or where that is not possible, as soon as reasonably practicable after the information has been collected.
@@ -160,10 +135,10 @@ Please note, however, that if you delete cookies or refuse to accept them, you m
 You can learn more about cookies and the following third-party websites:
 
 
-    AllAboutCookies:
+AllAboutCookies: {removed href}
 
 
-    Network Advertising Initiative:
+Network Advertising Initiative: {removed href}
 
 
 USE AND DISCLOSURE.
@@ -172,34 +147,22 @@ USE AND DISCLOSURE.
 Generally, we only use or disclose personal information about you for the purposes for which it was collected (as set out above) or for purposes which are directly related to one or more of our functions and activities. We may disclose personal information about you to:
 
 
-***
+{number list}
 
 
-    third party product or service providers, who assist us in operating our business (including for the purposes of collecting payment and assisting us in providing you with the products and/or services that you have requested or have expressed an interest), and these service providers may not be required to comply with our privacy policy;
+{list item} third party product or service providers, who assist us in operating our business (including for the purposes of collecting payment and assisting us in providing you with the products and/or services that you have requested or have expressed an interest), and these service providers may not be required to comply with our privacy policy;
 
 
-***
+{list item} our related entities and other organisations with whom we have affiliations so that those organisations may provide you with information about services and various promotions;
 
 
-    our related entities and other organisations with whom we have affiliations so that those organisations may provide you with information about services and various promotions;
+{list item} a third party where it is reasonably necessary to comply with a law, regulation, or valid legal process. In the event that we are required to release your data, we will provide you with notice unless prohibited by a valid legal process;
 
 
-***
+{list item} a third party if it is necessary and permitted by law in connection with the sale, merger, bankruptcy, sale of assets or reorganisation of our company; and.
 
 
-    a third party where it is reasonably necessary to comply with a law, regulation, or valid legal process. In the event that we are required to release your data, we will provide you with notice unless prohibited by a valid legal process;
-
-
-***
-
-
-    a third party if it is necessary and permitted by law in connection with the sale, merger, bankruptcy, sale of assets or reorganisation of our company; and.
-
-
-***
-
-
-    community posts, contests and surveys where you direct your information to be used for this purpose.
+{list item} community posts, contests and surveys where you direct your information to be used for this purpose.
 
 
 We may share your information if you direct us to share your data with other parties. Such third-parties are then responsible for the privacy of the shared information. You can revoke your consent to share with the third party at any time by contacting us.
@@ -214,37 +177,28 @@ INTERNATIONAL USERS.
 In some circumstances, we may collect personal information from you which may be:
 
 
-***
+{number list}
 
 
-    subject to local, regional or international privacy or data protection laws in jurisdictions other than Australia ( INTERNATIONAL LAW ); and/or.
+{list item} subject to local, regional or international privacy or data protection laws in jurisdictions other than Australia (INTERNATIONAL LAW); and/or.
 
 
-***
-
-
-    deemed by International Law specifically in relation to the European Union General Data Protection Regulation ( DATA PROTECTION LAW ) to constitute sensitive information.
+{list item} deemed by International Law specifically in relation to the European Union General Data Protection Regulation (DATA PROTECTION LAW) to constitute sensitive information.
 
 
 Data Protection Law recognises that some categories of personal information are more sensitive. Sensitive information can include information about a persons health, race, ethnic origin, political opinions criminal history, financial position, sex life, sexual orientation and religious beliefs. If you contact us, you may choose to provide details of a sensitive nature. We will only use this information in the following ways:
 
 
-***
+{number list}
 
 
-    For the purposes of dealing with your enquiry;
+{list item} For the purposes of dealing with your enquiry;
 
 
-***
+{list item} We will not pass on your details to anyone else without your express permission except in exceptional circumstances. Examples of this might include anyone reporting serious self-harm or posing a threat to others or children contacting us and sharing serious issues such as physical abuse or exploitation.
 
 
-    We will not pass on your details to anyone else without your express permission except in exceptional circumstances. Examples of this might include anyone reporting serious self-harm or posing a threat to others or children contacting us and sharing serious issues such as physical abuse or exploitation.
-
-
-***
-
-
-    Where you have given us your express consent or otherwise clearly indicated to us that you are happy for us to share your story, then we may publish it on our website or in other media.
+{list item} Where you have given us your express consent or otherwise clearly indicated to us that you are happy for us to share your story, then we may publish it on our website or in other media.
 
 
 In the instances where International Law requires more restrictive information handling practices than the practices set out in this Privacy Policy specifically in relation to Data Protection Law we will ensure that we have appropriate controls in place to secure your information by adjusting our information handling practices in your jurisdiction to comply with International Law.
@@ -328,7 +282,7 @@ CONTACT.
 If you have any queries or concerns about our privacy policy or the way we handle your personal information, please contact our privacy officer at:
 
 
-Email address:
+Email address: {removed href}
 
 
 Street address: PO Box 370, Burleigh Heads, QLD, 4220.
@@ -337,15 +291,57 @@ Street address: PO Box 370, Burleigh Heads, QLD, 4220.
 CHANGES TO OUR PRIVACY AND INFORMATION HANDLING PRACTICES.
 
 
-This privacy policy is subject to change at any time. Please check our privacy policy on our website, https://removed hyperref/contact/ regularly for any changes.
+This privacy policy is subject to change at any time. Please check our privacy policy on our website, {removed hyperref}/ regularly for any changes.
 
 
 MORE INFORMATION.
 
 
-For more information about privacy in general, you can visit the Office of the Australian Information Commissioner website at.
+For more information about privacy in general, you can visit the Office of the Australian Information Commissioner website at {removed href}.
 
 
 LIVIN Partnerships.
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
+
+
+{list item} {removed href} {removed href}
 
 

@@ -83,7 +83,7 @@ class GoogleEngine(Engine):
 
         for c in soup.find_all("cite"):
 
-            m = re.match(r"^((https?://)?(www\.)?([\w\d.\-_]+)(\.\w+)).*$", c.text)
+            m = re.match(r"^((https?://)?(www\.)?([\w.\-_]+)(\.\w+)).*$", c.text)
 
             content = re.sub(r"([^\w ]+)|(\s{2,})", " ", content)
             content_pieces = content.split()

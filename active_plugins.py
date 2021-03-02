@@ -1,5 +1,4 @@
 from crawler.plugins.amazon import Amazon
-from crawler.plugins.walmart import Walmart
 
 plugins = [
 

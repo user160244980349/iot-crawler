@@ -1,22 +1,21 @@
 
 
-
-    We now accept payment from CARECREDIT,. To learn more about CareCredit contact us at 302-319-5680. DELAWARE CENTER FOR MATERNAL amp; FETAL MEDICINE OF CHRISTIANA CARE, INC.
-
-
-    ABBY MEDICAL CENTER OFFICE: One Centurian Drive, Suite 312, Newark, DE 19713.
+DELAWARE CENTER FOR MATERNAL FETAL MEDICINE OF CHRISTIANA CARE, INC.
 
 
-    CHRISTIANA HOSPITAL: 4755 Ogletown-Stanton Road, Suite 1992, Newark, DE 19718.
+ABBY MEDICAL CENTER OFFICE: One Centurian Drive, Suite 312, Newark, DE 19713.
 
 
-    PHONE: (302) 319-5680 WEBSITE: removed hyperref FOR OUR PATIENTS SAFETY DUE TO THE CORONAVIRUS Due to the coronavirus, patients with appointments at locations other than Saint Francis Hospital, ONLY ONE SUPPORT PERSON OVER THE AGE OF 16 are allowed in the practice at this time. No children under the age of 16. Saint Francis Hospital is not allowing any visitors.
+CHRISTIANA HOSPITAL: 4755 Ogletown-Stanton Road, Suite 1992, Newark, DE 19718.
 
 
-    If you have traveled outside of the US, have a fever, have symptoms such as a cough, shortness of breath, sore throat, nausea, diarrhea, loss of taste/smell or have come in contact with someone who has traveled, or someone who has any symptoms please contact our office immediately at (302) 319-5680 to reschedule your appointment. All patients will be screened for illness at check-in.
+PHONE: (302) 319-5680 WEBSITE: {removed hyperref} FOR OUR PATIENTS SAFETY DUE TO THE CORONAVIRUS Due to the coronavirus, patients with appointments at locations other than Saint Francis Hospital, ONLY ONE SUPPORT PERSON OVER THE AGE OF 16 are allowed in the practice at this time. No children under the age of 16. Saint Francis Hospital is not allowing any visitors.
 
 
-    If you have results from COVID testing pending, you will be able to be seen in the office once negative results are received.
+If you have traveled outside of the US, have a fever, have symptoms such as a cough, shortness of breath, sore throat, nausea, diarrhea, loss of taste/smell or have come in contact with someone who has traveled, or someone who has any symptoms please contact our office immediately at (302) 319-5680 to reschedule your appointment. All patients will be screened for illness at check-in.
+
+
+If you have results from COVID testing pending, you will be able to be seen in the office once negative results are received.
 
 
 WHAT INFORMATION DO WE COLLECT?
@@ -97,6 +96,6 @@ CONTACTING US.
 If there are any questions regarding this privacy policy you may contact us using the information below.
 
 
-http://removed hyperref/ One Centurian Drive, Suite 312 Newark, Delaware 19713 USA removed e-mail (302) 319-5680.
+{removed hyperref}/ One Centurian Drive, Suite 312 Newark, Delaware 19713 USA {removed hyperref} (302) 319-5680.
 
 

@@ -1,7 +1,6 @@
 
 
-
-PRIVACY POLICY.
+Privacy Policy.
 
 
 Effective January 15, 2020.
@@ -10,10 +9,10 @@ Effective January 15, 2020.
 OUR POLICY.
 
 
-Arboleaf Corporation (removed hyperref, we, us, or our) provides users with information, services, and tools through the removed hyperref website, the removed hyperref mobile applications (Apps), the removed hyperref smart scale application programming interface (API), and other websites, apps, and online services that link to this Privacy Policy (collectively, the Services). Arboleaf is committed to protecting your privacy. We do not sell your personal data.
+Arboleaf Corporation ({removed hyperref}, we, us, or our) provides users with information, services, and tools through the {removed hyperref} website, the {removed hyperref} mobile applications (Apps), the {removed hyperref} smart scale application programming interface (API), and other websites, apps, and online services that link to this Privacy Policy (collectively, the Services). Arboleaf is committed to protecting your privacy. We do not sell your personal data.
 
 
-This Privacy Policy sets forth our policies with respect to how we collect, use, and share information through the Services. This Privacy Policy is incorporated by reference in the removed hyperref End User Terms of Use, which govern your use of the Services.
+This Privacy Policy sets forth our policies with respect to how we collect, use, and share information through the Services. This Privacy Policy is incorporated by reference in the {removed hyperref} End User Terms of Use, which govern your use of the Services.
 
 
 By voluntarily providing us with Personal Data, as defined below, you are consenting to our use of it in accordance with this Privacy Policy. If you provide Personal Data through the Services, you acknowledge and agree that such Personal Data may be transferred from your current location to our offices and servers, or those of our 3rd party contractors. If you would like us to cease using your Personal Data, you may delete your account by following the instructions provided in the Data Retention and Deletion section below or exercise the choices described in the Your Choices and Access to Information section below.
@@ -25,10 +24,10 @@ INFORMATION WE COLLECT.
 When you register for warranty on our website, place an order, respond to a survey and fill out a form, we may collect personal data and other information in connection with the Services, including but not limited to, your name, email address, mailing address, and phone number.
 
 
-    When you create an Arboleaf account, you provide your email and password, your certain personal profile information including your name, gender, birthdate and height. The profile data are necessary factors for determining your bio-metrics data. Your Arboleaf account allows you to access your measurement data through the Arboleaf mobile apps.
+When you create an Arboleaf account, you provide your email and password, your certain personal profile information including your name, gender, birthdate and height. The profile data are necessary factors for determining your bio-metrics data. Your Arboleaf account allows you to access your measurement data through the Arboleaf mobile apps.
 
 
-    When you use Arboleaf mobile apps, your measurement data (weight, BMI, body fat  and other body mass information), measurement mode, measurement and update time, measurement device ID, etc., are collected and stored in your account or retrieved from your account.
+When you use Arboleaf mobile apps, your measurement data (weight, BMI, body fat and other body mass information), measurement mode, measurement and update time, measurement device ID, etc., are collected and stored in your account or retrieved from your account.
 
 
 When you choose to share your Arboleaf data with other applications (i. e. Fitbit, Google Fit and Apple Health), we exchange data with them, respectively, via API (Application Programming Interface).
@@ -73,16 +72,16 @@ YOUR CHOICES AND ACCESS TO INFORMATION.
 We provide users with a variety of choices regarding how we or third parties collect, use, and share information, including as follows:
 
 
-You can update or change certain information associated with your account through the Settings page within our Apps or by logging into your account on removed hyperref.
+You can update or change certain information associated with your account through the Settings page within our Apps or by logging into your account on {removed hyperref}.
 
 
-Users may have additional rights to access, review, correct, delete, or inquire about information that we hold about them. To make such a request, please send us an email at removed e-mail. Please note that we may need to verify your identity or request additional information from you before we are able to comply with your request.
+Users may have additional rights to access, review, correct, delete, or inquire about information that we hold about them. To make such a request, please send us an email at {removed hyperref}. Please note that we may need to verify your identity or request additional information from you before we are able to comply with your request.
 
 
 DATA RETENTION AND DELETION.
 
 
-We retain information for as long as reasonably necessary to deliver our Services to you or to fulfill the purposes described in this Policy. For example, we may retain your profile information and information about your weight and body compositions during a certain period for as long as you maintain your removed hyperref account. This provides you with the ability to review your activities over time, track your progress toward personal goals and challenges, and remember your past achievements and milestones (for example, your weight loss goals or other personal achievements).
+We retain information for as long as reasonably necessary to deliver our Services to you or to fulfill the purposes described in this Policy. For example, we may retain your profile information and information about your weight and body compositions during a certain period for as long as you maintain your {removed hyperref} account. This provides you with the ability to review your activities over time, track your progress toward personal goals and challenges, and remember your past achievements and milestones (for example, your weight loss goals or other personal achievements).
 
 
 Because our users may take extended breaks from using scales and may use our Apps on various devices, we do not delete information automatically based on account inactivity or when you uninstall our Apps from one of your devices. However, we provide you with the ability to delete information associated with your account, as follows:
@@ -91,10 +90,10 @@ Because our users may take extended breaks from using scales and may use our App
 You may remove a specific activity from your account on a specific date and time.
 
 
-You may delete your removed hyperref account and information associated with your account.
+You may delete your {removed hyperref} account and information associated with your account.
 
 
-If you choose to delete your removed hyperref account, we will make our best effort to delete all information associated with your account, including your profile information, historical data, and third-party authorizations for services connected to your account.
+If you choose to delete your {removed hyperref} account, we will make our best effort to delete all information associated with your account, including your profile information, historical data, and third-party authorizations for services connected to your account.
 
 
 SECURITY.
@@ -136,6 +135,9 @@ Our Services may change from time to time. As a result, we may need to change th
 CONTACTING US.
 
 
-If you have any questions or concerns about this Privacy Policy or our information collection, use, and sharing practices, please feel free to contact us at any time at removed e-mail.
+If you have any questions or concerns about this Privacy Policy or our information collection, use, and sharing practices, please feel free to contact us at any time at {removed hyperref}.
+
+
+{removed href}
 
 

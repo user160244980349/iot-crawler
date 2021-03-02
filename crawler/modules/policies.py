@@ -52,7 +52,7 @@ class Policies(Module):
         for r in reversed(refs):
             if re.match(r"privacy(policy)?", re.sub(r"[^\w+]", "", r.text.lower())):
 
-                m = re.match(r"^((https?://)?(www\.)?([\w\d.\-_]+)\.\w+)?(.*$)", r.get("href"))
+                m = re.match(r"^((https?://)?(www\.)?([\w.\-_]+)\.\w+)?(.*$)", r.get("href"))
                 if m is not None:
                     return f"https://{re.sub('(https?:(//)?)', '', website)}{m.group(5)}"
 
@@ -84,6 +84,6 @@ class Policies(Module):
         for t in templates:
             policy_url = t(website_url, soup)
             if policy_url is not None:
-                break
+                return website_url, policy_url
 
-        return website_url, policy_url
+        return website_url, None

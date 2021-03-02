@@ -45,7 +45,7 @@
     "plain_policy": null,
     "policy_hash": "3fb46e42b3f902c10bf325efc5739971",
     "statistics": {
-      "length": 9849,
+      "length": 9882,
       "table": 0,
       "ol": 0,
       "ul": 0,
@@ -66,12 +66,12 @@
     "plain_policy": null,
     "policy_hash": "5a8545f37f4792044c4cdd1adbdb5a8d",
     "statistics": {
-      "length": 23646,
+      "length": 30174,
       "table": 0,
       "ol": 0,
-      "ul": 11,
-      "li": 96,
-      "p": 31,
+      "ul": 13,
+      "li": 115,
+      "p": 26,
       "br": 0
     }
   },
@@ -87,12 +87,12 @@
     "plain_policy": null,
     "policy_hash": "5a8545f37f4792044c4cdd1adbdb5a8d",
     "statistics": {
-      "length": 23646,
+      "length": 30174,
       "table": 0,
       "ol": 0,
-      "ul": 11,
-      "li": 96,
-      "p": 31,
+      "ul": 13,
+      "li": 115,
+      "p": 26,
       "br": 0
     }
   },
@@ -142,7 +142,7 @@
     "plain_policy": null,
     "policy_hash": "3fb46e42b3f902c10bf325efc5739971",
     "statistics": {
-      "length": 9849,
+      "length": 9882,
       "table": 0,
       "ol": 0,
       "ul": 0,
@@ -215,12 +215,12 @@
     "plain_policy": null,
     "policy_hash": "3090e16de55bb7540262bdc2e30cf08a",
     "statistics": {
-      "length": 7071,
+      "length": 7157,
       "table": 0,
       "ol": 0,
       "ul": 0,
       "li": 0,
-      "p": 36,
+      "p": 35,
       "br": 8
     }
   },
@@ -236,12 +236,12 @@
     "plain_policy": null,
     "policy_hash": "f5bdd04e4c2c9f562a4b9cb924701e57",
     "statistics": {
-      "length": 39586,
+      "length": 39796,
       "table": 1,
       "ol": 0,
       "ul": 2,
       "li": 4,
-      "p": 208,
+      "p": 209,
       "br": 0
     }
   },
@@ -270,12 +270,12 @@
     "plain_policy": null,
     "policy_hash": "5a8545f37f4792044c4cdd1adbdb5a8d",
     "statistics": {
-      "length": 23646,
+      "length": 30174,
       "table": 0,
       "ol": 0,
-      "ul": 11,
-      "li": 96,
-      "p": 31,
+      "ul": 13,
+      "li": 115,
+      "p": 26,
       "br": 0
     }
   },
@@ -304,11 +304,11 @@
     "plain_policy": null,
     "policy_hash": "e3dc029b6a7f6c2848e59f3d25371120",
     "statistics": {
-      "length": 1249,
+      "length": 1407,
       "table": 0,
       "ol": 0,
       "ul": 0,
-      "li": 0,
+      "li": 2,
       "p": 9,
       "br": 0
     }
@@ -351,12 +351,12 @@
     "plain_policy": null,
     "policy_hash": "f5bdd04e4c2c9f562a4b9cb924701e57",
     "statistics": {
-      "length": 39586,
+      "length": 39796,
       "table": 1,
       "ol": 0,
       "ul": 2,
       "li": 4,
-      "p": 208,
+      "p": 209,
       "br": 0
     }
   },
@@ -385,7 +385,7 @@
     "plain_policy": null,
     "policy_hash": "6cf12c7865f0e62a1a47991e259dcede",
     "statistics": {
-      "length": 9970,
+      "length": 10096,
       "table": 0,
       "ol": 0,
       "ul": 0,
@@ -406,7 +406,7 @@
     "plain_policy": null,
     "policy_hash": "13ca5f5aa00cdd10edb6b9c3305de3d7",
     "statistics": {
-      "length": 12029,
+      "length": 12221,
       "table": 0,
       "ol": 1,
       "ul": 1,
@@ -427,12 +427,12 @@
     "plain_policy": null,
     "policy_hash": "3090e16de55bb7540262bdc2e30cf08a",
     "statistics": {
-      "length": 7071,
+      "length": 7157,
       "table": 0,
       "ol": 0,
       "ul": 0,
       "li": 0,
-      "p": 36,
+      "p": 35,
       "br": 8
     }
   },
@@ -448,12 +448,12 @@
     "plain_policy": null,
     "policy_hash": "a0d85631ddca9b51f3c66bb884b33003",
     "statistics": {
-      "length": 13269,
+      "length": 13321,
       "table": 0,
       "ol": 0,
       "ul": 0,
       "li": 0,
-      "p": 1,
+      "p": 0,
       "br": 45
     }
   },
@@ -469,12 +469,12 @@
     "plain_policy": null,
     "policy_hash": "f5bdd04e4c2c9f562a4b9cb924701e57",
     "statistics": {
-      "length": 39586,
+      "length": 39796,
       "table": 1,
       "ol": 0,
       "ul": 2,
       "li": 4,
-      "p": 208,
+      "p": 209,
       "br": 0
     }
   },
@@ -503,11 +503,11 @@
     "plain_policy": null,
     "policy_hash": "79df77412ad073bb72ccc6c82f862e23",
     "statistics": {
-      "length": 33839,
+      "length": 33984,
       "table": 0,
       "ol": 0,
-      "ul": 2,
-      "li": 15,
+      "ul": 1,
+      "li": 13,
       "p": 3,
       "br": 149
     }
@@ -524,12 +524,12 @@
     "plain_policy": null,
     "policy_hash": "f5bdd04e4c2c9f562a4b9cb924701e57",
     "statistics": {
-      "length": 39586,
+      "length": 39796,
       "table": 1,
       "ol": 0,
       "ul": 2,
       "li": 4,
-      "p": 208,
+      "p": 209,
       "br": 0
     }
   },
@@ -545,12 +545,12 @@
     "plain_policy": null,
     "policy_hash": "f5bdd04e4c2c9f562a4b9cb924701e57",
     "statistics": {
-      "length": 39586,
+      "length": 39796,
       "table": 1,
       "ol": 0,
       "ul": 2,
       "li": 4,
-      "p": 208,
+      "p": 209,
       "br": 0
     }
   },
@@ -600,7 +600,7 @@
     "plain_policy": null,
     "policy_hash": "a09ff23ee8f191ad1e387e18bb32f5c4",
     "statistics": {
-      "length": 100,
+      "length": 50,
       "table": 0,
       "ol": 0,
       "ul": 0,
@@ -621,11 +621,11 @@
     "plain_policy": null,
     "policy_hash": "04ca390b95259c8822d77471c5b69504",
     "statistics": {
-      "length": 17783,
+      "length": 19884,
       "table": 0,
       "ol": 0,
       "ul": 6,
-      "li": 22,
+      "li": 36,
       "p": 54,
       "br": 1
     }
@@ -728,11 +728,11 @@
     "plain_policy": null,
     "policy_hash": "79df77412ad073bb72ccc6c82f862e23",
     "statistics": {
-      "length": 33839,
+      "length": 33984,
       "table": 0,
       "ol": 0,
-      "ul": 2,
-      "li": 15,
+      "ul": 1,
+      "li": 13,
       "p": 3,
       "br": 149
     }
@@ -835,12 +835,12 @@
     "plain_policy": null,
     "policy_hash": "582b411f4f7b1ba1fd1382a2e26f3d0d",
     "statistics": {
-      "length": 5320,
+      "length": 5193,
       "table": 0,
       "ol": 0,
       "ul": 0,
       "li": 0,
-      "p": 27,
+      "p": 26,
       "br": 5
     }
   },
@@ -856,12 +856,12 @@
     "plain_policy": null,
     "policy_hash": "f5bdd04e4c2c9f562a4b9cb924701e57",
     "statistics": {
-      "length": 39586,
+      "length": 39796,
       "table": 1,
       "ol": 0,
       "ul": 2,
       "li": 4,
-      "p": 208,
+      "p": 209,
       "br": 0
     }
   },
@@ -916,7 +916,7 @@
     "plain_policy": null,
     "policy_hash": "25791aa52a4a9499ea209fe54a68d4ec",
     "statistics": {
-      "length": 12580,
+      "length": 13181,
       "table": 0,
       "ol": 0,
       "ul": 0,
@@ -950,12 +950,12 @@
     "plain_policy": null,
     "policy_hash": "3090e16de55bb7540262bdc2e30cf08a",
     "statistics": {
-      "length": 7071,
+      "length": 7157,
       "table": 0,
       "ol": 0,
       "ul": 0,
       "li": 0,
-      "p": 36,
+      "p": 35,
       "br": 8
     }
   },
@@ -971,12 +971,12 @@
     "plain_policy": null,
     "policy_hash": "f5bdd04e4c2c9f562a4b9cb924701e57",
     "statistics": {
-      "length": 39586,
+      "length": 39796,
       "table": 1,
       "ol": 0,
       "ul": 2,
       "li": 4,
-      "p": 208,
+      "p": 209,
       "br": 0
     }
   },
@@ -1018,7 +1018,7 @@
     "plain_policy": null,
     "policy_hash": "2049524781792ef692c426c80fa5f1ad",
     "statistics": {
-      "length": 15496,
+      "length": 15798,
       "table": 0,
       "ol": 2,
       "ul": 0,
@@ -1039,11 +1039,11 @@
     "plain_policy": null,
     "policy_hash": "33f8ccbc83a2019caf4b4ed8823e108c",
     "statistics": {
-      "length": 29589,
+      "length": 30917,
       "table": 0,
       "ol": 0,
-      "ul": 0,
-      "li": 0,
+      "ul": 3,
+      "li": 8,
       "p": 39,
       "br": 1
     }

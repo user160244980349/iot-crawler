@@ -20,11 +20,11 @@ class Proxy:
 
 
 class _Proxy:
+    ip = re.compile(r"\d+\.\d+\.\d+\.\d+")
 
     @staticmethod
     def get_ip():
-        return re.search(r"\d+\.\d+\.\d+\.\d+",
-                         requests.get('http://icanhazip.com/').text).group(0)
+        return _Proxy.ip.search(requests.get('http://icanhazip.com/').text).group(0)
 
     def __init__(self, conf, file=None):
 
@@ -45,27 +45,25 @@ class _Proxy:
             try:
                 logger.info(f"Trying {p}")
                 proxy = {
-                    'http': f"http://{p}",
-                    # 'https': f"https://{p}"
+                    "http": f"http://{p}",
+                    "https": f"https://{p}"
                 }
-                ip = re.search(r"\d+\.\d+\.\d+\.\d+",
-                               requests.get('http://icanhazip.com/',
-                                            proxies=proxy,
-                                            timeout=2).text)
+                ip = _Proxy.ip.search(requests.get("http://icanhazip.com/",
+                                                   proxies=proxy,
+                                                   timeout=2).text)
                 if ip.group(0) is None:
-                    raise Exception
+                    raise Exception()
 
                 if ip.group(0) == self.get_ip():
-                    raise Exception
+                    raise Exception()
 
-                if requests.get('http://google.com/',
+                if requests.get("http://google.com/",
                                 proxies=proxy,
                                 timeout=5).status_code != 200:
-                    raise Exception
+                    raise Exception()
 
                 return p
 
             except IndexError:
                 logger.info(f"Loading more proxies")
                 self.proxies_list = self.req_proxy.get_proxy_list()
-                pass

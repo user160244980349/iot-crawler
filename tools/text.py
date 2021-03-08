@@ -1,8 +1,11 @@
 import re
 from difflib import SequenceMatcher
-from re import sub, match
 
 from tools.exceptions import UrlNotFound
+
+reg1 = re.compile("^(.*):(.*)$")
+reg2 = re.compile(r"^https?://(.*[^/])(/|$)")
+reg3 = re.compile(r"[&/?=+\\]")
 
 
 def similarity(content, url):
@@ -10,13 +13,13 @@ def similarity(content, url):
 
 
 def parse_proxy(proxy: str):
-    p = re.match("^(.*):(.*)$", proxy)
+    p = reg1.match(proxy)
     return p.group(1), int(p.group(2))
 
 
 def url_to_name(url: str):
-    name = match(r"^https?://(.*[^/])(/|$)", url)
+    name = reg2.match(url)
     if not name:
         raise UrlNotFound(url)
-    name = sub(r"[&/?=+\\]", "-", name.group(1))
+    name = reg3.sub("-", name.group(1))
     return f"{name}.html"

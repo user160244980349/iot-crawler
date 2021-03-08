@@ -2,6 +2,6 @@ from crawler.engines.google import GoogleEngine
 
 engines = [
 
-    GoogleEngine(sim=.8, delay=5., random_delay=5.)
+    GoogleEngine(sim=.7, delay=2., random_delay=6.)
 
 ]

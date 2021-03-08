@@ -15,17 +15,19 @@ from tools.arrays import flatten_list
 class Sanitization(Module):
     words = [
         "head", "cart", "foot", "nav", "bar",
-        "alert", "modal", "dialog", "popup",
+        "alert", "modal", "popup",
         "banner", "promo", "side", "notify",
-        "notification", "toolbar", "menu", "ft", "hd"
+        "notification", "toolbar", "menu",
+        "ft", "hd", "navigation", "shopify",
+        "footer", "header"
     ]
 
     tags = [
         "select", "option", "button", "style", "script", "form"
     ]
 
-    regex = re.compile(rf"^.*({'|'.join(words)}).*$", flags=re.IGNORECASE)
     indentation = re.compile(r'^(\s*)', re.MULTILINE)
+    split_html_attrs = re.compile(r"\W")
 
     def __init__(self):
 
@@ -83,6 +85,7 @@ class Sanitization(Module):
 
         sanitized_policy = os.path.abspath(os.path.join(config.processed_policies,
                                                         os.path.basename(item)))
+
         with open(sanitized_policy, "w", encoding="utf-8") as output_f:
             output_f.write(f"<html>\n"
                            f"<head>\n"
@@ -106,15 +109,14 @@ class Sanitization(Module):
         if id_ is not None:
             s.append(id_)
 
-        name = element.name
-        if name is not None:
-            s.append(name)
+        if element.name is not None:
+            s.append(element.name)
 
-        s = flatten_list([re.split(r'[^\w]', st) for st in s])
-        m = cls.regex.match(" ".join([i for i in s if i is not None]))
+        s = flatten_list([cls.split_html_attrs.split(st.lower()) for st in s])
+        m = [i in cls.words for i in s]
 
-        if (m is not None or element.name in cls.tags) \
-                and element.name not in ("html", "body"):
+        if (True in m or element.name in cls.tags) \
+                and element.name not in ("html", "body", "title", "head"):
             cls.remove_tags(element)
             element.extract()
             return
@@ -125,27 +127,6 @@ class Sanitization(Module):
     @classmethod
     def prettify(cls, soup, indent_width=4):
         return cls.indentation.sub(r"\1" * indent_width, soup.prettify())
-
-    @classmethod
-    def div_to_p(cls, element):
-        if element.tag == "div":
-            if len(list(element)) == 0:
-                element.tag = "p"
-        return element
-
-    @classmethod
-    def span_to_p(cls, element):
-        if element.tag == "span":
-            if len(list(element)) == 0:
-                element.tag = "p"
-        return element
-
-    @classmethod
-    def article_to_div(cls, element):
-        if element.tag == "article":
-            if len(list(element)) == 0:
-                element.tag = "div"
-        return element
 
     @classmethod
     def remove_tags(cls, soup, **kwargs):

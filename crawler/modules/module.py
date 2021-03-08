@@ -3,12 +3,18 @@ from multiprocessing import Pool
 
 class Module:
 
-    def __init__(self):
+    def __init__(self, sync=False):
         self.records = []
+        self.sync = sync
 
     def do_job(self, p: Pool = None):
         self.bootstrap()
-        self.run(p)
+
+        if self.sync:
+            self.run()
+        else:
+            self.run(p)
+
         self.finish()
 
     def bootstrap(self):

@@ -13,6 +13,10 @@ from crawler.web.driver import Driver
 
 
 class Policies(Module):
+    sanitize_a = re.compile(r"[^\w]")
+    privacy_link = re.compile(r"privacy(policy)?")
+    href = re.compile(r"^((https?://)?(www\.)?([\w.\-_]+)\.\w+)?(.*$)")
+    http = re.compile("(https?:(//)?)")
 
     def __init__(self):
         super(Policies, self).__init__()
@@ -50,11 +54,11 @@ class Policies(Module):
         refs = soup.findAll("a")
 
         for r in reversed(refs):
-            if re.match(r"privacy(policy)?", re.sub(r"[^\w+]", "", r.text.lower())):
+            if cls.privacy_link.match(cls.sanitize_a.sub("", r.text.lower())):
 
-                m = re.match(r"^((https?://)?(www\.)?([\w.\-_]+)\.\w+)?(.*$)", r.get("href"))
+                m = cls.href.match(r.get("href"))
                 if m is not None:
-                    return f"https://{re.sub('(https?:(//)?)', '', website)}{m.group(5)}"
+                    return f"https://{cls.http.sub('', website)}{m.group(5)}"
 
     @classmethod
     def scrap_policies_urls_base(cls, website_url, templates):
@@ -74,7 +78,11 @@ class Policies(Module):
 
             except WebDriverException:
                 logger.warning(f"Web driver exception, potentially net error")
+
                 driver.change_proxy()
+                driver.change_useragent()
+                driver.restart_session()
+
                 net_error += 1
                 if net_error > config.max_error_attempts:
                     return website_url, None

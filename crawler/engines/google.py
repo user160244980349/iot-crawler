@@ -18,6 +18,9 @@ from tools.text import similarity
 
 
 class GoogleEngine(Engine):
+    href = re.compile(r"^((https?://)?(www\.)?([\w.\-_]+)(\.\w+)).*$")
+    request = re.compile(r"([^\w ]+)|(\s{2,})")
+    captcha = re.compile(r"captcha", flags=re.IGNORECASE)
 
     def __init__(self, sim=.6, delay=0., random_delay=0.):
         self.similarity = sim
@@ -25,38 +28,40 @@ class GoogleEngine(Engine):
         self.random_delay = random_delay
         self.logger = logging.getLogger(f"pid={os.getpid()}")
 
-    def search(self, content):
+    def search(self, manufacturer, keyword):
 
-        driver = Driver()
-
-        timeout_attempts = 0
-        error_attempts = 0
-        captcha_attempts = 0
+        net_error = 0
 
         while True:
 
+            driver = Driver()
+
+            driver.change_proxy()
+            driver.change_useragent()
+            driver.restart_session()
+
             try:
-                return self.results(content)
+                return self.results(manufacturer, keyword)
 
             except TimeoutException:
                 self.logger.warning("Slow connection")
-                driver.change_proxy()
-                if timeout_attempts > config.max_timeout_attempts:
+                net_error += 1
+                if net_error > config.max_timeout_attempts:
                     return None
 
             except CaptchaException:
                 self.logger.warning("Google knows that this is automation script")
-                driver.change_proxy()
-                if captcha_attempts > config.max_captcha_attempts:
+                net_error += 1
+                if net_error > config.max_captcha_attempts:
                     return None
 
             except WebDriverException:
                 self.logger.warning(f"Web driver exception, potentially net error")
-                driver.change_proxy()
-                if error_attempts > config.max_error_attempts:
+                net_error += 1
+                if net_error > config.max_error_attempts:
                     return None
 
-    def results(self, content):
+    def results(self, manufacturer, keyword):
         driver = Driver()
 
         sleep(self.delay + random.random() * self.random_delay)
@@ -64,38 +69,37 @@ class GoogleEngine(Engine):
         sleep(self.delay + random.random() * self.random_delay)
 
         search = driver.manage().find_element_by_name("q")
-        search.send_keys(content)
+        search.send_keys(f"{manufacturer} {keyword}")
         search.send_keys(Keys.RETURN)
 
         driver.wait(ec.presence_of_element_located((By.TAG_NAME, "cite")))
 
         soup = BeautifulSoup(driver.source(), "lxml")
 
-        if re.search(r"captcha", str(soup), flags=re.IGNORECASE) is not None:
-            raise CaptchaException
+        if GoogleEngine.captcha.match(str(soup)) is not None:
+            raise CaptchaException()
 
-        return self.similarity_filter(content, soup, threshold=self.similarity)
+        return self.similarity_filter(manufacturer, soup, threshold=self.similarity)
 
-    @staticmethod
-    def similarity_filter(content, soup, threshold=.6):
+    @classmethod
+    def similarity_filter(cls, content, soup, threshold=.6):
         best_url = None
         best_similarity = threshold
 
-        for c in soup.find_all("cite"):
+        for c in soup.findAll("cite"):
 
-            m = re.match(r"^((https?://)?(www\.)?([\w.\-_]+)(\.\w+)).*$", c.text)
+            m = cls.href.match(c.text)
 
-            content = re.sub(r"([^\w ]+)|(\s{2,})", " ", content)
-            content_pieces = content.split()
-            if len(content_pieces) > 1:
-                content_pieces.append("".join(content_pieces))
+            content_list = cls.request.sub(" ", content).split()
+            if len(content_list) > 1:
+                content_list.append("".join(content_list))
 
-            for piece in content_pieces:
+            for piece in content_list:
                 if m is not None:
                     domain = m.group(4)
                     sim = similarity(piece, domain)
 
-                    if sim > best_similarity:
+                    if sim > best_similarity or domain in piece:
 
                         w3 = m.group(3)
                         if w3 is None:
@@ -104,5 +108,4 @@ class GoogleEngine(Engine):
                         best_url = f"https://{w3}{m.group(4)}{m.group(5)}"
                         best_similarity = sim
 
-        if best_url is not None:
-            return best_url
+        return best_url

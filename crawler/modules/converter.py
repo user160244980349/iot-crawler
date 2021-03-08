@@ -13,32 +13,32 @@ from crawler.modules.sanitizer import Sanitization
 
 class Converter(Module):
     local_subs = [
-        (r"[^A-Za-z0-9,.:;\\/\-\n\s(){}*?!]", ""),  # special characters
+        (r"[^a-z0-9,.:;\\/\-\n\s\(\)\{\}*?!\[\]]", ""),
         (r"\n+", ""),
         (r"\s+", " "),
         (r"^[\n ]+", ""),
     ]
 
     global_subs = [
-        (r"[\w_\-]+@[a-z]+\.[a-z]{2,}", "{removed e-mail}"),
-        (r"(https?://)?(www\.)?(([\w_\-]+\.)+[a-z]{2,})(/[\w_\-]+)*", "{removed hyperref}"),
+        (r"[\w\-]+@[a-z]+\.[a-z]{2,}", "{removed e-mail}"),
+        (r"(https?://)?(www\.)?(([\w\-]+\.)+[a-z]{2,})(/[\w\-]+)*", "{removed hyperref}"),
 
-        (r"^\s{4}", ""),  # indentation
+        (r"^\s{4}", ""),
 
-        (r" ([.,:;!?)])", "\g<1>"),  # split punctuation
-        (r"([.,:;!?])(\w+)", "\g<1> \g<2>"),  # split punctuation
-        (r"(\w+)\n", "\g<1>.\n"),  # split punctuation
-        (r"\( ", "("),  # split punctuation
-        (r"}{", "} {"),  # split punctuation
+        (r" ([.,:;!?\)\}\]])", "\g<1>"),
+        (r"([.,:;!?\)\}\]])(\w+)", "\g<1> \g<2>"),
+        (r"(\w|[\}\]\)])\n", "\g<1>.\n"),
+        (r"([\[\(\{]) ", "\g<1>"),
+        (r"([\}\]\)])([\{\[\(])", "\g<1> \g<2>"),
 
-        (r"<\w+/?>", ""),  # open_tags
-        (r"</\w+/?>", ""),  # close_tags
+        (r"</?.*/?>", ""),
 
-        (r"\n{4,}", "\n\n\n"),  # recover spacing
+        (r"\n{4,}", "\n\n\n")
     ]
 
     global_regexps = [(re.compile(s[0], flags=re.MULTILINE | re.IGNORECASE), s[1]) for s in global_subs]
     local_regexps = [(re.compile(s[0], flags=re.MULTILINE | re.IGNORECASE), s[1]) for s in local_subs]
+    empty_tag = re.compile(r"^[ \n]*$")
 
     def __init__(self):
         super(Converter, self).__init__()
@@ -80,12 +80,11 @@ class Converter(Module):
         cls.walk(soup, preprocess=(cls.mark_li,))
         cls.walk(soup, preprocess=(cls.unwrap_accents,))
         cls.walk(soup, postprocess=(cls.wrap_rawtext,))
-        cls.walk(soup, preprocess=(cls.remove_empty,))
         cls.walk(soup, preprocess=(cls.clear_paragraphs,))
         cls.walk(soup, postprocess=(cls.unwrap_nested,))
         cls.walk(soup, preprocess=(cls.remove_empty,))
 
-        text = Sanitization.prettify(soup.body, indent_width=0)
+        text = Sanitization.prettify(soup, indent_width=0)
 
         for r in cls.global_regexps:
             text = r[0].sub(r[1], text)
@@ -170,7 +169,7 @@ class Converter(Module):
         if isinstance(element, NavigableString):
             return
 
-        if element.name == "br" or re.match(r"^[ \n]*$", element.text):
+        if element.name == "br" or cls.empty_tag.match(element.text):
             element.extract()
 
     @classmethod
@@ -180,7 +179,8 @@ class Converter(Module):
             return
 
         if element.name == "a":
-            element.replaceWith(NavigableString("{removed href}"))
+            label = "{removed href}"
+            element.replaceWith(NavigableString(f"{label} {element.text}"))
 
     @classmethod
     def clear_paragraphs(cls, element):

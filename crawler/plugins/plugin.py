@@ -2,6 +2,7 @@ import logging
 import os
 import re
 from multiprocessing import Pool
+from time import sleep
 
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import WebDriverException
@@ -10,6 +11,7 @@ import config
 from crawler.product import Product
 from crawler.web.driver import Driver
 from tools.arrays import flatten_list
+from tools.exceptions import CaptchaException
 
 
 class Plugin:
@@ -45,7 +47,7 @@ class Plugin:
 
             products = [Product(url=url) for url in items_urls]
 
-            if p is None:
+            if p is None or self.sync:
                 found_items = [self.get_product(product) for product in products]
             else:
                 found_items = p.map(self.get_product, products)
@@ -57,8 +59,10 @@ class Plugin:
 
         return items
 
-    @classmethod
-    def scrap_products_base(cls, url, template, captcha=lambda m: False):
+    def captcha(self, markup):
+        return False
+
+    def scrap_products_base(self, url, template):
 
         logger = logging.getLogger(f"pid={os.getpid()}")
         logger.info(f"Scrapping page: {url}")
@@ -70,45 +74,81 @@ class Plugin:
             try:
                 markup = driver.get(url)
 
-                if captcha(markup):
-                    return []
+                if self.captcha(markup):
+                    raise CaptchaException()
 
                 soup = BeautifulSoup(markup, "lxml").find("body")
                 return template(soup)
 
             except WebDriverException:
                 logger.warning(f"Web driver exception, potentially net error")
+                sleep(config.retry_period)
+
                 driver.change_proxy()
+                driver.change_useragent()
+                driver.restart_session()
+
                 net_error += 1
                 if net_error > config.max_error_attempts:
                     return []
 
-    @classmethod
-    def get_product_base(cls, product, templates, captcha=lambda m: False):
+            except CaptchaException:
+                logger.error("Sorry, we just need to make sure you're not a robot.")
+                sleep(config.retry_period)
+
+                driver.change_proxy()
+                driver.change_useragent()
+                driver.restart_session()
+
+                net_error += 1
+                if net_error > config.max_captcha_attempts:
+                    return []
+
+    def get_product_base(self, product, templates):
         logger = logging.getLogger(f"pid={os.getpid()}")
 
         driver = Driver()
         net_error = 0
 
         while True:
+
             try:
+
                 markup = driver.get(product["url"])
 
-                if captcha(markup):
-                    return product
+                if self.captcha(markup):
+                    raise CaptchaException()
 
                 soup = BeautifulSoup(markup, "lxml").find("body")
 
                 for t in templates:
                     product["manufacturer"] = t(soup)
                     if product["manufacturer"] is not None:
+                        logger.info(f"Got manufacturer {product['manufacturer']}")
                         break
 
                 return product
 
             except WebDriverException:
                 logger.warning(f"Web driver exception, potentially net error")
+                sleep(config.retry_period)
+
                 driver.change_proxy()
+                driver.change_useragent()
+                driver.restart_session()
+
                 net_error += 1
                 if net_error > config.max_error_attempts:
+                    return product
+
+            except CaptchaException:
+                logger.error("Sorry, we just need to make sure you're not a robot.")
+                sleep(config.retry_period)
+
+                driver.change_proxy()
+                driver.change_useragent()
+                driver.restart_session()
+
+                net_error += 1
+                if net_error > config.max_captcha_attempts:
                     return product

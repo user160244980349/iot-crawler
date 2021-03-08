@@ -33,7 +33,7 @@ Check list
         - [x] Remove headers
         - [x] Remove footers
     - [x] Hash for policies
-    - [ ] Split by paragraphs
+    - [x] Split by paragraphs
     - [ ] Policies metrics module
         - [x] Efficiency statistics
         - [x] Total policy length
@@ -42,7 +42,17 @@ Check list
         - [ ] Subsections yes/no how many and how long
     - [x] Manually added policies
 
-- [x] Bugs
+Bugs
+----
+
+- [x] Synchronous run broken
+- [x] Captcha fix for walmart plugin
+- [x] Add keywords to search engine query
+- [x] Wrong user agent setting
+- [x] Reset headless mode after restart session
+- [x] Change user agent on each request
+- [x] Multiprocessing on scrapping causes captcha
+- [ ] Deadlock on exit
 
 Marketplaces
 ------------
@@ -53,21 +63,21 @@ Marketplaces
 IOT Devices
 -----------
 
-    smart scales                24
-    smart watches               18
-    smart locks               ~ 10
-    smart bulbs               ~ 10
-    indoor camera             +
-    outdoor camera            = 21
-    smart navigation systems  +
-    gps tracking device       +
-    voice controller          = 25
-    tracking sensor           == 108
+    smart scale
+    smart watche
+    smart lock
+    smart bulb
+    indoor camera 
+    outdoor camera 
+    smart navigation system
+    gps tracking device 
+    voice controller
+    tracking sensor 
     tracking device
     smart alarm clock
     smart thermostat
     smart plug
-    smart light switch    
+    smart light switch
     smart tv
     smart speaker
     smart thermometer

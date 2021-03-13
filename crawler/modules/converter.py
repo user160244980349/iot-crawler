@@ -50,11 +50,13 @@ class Converter(Module):
 
     def run(self, p: Pool = None):
         self.logger.info("Converting to plain text")
+        
+        jobs = filter(None, set([r["processed_policy"] for r in self.records]))
 
         if p is None:
-            plain = [self.plain_webpage(i) for i in set([r["processed_policy"] for r in self.records])]
+            plain = [self.plain_webpage(j) for j in jobs]
         else:
-            plain = p.map(self.plain_webpage, set(r["processed_policy"] for r in self.records))
+            plain = p.map(self.plain_webpage, jobs)
 
         for item in self.records:
             for policy, plain_policy in plain:

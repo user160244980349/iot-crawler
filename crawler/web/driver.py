@@ -12,19 +12,23 @@ from tools.text import parse_proxy
 
 
 class Driver:
-    _instance = None
 
     @classmethod
     def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = _DriverInstance(config.webdriver_settings)
-        return cls._instance
+
+        if hasattr(cls, "_instance"):
+            return cls._instance
+
+        setattr(cls, "_instance", _DriverInstance(config.webdriver_settings))
+        return getattr(cls, "_instance")
 
     @classmethod
     def close(cls, *args, **kwargs):
-        if cls._instance is not None:
-            cls._instance.__del__()
-            cls._instance = None
+
+        if not hasattr(cls, "_instance"):
+            return
+
+        delattr(cls, "_instance")
 
 
 class _DriverInstance:
@@ -50,6 +54,7 @@ class _DriverInstance:
             self._profile.set_preference("marionette.enabled", False)
         self._profile.set_preference("general.useragent.override", random.choice(self.config['user_agents']))
         self._profile.set_preference("intl.accept_languages", "en-US, en")
+        self._profile.update_preferences()
 
         self._options = webdriver.FirefoxOptions()
         self._options.add_argument("--no-sandbox")
@@ -68,8 +73,7 @@ class _DriverInstance:
             capabilities=self._capabilities,
             service_log_path=self._service_log_path
         )
-
-        self.clear_cookies()
+        self._driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
     def _check_installation(self):
 
@@ -157,19 +161,20 @@ class _DriverInstance:
     def change_useragent(self):
         self._profile.set_preference("general.useragent.override",
                                      random.choice(self.config['user_agents']))
+        self._profile.update_preferences()
 
     def restart_session(self):
         self._driver.close()
         self._driver.start_session(capabilities=self._capabilities,
                                    browser_profile=self._profile)
-        self.clear_cookies()
 
     def change_proxy(self):
 
         if not self.config["use_proxy"]:
             return
 
-        p_str = Proxy().get_proxy()
+        proxy = Proxy()
+        p_str = proxy.get_proxy()
         p = parse_proxy(p_str)
 
         self.logger.info(f"Switching to {p_str} proxy")
@@ -181,12 +186,13 @@ class _DriverInstance:
         self._profile.set_preference("network.proxy.ssl_port", p[1])
         self._profile.set_preference("network.proxy.ftp", p[0])
         self._profile.set_preference("network.proxy.ftp_port", p[1])
+        self._profile.update_preferences()
 
     def __del__(self):
 
-        if not hasattr(self, "_driver"):
+        if self._driver is None:
             return
 
-        if self._driver is not None:
-            self._driver.quit()
-            self.logger.info("Driver has been closed")
+        self._driver.quit()
+        del self._driver
+        self.logger.info("Driver has been closed")

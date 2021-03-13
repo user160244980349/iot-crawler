@@ -21,8 +21,7 @@ class Products(Module):
         self.logger.info("Searching products")
 
         for plugin in active_plugins.plugins:
-            self.records.extend(plugin.scrap(p))
+            plugin.scrap(p)
 
     def finish(self):
-        with open(os.path.abspath(config.products_json), "w") as f:
-            json.dump(self.records, f, indent=2)
+        pass

@@ -9,7 +9,6 @@ from html_sanitizer import Sanitizer
 
 import config
 from crawler.modules.module import Module
-from tools.arrays import flatten_list
 
 
 class Sanitization(Module):
@@ -38,10 +37,12 @@ class Sanitization(Module):
 
         self.logger.info("Sanitization")
 
+        jobs = filter(None, set([r["original_policy"] for r in self.records]))
+
         if p is None:
-            sanitized = [self.clean_webpage(i) for i in set([r["original_policy"] for r in self.records])]
+            sanitized = [self.clean_webpage(j) for j in jobs]
         else:
-            sanitized = p.map(self.clean_webpage, set(r["original_policy"] for r in self.records))
+            sanitized = p.map(self.clean_webpage, jobs)
 
         for item in self.records:
             for policy, sanitized_policy, stats in sanitized:

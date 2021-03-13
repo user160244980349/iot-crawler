@@ -25,10 +25,12 @@ class Policies(Module):
     def run(self, p: Pool = None):
         self.logger.info("Searching policies")
 
+        jobs = filter(None, set([r["website"] for r in self.records]))
+
         if p is None:
-            privacy_policies = [self.scrap_policies_urls(i) for i in set([it["website"] for it in self.records])]
+            privacy_policies = [self.scrap_policies_urls(j) for j in jobs]
         else:
-            privacy_policies = p.map(self.scrap_policies_urls, set([it["website"] for it in self.records]))
+            privacy_policies = p.map(self.scrap_policies_urls, jobs)
 
         for item in self.records:
             for website, policy in privacy_policies:
@@ -49,26 +51,24 @@ class Policies(Module):
             (self.template1,),
         )
 
-    @classmethod
-    def template1(cls, website, soup):
+    def template1(self, website, soup):
         refs = soup.findAll("a")
 
         for r in reversed(refs):
-            if cls.privacy_link.match(cls.sanitize_a.sub("", r.text.lower())):
+            if self.privacy_link.match(self.sanitize_a.sub("", r.text.lower())):
 
-                m = cls.href.match(r.get("href"))
+                m = self.href.match(r.get("href"))
                 if m is not None:
-                    return f"https://{cls.http.sub('', website)}{m.group(5)}"
+                    return f"https://{self.http.sub('', website)}{m.group(5)}"
 
     @classmethod
     def scrap_policies_urls_base(cls, website_url, templates):
-        if website_url is None:
-            return website_url, None
 
         logger = logging.getLogger(f"pid={os.getpid()}")
         driver = Driver()
 
         net_error = 0
+        policy_url = None
 
         while True:
             logger.info(f"Getting for policy to {website_url}")
@@ -80,18 +80,17 @@ class Policies(Module):
                 logger.warning(f"Web driver exception, potentially net error")
 
                 driver.change_proxy()
-                driver.change_useragent()
                 driver.restart_session()
 
                 net_error += 1
                 if net_error > config.max_error_attempts:
-                    return website_url, None
+                    return website_url, policy_url
 
         soup = BeautifulSoup(markup, "lxml").find("body")
 
         for t in templates:
             policy_url = t(website_url, soup)
             if policy_url is not None:
-                return website_url, policy_url
+                break
 
-        return website_url, None
+        return website_url, policy_url

@@ -17,12 +17,14 @@ class Websites(Module):
     def run(self, p: Pool = None):
         self.logger.info("Searching websites")
 
+        jobs = set([(r['manufacturer'], r['keyword'])
+                    for r in self.records
+                    if r['manufacturer'] is not None])
+
         if p is None:
-            webs = [self.scrap_sites_urls(*i)
-                    for i in set([(it['manufacturer'], it['keyword']) for it in self.records])]
+            webs = [self.scrap_sites_urls(*j) for j in jobs]
         else:
-            webs = p.starmap(self.scrap_sites_urls,
-                             set([(it['manufacturer'], it['keyword']) for it in self.records]))
+            webs = p.starmap(self.scrap_sites_urls, jobs)
 
         for item in self.records:
             for manufacturer, keyword, site in webs:
@@ -35,12 +37,8 @@ class Websites(Module):
         logger = logging.getLogger(f"pid={os.getpid()}")
         logger.info(f"Searching: {manufacturer} {keyword}")
 
-        if manufacturer is None:
-            return manufacturer, keyword, None
-
-        logger = logging.getLogger(f"pid={os.getpid()}")
-
         for engine in active_engines.engines:
+
             try:
                 site = engine.search(manufacturer, keyword)
                 if site is not None:

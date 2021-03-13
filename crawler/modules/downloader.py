@@ -22,10 +22,12 @@ class Downloader(Module):
     def run(self, p: Pool = None):
         self.logger.info("Download")
 
+        jobs = filter(None, set(r["policy"] for r in self.records))
+
         if p is None:
-            downloaded = [self.get_policy(policy) for policy in set(i["policy"] for i in self.records)]
+            downloaded = [self.get_policy(j) for j in jobs]
         else:
-            downloaded = p.map(self.get_policy, set(i["policy"] for i in self.records))
+            downloaded = p.map(self.get_policy, jobs)
 
         for item in self.records:
             for policy, policy_path, policy_hash in downloaded:
@@ -50,13 +52,12 @@ class Downloader(Module):
 
     @classmethod
     def get_policy(cls, policy_url):
-        if policy_url is None:
-            return policy_url, None, None
 
         logger = logging.getLogger(f"pid={os.getpid()}")
 
         driver = Driver()
         net_error = 0
+
         while True:
             logger.info(f"Getting for policy to {policy_url}")
             try:

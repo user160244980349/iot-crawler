@@ -1,0 +1,647 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="en" lang="en"><head>
+
+<!--  Discover how Weight Watchers&reg; Scales by Conair&trade;, Thinner&reg; Scales and Conair&reg; Scales can help you achieve and maintain a life in balance. //--> 
+
+<title>Scales by Conair™ – Life in balance</title>
+
+<meta name="description" content="Discover how Weight Watchers® Scales by Conair™, Thinner® Scales and Conair® Scales can help you achieve and maintain a life in balance."> 
+<meta name="keywords" content="scales by conair, conair scales, weight watchers scales by conair, thinner scales, weight watchers scales, weight management"> 
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<!-- Standard Meta Data //-->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-US"> 
+<meta name="author" content="Tony Collings">
+<meta name="robots" content="index,follow,noodp">
+<meta name="copyright" content="(c)Conair Corporation">
+<meta name="googlebot" content="noarchive">
+
+
+<!-- Facebook OpenGraph Meta Data //-->
+<meta property="og:title" content="Scales by Conair™ – Life in balance">
+<meta property="og:type" content="product">
+<meta property="og:image" content="http://www.conairscales.com/images/branding/conair-scales-logo.png">
+<meta property="og:site_name" content="Conair Corporation">
+<meta property="og:description" content="Discover how Weight Watchers® Scales by Conair™, Thinner® Scales and Conair® Scales can help you achieve and maintain a life in balance.">
+<meta property="og:url" content="http://www.conairscales.com/index.php?page=privacy">
+<meta property="fb:app_id" content="151991301556720">
+
+<!-- Dublin Core Meta Data //-->
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.title" content="Scales by Conair™ – Life in balance">
+<meta name="DC.description" content="Discover how Weight Watchers® Scales by Conair™, Thinner® Scales and Conair® Scales can help you achieve and maintain a life in balance.">
+<meta name="DC.publisher" content="www.conairscales.com">
+<meta name="DC.creator" content="Tony Collings">
+
+<!-- Google Sitemaps Key //-->
+<meta name="google-site-verification" content="">
+<!-- Yahoo Site Explorer Key //-->
+<meta name="y_key" content="ecee1e8cd19c9cef">
+<!-- Microsoft LIVE Sitemaps Key //-->
+<meta name="msvalidate.01" content="5ACACFDAAF8D727415247F1362714C71">
+
+
+<!-- Favicon //-->
+<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon"> 
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" href="apple_touch_icon.png">
+
+<!-- Stylesheets //--> 
+<link rel="stylesheet" type="text/css" href="css/core.css" media="all">
+
+<!-- Javascript //--> 
+<script async="" src="//libs.conair.com/js/shared/legalModals.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-M5JF4C"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="js/libs/mootools-1.2.6/mootools.core.js?v1.2.6" charset="utf-8"></script>
+<script type="text/javascript" src="js/libs/mootools-1.2.6/mootools.more.js?v1.2.5.1" charset="utf-8"></script>
+<script type="text/javascript" src="js/functions.global.js" charset="utf-8"></script><!-- Global JS Functins /-->
+<script type="text/javascript" src="js/motionpoint.js"></script><!-- MotionPoint Translation //-->
+
+<script type="text/javascript">
+//<![CDATA[
+	
+	
+	var oWindowScroller;
+	
+	
+	window.addEvent('domready', function() {
+		
+		oWindowScroller = new Fx.Scroll(window,{});
+		
+		
+		
+				 
+		// PRIMARY NAV' 	
+		var aNavItems = $('primary-nav').getElements('li');
+		var oNavElFX = $('primary-nav-fx');
+		oNavElFX.setStyles({'opacity':0});
+		var oNavFX = new Fx.Morph(oNavElFX, {
+			duration: 2000, transition: /*Fx.Transitions.Sine.easeOut*/Fx.Transitions.Elastic.easeOut
+		});
+		if(aNavItems.length > 0){
+			aNavItems.each(function(oNavItem, iIndex){
+				if(!oNavItem.hasClass('selected')){
+					var oNavItemDims = oNavItem.getCoordinates('primary-nav-wrapper');
+					oNavItem.addEvents({
+						'mouseover':function(){
+							oNavFX.cancel();
+							//oNavElFX.setStyles({'left':oNavItemDims.left,'width':oNavItemDims.width});	
+							oNavFX.start({
+								'left':oNavItemDims.left,
+								'width':oNavItemDims.width,
+								'opacity':1
+							});
+						},
+						'mouseout':function(){}
+					});
+				} // if(!oNavItem.hasClass('selected'))
+			});
+			
+			$('primary-nav').addEvents({
+				'mouseleave': function(){
+					oNavFX.cancel();
+					oNavFX.start({'opacity':0});
+				}
+			});
+		}
+		
+				 		
+		
+		
+		
+		
+		
+	}); // END  window.addEvent('domready', function()
+
+
+
+// Motion Point 
+function switchLanguage(lang) {
+    MP.SrcUrl=unescape('mp_js_orgin_url');
+	MP.UrlLang='mp_js_current_lang';
+	MP.init();
+	MP.switchLanguage(MP.UrlLang==lang?'en':lang);
+	return false;
+}
+
+
+
+var options = {
+	statementLink : '',
+	feedbackLink : '',
+	footerHtml : '<p>&copy;Conair Corporation</p>',
+	hideMobile : false,
+	hideTrigger : false,
+	language : 'en',
+	position : 'right',
+	leadColor : '#a0d667',
+	triggerColor : '#a0d667',
+	triggerRadius : '50%',
+	triggerPositionX : 'left',
+	triggerPositionY : 'bottom',
+	triggerIcon : 'people',
+	triggerSize : 'medium',
+	triggerOffsetX : 20,
+	triggerOffsetY : 20,
+	mobile : {
+		triggerSize : 'medium',
+		triggerPositionX : 'left',
+		triggerPositionY : 'bottom',
+		triggerOffsetX : 0,
+		triggerOffsetY : 0,
+		triggerRadius : '50%'}
+	};
+
+(function(){var s = document.createElement('script'),e = ! document.body ? document.querySelector('head') : document.body;s.src = 'https://acsbapp.com/apps/app/assets/js/acsb.js';s.defer = true;s.onload = function(){acsbJS.init(options);};e.appendChild(s);}());
+
+	
+//]]>
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-624853-36']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+//Carousel
+var carouselIndex = 0,
+	carouselDelay = 5000,
+	carouselItems = [],
+	carouselAutoRotate = true,
+	carouselTimer,
+	carouselSlider;
+
+
+
+
+window.addEvent('domready', function() {
+
+
+	var preloadImages = $$('img.preload-image');
+	if(preloadImages.length>0)
+		fnPreloadImages(preloadImages);
+
+
+	initCarousel();
+
+
+}); // window.addEvent('domready', function() {
+
+
+function initCarousel(){
+	var carousel = $('tpb-carousel').getElement('ul.carousel-banner');
+	if(carousel){
+		carouselItems = carousel.getElements('li');
+		carouselSlider = new Fx.Scroll(carousel,{
+			link: 'cancel',
+			wheelStops: false,
+			onComplete: function(){
+				if(carouselAutoRotate)
+					carouselTimer = setTimeout(carouselTo,carouselDelay,carouselIndex+1);
+
+			}
+		});
+
+		if(carouselAutoRotate)
+			carouselTimer = setTimeout(carouselTo,carouselDelay,carouselIndex+1);
+	}
+}
+
+function carouselTo(index){
+	clearTimeout(carouselTimer);
+	carouselSlider.cancel();
+
+	var carouselPagination = $('tpb-carousel').getElements('ul.carousel-products li');
+	if(carouselPagination.length>0)
+		carouselPagination.removeClass('selected');
+
+
+	if(index >= carouselItems.length) index = 0;
+	carouselIndex = index;
+	if(carouselItems[carouselIndex]){
+		carouselSlider.toElement(carouselItems[carouselIndex]);
+		carouselPagination[carouselIndex].addClass('selected');
+	}
+}
+
+
+
+
+function fnToggleOverlay(sOverlayElement){
+	var oOverlayFX;
+	var oOverlayDOM = {
+		'overlay' : $(sOverlayElement)
+	}
+	if(oOverlayDOM.overlay){
+		if(oOverlayDOM.overlay.getStyle('display') == 'block'){
+			// Close
+			if($type(this.oOverlayFX)=='object') this.oOverlayFX.cancel();
+			this.oOverlayFX = new Fx.Morph(oOverlayDOM.overlay, {duration: 800, transition: Fx.Transitions.Sine.easeOut,
+				onComplete: function(){
+					oOverlayDOM.overlay.setStyles({'display':'none','opacity':0,'top':'-20px'});
+				}
+			});
+			this.oOverlayFX.start({
+				'opacity': 0,
+				'top': '-20px'
+			});
+		}else{
+			// Open
+			if($type(this.oOverlayFX)=='object') this.oOverlayFX.cancel();
+			oOverlayDOM.overlay.setStyles({'display':'block','opacity':0,'top':'-20px'});
+			this.oOverlayFX = new Fx.Morph(oOverlayDOM.overlay, {duration: 800, transition: Fx.Transitions.Sine.easeOut});
+			this.oOverlayFX.start({
+				'opacity': 1,
+				'top': 30
+			});
+
+		}
+	}
+}
+
+
+
+//_______________________________________
+
+
+function toggleNotification(parent,event,state){
+
+	var notification = $(parent.rel);
+	var xhr = null;
+	if(notification){
+		if(state == 0){
+			notification.addClass('minimize');
+			var xhr = new Request({
+				url: 'xhr.php',
+				method: 'get',
+				withCredentials: true,
+				onSuccess: function(){
+
+					$(document.body).removeClass('notify');
+					notification.remove();
+
+				}
+			}).send('action=set_privacy&value=1');
+		}else{ return; }
+	}else{ return; }
+}
+
+//]]>
+</script>
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script></head>
+
+<body>
+
+
+
+
+<div id="global-wrapper">
+<div id="header">
+
+<ul id="auxillary-nav">
+	<li><a href="wtb.php">Where To Buy</a></li>
+    <li><a href="customer-service.php">Customer Service</a></li>
+    <li><a href="manuals.php">Manual de Instrucciones</a></li>
+    <li class="last-item"><a href="http://es.conair.com" onclick="return switchLanguage('es');">Español</a></li>
+</ul>
+
+
+
+
+	<ul id="website-logos">
+    	<li id="weight-watchers" class="website-logo">
+        	<a href="catalog.php?b[1]=1">
+        	<img src="images/branding/weight-watchers-logo.png" alt="Weight Watchers® Scales by Conair™">
+            </a>
+        </li>
+        <li id="thinner" class="website-logo">
+        	<a href="catalog.php?b[2]=1">
+        	<img src="images/branding/thinner-logo.png" alt="Thinner">
+            </a>
+        </li>
+        <!--<li id="conair-scales" class="website-logo">
+        	
+        	<img src="images/branding/conair-scales-logo.png" alt="Conair&reg; Scales" />
+            
+        </li>-->
+    </ul><!-- /#website-logos //-->
+
+    <div id="primary-nav-wrapper">
+        <!--<span class="primary-nav-tl"><img src="css/img/corners/primary-nav-ul-tl.png" alt="" /></span>
+        <span class="primary-nav-tr"><img src="css/img/corners/primary-nav-ul-tr.png" alt="" /></span>-->
+
+        <div id="primary-nav-fx" style="visibility: hidden; opacity: 0;">
+            <span class="primary-nav-l-edge"></span><span class="primary-nav-r-edge"></span>
+        </div>
+
+        <ul id="primary-nav">
+        	<li class="">
+			<img src="images/layout/homepage/home-icon.png" class="home-icon" alt="">
+    		<a href="./" title="Home">Home</a><span class="primary-nav-l-edge"></span><span class="primary-nav-r-edge"></span>
+            </li>
+            <li class="">
+            <a href="catalog.php" title="Scales">Scales</a><span class="primary-nav-l-edge"></span><span class="primary-nav-r-edge"></span></li>
+            <li class="">
+            <a href="body-analysis.php" title="Body Analysis">Body Analysis</a><span class="primary-nav-l-edge"></span><span class="primary-nav-r-edge"></span></li>
+
+            <li class="">
+            <a href="recipes.php" title="Recipes">Recipes</a><span class="primary-nav-l-edge"></span><span class="primary-nav-r-edge"></span></li>
+
+
+
+            <li class=" last-item">
+            <a href="videos.php" title="Product Demos">Demos</a><span class="primary-nav-l-edge"></span><span class="primary-nav-r-edge"></span></li>
+
+            
+        </ul><!-- /#primary-nav //-->
+    </div><!-- /#prmiary-nav-wrapper //-->
+
+
+</div><!-- /#header //-->
+
+<div id="content-wrapper">
+
+
+    <div id="tpb-container" class="colgroup">
+		<div id="tpb-promos" class="col">
+			<ul id="promos-3n">
+           		           			<li class="colgroup">
+						<span class="col">
+						<img src="images/layout/homepage/tl-promo-1.png" alt="Body Analysis" class="" border="0">
+						</span>
+						<span class="col">
+							<h2>Body Analysis</h2>
+							<p>Why analyze BMI, Body Fat, Body Water and Bone Mass?</p>
+														<a href="body-analysis.php" title="Body Analysis">Learn More</a>
+													</span>
+           			</li>
+           		           			<li class="colgroup">
+						<span class="col">
+						<img src="images/layout/homepage/tl-promo.png" alt="LIFE IN BALANCE" class="" border="0">
+						</span>
+						<span class="col">
+							<h2>LIFE IN BALANCE</h2>
+							<p>A step towards feeling whole.</p>
+														<a onclick="toggleVideo(this,event,1);" data-file="LIFE_BEYOND_THE_SCALE.mp4" data-poster="WW701-homepage-poster.jpg" title="Stay Fit" rel="video-overlay">Play Video</a>
+													</span>
+           			</li>
+           		           			<li class="colgroup">
+						<span class="col">
+						<img src="images/layout/homepage/tl-promo-2.png" alt="How to Program your Scale" class="" border="0">
+						</span>
+						<span class="col">
+							<h2>How to Program your Scale</h2>
+							<p>Learn how to program your preferred scale.</p>
+														<a href="videos.php" title="How to Program your Scale">Learn More</a>
+													</span>
+           			</li>
+           		            </ul>
+        </div><!-- /.col //-->
+
+        <div id="tpb-carousel" class="col">
+
+           	           		<ul class="carousel-banner">
+           							<li>
+					<a target="_blank" href="catalog.php?product_id=467">						<img src="images/layout/homepage/carousel/banner-www26.jpeg" alt="WW26">
+					</a>					</li>
+           							<li>
+					<a target="_blank" href="catalog.php?product_id=460">						<img src="images/layout/homepage/carousel/banner-ww701xf.jpeg" alt="WW701YF">
+					</a>					</li>
+           							<li>
+					<a target="_blank" href="catalog.php?product_id=469">						<img src="images/layout/homepage/carousel/banner-ww912wxf.jpeg" alt="WW912F">
+					</a>					</li>
+           							<li>
+											<img src="images/layout/homepage/carousel/banner-ww711xf.jpeg" alt="WW711F">
+										</li>
+           		           		</ul>
+
+	            <ul class="carousel-products">
+	            						<li onclick="carouselTo(0);" class="selected">
+					<span class="product-toggle"></span>
+					<span class="product-image">
+					<img src="images/layout/homepage/carousel/thumb-ww26.png" alt="WW26">
+					</span>
+					</li>
+            							<li onclick="carouselTo(1);" class="">
+					<span class="product-toggle"></span>
+					<span class="product-image">
+					<img src="images/layout/homepage/carousel/thumb-ww701YF.png" alt="WW701YF">
+					</span>
+					</li>
+            							<li onclick="carouselTo(2);" class="">
+					<span class="product-toggle"></span>
+					<span class="product-image">
+					<img src="images/layout/homepage/carousel/thumb-ww912F.png" alt="WW912F">
+					</span>
+					</li>
+            							<li onclick="carouselTo(3);" class="">
+					<span class="product-toggle"></span>
+					<span class="product-image">
+					<img src="images/layout/homepage/carousel/thumb-ww711F.png" alt="WW711F">
+					</span>
+					</li>
+            			            </ul>
+           	
+           	<span id="ww-lockup">
+           		<img src="images/layout/homepage/ww_logo.png" alt="Weight Watchers - Scales by Conair">
+           	</span>
+
+        </div><!-- /.col //-->
+    </div><!-- /#tpb-container //-->
+
+
+    <!--<div id="bpb-container" class="colgroup">
+    	<img src="images/layout/homepage/homepage-bottom-promo.png" alt="Life in Balance" class=""  border="0" />
+    </div>--><!-- /#bpb-container //-->
+
+
+
+</div><!-- /#content-wrapper //-->
+<div id="footer">
+
+         <ul id="footer-primary-nav">
+            <li class="first-item"><a href="content.php?page=privacy" title="">Privacy Policy</a></li>
+            <li><a href="content.php?page=terms" title="">Terms of Use</a></li>
+			<li><a href="http://legal.conair.com/content/page/do-not-sell-request?referrer=www.conairscales.com">CA - Do Not Sell My Personal Info</a></li>
+            <!-- 
+            <li>Site Map</li>
+            //-->
+            <li class="last-item"><a href="http://www.conair.com" title="Visit conair.com for more great products" target="_blank">Visit Conair.com for More Great Products</a></li>
+         </ul><!-- /#footer-nav //-->
+		 <ul id="footer-secondary-nav">
+         	            <li class="first-item"><a href="https://register.conair.com/" target="_blank" title="Register your Conair® Scales Product">Register Your Product</a></li>
+                        <li><a href="content.php?page=about" title="About WeightWatchers® Scales by Conair">About Scales by Conair</a></li>
+            <li class="last-item"><a href="https://jobs.jobvite.com/conair/" title="Interested in working for Conair?" target="_blank">Interested in working for Conair?</a></li>
+         </ul>
+			
+         
+         <div id="copyright">
+            <a href="content.php?page=copyright" title="">©2021 Conair Corporation</a>
+         </div><!-- /#copyright //-->
+
+
+</div><!-- /#footer //-->
+
+
+ 
+    
+    <div id="video-overlay" class="overlay" style="display:none;">
+    	<a class="overlay-close" rel="video-overlay" onclick="toggleVideo(this,event,0);"></a>
+       	<h3 class="video-title">Title</h3>
+        <div class="overlay-content"></div><!-- /.overlay-content //-->
+    </div><!-- /#video-overlay //-->
+   
+
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M5JF4C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M5JF4C');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script type="text/javascript" language="javascript">
+//<![CDATA[
+	
+(function(tag, script) {
+    modal = document.createElement(tag),
+    tags = document.getElementsByTagName(tag)[0];
+    modal.async = 1;
+    modal.src = script;
+	modal.onload = function(){
+		
+	
+		var legalModal = new LegalModal(); 
+		legalModal.init({
+			termsUrl: 'content.php?page=terms',
+			privacyUrl: 'content.php?page=privacy',
+			externalCss: '//libs.conair.com/css/legal/modals.css',
+			styles: {
+				//'backgroundColor': 'pink',
+				'opacity': 0.75,
+				'color': '#fff'
+			}
+		}); 		
+
+
+	};
+    tags.parentNode.insertBefore(modal,tags);
+	
+
+	
+})('script', '//libs.conair.com/js/shared/legalModals.js');
+
+//]]>
+</script>
+<aside id="legal-modals-container"></aside>
+
+
+
+</div><!-- /#global-wrapper //-->
+
+
+
+
+
+
+
+<div class="overlay-wrapper" id="official-rules" style="display: none;">
+	<span class="overlay-close"><a href="javascript:void(0);" onclick="fnToggleOverlay('official-rules');">
+    <img src="images/layout/overlays/overlay-close.png" alt=""></a></span>
+	<span id="overlay-outer-t" class="overlay-outer"></span>
+    <span id="overlay-outer-tr" class="overlay-outer"></span>
+    <span id="overlay-outer-r" class="overlay-outer"></span>
+    <span id="overlay-outer-br" class="overlay-outer"></span>
+    <span id="overlay-outer-b" class="overlay-outer"></span>
+    <span id="overlay-outer-bl" class="overlay-outer"></span>
+    <span id="overlay-outer-l" class="overlay-outer"></span>
+    <span id="overlay-outer-tl" class="overlay-outer"></span>
+
+	<div class="overlay-inner">
+        <span id="overlay-inner-t" class="overlay-inner"></span>
+        <span id="overlay-inner-tr" class="overlay-inner"></span>
+        <span id="overlay-inner-r" class="overlay-inner"></span>
+        <span id="overlay-inner-br" class="overlay-inner"></span>
+        <span id="overlay-inner-b" class="overlay-inner"></span>
+        <span id="overlay-inner-bl" class="overlay-inner"></span>
+        <span id="overlay-inner-l" class="overlay-inner"></span>
+        <span id="overlay-inner-tl" class="overlay-inner"></span>
+
+        <div class="overlay-inner-content">
+
+
+
+<h3>OFFICIAL RULES – NO PURCHASE IS NECESSARY TO ENTER.</h3>
+<p>
+<strong>ADMINISTRATOR</strong>: The Conair® "Weigh in and Win" Online Giveaway ("Giveaway") is administrated by Conair Corporation ("Administrator"), distributor of Conair® products.
+</p>
+<p>
+<strong>ELIGIBILITY</strong>: Giveaway is open to legal residents of the 50 United States, the District of Columbia, Puerto Rico and Canada who are age 18 or older at the time of entry. Void where prohibited by law. Employees of Conair Corporation, its subsidiaries, affiliated companies, advertising and promotion agencies, electronic media firm, the immediate families of such employees (employees' parents, siblings, children and spouses) and members of the same household of such employees, and anyone involved in the production, development or handling of this Giveaway are not eligible. All federal, state, and local laws and regulations apply.
+</p>
+<p>
+<strong>HOW TO ENTER</strong>: Submit entry as instructed by voting on what you would like to see added to our website via the survey on conairscales.com ("Giveaway Website"). On February 9, 2012, while supplies last, ten entrants will be selected randomly from all entrants to receive one (1) Weight Watchers® by Conair Inspirational Glass Scale (model WW58S). Giveaway begins on January 12, 2012 and ends on February 9, 2012 (the "Giveaway Period"). Limit of one entry per person or email address. Multiple registrations from the same entrant may result in ineligibility to receive a prize. Administrator's computer is the official time-keeping device for Giveaway. Administrator is not responsible for incomplete or incorrect mailing addresses or invalid entries. All entry information collected becomes the sole property of the Administrator and will not be shared or sold.
+</p>
+<p>
+<strong>PRIZES</strong> (10 total): Weight Watchers® by Conair Inspirational Glass Scale (model WW58S) (up to $37.99 ARV US each). Total prize value of all 10 prizes is approximately $379.90 US, plus shipping and handling depending on winner location.
+Prizes may vary in color, size and other respects from items shown on Giveaway Website, and may be substituted for a similar valued product by the Administrator at the discretion of the Administrator. If applicable, taxes are the winner's responsibility. Prizes are not transferable or redeemable for cash. There will be no substitution for prize except as may be necessary due to unavailability, in which case a prize of equal or greater value will be awarded at the Administrator's sole discretion. Prizes are awarded "as is". Odds of winning depend upon the number of entries received.
+WINNERS will be notified by email and by having the prize package mailed to the address supplied once contacted by email. No other notification will be provided. Winners can expect to receive their prize within four (4) weeks following the Giveaway end date of 2/9/12 or sooner at the Administrator's discretion. Winners will be independently and randomly determined by the Giveaway Administrator, whose decisions regarding this Giveaway are final. Limit of one prize per household. Any prize returned as undeliverable will be awarded to an alternate winner (by random selection from entries per the date returned prize is received by Administrator). Except where prohibited by law, acceptance of a prize shall constitute and signify the winner's consent that the Administrator may use the winner's name, address (city and state only), likeness (if provided by winner) and any statements made by the winner about the Giveaway and Administrator for promotional purposes, in all forms of media, including online on Facebook, Twitter, etc., in perpetuity and without monetary payment or additional consideration.
+</p>
+<p>
+<strong>GENERAL TERMS</strong>: Entrants agree to be bound by these Official Rules. Participants in this Giveaway hereby waive and release, and agree to hold harmless the Administrator, its parent, subsidiaries, affiliates, advertising and promotion agencies, and all of their respective officers, directors, employees, representatives and agents, from and against, any and all rights, claims and causes of action whatsoever that they may have, or which may arise, against any of them for any liability for any matter, cause of thing whatsoever, including but not limited to any injury, loss, damage, whether direct, compensatory, incidental or consequential, to person, including death and property, arising in whole or in part, directly or indirectly, from their acceptance, possession, use or misuse of, or inability to use a prize in the Giveaway, or their participation in the Giveaway, or their participation in any Giveaway or prize related activity. Participants acknowledge that the Administrator and other released entities and individuals have neither made, nor are in any manner responsible or liable for any warranty, representation, or guarantee, expressed or implied, in fact or in law, relative to the prize, including but not limited to its quality, mechanical condition, or fitness, except for any standard limited warranty offered by any manufacturer of the non-cash prize.
+</p>
+<p>
+<strong>INTERNET</strong>: Administrator and its agents are not responsible for lost, late, misdirected, damaged, incomplete or illegible entries or Internet technical, hardware, software, telephone, or transmission failures of any kind, which may limit a person's ability to enter the Giveaway. Administrator and its agents are not responsible for any injury or damage to entrant's or any other person's computer related to or resulting from entering or downloading any materials in the Giveaway. Administrator reserves the right to cancel or suspend advertising the Giveaway on the Internet should a computer virus, unauthorized intervention or other cause corrupt the integrity or proper conduct of the Giveaway. Administrator reserves the right to disqualify any entrant found to be disrupting the operation of the Giveaway or Giveaway Website. If the integrity of the Internet portion of the Giveaway is compromised in any manner, Administrator reserves the right to modify Giveaway and randomly select winners from valid entries received that are unaffected by the problem. In the event of a dispute as to the identity of any online entrant, entrant will be deemed the individual named on the online entry. All issues and questions concerning these Official Rules, or the rights and obligations of the entrant and Administrator in connection with the Giveaway, shall be governed by, and construed in accordance with, the laws of the state of Connecticut, without giving effect to any choice of law or conflict of law rules (whether of Connecticut or any other jurisdiction), which would cause the application of the laws of any jurisdiction other than Connecticut. WARNING: ANY ATTEMPT BY A PARTICIPANT TO DELIBERATELY DAMAGE THE ADMINISTRATOR OR ADMINISTRATOR'S WEBSITE OR UNDERMINE THE LEGITIMATE OPERATION OF THE GIVEAWAY MAY BE IN VIOLATION OF CRIMINAL AND CIVIL LAWS, AND SHOULD SUCH AN ATTEMPT BE MADE, THE ADMINISTRATOR RESERVES THE RIGHT TO SEEK REMEDIES AND DAMAGES (INCLUDING ATTORNEYS' FEES) FROM ANY SUCH PARTICIPANT TO THE FULLEST EXTENT OF THE LAW, INCLUDING CRIMINAL PROSECUTION.
+</p>
+<p>
+<strong>WINNERS LIST</strong>: For a list of winners, send a self-addressed stamped envelope to: Weigh In and Win Giveaway Winners, c/o Samantha Mauro, Conair Corporation, 1 Cummings Point Road, Stamford, CT 06902.
+</p>
+<p>
+<strong>ENTRY BY MAIL</strong>: Print your name, phone number, and email address (if you have one) along with your survey submission on a 3x5 piece of paper and send to: Weigh In and Win Giveaway, c/o Samantha Mauro, Conair Corporation, 1 Cummings Point Road, Stamford, CT 06902. Mail-in entries must be postmarked by 2/9/12 and received by 2/16/12.
+</p>
+<p>
+<strong>ADMINISTRATOR</strong>: Conair Corporation, 1 Cummings Point Road, Stamford, CT 06902.
+</p>
+<p>
+Privacy: <br>
+<a href="content.php?page=privacy" title="Conair Privacy Policy" target="_blank">Conair Privacy Policy</a>
+</p>
+
+        </div><!-- /overlay-inner-content //-->
+
+    </div><!-- /.overlay-inner //-->
+</div><!-- /.overlay-wrapper //-->
+
+
+
+
+
+ <script type="text/javascript" id="" src="http://loadus.exelator.com/load/?lb=ADEF089"></script> </body></html>

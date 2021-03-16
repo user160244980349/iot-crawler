@@ -1,0 +1,646 @@
+<html data-ng-app="lnx" data-ng-controller="lang" browser-classes="" class="js geolocation rgba backgroundsize opacity fontface ng-scope chrome chrome-66" lang="en">
+
+<body data-ng-controller="app" itemscope="" itemtype="http://schema.org/WebPage" class="ng-scope">
+    
+    <div id="page-wrapper" class="nav-closed loaded" data-ng-class="{portal: portal, loading : isLoading, loaded: !isLoading, iframe: isIframe, custom: custom}">
+        <div id="page-container">
+            <!-- ngIf: !isIframe && !minimal && !custom && !portal --><header data-ng-if="!isIframe &amp;&amp; !minimal &amp;&amp; !custom &amp;&amp; !portal" style="" class="ng-scope">
+                <div class="container">
+                    <div id="header-left">
+                        <a href="/residential"><img src="/lib/img/lennox_logo.svg" alt="Lennox HVAC Systems" id="logo"></a>
+                    </div>
+
+                    <div id="nav-wrapper">
+                        <div id="secondary-info">
+                            <span class="user-location">
+                                <span class="location-prompt">
+                                    <span class="label">Your Location:</span>
+                                    <span class="user-location-zip">
+                                        <form class="single-line no-label inline ng-pristine ng-valid" data-ng-submit="user.location.find()">
+                                            <input type="text" data-ng-model="user.location.data.confirmed" lnx-text-input="" lnx-placeholder="ZIP CODE" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                            <i class="icon icon-location"></i>
+                                        </form>
+                                        <!--<i class="icon icon-location"></i></span>-->
+                                    </span>
+                                </span>
+                            </span>
+
+                            <!-- ngIf: showFindDealerButton --><a data-ng-if="showFindDealerButton" data-ng-click="user.location.find(user.location.data.confirmed)" class="find-dealer-alt cta cta-reverse btn ng-scope">Find a Dealer</a><!-- end ngIf: showFindDealerButton -->
+
+                            <!-- ngIf: !showFindDealerButton -->
+
+                            <form class="search-form single-line no-label ng-pristine ng-valid active" data-ng-submit="onSearch(searchQuery)">
+                                <input type="search" data-ng-model="searchQuery" name="q" lnx-placeholder="Search Our Site" lnx-text-input="" clear-on-focus="" data-ng-class="{ hasError: hasError }" ng-focus="clearSearchError()" update-on-change="" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                <input type="submit" value="Go" class="btn-icon btn-icon-search">
+                            </form>
+
+                        </div>
+                        <!-- /#secondary-info -->
+                        <a class="nav-trigger"><span class="label">Menu</span> <span class="patty"></span></a>
+
+                        <nav id="primary-nav" nav="" data-ng-controller="supernav" class="ng-scope">
+                            <!-- ngIf: !showFindDealerButton -->
+                            <!-- ngIf: showFindDealerButton --><a data-ng-if="showFindDealerButton" class="mobile-only find-dealer ng-scope" href="/locate"><span><i class="icon icon-location"></i> Find a Dealer</span></a><!-- end ngIf: showFindDealerButton -->
+
+                            <ul>
+                                <li class="first products">
+                                    <a href="/products" class="supernav-title">Products</a>
+                                    <div class="supernav supernav-products supernav-open five-col">
+                                        <div class="column double-column">
+                                            <div class="column-img">
+                                                <a href="/products/heating-cooling"><img src="/lib/img/nav/products/heating-and-cooling-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.products.heatingCooling"><div class="column-title"><img src="/lib/img/nav/products/heating-and-cooling-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/products/heating-cooling" class="ng-binding" href="/products/heating-cooling">Heating &amp; Cooling</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/furnaces" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/furnaces">Furnaces</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/air-conditioners" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/air-conditioners">Air Conditioners</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/heat-pumps" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/heat-pumps">Heat Pumps</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/packaged-units" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/packaged-units">Packaged Units</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/air-handlers" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/air-handlers">Air Handlers</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/boilers" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/boilers">Boilers</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/garage-heaters" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/garage-heaters">Garage Heaters</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/heating-cooling/mini-split-systems" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/heating-cooling/mini-split-systems">Mini-Split Systems</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/products/comfort-controls"><img src="/lib/img/nav/products/comfort-controls-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.products.comfortControls"><div class="column-title"><img src="/lib/img/nav/products/comfort-controls-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/products/comfort-controls" class="ng-binding" href="/products/comfort-controls">Comfort Controls</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/comfort-controls/thermostats" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/comfort-controls/thermostats">Thermostats</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/comfort-controls/zoning" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/comfort-controls/zoning">Zoning</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/products/indoor-air-quality"><img src="/lib/img/nav/products/indoor-air-quality-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.products.indoorAirQuality"><div class="column-title"><img src="/lib/img/nav/products/indoor-air-quality-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/products/indoor-air-quality" class="ng-binding" href="/products/indoor-air-quality">Indoor Air Quality</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/indoor-air-quality/air-purification" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/indoor-air-quality/air-purification">Air Purification</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/indoor-air-quality/humidity-control" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/indoor-air-quality/humidity-control">Humidity Control</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/indoor-air-quality/ventilation" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/indoor-air-quality/ventilation">Ventilation</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/parts-and-filters/filters" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/parts-and-filters/filters">Filters</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/products/systems"><img src="/lib/img/nav/products/systems-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.products.systems"><div class="column-title"><img src="/lib/img/nav/products/systems-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/products/systems" class="ng-binding" href="/products/systems">Systems</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/systems/ultimate-comfort-system" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/systems/ultimate-comfort-system">Ultimate Comfort System</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/products/systems/healthy-climate" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/products/systems/healthy-climate">Healthy Climate Solutions</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column column-cta column-mixed">
+                                            <div class="column-img">
+                                                <a href="/productselector"><img src="/lib/img/nav/products/product-selector-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content">
+                                                <h2 class="column-title"><img src="/lib/img/nav/products/product-selector-m.jpg" class="supernav-mobile-thumb" loading="lazy"><a href="/productselector">Product Selector</a></h2>
+                                                <p>Use our selector tool to find the perfect heating and cooling
+                                                    products for your comfort needs.</p>
+                                                <a class="cta btn" href="/productselector">Start Now</a>
+
+                                                <div class="other-link">
+                                                    <a href="/products/our-product-lines" class="column-title">
+                                                        <img src="/lib/img/nav/products/our-product-lines-m.jpg" class="supernav-mobile-thumb" loading="lazy">
+                                                        <img src="/lib/img/nav/products/our-product-lines-nav.jpg" class="column-img-desktop" loading="lazy">
+                                                        <div class="other-link-caption">Our Product Lines</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="buyers-guide">
+                                    <a href="/buyers-guide" class="supernav-title">Buyer's Guide</a>
+                                    <div class="supernav supernav-buyers-guide supernav-open four-col">
+                                        <div class="column double-column">
+                                            <div class="column-img">
+                                                <a href="/buyers-guide/guide-to-hvac">
+                                                    <img src="/lib/img/nav/buyers-guide/guide-to-hvac-nav.jpg" class="col-img" loading="lazy">
+                                                </a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.buyersGuide.hvacGuide"><div class="column-title"><img src="/lib/img/nav/buyers-guide/guide-to-hvac-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/buyers-guide/guide-to-hvac" class="ng-binding" href="/buyers-guide/guide-to-hvac">Guide to HVAC</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/price-guide" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/price-guide">Price Guide</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/system-benefits" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/system-benefits">System Benefits</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/how-it-works" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/how-it-works">How It Works</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/repair-vs-replace" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/repair-vs-replace">Repair or Replace</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/glossary" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/glossary">Glossary</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/energy-ratings" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/energy-ratings">Energy Ratings</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/indoor-air-quality" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/indoor-air-quality">Indoor Air Quality</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/guide-to-hvac/faqs" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/guide-to-hvac/faqs">FAQs</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/health-and-well-being" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/health-and-well-being">Health &amp; Well-being</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/buyers-guide/offers-and-savings"><img src="/lib/img/nav/buyers-guide/offers-and-savings-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.buyersGuide.offersSavings"><div class="column-title"><img src="/lib/img/nav/buyers-guide/offers-and-savings-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/buyers-guide/offers-and-savings" class="ng-binding" href="/buyers-guide/offers-and-savings">Offers &amp; Savings</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding no-hover">Promotions and Product Rebates</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/offers-and-savings/financing" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/offers-and-savings/financing">Financing</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/offers-and-savings/rebates" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/offers-and-savings/rebates">Utility Rebates</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/tax-credits/energy-tax-credits" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/tax-credits/energy-tax-credits">Federal Energy Tax Credits</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/buyers-guide/why-buy-lennox"><img src="/lib/img/nav/buyers-guide/why-buy-lennox-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.buyersGuide.whyBuyLennox"><div class="column-title"><img src="/lib/img/nav/buyers-guide/why-buy-lennox-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/buyers-guide/why-buy-lennox" class="ng-binding" href="/buyers-guide/why-buy-lennox">Why Buy Lennox?</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/lennox-premier-dealers" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/lennox-premier-dealers">Lennox<sup>®</sup> Premier Dealers™</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/ratings-and-reviews" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/ratings-and-reviews">Ratings &amp; Reviews</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/warranty" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/warranty">Warranty</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/energy-star" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/energy-star">ENERGY STAR<sup>®</sup></a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/technologies" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/technologies">Technologies</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/quantum-coil-technology" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/quantum-coil-technology">Quantum™ Coil</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/healthy-climate-solutions" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/healthy-climate-solutions">Healthy Climate Solutions™</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/landing/low-nox" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/landing/low-nox">Ultra-Low Emissions Furnaces</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/buyers-guide/why-buy-lennox/mobile-tools" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/buyers-guide/why-buy-lennox/mobile-tools">Mobile Tools</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column column-other">
+                                            <div class="column-content">
+                                                <div class="other-link">
+                                                    <a href="/buyers-guide/tools/energy-savings-calculator/" class="column-title">
+                                                        <img src="/lib/img/nav/buyers-guide/energy-savings-calculator-m.jpg" class="supernav-mobile-thumb" loading="lazy">
+                                                        <img src="/lib/img/nav/buyers-guide/energy-savings-calculator-nav.jpg" class="column-img-desktop" loading="lazy">
+                                                        <div class="other-link-caption">Energy Savings Calculator</div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="other-link">
+                                                    <a href="/buyers-guide/tools/healthy-solutions-finder/" class="column-title">
+                                                        <img src="/lib/img/nav/buyers-guide/healthy-solutions-m.jpg" class="supernav-mobile-thumb" loading="lazy">
+                                                        <img src="/lib/img/nav/buyers-guide/healthy-solutions-nav.jpg" class="column-img-desktop" loading="lazy">
+                                                        <div class="other-link-caption">Healthy Solutions Finder</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="no-supernav lennox-life">
+                                    <a href="/lennox-life" class="supernav-title">Lennox Life</a>
+                                </li>
+                                <li class="owners">
+                                    <a href="/owners" class="supernav-title">Owners</a>
+
+                                    <div class="supernav supernav-owners supernav-open four-col">
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/owners/assistance"><img src="/lib/img/nav/owners/owners-assistance-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.owners.assistance"><div class="column-title"><img src="/lib/img/nav/owners/owners-assistance-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/owners/assistance" class="ng-binding" href="/owners/assistance">Assistance</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/assistance/troubleshooting" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/assistance/troubleshooting">Troubleshooting</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/assistance/product-literature" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/assistance/product-literature">Manuals and Brochures</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/assistance/maintenance-and-efficiency" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/assistance/maintenance-and-efficiency">Maintenance and Efficiency</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/help/contact-us" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/help/contact-us">Contact Us</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/owners/register-and-review"><img src="/lib/img/nav/owners/product-registration-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.owners.registerReview"><div class="column-title"><img src="/lib/img/nav/owners/product-registration-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/owners/register-and-review" class="ng-binding" href="/owners/register-and-review">Register &amp; Review</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/register-and-review/product-registration" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/register-and-review/product-registration">Product Registration</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/register-and-review/rate-your-product" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/register-and-review/rate-your-product">Rate Your Product</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/tax-credits/energy-tax-credits" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/tax-credits/energy-tax-credits">Federal Tax Credits</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/assistance/warranty" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/assistance/warranty">Warranty</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column">
+                                            <div class="column-img">
+                                                <a href="/owners/icomfort"><img src="/lib/img/nav/owners/tax-credits-nav.jpg" class="col-img" loading="lazy"></a>
+                                            </div>
+                                            <div class="column-content ng-isolate-scope" supernav-sub-section="" sub-section-data="links.owners.icomfort"><div class="column-title"><img src="/lib/img/nav/owners/tax-credits-m.jpg" class="supernav-mobile-thumb"><a data-ng-href="/owners/icomfort" class="ng-binding" href="/owners/icomfort">iComfort Owners</a></div>
+
+<ul>
+    <!-- ngRepeat: link in subSection.children --><li data-ng-repeat="link in subSection.children" class="ng-scope">
+        <a data-ng-href="/owners/assistance/icomfort-thermostat-owners" data-ng-class="((link.url)?'':'no-hover')" data-ng-bind-html="::getNavTitle(link) | html" class="ng-binding" href="/owners/assistance/icomfort-thermostat-owners">iComfort<sup>®</sup> Thermostat Owners</a>
+        <!-- ngIf: ::link.children -->
+    </li><!-- end ngRepeat: link in subSection.children -->
+</ul></div>
+                                        </div>
+
+                                        <div class="column column-other">
+                                            <div class="column-content">
+                                                <div class="other-link">
+                                                    <a href="/owners/parts-and-filters/filters" class="column-title">
+                                                        <img src="/lib/img/nav/owners/filters-m.jpg" class="supernav-mobile-thumb" loading="lazy">
+                                                        <img src="/lib/img/nav/owners/filters-nav.jpg" class="column-img-desktop" loading="lazy">
+                                                        <div class="other-link-caption">Filters</div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="other-link">
+                                                    <a href="/owners/parts-and-filters/parts" class="column-title">
+                                                        <img src="/lib/img/nav/owners/parts-m.jpg" class="supernav-mobile-thumb" loading="lazy">
+                                                        <img src="/lib/img/nav/owners/parts-nav.jpg" class="column-img-desktop" loading="lazy">
+                                                        <div class="other-link-caption">Parts</div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="no-supernav no-hover faux-link last supernav-search">
+                                    <a data-ng-click="openFlood()" class="supernav-title">Search <i class="btn-icon btn-icon-search"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- /#primary-nav -->
+                    </div>
+                </div>
+                <!-- /.container -->
+            </header><!-- end ngIf: !isIframe && !minimal && !custom && !portal -->
+
+            <!-- ngIf: !isIframe && !minimal && !custom && portal -->
+
+            <!-- ngIf: minimal || portal -->
+
+            <!-- ngView: --><main data-ng-view="" autoscroll="" itemprop="mainContentOfPage" class="ng-scope"><div class="wrapper basic-page ng-scope">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Page Not Found</h1>
+        </div>
+        <div class="main-body-wrapper">
+            <div class="main-text-and-links">
+                <h3>We can't seem to find the page you're looking for.</h3>
+                <p>In the meantime, here are some helpful links:</p>
+                <ul class="the-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/search">Search</a></li>
+                    <li><a href="/help">Help</a></li>
+                    <li><a href="/products/heating-cooling/air-conditioners">Air Conditioners</a></li>
+                    <li><a href="/products/heating-cooling/furnaces">Furnaces</a></li>
+                    <li><a href="/owners/register-and-review/product-registration">Product Registration</a></li>
+                </ul>
+            </div>
+            <div class="the-images">
+                <img src="../../lib/img/global/404.svg" alt="">
+            </div>
+        </div>
+    </div>
+</div></main>
+
+            <!-- ngIf: !isIframe && !custom && !portal --><footer data-ng-if="!isIframe &amp;&amp; !custom &amp;&amp; !portal" data-ng-class="{minimal: minimal}" class="ng-scope">
+                <div id="footer-body">
+                    <div class="container">
+                        <div id="footer-info">
+                            <div class="bbb-logo">
+                                <a target="_blank" id="bbblink" class="rbhzbum" href="http://www.bbb.org/dallas/business-reviews/appliances-major-wholesale-and-manufacturers/lennox-industries-in-richardson-tx-2252#bbbseal" title="Lennox Industries, Inc., Appliances  Major  Wholesale &amp; Manufacturers, Richardson, TX" style="display: block;position: relative;overflow: hidden; width: 150px; height: 57px; margin: 0px; padding: 0px;"><img style="padding: 0px; border: none;" id="bbblinkimg" src="https://seal-dallas.bbb.org/logo/rbhzbum/lennox-industries-2252.png" alt="Lennox Industries, Inc., Appliances  Major  Wholesale &amp; Manufacturers, Richardson, TX" loading="lazy" width="300" height="57"></a>
+                            </div>
+
+                            <div class="social-icons">
+                                <h4>Connect with us:</h4>
+
+                                <ul>
+                                    <li class="facebook"><a class="social-link" target="_blank" href="http://www.facebook.com/Lennox" title="facebook">Facebook</a></li>
+                                    <li class="twitter"><a class="social-link" target="_blank" href="http://twitter.com/lennoxair" title="twitter">Twitter</a></li>
+                                    <li class="youtube"><a class="social-link" target="_blank" href="http://www.youtube.com/lennoxresidential/" title="youtube">Youtube</a>
+                                    </li>
+                                    <li class="instagram"><a class="social-link" target="_blank" href="http://instagram.com/lennoxair" title="instagram">Instagram</a></li>
+                                </ul>
+                            </div>
+                            <!-- /.social-icons -->
+
+                            <a class="btn cta share-btn" share-button="">
+                                <span class="icon-center"><i class="icon icon-share"></i> Share this page</span>
+                            </a>
+
+                            <overlay overlay-id="shareThisPage" class="ng-isolate-scope"><div ng-id="overlay-shareThisPage" class="overlay-wrapper overlay-hidden overlay-regular ">
+    <div class="overlay-container" ng-style="setMinWidth()" style="min-width: 0px;">
+        <div class="overlay-close"><i class="icon icon-x"></i></div>
+        <div class="overlay">
+            <div class="overlay-content">
+                <div class="youtube ng-hide" data-ng-show="videoId" id="unique-youtube-embed-id-1"></div>
+
+                <data-ng-transclude>
+                                <div class="share-overlay ng-scope">
+                                    <h3>Like this page? Share it with your friends!</h3>
+                                    <div class="addthis_sharing_toolbox" style="clear: both;" data-url="https://www.lennox.com/home/home/privacy.html" data-title="HVAC Systems | Heating &amp; Cooling Systems | Heating &amp; Air"><div id="atstbx" class="at-resp-share-element at-style-responsive addthis-smartlayers addthis-animated at4-show" aria-labelledby="at-266579de-55b7-4cbc-9807-4576f8657653" role="region"><span id="at-266579de-55b7-4cbc-9807-4576f8657653" class="at4-visually-hidden">AddThis Sharing Buttons</span><div class="at-share-btn-elements"><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-facebook" style="background-color: rgb(59, 89, 152); border-radius: 0%;"><span class="at4-visually-hidden">Share to Facebook</span><span class="at-icon-wrapper" style="line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-facebook-1" class="at-icon at-icon-facebook" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><g><path d="M22 5.16c-.406-.054-1.806-.16-3.43-.16-3.4 0-5.733 1.825-5.733 5.17v2.882H9v3.913h3.837V27h4.604V16.965h3.823l.587-3.913h-4.41v-2.5c0-1.123.347-1.903 2.198-1.903H22V5.16z" fill-rule="evenodd"></path></g></svg></span></a><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-twitter" style="background-color: rgb(29, 161, 242); border-radius: 0%;"><span class="at4-visually-hidden">Share to Twitter</span><span class="at-icon-wrapper" style="line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-twitter-2" class="at-icon at-icon-twitter" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><g><path d="M27.996 10.116c-.81.36-1.68.602-2.592.71a4.526 4.526 0 0 0 1.984-2.496 9.037 9.037 0 0 1-2.866 1.095 4.513 4.513 0 0 0-7.69 4.116 12.81 12.81 0 0 1-9.3-4.715 4.49 4.49 0 0 0-.612 2.27 4.51 4.51 0 0 0 2.008 3.755 4.495 4.495 0 0 1-2.044-.564v.057a4.515 4.515 0 0 0 3.62 4.425 4.52 4.52 0 0 1-2.04.077 4.517 4.517 0 0 0 4.217 3.134 9.055 9.055 0 0 1-5.604 1.93A9.18 9.18 0 0 1 6 23.85a12.773 12.773 0 0 0 6.918 2.027c8.3 0 12.84-6.876 12.84-12.84 0-.195-.005-.39-.014-.583a9.172 9.172 0 0 0 2.252-2.336" fill-rule="evenodd"></path></g></svg></span></a><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-email" style="background-color: rgb(132, 132, 132); border-radius: 0%;"><span class="at4-visually-hidden">Share to Email</span><span class="at-icon-wrapper" style="line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-email-3" class="at-icon at-icon-email" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><g><g fill-rule="evenodd"></g><path d="M27 22.757c0 1.24-.988 2.243-2.19 2.243H7.19C5.98 25 5 23.994 5 22.757V13.67c0-.556.39-.773.855-.496l8.78 5.238c.782.467 1.95.467 2.73 0l8.78-5.238c.472-.28.855-.063.855.495v9.087z"></path><path d="M27 9.243C27 8.006 26.02 7 24.81 7H7.19C5.988 7 5 8.004 5 9.243v.465c0 .554.385 1.232.857 1.514l9.61 5.733c.267.16.8.16 1.067 0l9.61-5.733c.473-.283.856-.96.856-1.514v-.465z"></path></g></svg></span></a><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-pinterest_share" style="background-color: rgb(203, 32, 39); border-radius: 0%;"><span class="at4-visually-hidden">Share to Pinterest</span><span class="at-icon-wrapper" style="line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-pinterest_share-4" class="at-icon at-icon-pinterest_share" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><g><path d="M7 13.252c0 1.81.772 4.45 2.895 5.045.074.014.178.04.252.04.49 0 .772-1.27.772-1.63 0-.428-1.174-1.34-1.174-3.123 0-3.705 3.028-6.33 6.947-6.33 3.37 0 5.863 1.782 5.863 5.058 0 2.446-1.054 7.035-4.468 7.035-1.232 0-2.286-.83-2.286-2.018 0-1.742 1.307-3.43 1.307-5.225 0-1.092-.67-1.977-1.916-1.977-1.692 0-2.732 1.77-2.732 3.165 0 .774.104 1.63.476 2.336-.683 2.736-2.08 6.814-2.08 9.633 0 .87.135 1.728.224 2.6l.134.137.207-.07c2.494-3.178 2.405-3.8 3.533-7.96.61 1.077 2.182 1.658 3.43 1.658 5.254 0 7.614-4.77 7.614-9.067C26 7.987 21.755 5 17.094 5 12.017 5 7 8.15 7 13.252z" fill-rule="evenodd"></path></g></svg></span></a><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-compact" style="background-color: rgb(255, 101, 80); border-radius: 0%;"><span class="at4-visually-hidden">Share to More</span><span class="at-icon-wrapper" style="line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-addthis-5" class="at-icon at-icon-addthis" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;"><g><path d="M18 14V8h-4v6H8v4h6v6h4v-6h6v-4h-6z" fill-rule="evenodd"></path></g></svg></span></a></div></div></div>
+                                </div>
+                            </data-ng-transclude>
+
+                <!-- ngIf: route -->
+            </div>
+        </div>
+    </div>
+</div></overlay>
+
+                            <form class="email-signup single-line ng-pristine ng-valid" data-ng-submit="email.signup()">
+                                <label>Sign up for email updates</label>
+
+                                <input type="text" data-ng-model="email.address" lnx-placeholder="Enter your email" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                <input type="submit" value="Go">
+                            </form>
+                            <!-- /.email-signup -->
+                        </div>
+                        <!-- /#footer-info -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /#footer-body -->
+
+                <nav id="footer-nav">
+                    <ul class="container">
+                        <li><a href="/help/contact-us">Contact Us</a></li>
+                        <li><a href="/locate">Find a Dealer</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/help">Help</a></li>
+                        <li><a href="https://learnlennox.com" target="_blank">Become a Dealer</a></li>
+                        <li><a href="/media-room">Media Room</a></li>
+                    </ul>
+                </nav>
+
+                <div id="copyright">
+                    <div class="container">
+                        <p class="ng-binding">© 2021 Lennox International Inc.</p>
+                        <a href="https://www.lennoxinternational.com/home/Home/privacy.html" target="_blank">Privacy
+                            Policy</a>
+                        <a href="https://resources.lennox.com/pdfs/legal/Lennox-Industries-Accessibility-Policy.pdf" target="_blank">Accessibility</a>
+                        <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                        <div class="language-links"><a href="/es/about" id="spanish-about">Versión en
+                                Español</a><span class="separator"> / </span><a href="/fr/about">Version
+                                Française</a></div>
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /#copyright -->
+            </footer><!-- end ngIf: !isIframe && !custom && !portal -->
+
+            <div class="loading-screen">
+                <div class="loading-screen-wrapper">
+                    <img src="/lib/img/global/ajax-spinner.svg" class="spinner">
+                </div>
+            </div>
+
+            <search-flood class="ng-isolate-scope"><!-- ngInclude: includeUrl --><div data-ng-include="includeUrl" class="ng-scope"><div class="search-flood__wrap search-flood__hidden ng-scope">
+    <div class="search-flood">
+        <a class="search-flood__close" data-ng-click="close()"><span class="icon icon-flood-close"></span></a>
+        <div class="search-flood__body">
+
+            <div class="search-flood__top">
+
+                <div class="search-flood__form">
+                    <div class="search-flood__form-wrap">
+                        <form data-ng-submit="submit(query)" class="ng-pristine ng-valid active">
+                            <label for="q">What can we help you find?</label>
+                            <input class="st-default-search-input ng-pristine ng-untouched ng-valid ng-not-empty" type="search" data-ng-model="query" name="q" id="q" lnx-text-input="" clear-on-focus="" lnx-placeholder="Search" autocomplete="off" update-on-change="" autocorrect="off" autocapitalize="none">
+                            <button class="search-flood__submit"><i class="btn-icon btn-icon-search"></i></button>
+                        </form>
+
+                        <!-- ngIf: hasError -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-flood__bottom">
+
+                <div data-ng-class="{ 'no-results': (!postal) }" class="no-results">
+
+                    <div class="cta-card">
+                        <div class="cta-message">
+                            <img src="/lib/img/icons/flood-search-pin.svg" class="desktop-only search-flood__icon">
+                            <p>It's also easy to find an expert Lennox<sup>®</sup> dealer who can help <br>you make the most of your HVAC system.
+                                <!-- ngIf: postal -->
+                                <!-- ngIf: !postal --><span data-ng-if="!postal" class="ng-scope">Find a Lennox<sup>®</sup> Dealer Near You.</span><!-- end ngIf: !postal -->
+                            </p>
+                            <a class="search-flood__btn" data-ng-click="goToLocator()">View Now</a>
+                        </div>
+                    </div>
+
+                    <div id="locator-canvas-flood"></div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div></div></search-flood>
+
+
+        </div>
+    </div>
+    <!-- /#page-wrapper -->
+    <!-- ngIf: portal -->
+    
+
+    <!-- SCRIPTS -->
+    
+    
+    
+    
+
+    <!-- ANGULAR -->
+    
+
+
+
+
+
+    
+    
+    
+
+    
+    
+
+    <!-- /SCRIPTS -->
+
+    <!-- PIXELS -->
+    <img src="//pixel.tapad.com/tap/pxl.png?ta_property_id=2235&amp;ta_action_id=LennoxHill_AA_Pixel_2015" width="1" height="1">
+    <!-- /PIXELS -->
+
+    <!-- FORESEE -->
+    
+
+    <!-- Swifttype install code -->
+    
+
+    <!-- Google Tag Manager (noscript) -->
+    
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+
+    
+
+
+
+<img src="https://pixel.tapad.com/tap/pxl.png?ta_property_id=2674&amp;ta_action_id=RTG_HP_Lennox_Spring16" width="1" height="1">
+
+
+
+<div class="st-injected-content-generated st-install-7L2Y9KTtoPmag-wp_qsd" data-st-install-key="7L2Y9KTtoPmag-wp_qsd" id="st-injected-content">
+</div><div class="st-injected-content-generated st-install-7L2Y9KTtoPmag-wp_qsd __st-search-container" data-st-install-key="7L2Y9KTtoPmag-wp_qsd">
+<div class="st-ui-embed " style="">
+  <!-- Swiftype input and results overlay -->
+  <div class="st-ui-container st-ui-injected-container   st-ui-injected-on-page-container">
+    <!-- HEADER -->
+    <div class="st-ui-container-header_bar st-position-container">
+    </div>
+
+    <!-- LEFT SIDEBAR -->
+    <div class="st-ui-container-left_sidebar st-position-container">
+      <div class="st-ui-injected-search-controls">
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="st-ui-container-right_sidebar st-position-container">
+      <div class="st-ui-injected-container-right_sidebar">
+        <div class="st-ui-injected-search-controls">
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIMARY CONTENT -->
+    <div class="st-ui-container-primary_content st-position-container">
+        <div class="st-ui-injected-search-summary st-search-summary" aria-live="polite"></div>
+        <div class="st-ui-injected-content st-search-results"></div>
+
+      <section class="st-ui-no-results st-search-suggestions"><div class="st-query-not-present">
+      </div></section>
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <div class="st-ui-container-footer_bar st-position-container">
+      <section class="st-ui-footer">
+        <span class="st-ui-pagination st-search-pagination"></span>
+      </section>
+    </div>
+  </div>
+</div>
+</div></body></html>

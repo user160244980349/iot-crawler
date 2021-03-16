@@ -1,0 +1,455 @@
+<html lang="en">
+    <body data-container="body" data-mage-init="{&quot;loaderAjax&quot;: {}, &quot;loader&quot;: { &quot;icon&quot;: &quot;https://lamotte.com/static/version1597071198/frontend/SmartSolutions/smartmage/en_US/images/loader-2.gif&quot;}}" class="cms-privacy-policy cms-page-view page-layout-1column">
+            
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<div class="page-wrapper"><header class="page-header"><div class="panel wrapper"><div class="panel header"><a class="action skip contentarea" href="#contentarea"><span>Skip to Content</span></a>
+<ul class="headerSitemenu"><li class="item link compare" data-bind="scope: 'compareProducts'" data-role="compare-products-link">
+    <a class="action compare no-display" title="Compare" data-bind="attr: {'href': compareProducts().listUrl}">
+        Compare        <span class="counter qty" data-bind="text: compareProducts().countCaption"></span>
+    </a>
+</li>
+
+<li class="nav item"><a href="https://lamotte.com/wishlist/index/index/">My Wishlist</a></li></ul><ul class="header links">        <li class="greet welcome" data-bind="scope: 'customer'">
+            <!-- ko if: customer().fullname  -->
+            <span class="logged-in" data-bind="text: new String('Welcome, %1!').replace('%1', customer().fullname)">
+            </span>
+            <!-- /ko -->
+            <!-- ko ifnot: customer().fullname  -->
+            <span data-bind="html:&quot;&quot;"></span>
+                        <!-- /ko -->
+        </li>
+        
+    <li class="authorization-link" data-label="or">
+    <a href="https://lamotte.com/customer/account/login/referer/aHR0cHM6Ly9sYW1vdHRlLmNvbS9wcml2YWN5LXBvbGljeQ%2C%2C/">
+        Sign In    </a>
+</li>
+<li><a href="https://lamotte.com/customer/account/create/">Create an Account</a></li></ul></div></div><div class="header content"><span data-action="toggle-nav" class="action nav-toggle"><span>Toggle Nav</span></span>
+<a class="logo" href="https://lamotte.com/" title="LaMotte Logo" aria-label="store logo">
+    <img src="https://lamotte.com/media/logo/stores/1/LaMotteLogoUpdated.png" title="LaMotte Logo" alt="LaMotte Logo" width="259" height="71">
+</a>
+<div data-block="minicart" class="minicart-wrapper">
+
+
+    <a class="action showcart" href="https://lamotte.com/checkout/cart/" data-bind="scope: 'minicart_content'">
+        <div class="minicart-wrapper-show-hide empty" data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+        <span class="text">My Cart</span>
+        <span class="counter qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+            <span class="counter-number"><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+            <span class="counter-label">
+            <!-- ko if: getCartParam('summary_count') -->
+                <!-- ko text: getCartParam('summary_count') --><!-- /ko -->
+                <!-- ko i18n: 'items' --><!-- /ko -->
+            <!-- /ko -->
+            </span>
+        </span>
+        </div>
+    </a>
+            <div class="block block-minicart" data-role="dropdownDialog" data-mage-init="{&quot;dropdownDialog&quot;:{
+                &quot;appendTo&quot;:&quot;[data-block=minicart]&quot;,
+                &quot;triggerTarget&quot;:&quot;.showcart&quot;,
+                &quot;timeout&quot;: &quot;2000&quot;,
+                &quot;closeOnMouseLeave&quot;: false,
+                &quot;closeOnEscape&quot;: true,
+                &quot;triggerClass&quot;:&quot;active&quot;,
+                &quot;parentClass&quot;:&quot;active&quot;,
+                &quot;buttons&quot;:[]}}">
+            <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                <!-- ko template: getTemplate() --><!-- /ko -->
+            </div>
+            <!-- BLOCK minicart.movetoquote --><!-- /BLOCK minicart.movetoquote -->        </div>
+        
+    
+</div>
+
+
+    <div data-block="miniquote" class="miniquote-wrapper" style="">
+        <a class="action showquote" href="https://lamotte.com/quotation/quote/" data-bind="scope: 'miniquote_content'">
+            <span class="text">My Quote</span>
+            <span class="counter qty empty" data-bind="css: { empty: quote().summary_count == 0 }, blockLoader: isLoading">
+            <span class="counter-number"><!-- ko text: quote().summary_count --><!-- /ko --></span>
+            <span class="counter-label">
+            <!-- ko if: quote().summary_count -->
+                <!-- ko text: quote().summary_count --><!-- /ko -->
+                <!-- ko text: $t('items') --><!-- /ko -->
+                <!-- /ko -->
+            </span>
+        </span>
+        </a>
+                    <div class="block block-miniquote empty" data-role="dropdownDialog" data-mage-init="{&quot;dropdownDialog&quot;:{
+                &quot;appendTo&quot;:&quot;[data-block=miniquote]&quot;,
+                &quot;triggerTarget&quot;:&quot;.showquote&quot;,
+                &quot;timeout&quot;: &quot;2000&quot;,
+                &quot;closeOnMouseLeave&quot;: false,
+                &quot;closeOnEscape&quot;: true,
+                &quot;triggerClass&quot;:&quot;active&quot;,
+                &quot;parentClass&quot;:&quot;active&quot;,
+                &quot;buttons&quot;:[]}}">
+                <div id="miniquote-content-wrapper" data-bind="scope: 'miniquote_content'">
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                </div>
+            </div>
+                
+        
+    </div>
+<div class="block block-search">
+    <div class="block block-title"><strong>Search</strong></div>
+    <div class="block block-content">
+        <form class="form minisearch" id="search_mini_form" action="https://lamotte.com/catalogsearch/result/" method="get">
+            <div class="field search">
+                <label class="label" for="search" data-role="minisearch-label">
+                    <span>Search</span>
+                </label>
+                <div class="control">
+                    <input id="search" data-mage-init="{&quot;quickSearch&quot;:{
+                                &quot;formSelector&quot;:&quot;#search_mini_form&quot;,&quot;minSearchLength&quot;: 10000,
+                                &quot;url&quot;:&quot;https://lamotte.com/search/ajax/suggest/&quot;,
+                                &quot;destinationSelector&quot;:&quot;#search_autocomplete&quot;}
+                           }" type="text" name="q" value="" placeholder="Search entire site" class="input-text" maxlength="128" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off">
+    <div class="mst-searchautocomplete__autocomplete">
+        <div class="mst-searchautocomplete__spinner">
+            <div class="spinner-item spinner-item-1"></div>
+            <div class="spinner-item spinner-item-2"></div>
+            <div class="spinner-item spinner-item-3"></div>
+            <div class="spinner-item spinner-item-4"></div>
+            <div class="spinner-item spinner-item-5"></div>
+            <div class="spinner-item spinner-item-6"></div>
+            <div class="spinner-item spinner-item-7"></div>
+            <div class="spinner-item spinner-item-8"></div>
+        </div>
+
+        <div class="mst-searchautocomplete__close">
+            ×
+        </div>
+    </div>
+
+                    <div id="search_autocomplete" class="search-autocomplete"></div>
+                    <div class="nested">
+    <a class="action advanced" href="https://lamotte.com/catalogsearch/advanced/" data-action="advanced-search">
+        Advanced Search    </a>
+</div>
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit" title="Search" class="action search" aria-label="Search">
+                    <span>Search</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div></header>    <div class="sections nav-sections">
+                <div class="section-items nav-sections-items" data-mage-init="{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}">
+                                            <div class="section-item-title nav-sections-item-title" data-role="collapsible">
+                    <a class="nav-sections-item-switch" data-toggle="switch" href="#store.menu">Menu</a>
+                </div>
+                <div class="section-item-content nav-sections-item-content" id="store.menu" data-role="content">
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init="{&quot;menu&quot;:{&quot;responsive&quot;:true, &quot;expanded&quot;:true, &quot;position&quot;:{&quot;my&quot;:&quot;left top&quot;,&quot;at&quot;:&quot;left bottom&quot;}}}">
+        <li class="level0 nav-1 category-item first has-active level-top parent"><a href="https://lamotte.com/products/" class="level-top"><span>Products</span></a><ul class="level0 submenu"><li class="level1 nav-1-1 category-item first has-active parent"><a href="https://lamotte.com/products/pool-and-spa/"><span>Pool and Spa</span></a><ul class="level1 submenu"><li class="level2 nav-1-1-1 category-item first parent"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-products-for-owners/"><span>Pool and Spa Residential Products</span></a><ul class="level2 submenu"><li class="level3 nav-1-1-1-1 category-item first"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-products-for-owners/insta-testr-strips/"><span>Insta-TEST® Test Strips</span></a></li><li class="level3 nav-1-1-1-2 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-products-for-owners/on-site-digital-testing/"><span>On-Site Digital Testing</span></a></li><li class="level3 nav-1-1-1-3 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-products-for-owners/insta-test-reg-pool-and-spa-owner-s-handbook/"><span>Insta-TEST® Pool and Spa Owner's Handbook</span></a></li><li class="level3 nav-1-1-1-4 category-item last"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-products-for-owners/water-analysis-software/"><span>WaterLink® Solutions™ Home App</span></a></li></ul></li><li class="level2 nav-1-1-2 category-item has-active last parent"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/"><span>Pool and Spa Professional Products</span></a><ul class="level2 submenu"><li class="level3 nav-1-1-2-1 category-item first has-active parent"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/insta-test-test-strips/"><span>Insta-TEST® Professional Test Strips</span></a><ul class="level3 submenu"><li class="level4 nav-1-1-2-1-1 category-item first"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/insta-test-test-strips/insta-test-plus/"><span>Insta-TEST® Plus</span></a></li><li class="level4 nav-1-1-2-1-2 category-item active"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/insta-test-test-strips/insta-test-pro/"><span>Insta-TEST® Pro</span></a></li><li class="level4 nav-1-1-2-1-3 category-item last"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/insta-test-test-strips/insta-test-specialty/"><span>Insta-TEST® Specialty</span></a></li></ul></li><li class="level3 nav-1-1-2-2 category-item parent"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/on-site-digital-test-kits/"><span>On-Site Digital Test Kits</span></a><ul class="level3 submenu"><li class="level4 nav-1-1-2-2-1 category-item first"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/on-site-digital-test-kits/waterlink-reg-spin-touch-reg-mobile-labs/"><span>WaterLink® Spin Touch® Mobile Labs</span></a></li><li class="level4 nav-1-1-2-2-2 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/on-site-digital-test-kits/colorq-photometers/"><span>ColorQ Photometers Series Test Kits</span></a></li><li class="level4 nav-1-1-2-2-3 category-item last"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/on-site-digital-test-kits/tracer-waterproof-pocketesters/"><span>TRACER PockeTesters™</span></a></li></ul></li><li class="level3 nav-1-1-2-3 category-item parent"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/"><span>Test Kits and Reagents</span></a><ul class="level3 submenu"><li class="level4 nav-1-1-2-3-1 category-item first"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/pool-mgr-series-test-kits/"><span>POOL MGR. Tablet Series Test Kits</span></a></li><li class="level4 nav-1-1-2-3-2 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/dipcell-series-test-kits/"><span>POOL MGR. DipCell Series Test Kits</span></a></li><li class="level4 nav-1-1-2-3-3 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/pool-mgr-pro-250-series-test-kits/"><span>POOL MGR. PRO 250 Series Test Kits</span></a></li><li class="level4 nav-1-1-2-3-4 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/fas-dpd-series-test-kits/"><span>FAS-DPD Series Test Kits</span></a></li><li class="level4 nav-1-1-2-3-5 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/specialty-test-kits/"><span>Specialty Test Kits</span></a></li><li class="level4 nav-1-1-2-3-6 category-item last parent"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/test-tab-and-liquid-reagents/"><span>TesTabs® and Liquid Reagents</span></a><ul class="level4 submenu"><li class="level5 nav-1-1-2-3-6-1 category-item first"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/test-tab-and-liquid-reagents/testab-reagents/"><span>Visual Grade TesTabs® Reagents</span></a></li><li class="level5 nav-1-1-2-3-6-2 category-item last"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/test-kits-and-reagents/test-tab-and-liquid-reagents/liquid-reagents/"><span>Liquid Reagents</span></a></li></ul></li></ul></li><li class="level3 nav-1-1-2-4 category-item"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/in-store-water-testing-labs/"><span>In-Store Water Testing Labs</span></a></li><li class="level3 nav-1-1-2-5 category-item last"><a href="https://lamotte.com/products/pool-and-spa/pool-and-spa-professional-products/software/"><span>Water Analysis Software</span></a></li></ul></li></ul></li><li class="level1 nav-1-2 category-item parent"><a href="https://lamotte.com/products/environmental-science-education/"><span>Environmental Science Education</span></a><ul class="level1 submenu"><li class="level2 nav-1-2-1 category-item first parent"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/"><span>Water Monitoring Kits</span></a><ul class="level2 submenu"><li class="level3 nav-1-2-1-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/water-monitoring/"><span>Water Monitoring</span></a></li><li class="level3 nav-1-2-1-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/tablet-test-kits/"><span>Water Monitoring Tablet Test Kits</span></a></li><li class="level3 nav-1-2-1-3 category-item parent"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/bacteria-studies/"><span>Bacteria Studies</span></a><ul class="level3 submenu"><li class="level4 nav-1-2-1-3-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/bacteria-studies/biopaddles/"><span>BioPaddles®</span></a></li><li class="level4 nav-1-2-1-3-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/bacteria-studies/coliform/"><span>Coliform</span></a></li><li class="level4 nav-1-2-1-3-3 category-item last"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/bacteria-studies/microbe-hunter-trade/"><span>Microbe Hunter™</span></a></li></ul></li><li class="level3 nav-1-2-1-4 category-item"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/individual-test-kits/"><span>Individual Test Kits</span></a></li><li class="level3 nav-1-2-1-5 category-item last parent"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/insta-test-reg-test-strips/"><span>Insta-TEST® Test Strips</span></a><ul class="level3 submenu"><li class="level4 nav-1-2-1-5-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/insta-test-reg-test-strips/single-factor-test-strips/"><span>Single Factor Test Strips</span></a></li><li class="level4 nav-1-2-1-5-2 category-item last"><a href="https://lamotte.com/products/environmental-science-education/water-monitoring-kits/insta-test-reg-test-strips/multi-factor-test-strips/"><span>Multi-Factor Test Strips</span></a></li></ul></li></ul></li><li class="level2 nav-1-2-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/aquatic-macroinvertebrates/"><span>Aquatic Macroinvertebrates</span></a></li><li class="level2 nav-1-2-3 category-item"><a href="https://lamotte.com/products/environmental-science-education/sampling-equipment/"><span>Sampling Equipment</span></a></li><li class="level2 nav-1-2-4 category-item"><a href="https://lamotte.com/products/environmental-science-education/curriculum-packages/"><span>Curriculum Packages</span></a></li><li class="level2 nav-1-2-5 category-item parent"><a href="https://lamotte.com/products/environmental-science-education/bacteria-studies/"><span>Bacteria Studies</span></a><ul class="level2 submenu"><li class="level3 nav-1-2-5-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/bacteria-studies/biopaddles/"><span>Biopaddles®</span></a></li><li class="level3 nav-1-2-5-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/bacteria-studies/microbe-hunter-activities/"><span>Microbe Hunter™ Activities</span></a></li><li class="level3 nav-1-2-5-3 category-item last"><a href="https://lamotte.com/products/environmental-science-education/bacteria-studies/coliform/"><span>Coliform</span></a></li></ul></li><li class="level2 nav-1-2-6 category-item parent"><a href="https://lamotte.com/products/environmental-science-education/soil-testing/"><span>Soil Testing</span></a><ul class="level2 submenu"><li class="level3 nav-1-2-6-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/soil-testing/soil-test-kits/"><span>Soil Test Kits</span></a></li><li class="level3 nav-1-2-6-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/soil-testing/hydroponics-test-kits/"><span>Hydroponics Test Kits</span></a></li><li class="level3 nav-1-2-6-3 category-item last"><a href="https://lamotte.com/products/environmental-science-education/soil-testing/plant-tissue-testing/"><span>Plant Tissue Testing</span></a></li></ul></li><li class="level2 nav-1-2-7 category-item parent"><a href="https://lamotte.com/products/environmental-science-education/home-school-and-science-projects/"><span>Home School and Science Projects</span></a><ul class="level2 submenu"><li class="level3 nav-1-2-7-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/home-school-and-science-projects/water-monitoring/"><span>Water Monitoring</span></a></li><li class="level3 nav-1-2-7-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/home-school-and-science-projects/sampling-equipment/"><span>Sampling Equipment</span></a></li><li class="level3 nav-1-2-7-3 category-item"><a href="https://lamotte.com/products/environmental-science-education/home-school-and-science-projects/macroinvertebrates/"><span>Macroinvertebrates</span></a></li><li class="level3 nav-1-2-7-4 category-item last"><a href="https://lamotte.com/products/environmental-science-education/home-school-and-science-projects/soil-testing/"><span>Soil Testing</span></a></li></ul></li><li class="level2 nav-1-2-8 category-item parent"><a href="https://lamotte.com/products/environmental-science-education/instrumentation/"><span>Instrumentation</span></a><ul class="level2 submenu"><li class="level3 nav-1-2-8-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/instrumentation/tracer/"><span>Tracer Electronic Meters</span></a></li><li class="level3 nav-1-2-8-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/instrumentation/6-series-field-meters/"><span>LaMotte Field Meters</span></a></li><li class="level3 nav-1-2-8-3 category-item"><a href="https://lamotte.com/products/environmental-science-education/instrumentation/portable-turbidity-meters/"><span>Portable Turbidity Meters</span></a></li><li class="level3 nav-1-2-8-4 category-item last"><a href="https://lamotte.com/products/environmental-science-education/instrumentation/colorimetric-meters/"><span>Colorimetric Meters</span></a></li></ul></li><li class="level2 nav-1-2-9 category-item"><a href="https://lamotte.com/products/environmental-science-education/aquaculture-and-aquarium/"><span>Aquaculture and Aquarium</span></a></li><li class="level2 nav-1-2-10 category-item"><a href="https://lamotte.com/products/environmental-science-education/handbooks/"><span>Handbooks</span></a></li><li class="level2 nav-1-2-11 category-item parent"><a href="https://lamotte.com/products/environmental-science-education/partnership-programs/"><span>Partnership Programs</span></a><ul class="level2 submenu"><li class="level3 nav-1-2-11-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/partnership-programs/alabama-water-watch/"><span>Alabama Water Watch</span></a></li><li class="level3 nav-1-2-11-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/partnership-programs/earth-force-reg/"><span>Earth Force®</span></a></li><li class="level3 nav-1-2-11-3 category-item"><a href="https://lamotte.com/products/environmental-science-education/partnership-programs/stroud-water-research-center/"><span>Stroud Water Research Center</span></a></li><li class="level3 nav-1-2-11-4 category-item"><a href="https://lamotte.com/products/environmental-science-education/partnership-programs/the-globe-program/"><span>The GLOBE Program</span></a></li><li class="level3 nav-1-2-11-5 category-item last"><a href="https://lamotte.com/products/environmental-science-education/partnership-programs/adopt-a-stream/"><span>South Carolina Adopt-a-Stream</span></a></li></ul></li><li class="level2 nav-1-2-12 category-item"><a href="https://lamotte.com/products/environmental-science-education/earthecho-water-challenge/"><span>EarthEcho Water Challenge</span></a></li><li class="level2 nav-1-2-13 category-item last parent"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/"><span>Environmental Education Resources</span></a><ul class="level2 submenu"><li class="level3 nav-1-2-13-1 category-item first"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/10-video-tips/"><span>10 Video Tips</span></a></li><li class="level3 nav-1-2-13-2 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/at-home-activities/"><span>At Home Activities</span></a></li><li class="level3 nav-1-2-13-3 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/lamotte-photo-contest/"><span>LaMotte Photo Contest</span></a></li><li class="level3 nav-1-2-13-4 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/free-downloadable-handbooks/"><span>FREE Downloadable Handbooks</span></a></li><li class="level3 nav-1-2-13-5 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/ngss-aligned-lamotte-kits/"><span>NGSS Aligned LaMotte Kits</span></a></li><li class="level3 nav-1-2-13-6 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/environmental-education-products-catalog/"><span>Environmental Education Products Catalog</span></a></li><li class="level3 nav-1-2-13-7 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/reagent-refills-and-accessories/"><span>Reagent Refills and Accessories</span></a></li><li class="level3 nav-1-2-13-8 category-item"><a href="https://lamotte.com/catalog/category/view/s/are-my-reagents-still-good/id/227/"><span>Are my Reagents Still Good?</span></a></li><li class="level3 nav-1-2-13-9 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/lesson-plans/"><span>Lesson Plans</span></a></li><li class="level3 nav-1-2-13-10 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/aquatic-macroinvertebrates-resource-material/"><span>Aquatic Macroinvertebrates Resource Material</span></a></li><li class="level3 nav-1-2-13-11 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/dissolved-oxygen-fact-sheet/"><span>Dissolved Oxygen Fact Sheet</span></a></li><li class="level3 nav-1-2-13-12 category-item"><a href="https://lamotte.com/catalog/category/view/s/test-methods/id/233/"><span>Test Methods</span></a></li><li class="level3 nav-1-2-13-13 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/helpful-websites/"><span>Helpful Websites</span></a></li><li class="level3 nav-1-2-13-14 category-item"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/workshop-material/"><span>Workshop Material</span></a></li><li class="level3 nav-1-2-13-15 category-item last"><a href="https://lamotte.com/products/environmental-science-education/environmental-education-resources/new-grant-links/"><span>New Grant Links</span></a></li></ul></li></ul></li><li class="level1 nav-1-3 category-item parent"><a href="https://lamotte.com/products/drinking-water/"><span>Drinking Water</span></a><ul class="level1 submenu"><li class="level2 nav-1-3-1 category-item first parent"><a href="https://lamotte.com/products/drinking-water/water-quality-sales-demo-kits/"><span>Water Quality Sales Demo Kits</span></a><ul class="level2 submenu"><li class="level3 nav-1-3-1-1 category-item first"><a href="https://lamotte.com/products/drinking-water/water-quality-sales-demo-kits/at-visual-series-water-softener-demo-kit/"><span>AT Visual Series Water Softener Demo Kit</span></a></li><li class="level3 nav-1-3-1-2 category-item"><a href="https://lamotte.com/products/drinking-water/water-quality-sales-demo-kits/atq-digital-series-water-softener-demo-kit/"><span>ATQ Digital Series Water Softener Demo Kit</span></a></li><li class="level3 nav-1-3-1-3 category-item last"><a href="https://lamotte.com/products/drinking-water/water-quality-sales-demo-kits/waterlink-reg-spin-touch-reg-dw-sales-demonstration-outfit/"><span>WaterLink® Spin Touch® DW Sales Demonstration Outfit</span></a></li></ul></li><li class="level2 nav-1-3-2 category-item"><a href="https://lamotte.com/products/drinking-water/demonstration-softeners/"><span>Demonstration Softeners</span></a></li><li class="level2 nav-1-3-3 category-item"><a href="https://lamotte.com/products/drinking-water/combination-oufits/"><span>Combination Test Kits</span></a></li><li class="level2 nav-1-3-4 category-item"><a href="https://lamotte.com/products/drinking-water/individual-test-kits/"><span>Individual Test Kits</span></a></li><li class="level2 nav-1-3-5 category-item parent"><a href="https://lamotte.com/products/drinking-water/insta-test/"><span>Insta-TEST® Test Strips</span></a><ul class="level2 submenu"><li class="level3 nav-1-3-5-1 category-item first"><a href="https://lamotte.com/products/drinking-water/insta-test/single-factor-test-strips/"><span>Single Factor Test Strips</span></a></li><li class="level3 nav-1-3-5-2 category-item last"><a href="https://lamotte.com/products/drinking-water/insta-test/multi-factor-test-strips/"><span>Multi-Factor Test Strips</span></a></li></ul></li><li class="level2 nav-1-3-6 category-item parent"><a href="https://lamotte.com/products/drinking-water/microbiological-testing/"><span>Microbiological Testing</span></a><ul class="level2 submenu"><li class="level3 nav-1-3-6-1 category-item first"><a href="https://lamotte.com/products/drinking-water/microbiological-testing/biological-activity-reaction-test-bart/"><span>Biological Activity Reaction Test (BART)</span></a></li><li class="level3 nav-1-3-6-2 category-item last"><a href="https://lamotte.com/products/drinking-water/microbiological-testing/coliform/"><span>Coliform &amp; E. Coli Screening Tests</span></a></li></ul></li><li class="level2 nav-1-3-7 category-item"><a href="https://lamotte.com/products/drinking-water/instrumentation/"><span>Instrumentation</span></a></li><li class="level2 nav-1-3-8 category-item last"><a href="https://lamotte.com/products/drinking-water/water-analysis-software/"><span>Water Analysis Software</span></a></li></ul></li><li class="level1 nav-1-4 category-item parent"><a href="https://lamotte.com/products/industrial-water/"><span>Industrial Water / Boiling &amp; Cooling</span></a><ul class="level1 submenu"><li class="level2 nav-1-4-1 category-item first"><a href="https://lamotte.com/products/industrial-water/instrumentation/"><span>Instrumentation</span></a></li><li class="level2 nav-1-4-2 category-item"><a href="https://lamotte.com/products/industrial-water/individual-test-kits/"><span>Individual Test Kits</span></a></li><li class="level2 nav-1-4-3 category-item parent"><a href="https://lamotte.com/products/industrial-water/insta-test/"><span>Insta-TEST® Test Strips</span></a><ul class="level2 submenu"><li class="level3 nav-1-4-3-1 category-item first"><a href="https://lamotte.com/products/industrial-water/insta-test/single-factor-test-strips/"><span>Single Factor Test Strips</span></a></li><li class="level3 nav-1-4-3-2 category-item last"><a href="https://lamotte.com/products/industrial-water/insta-test/multi-factor-test-strips/"><span>Multi-Factor Test Strips</span></a></li></ul></li><li class="level2 nav-1-4-4 category-item"><a href="https://lamotte.com/products/industrial-water/test-papers/"><span>Test Papers</span></a></li><li class="level2 nav-1-4-5 category-item"><a href="https://lamotte.com/products/industrial-water/microbiological-testing/"><span>Microbiological Testing</span></a></li><li class="level2 nav-1-4-6 category-item last parent"><a href="https://lamotte.com/products/industrial-water/combination-oufits/"><span>Combination Outfits</span></a><ul class="level2 submenu"><li class="level3 nav-1-4-6-1 category-item first"><a href="https://lamotte.com/products/industrial-water/combination-oufits/combination-buret-outfits/"><span>Combination Buret Outfits</span></a></li><li class="level3 nav-1-4-6-2 category-item last"><a href="https://lamotte.com/products/industrial-water/combination-oufits/titration-reagents/"><span>Titration Reagents</span></a></li></ul></li></ul></li><li class="level1 nav-1-5 category-item parent"><a href="https://lamotte.com/products/water-wastewater/"><span>Water and Wastewater</span></a><ul class="level1 submenu"><li class="level2 nav-1-5-1 category-item first"><a href="https://lamotte.com/products/water-wastewater/instrumentation/"><span>Instrumentation</span></a></li><li class="level2 nav-1-5-2 category-item"><a href="https://lamotte.com/products/water-wastewater/individual-test-kits/"><span>Individual Test Kits</span></a></li><li class="level2 nav-1-5-3 category-item parent"><a href="https://lamotte.com/products/water-wastewater/insta-test/"><span>Insta-TEST® Test Strips</span></a><ul class="level2 submenu"><li class="level3 nav-1-5-3-1 category-item first"><a href="https://lamotte.com/products/water-wastewater/insta-test/single-factor-test-strips/"><span>Single Factor Test Strips</span></a></li><li class="level3 nav-1-5-3-2 category-item last"><a href="https://lamotte.com/products/water-wastewater/insta-test/multi-factor-test-strips/"><span>Multi-Factor Test Strips</span></a></li></ul></li><li class="level2 nav-1-5-4 category-item last"><a href="https://lamotte.com/products/water-wastewater/test-papers/"><span>Test Papers</span></a></li></ul></li><li class="level1 nav-1-6 category-item parent"><a href="https://lamotte.com/products/food-beverage-laundry/"><span>Food / Beverage / Laundry &amp; Sanitation</span></a><ul class="level1 submenu"><li class="level2 nav-1-6-1 category-item first"><a href="https://lamotte.com/products/food-beverage-laundry/instrumentation/"><span>Instrumentation</span></a></li><li class="level2 nav-1-6-2 category-item"><a href="https://lamotte.com/products/food-beverage-laundry/individual-test-kits/"><span>Individual Test Kits</span></a></li><li class="level2 nav-1-6-3 category-item parent"><a href="https://lamotte.com/products/food-beverage-laundry/combination-outfits/"><span>Combination Outfits</span></a><ul class="level2 submenu"><li class="level3 nav-1-6-3-1 category-item first"><a href="https://lamotte.com/products/food-beverage-laundry/combination-outfits/combination-buret-outfits/"><span>Combination Buret Outfits</span></a></li><li class="level3 nav-1-6-3-2 category-item"><a href="https://lamotte.com/products/food-beverage-laundry/combination-outfits/laundry-oufit/"><span>Laundry Oufit</span></a></li><li class="level3 nav-1-6-3-3 category-item last"><a href="https://lamotte.com/products/food-beverage-laundry/combination-outfits/titration-reagents/"><span>Titration Reagents</span></a></li></ul></li><li class="level2 nav-1-6-4 category-item parent"><a href="https://lamotte.com/products/food-beverage-laundry/insta-test/"><span>Insta-TEST® Test Strips</span></a><ul class="level2 submenu"><li class="level3 nav-1-6-4-1 category-item first"><a href="https://lamotte.com/products/food-beverage-laundry/insta-test/single-factor-test-strips/"><span>Single Factor Test Strips</span></a></li><li class="level3 nav-1-6-4-2 category-item last"><a href="https://lamotte.com/products/food-beverage-laundry/insta-test/multi-factor-test-strips/"><span>Multi-Factor Test Strips</span></a></li></ul></li><li class="level2 nav-1-6-5 category-item"><a href="https://lamotte.com/products/food-beverage-laundry/test-papers/"><span>Test Papers</span></a></li><li class="level2 nav-1-6-6 category-item"><a href="https://lamotte.com/products/food-beverage-laundry/microbiological-testing/"><span>Microbiological Testing</span></a></li><li class="level2 nav-1-6-7 category-item last"><a href="https://lamotte.com/products/food-beverage-laundry/brewlab/"><span>BrewLab® Test Kits</span></a></li></ul></li><li class="level1 nav-1-7 category-item parent"><a href="https://lamotte.com/products/aquarium-and-fish-farming/"><span>Aquarium and Fish Farming</span></a><ul class="level1 submenu"><li class="level2 nav-1-7-1 category-item first"><a href="https://lamotte.com/products/aquarium-and-fish-farming/individual-test-kits/"><span>Individual Test Kits</span></a></li><li class="level2 nav-1-7-2 category-item"><a href="https://lamotte.com/products/aquarium-and-fish-farming/electronic-aquaculture-lab/"><span>Electronic Aquaculture Lab</span></a></li><li class="level2 nav-1-7-3 category-item"><a href="https://lamotte.com/products/aquarium-and-fish-farming/fresh-water-combination-kits/"><span>Fresh Water Combination Kits</span></a></li><li class="level2 nav-1-7-4 category-item"><a href="https://lamotte.com/products/aquarium-and-fish-farming/salt-water-combination-kits/"><span>Salt Water Combination Kits</span></a></li><li class="level2 nav-1-7-5 category-item"><a href="https://lamotte.com/products/aquarium-and-fish-farming/instrumentation/"><span>Instrumentation</span></a></li><li class="level2 nav-1-7-6 category-item"><a href="https://lamotte.com/products/aquarium-and-fish-farming/sampling-equipment/"><span>Sampling Equipment</span></a></li><li class="level2 nav-1-7-7 category-item last"><a href="https://lamotte.com/products/aquarium-and-fish-farming/aquaponics-and-hydroponics-kits/"><span>Aquaponics and Hydroponics Kits</span></a></li></ul></li><li class="level1 nav-1-8 category-item last parent"><a href="https://lamotte.com/products/soil/"><span>Soil</span></a><ul class="level1 submenu"><li class="level2 nav-1-8-1 category-item first parent"><a href="https://lamotte.com/products/soil/instrumentation/"><span>Instrumentation</span></a><ul class="level2 submenu"><li class="level3 nav-1-8-1-1 category-item first"><a href="https://lamotte.com/products/soil/instrumentation/ph/"><span>pH Testing</span></a></li><li class="level3 nav-1-8-1-2 category-item"><a href="https://lamotte.com/products/soil/instrumentation/dissolved-salts-testing/"><span>Dissolved Salts Testing</span></a></li><li class="level3 nav-1-8-1-3 category-item last"><a href="https://lamotte.com/products/soil/instrumentation/electronic-soil-labs/"><span>Electronic Soil Labs</span></a></li></ul></li><li class="level2 nav-1-8-2 category-item"><a href="https://lamotte.com/products/soil/multi-parameter-test-kits/"><span>Multi-Parameter Test Kits</span></a></li><li class="level2 nav-1-8-3 category-item"><a href="https://lamotte.com/products/soil/agricultural-soil-testing-kits/"><span>Agricultural Soil Testing Kits</span></a></li><li class="level2 nav-1-8-4 category-item"><a href="https://lamotte.com/products/soil/individual-soil-plant-tissue-test-kits/"><span>Individual Soil &amp; Plant Tissue Test Kits</span></a></li><li class="level2 nav-1-8-5 category-item last"><a href="https://lamotte.com/products/soil/sampling-equipment/"><span>Sampling Equipment</span></a></li></ul></li></ul></li><li class="level0 nav-2 category-item level-top"><a href="https://lamotte.com/new-products-at-lamotte/" class="level-top"><span>What's New</span></a></li><li class="level0 nav-3 category-item level-top parent"><a href="https://lamotte.com/support/" class="level-top"><span>Support</span></a><ul class="level0 submenu"><li class="level1 nav-3-1 category-item first"><a href="https://lamotte.com/support/meter-registration/"><span>Meter Registration</span></a></li><li class="level1 nav-3-2 category-item"><a href="https://lamotte.com/catalog/category/view/s/software-and-firmware-updates/id/254/"><span>Software and Firmware Updates</span></a></li><li class="level1 nav-3-3 category-item"><a href="https://lamotte.com/catalog/category/view/s/waterlink-reg-spin-touch-reg-replacement-program/id/183/"><span>WaterLink® Spin Touch® Replacement Program</span></a></li><li class="level1 nav-3-4 category-item parent"><a href="https://lamotte.com/support/technical-support/"><span>Technical Support</span></a><ul class="level1 submenu"><li class="level2 nav-3-4-1 category-item first"><a href="https://lamotte.com/support/technical-support/remote-support/"><span>Remote Support</span></a></li><li class="level2 nav-3-4-2 category-item last"><a href="https://lamotte.com/support/technical-support/meter-and-software-faq/"><span>Meter &amp; Software FAQ</span></a></li></ul></li><li class="level1 nav-3-5 category-item parent"><a href="https://lamotte.com/support/product-documentation/"><span>Product Documentation</span></a><ul class="level1 submenu"><li class="level2 nav-3-5-1 category-item first"><a href="https://lamotte.com/support/product-documentation/instructions-manuals/"><span>Instructions &amp; Manuals</span></a></li><li class="level2 nav-3-5-2 category-item"><a href="https://lamotte.com/support/product-documentation/safety-data-sheets-sds-search/"><span>Safety Data Sheet (SDS) Search</span></a></li><li class="level2 nav-3-5-3 category-item parent"><a href="https://lamotte.com/support/product-documentation/certification-documents/"><span>Certificate of Compliance</span></a><ul class="level2 submenu"><li class="level3 nav-3-5-3-1 category-item first"><a href="https://lamotte.com/support/product-documentation/certification-documents/certificates-of-analysis/"><span>Certificates of Analysis</span></a></li><li class="level3 nav-3-5-3-2 category-item"><a href="https://lamotte.com/support/product-documentation/certification-documents/ce-mark-declaration-of-conformity/"><span>CE Mark Declaration of Conformity</span></a></li><li class="level3 nav-3-5-3-3 category-item last"><a href="https://lamotte.com/support/product-documentation/certification-documents/conformity-certificates/"><span>Conformity Certificates</span></a></li></ul></li><li class="level2 nav-3-5-4 category-item last"><a href="https://lamotte.com/support/product-documentation/reagent-shelf-life/"><span>Reagent Refills and Shelf Life</span></a></li></ul></li><li class="level1 nav-3-6 category-item parent"><a href="https://lamotte.com/support/sales-support-resources/"><span>Sales Support &amp; Resources</span></a><ul class="level1 submenu"><li class="level2 nav-3-6-1 category-item first"><a href="https://lamotte.com/support/sales-support-resources/product-catalogs/"><span>Product Catalogs</span></a></li><li class="level2 nav-3-6-2 category-item"><a href="https://lamotte.com/support/sales-support-resources/product-brochures/"><span>Product Brochures</span></a></li><li class="level2 nav-3-6-3 category-item"><a href="https://lamotte.com/support/sales-support-resources/video-tutorials-and-archives/"><span>Video Tutorials and Archives</span></a></li><li class="level2 nav-3-6-4 category-item last"><a href="https://lamotte.com/support/sales-support-resources/testing-systems-and-methods/"><span>Testing Systems and Methods</span></a></li></ul></li><li class="level1 nav-3-7 last"><a href="https://lamotte.com/technical-tips"><span>Tech Tips</span></a></li></ul></li><li class="level0 nav-4 category-item level-top"><a href="https://lamotte.com/catalog/category/view/s/videos/id/272/" class="level-top"><span>Videos</span></a></li><li class="level0 nav-5 category-item level-top"><a href="https://lamotte.com/distributors.html" class="level-top"><span>Where to Buy</span></a></li><li class="level0 nav-6 category-item level-top"><a href="https://lamotte.com/about-us/" class="level-top"><span>About Us</span></a></li><li class="level0 nav-7 category-item last level-top"><a href="https://lamotte.com/international/" class="level-top"><span>International</span></a></li>            </ul>
+</nav>
+</div>
+                                            <div class="section-item-title nav-sections-item-title" data-role="collapsible">
+                    <a class="nav-sections-item-switch" data-toggle="switch" href="#store.links">Account</a>
+                </div>
+                <div class="section-item-content nav-sections-item-content" id="store.links" data-role="content"><!-- Account links --><ul class="header links">        <li class="greet welcome" data-bind="scope: 'customer'">
+            <!-- ko if: customer().fullname  -->
+            <span class="logged-in" data-bind="text: new String('Welcome, %1!').replace('%1', customer().fullname)">
+            </span>
+            <!-- /ko -->
+            <!-- ko ifnot: customer().fullname  -->
+            <span data-bind="html:&quot;&quot;"></span>
+                        <!-- /ko -->
+        </li>
+        
+    <li class="authorization-link" data-label="or">
+    <a href="https://lamotte.com/customer/account/login/referer/aHR0cHM6Ly9sYW1vdHRlLmNvbS9wcml2YWN5LXBvbGljeQ%2C%2C/">
+        Sign In    </a>
+</li>
+<li><a href="https://lamotte.com/customer/account/create/">Create an Account</a></li></ul></div>
+                                    </div>
+    </div>
+<div class="breadcrumbs">
+    <ul class="items">
+                    <li class="item home">
+                            <a href="https://lamotte.com/" title="Go to Home Page">Home</a>
+                        </li>
+                    <li class="item cms_page">
+                            <strong>Privacy Policy</strong>
+                        </li>
+            </ul>
+</div>
+<main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
+<div class="page-title-wrapper">
+    <h1 class="page-title">
+        <span class="base" data-ui-id="page-title-wrapper">Privacy and Cookie Policy</span>    </h1>
+    </div>
+<div class="page messages"><div data-placeholder="messages"></div>
+<div data-bind="scope: 'messages'">
+    <!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+    <div role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+        <div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+            <div data-bind="html: message.text"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko if: messages().messages && messages().messages.length > 0 -->
+    <div role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages">
+        <div data-bind="attr: {
+            class: 'message-' + message.type + ' ' + message.type + ' message',
+            'data-ui-id': 'message-' + message.type
+        }">
+            <div data-bind="html: message.text"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>
+
+</div><div class="columns"><div class="column main">
+
+
+
+
+
+
+
+<h1>LaMotte Company Website Privacy Policy/Terms of Service</h1>
+<h3>1. Terms</h3>
+<p>By accessing this web site, you are agreeing to be bound by these web site Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this web site are protected by applicable copyright and trade mark law.</p>
+<h3>2. Use License</h3>
+<ol type="a">
+<li>Permission is granted to temporarily download one copy of the materials (information or software) on LaMotte Company's web site for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+<ol type="i">
+<li>modify or copy the materials;</li>
+<li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial) without written consent;</li>
+<li>attempt to decompile or reverse engineer any software contained on LaMotte Company's web site;</li>
+<li>remove any copyright or other proprietary notations from the materials; or</li>
+<li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+</ol>
+</li>
+<li>This license shall automatically terminate if you violate any of these restrictions and may be terminated by LaMotte Company at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.</li>
+</ol>
+<h3>3. Disclaimer</h3>
+<ol type="a">
+<li>The materials on LaMotte Company's web site are provided "as is". LaMotte Company makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, LaMotte Company does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet web site or otherwise relating to such materials or on any sites linked to this site.</li>
+</ol>
+<h3>4. Limitations</h3>
+<p>In no event shall LaMotte Company or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on LaMotte Company's Internet site, even if LaMotte Company or a LaMotte Company authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+<h3>5. Revisions and Errata</h3>
+<p>The materials appearing on LaMotte Company's web site could include technical, typographical, or photographic errors. LaMotte Company does not warrant that any of the materials on its web site are accurate, complete, or current. LaMotte Company may make changes to the materials contained on its web site at any time without notice. LaMotte Company does not, however, make any commitment to update the materials.</p>
+<h3>6. Links</h3>
+<p>LaMotte Company has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by LaMotte Company of the site. Use of any such linked web site is at the user's own risk.</p>
+<h3>7. Site Terms of Use Modifications</h3>
+<p>LaMotte Company may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.</p>
+<h3>8. Governing Law</h3>
+<p>Any claim relating to LaMotte Company's web site shall be governed by the laws of the State of Maryland without regard to its conflict of law provisions.</p>
+<p>General Terms and Conditions applicable to Use of a Web Site.</p>
+<h2>Privacy Policy</h2>
+<p>This privacy policy (“<strong>Policy</strong>”) describes how LaMotte Company and its related companies (“<strong>Company</strong>”) collect, use and share personal information of consumer users of this website, www.lamotte.com (the “Site”). This Policy also applies to any of our other websites that post this Policy. This Policy does not apply to websites that post different statements.</p>
+<p class="text" style="text-align: left;"><strong>WHAT WE COLLECT</strong></p>
+<p class="text" style="text-align: left;">We get information about you in a range of ways.</p>
+<p class="text" style="text-align: left;"><strong>Information You Give Us. </strong></p>
+<p class="text" style="text-align: left;">We collect your‎ ‎ name,‎ email address,‎ phone number,‎ fax number,‎ username,‎ password, page visits and other information you directly give us on our Site.</p>
+<p><strong>Information We Get from Others. </strong></p>
+<p>We may get information about you from other sources. We may add this to information we get from this Site.</p>
+<p><strong>Information Automatically Collected. </strong></p>
+<p>We automatically log information about you and your computer. For example, when visiting our Site, we log ‎ your computer operating system type,‎ browser type,‎ browser language,‎ the website you visited before browsing to our Site,‎ pages you viewed,‎ how long you spent on a page,‎ access times,‎ Internet protocol (IP) address and information about your use of and actions on our Site.</p>
+<p><strong>Cookies</strong>. We may log information using "cookies." Cookies are small data files stored on your hard drive by a website. Cookies help us make our Site and your visit better. We use cookies to see which parts of our Site people use and like and to count visits to our Site.</p>
+<p>Some of our business partners may use cookies on our site (for example, advertisers). However, we have no access to or control over these cookies.</p>
+<p><strong>Web Beacons.</strong> We may log information using digital images called Web beacons on our Site or in our emails. We use Web beacons to manage cookies, count visits, and to learn what marketing works and what does not. We also use Web Beacons to tell if you open or act on our emails.</p>
+<p><strong>USE OF PERSONAL INFORMATION</strong></p>
+<p>We use your personal information as follows:</p>
+<ul>
+<li>We use your personal information to operate, maintain, and improve our sites, products, and services.</li>
+<li>We use your personal information to respond to comments and questions and provide customer service.</li>
+<li>We use your personal information to communicate about promotions, upcoming events, and other news about products and services offered by us and our selected partners.</li>
+<li>We use your personal information to provide and deliver products and services customers request.</li>
+</ul>
+<p><strong>SHARING OF PERSONAL INFORMATION</strong></p>
+<p>We may share personal information as follows:</p>
+<ul>
+<li>We may share personal information with your consent. For example, you may let us share personal information with others for their own marketing uses. Those uses will be subject to their privacy policies.</li>
+<li>We may share personal information when we do a business deal, or negotiate a business deal, involving sale or transfer of all or a part of our business or assets. These deals can include any merger, financing, acquisition, or bankruptcy transaction or proceeding.</li>
+<li>We may share personal information for legal, protection, and safety purposes.</li>
+<li>We may share information to comply with laws.</li>
+<li>We may share information to respond to lawful requests and legal process.</li>
+<li>We may share information to protect the rights and property of LaMotte Company, our agents, customers, and others. This includes enforcing our agreements, policies, and terms of use.</li>
+<li>We may share information in an emergency. This includes protecting the safety of our employees and agents, our customers, or any person.</li>
+<li>We may share information with those who need it to do work for us.</li>
+</ul>
+<p>We may also share aggregated and/or anonymized data with others for their own uses.</p>
+<p><strong>INFORMATION CHOICES AND CHANGES</strong></p>
+<p>Our marketing emails tell you how to “opt-out.” If you opt out, we may still send you non-marketing emails. Non-marketing emails include emails about your accounts and our business dealings with you.</p>
+<p>You may send requests about personal information to our Contact Information below. You can request to change contact choices, opt-out of our sharing with others, and update your personal information.</p>
+<p>You can typically remove and reject cookies from our Site with your browser settings. Many browsers are set to accept cookies until you change your settings. If you remove or reject our cookies, it could affect how our Site works for you.</p>
+<p><strong>SECURITY OF YOUR PERSONAL INFORMATION</strong></p>
+<p>We take steps to help protect personal information. No company can fully prevent security risks, however. Mistakes may happen. Bad actors may defeat even the best safeguards.</p>
+<p><strong>CONTACT INFORMATION</strong></p>
+<p>We welcome your comments or questions about this Privacy Policy. You may also contact us at our address: LaMotte Company 802 Washington Avenue PO Box 329 Chestertown, Maryland 21620 USA</p>
+<p><strong>CHANGES TO THIS PRIVACY POLICY</strong></p>
+<p>We may change this Privacy Policy. If we make any changes, we will change the Last Updated date below.</p>
+<p>This Privacy Policy was last Updated on 1/20/2014. <strong>Published 1/20/2014. </strong></p>
+</div></div></main><footer class="page-footer"><div class="footer-container">
+
+    <div class="footer">
+        <div class="footer-col-1">
+            <h5 class="footer-widget-title">
+                Contact Information
+            </h5><!-- /.footer-widget-title -->
+
+            <div class="footer-menu-icon-wrapper">
+                <img class="footer-contact-icon" src="https://lamotte.com/static/version1597071198/frontend/SmartSolutions/smartmage/en_US/images/pin.png">
+                <div class="footer-menu-icon-block">
+                    <p>ADDRESS</p>
+                    <address>
+                        802 Washington Ave.<br> Chestertown, Maryland 21620                      </address>
+                </div><!-- /.footer-menu-icon-block -->
+            </div><!-- /.footer-menu-icon-wrapper -->
+            
+            <div class="footer-menu-icon-wrapper">
+                <img class="footer-contact-icon" src="https://lamotte.com/static/version1597071198/frontend/SmartSolutions/smartmage/en_US/images/phone.png">
+                <div class="footer-menu-icon-block">
+                    <p>PHONE</p>
+                    <p><a href="tel:4107783100">(410) 778-3100</a></p>
+                    <p><a href="tel:8007783100">(800) 344-3100 (USA)</a></p>
+                    <p><a href="tel:8007783100">(800) 344-3100 x7033 (INTERNATIONAL)</a></p>
+                </div><!-- /.footer-menu-icon-block -->
+            </div><!-- /.footer-menu-icon-wrapper -->
+
+            <div class="footer-menu-icon-wrapper">
+                <img class="footer-contact-icon" src="https://lamotte.com/static/version1597071198/frontend/SmartSolutions/smartmage/en_US/images/mail.png">
+                <div class="footer-menu-icon-block">
+                    <p>EMAIL</p>
+                    <p><a href="mailto:info@lamotte.com">
+                            info@lamotte.com</a></p>
+                </div><!-- /.footer-menu-icon-block -->
+            </div><!-- /.footer-menu-icon-wrapper -->
+            
+            <div class="footer-menu-icon-wrapper">
+                <img class="footer-contact-icon" src="https://lamotte.com/static/version1597071198/frontend/SmartSolutions/smartmage/en_US/images/time.png">
+                <div class="footer-menu-icon-block">
+                    <p>Working Days/Hours</p>
+                    <p>Mon - Fri / 9:00 AM - 5:00 PM (EST)</p>
+                </div><!-- /.footer-menu-icon-block -->
+            </div><!-- /.footer-menu-icon-wrapper -->
+
+        </div><!-- /.footer-col-1 -->
+
+        <div class="footer-col-2">
+            <div class="footer-col-menu">
+                <h5 class="footer-widget-title">
+                    LaMotte Company
+                </h5><!-- /.footer-widget-title -->
+                <ul class="footer-menu">
+                    <ul>
+<li><a href="https://lamotte.com/contact-us/">Contact Us</a></li>
+<li><a href="https://lamotte.com/employment-opportunities/">Employment Opportunities</a></li>
+<li><a title="Credit Application" href="https://lamotte.com/media/wysiwyg/pdf/forms/LaMotteCreditApplication.pdf" target="_blank" rel="noopener">Credit Application</a></li>
+<li><a title="Order Form" href="https://lamotte.com/media/wysiwyg/pdf/forms/LaMotteOrderForm.pdf" target="_blank" rel="noopener">Order Form</a></li>
+<li><a href="https://lamotte.com/privacy-policy/">Privacy Policy</a></li>
+</ul>
+
+                </ul><!-- /.footer-menu -->
+            </div><!-- /.footer-col-menu -->
+            <div class="footer-col-menu footer-col-menu-2">
+                <h5 class="footer-widget-title">
+                    Support
+                </h5><!-- /.footer-widget-title -->
+
+                <ul class="footer-menu footer-menu-2">
+                    
+<li>TECH SUPPORT <br>EMAIL: <a title="Tech Support Email Address" href="mailto:tech@lamotte.com">tech@lamotte.com</a><br> PHONE: 410-778-3100, ext. 2<br> USA: 1-800-344-3100, ext. 2</li>
+
+
+<li>SOFTWARE SUPPORT<br> EMAIL: <a title="Software Support Email Address" href="mailto:softwaresupport@lamotte.com">softwaresupport@lamotte.com</a><br> PHONE: 410-778-3100, ext. 3<br> USA: 1-800-344-3100, ext. 3</li>
+<li>
+<ul>
+<li><a href="https://lamotte.com/support/technical-support/remote-support/">Remote Support</a></li>
+<li><a href="https://softwarecenter.lamotte.com/" target="_blank">Firmware and Software Updates</a></li>
+<li><a href="https://lamotte.com/support/product-documentation/safety-data-sheets-sds-search/">Safety Data Sheet Search</a></li>
+<li><a href="https://lamotte.com/support/product-documentation/instructions-manuals/">Instructions and Manuals</a></li>
+<li><a href="https://lamotte.com/support/sales-support-resources/video-tutorials-and-archives/">Video Tutorials</a></li>
+<li><a href="https://lamotte.com/support/product-documentation/certification-documents/">Certification Documents</a></li>
+<li><a href="https://lamotte.com/support/sales-support-resources/">Sales Support &amp; Resources</a></li>
+<li><a href="https://register.lamotte.com" target="_blank">Meter Registration</a></li>
+<li><a href="https://lamotte.com/instrument-repairs/">Instrument Repairs</a></li>
+<li><a href="https://lamotte.com/trademark-designations/">Trademark Designations</a></li>
+<li><a href="https://lamotte.com/software-end-of-service-eos-notices/">Software End of Service Notices</a></li>
+</ul>
+</li>
+
+
+
+                </ul><!-- /.footer-menu -->
+            </div><!-- /.footer-col-menu -->
+
+        </div><!-- /.footer-col-2 -->
+    </div><!-- /.footer -->
+</div><!-- /.footer-container -->
+
+<div class="footer-copyright-wrap">
+    <div class="footer-bottom-bar">
+        <div class="footer-social social-icons">
+
+                <ul>
+<li class="social-icon social-fb"><a href="https://www.facebook.com/LaMotteCompany" target="_blank" rel="noopener"> <img src="https://lamotte.com/media/wysiwyg/fb.png" alt=""> </a></li><!-- /.facebook -->
+<li class="social-icon social-yt"><a href="https://www.youtube.com/user/LaMotteCompany?sub_confirmation=1" target="_blank" rel="noopener"> <img src="https://lamotte.com/media/wysiwyg/yt.png" alt=""> </a></li><!-- /.youtube -->
+<li class="social-icon social-tw"><a href="https://twitter.com/intent/follow?source=followbutton&amp;variant=1.0&amp;screen_name=LaMotteCompany" target="_blank" rel="noopener"> <img src="https://lamotte.com/media/wysiwyg/tw.png" alt=""> </a></li><!-- /.twitter -->
+</ul>
+
+
+        </div><!-- /.footer-social -->
+        <div class="footer-copyright">
+            Copyright © 2021 LaMotte Company. All rights reserved.        </div><!-- /.footer-copyright -->
+    </div><!-- /.footer-bottom-bar -->
+</div><!-- /.footer-copyright-wrap -->
+</footer>
+
+</div>    
+
+</body></html>

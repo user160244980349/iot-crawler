@@ -24,10 +24,8 @@ class Downloader(Module):
 
         jobs = filter(None, set(r["policy"] for r in self.records))
 
-        if p is None:
-            downloaded = [self.get_policy(j) for j in jobs]
-        else:
-            downloaded = p.map(self.get_policy, jobs)
+        downloaded = [self.get_policy(j) for j in jobs] \
+                     if p is None else p.map(self.get_policy, jobs)
 
         for item in self.records:
             for policy, policy_path, policy_hash in downloaded:

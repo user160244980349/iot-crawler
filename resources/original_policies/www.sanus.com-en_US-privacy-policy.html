@@ -1,0 +1,547 @@
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csscalc" style="" lang="en"><!--<![endif]-->
+<body class="privacy-policy">
+    <div id="site-wrap">
+
+    <header class="site-header">
+
+    <div id="countryLanguage-container" role="navigation" aria-label="Locale Navigation">
+        <div class="site-centered clearfix">
+            <h2>Choose Location/Language</h2>
+                        <ul id="selectPreferred">
+                                <li class="US flag"><a href="/en_US/" data-locale="en_US" tabindex="-1">United States - English</a></li>
+                                <li class="US flag"><a href="/es_US/" data-locale="es_US" tabindex="-1">United States - español</a></li>
+                                <li class="CA flag"><a href="/en_CA/" data-locale="en_CA" tabindex="-1">Canada - English</a></li>
+                                <li class="CA flag"><a href="/fr_CA/" data-locale="fr_CA" tabindex="-1">Canada - français</a></li>
+                                <li class="AU flag"><a href="/en_AU/" data-locale="en_AU" tabindex="-1">Australia</a></li>
+                                <li class="BE flag"><a href="/en_BE/" data-locale="en_BE" tabindex="-1">Belgium</a></li>
+                                <li class="CN flag"><a href="/zh_CN/" data-locale="zh_CN" tabindex="-1">China</a></li>
+                                <li class="FR flag"><a href="/fr_FR/" data-locale="fr_FR" tabindex="-1">France</a></li>
+                                <li class="DE flag"><a href="/de_DE/" data-locale="de_DE" tabindex="-1">Germany</a></li>
+                                <li class="HK flag"><a href="/zh_HK/" data-locale="zh_HK" tabindex="-1">Hong Kong</a></li>
+                                <li class="IN flag"><a href="/en_IN/" data-locale="en_IN" tabindex="-1">India</a></li>
+                                <li class="IE flag"><a href="/en_IE/" data-locale="en_IE" tabindex="-1">Ireland</a></li>
+                                <li class="JP flag"><a href="/ja_JP/" data-locale="ja_JP" tabindex="-1">Japan</a></li>
+                                <li class="MY flag"><a href="/en_MY/" data-locale="en_MY" tabindex="-1">Malaysia</a></li>
+                                <li class="MX flag"><a href="/es_MX/" data-locale="es_MX" tabindex="-1">Mexico</a></li>
+                                <li class="NL flag"><a href="/nl_NL/" data-locale="nl_NL" tabindex="-1">Netherlands</a></li>
+                                <li class="NZ flag"><a href="/en_NZ/" data-locale="en_NZ" tabindex="-1">New Zealand</a></li>
+                                <li class="PH flag"><a href="/en_PH/" data-locale="en_PH" tabindex="-1">Philippines</a></li>
+                                <li class="RU flag"><a href="/ru_RU/" data-locale="ru_RU" tabindex="-1">Russian Federation</a></li>
+                                <li class="SG flag"><a href="/en_SG/" data-locale="en_SG" tabindex="-1">Singapore</a></li>
+                                <li class="ZA flag"><a href="/en_ZA/" data-locale="en_ZA" tabindex="-1">South Africa</a></li>
+                                <li class="ES flag"><a href="/es_ES/" data-locale="es_ES" tabindex="-1">Spain</a></li>
+                                <li class="SE flag"><a href="/en_SE/" data-locale="en_SE" tabindex="-1">Sweden</a></li>
+                                <li class="CH flag"><a href="/en_CH/" data-locale="en_CH" tabindex="-1">Switzerland</a></li>
+                                <li class="TH flag"><a href="/en_TH/" data-locale="en_TH" tabindex="-1">Thailand</a></li>
+                                <li class="GB flag"><a href="/en_GB/" data-locale="en_GB" tabindex="-1">United Kingdom</a></li>
+                            </ul>
+            
+            <div class="language-selector-menu">
+                <label class="language-selector"> All Countries Available</label>
+                                    <div id="locale-menu-wrap" class="select-styled-wrap"></div>
+                
+                                    <div id="language-menu-wrap" class="select-styled-wrap"></div>
+                
+                <button id="changeConfirm" tabindex="0" aria-label="Submit locale selection">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="site-centered clearfix">
+            <img src="/img/sanus_logo_bg.png" alt="sanus_logo_bg" class="logo_print">
+            <div class="site-aux clearfix right  us-region" aria-label="Auxilary Navigation">
+                <ul>
+
+                                            <li><a class="aux-store-locator" id="find-stores" title="Find Stores" href="/en_US/stores/">Find Stores</a></li>
+                        <li><span class="sep">|</span></li>
+                    
+                                                                <li><a class="aux-user-icon login" href="/en_US/user/profile/">Login</a></li>
+                        <li><span class="sep">|</span></li>
+                                                                
+                    <li>
+                        <div class="flag-wrapper">
+                            <div class="site-locale flag US disabled" role="button" aria-label="Select Locale" tabindex="0"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="site-header-main site-wrapper clearfix left">
+                <span id="site-logo" class="left">
+                    <a href="/en_US/" title="Home" "="" aria-label="homepage link"><span class="sanus-logo">SANUS</span></a>
+                </span>
+                <div class="site-nav-container left">
+                    <a href="#" id="nav-toggle">Menu</a>
+                    <a href="#" id="filter-toggle">Filter</a>
+                    <a href="#" id="search-toggle">Search</a>
+                                            <a href="https://cart.sanus.com/cart.php" id="cart-toggle">Cart</a>
+                    
+
+                    <div class="nav-collapse ">
+                        <nav id="main-nav" role="navigation" class="main-navigation clearfix" aria-label="Main Site Navigation">
+                            <div class="nav-level">
+                                <ul>
+                                    <li class="sub-nav first-child" aria-expanded="false"><a title="Shop" href="/en_US/products/">Shop</a>
+                                        <div class="nav-level">
+                                            <div class="nav-level-header">
+                                                <span class="nav-label">Products</span>
+                                                <a class="nav-back">Back</a>
+                                            </div>
+                                            <ul class="clearfix">
+                                                <li class="mobile-link">
+                                                    <a title="Products Home" href="/en_US/products/">Products Home</a>
+                                                </li>
+                                                                                                    <li>
+                                                        <a class="category-link" title="Mounts" href="/en_US/products/mounts/">
+                                                            <img class="image" src="/img/brands/sanus/menu/mounts.jpg" alt="Thumbnail of Mounts">
+                                                            <span class="image mounts"></span>Mounts
+                                                        </a>
+                                                        <ul class="sub-categories clearfix">
+                                                                                                                            <li><a href="/en_US/products/mounts/#full-motion-plus-mounts">Full-Motion+</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#full-motion-mounts">Full-Motion</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#tilting-mounts">Tilting</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#fixed-position-mounts">Fixed-Position</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#ceiling-mounts">Ceiling Mounts</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#in-wall-mounts">In-Wall Mounts</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#projector-mounts">Projector Mounts</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#speaker-mounts">Speaker Mounts</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#mount-adapters">Mount Adapters</a></li>
+                                                                                                                            <li><a href="/en_US/products/mounts/#tv-stands">TV Stands</a></li>
+                                                                                                                    </ul>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a class="category-link" title="Furniture" href="/en_US/products/furniture/">
+                                                            <img class="image" src="/img/brands/sanus/menu/furniture.jpg" alt="Thumbnail of Furniture">
+                                                            <span class="image furniture"></span>Furniture
+                                                        </a>
+                                                        <ul class="sub-categories clearfix">
+                                                                                                                            <li><a href="/en_US/products/furniture/#basic-series-furniture">Basic Series</a></li>
+                                                                                                                            <li><a href="/en_US/products/furniture/#steel-series-furniture">Steel Series</a></li>
+                                                                                                                    </ul>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a class="category-link" title="Racks" href="/en_US/products/racks/">
+                                                            <img class="image" src="/img/brands/sanus/menu/racks.jpg" alt="Thumbnail of Racks">
+                                                            <span class="image racks"></span>Racks
+                                                        </a>
+                                                        <ul class="sub-categories clearfix">
+                                                                                                                            <li><a href="/en_US/products/racks/#component-series-racks">Component Series</a></li>
+                                                                                                                            <li><a href="/en_US/products/racks/#ecosystem-rack-accessories">EcoSystem  Accessories</a></li>
+                                                                                                                            <li><a href="/en_US/products/racks/#component-series-rack-accessories">Component Series Rack Accessories</a></li>
+                                                                                                                            <li><a href="/en_US/products/racks/#euro-series-rack-accessories">Euro Series Rack Accessories</a></li>
+                                                                                                                    </ul>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a class="category-link" title="Speaker Stands" href="/en_US/products/speaker-stands/">
+                                                            <img class="image" src="/img/brands/sanus/menu/speaker-stands.jpg" alt="Thumbnail of Speaker Stands">
+                                                            <span class="image speaker-stands"></span>Speaker Stands
+                                                        </a>
+                                                        <ul class="sub-categories clearfix">
+                                                                                                                            <li><a href="/en_US/products/speaker-stands/#basic-series-speaker-stands">Basic Series</a></li>
+                                                                                                                            <li><a href="/en_US/products/speaker-stands/#euro-series-speaker-stands">Euro Series</a></li>
+                                                                                                                            <li><a href="/en_US/products/speaker-stands/#home-theater-series-speaker-stands">Home Theater Series</a></li>
+                                                                                                                            <li><a href="/en_US/products/speaker-stands/#natural-series-speaker-stands">Natural Series</a></li>
+                                                                                                                            <li><a href="/en_US/products/speaker-stands/#steel-series-speaker-stands">Steel Series</a></li>
+                                                                                                                            <li><a href="/en_US/products/speaker-stands/#wireless-series-speaker-stands">Wireless Series</a></li>
+                                                                                                                    </ul>
+                                                    </li>
+                                                                                                    <li>
+                                                        <a class="category-link" title="Accessories" href="/en_US/products/accessories/">
+                                                            <img class="image" src="/img/brands/sanus/menu/accessories.jpg" alt="Thumbnail of Accessories">
+                                                            <span class="image accessories"></span>Accessories
+                                                        </a>
+                                                        <ul class="sub-categories clearfix">
+                                                                                                                            <li><a href="/en_US/products/accessories/#cable-tunnels">Cable Tunnels</a></li>
+                                                                                                                            <li><a href="/en_US/products/accessories/#cables">Cables</a></li>
+                                                                                                                            <li><a href="/en_US/products/accessories/#power">Power</a></li>
+                                                                                                                            <li><a href="/en_US/products/accessories/#miscellaneous">Miscellaneous</a></li>
+                                                                                                                            <li><a href="/en_US/products/accessories/#wall-mounted-av-shelves">Wall Mounted AV Shelves</a></li>
+                                                                                                                    </ul>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a title="MountFinder™" class="sub-nav-finder" href="/en_US/mountfinder/">MountFinder<sup>™</sup></a>
+                                    </li>
+                                    <li>
+                                        <a title="HeightFinder™" class="sub-nav-finder" href="/en_US/heightfinder/">HeightFinder<sup>™</sup></a>
+                                    </li>
+
+                                                                        <li class="sub-nav" aria-expanded="false"><a title="Learn" href="/en_US/learn/">Learn</a>
+                                        <div class="nav-level">
+                                            <div class="nav-level-header">
+                                                <span class="nav-label">Learn</span>
+                                                <a class="nav-back">Back</a>
+                                            </div>
+                                            <ul class="learn-nav clearfix">
+                                                <li class="mobile-link">
+                                                    <a title="Learn Home" href="/en_US/learn/">Learn Home</a>
+                                                </li>
+                                                <li>
+                                                    <a title="Why Mount" href="/en_US/learn/why-mount/">
+                                                        <img src="/img/brands/sanus/menu/learn/why-mount.jpg" alt="Thumbnail for Why Mount">
+                                                        Why Mount
+                                                    </a>
+                                                </li>
+                                                                                                    <li>
+                                                        <a title="Which Solution" href="/en_US/learn/which-solution/">
+                                                            <img src="/img/brands/sanus/menu/learn/which-solution.jpg" alt="Thumbnail for Which Solution">
+                                                            Which Solution
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a title="Product Technologies" href="/en_US/learn/product-technologies/">
+                                                            <img src="/img/brands/sanus/menu/learn/product-technologies.jpg" alt="Thumbnail for Product Technologies">
+                                                            Product Technologies
+                                                        </a>
+                                                    </li>
+                                                                                                <li>
+                                                    <a title="TV Safety" href="/en_US/learn/tv-safety/">
+                                                        <img src="/img/brands/sanus/menu/learn/tv-safety.jpg" alt="Thumbnail for TV Safety">
+                                                        TV Safety
+                                                    </a>
+                                                </li>
+                                                                                                                                                            <li>
+                                                            <a title="EcoSystem" href="/en_US/learn/ecosystem/">
+                                                                <img src="/img/brands/sanus/menu/learn/ecosystem.jpg" alt="Thumbnail for EcoSystem">
+                                                                EcoSystem
+                                                            </a>
+                                                        </li>
+                                                                                                                                                                                                        <li>
+                                                    <a title="Recycle" href="/en_US/learn/recycle/">
+                                                        <img src="/img/brands/sanus/menu/learn/recycle.png" alt="Thumbnail for Recycle">
+                                                        Recycle
+                                                    </a>
+                                                </li>
+                                                                                                    <li>
+                                                        <a title="Picking The Right Mount" href="http://info.sanus.com/the-ultimate-guide-to-picking-and-installing-a-tv-mount" target="_self">
+                                                            <img src="/img/brands/sanus/menu/learn/picking-and-installing.jpg" alt="Thumbnail for Picking &amp; Installing">
+                                                            Picking The Right Mount
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a title="Installing Your Mount" href="/en_US/learn/installing-your-mount/" target="_self">
+                                                            <img src="/img/brands/sanus/menu/learn/learn_thumbs_install.jpg" alt="Thumbnail for Installing Your Mount">
+                                                            Installing Your Mount
+                                                        </a>
+                                                    </li>
+                                                                                                                                                    <li>
+                                                        <a title="Blog" href="/en_US/blog/">
+                                                            <img src="/img/brands/sanus/menu/learn/blog.jpg" alt="Thumbnail for Blog">
+                                                            Blog
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+                                        </div>
+                                    </li>
+                                                                        <li class="sub-nav" aria-expanded="false">
+                                        <a title="Support" href="/en_US/support/">Support</a>
+                                        <div class="nav-level">
+                                            <div class="nav-level-header">
+                                                <span class="nav-label">Support</span>
+                                                <a class="nav-back">Back</a>
+                                            </div>
+                                            <ul class="tools-nav">
+                                                                                            <li>
+                                                    <a title="Product Registration" href="/en_US/registration/">
+                                                        <span class="image support-registration"></span>
+                                                        <span class="title">Product Registration</span>
+                                                        <span class="description">
+                                                            Which great SANUS product did you choose? All we need is a little info and a few seconds of your time.
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                <li>
+                                                    <a title="Warranty Information" href="/en_US/warranty-information/">
+                                                        <span class="image support-warranty"></span>
+                                                        <span class="title">Warranty Information</span>
+                                                        <span class="description">
+                                                                                                                        All SANUS products are covered by a limited product warranty. See what kind of coverage your product has.
+                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </li>
+                                                                                                                <li class="mobile-login"><a id="find-stores-mobile" title="Find Stores" href="/en_US/stores/">Find Stores</a></li>
+                                    
+                                                                                                                <li class="mobile-login"><a title="Login" href="/en_US/user/login/">Login</a></li>
+                                                                                                        </ul>
+                                <div class="language-selector-menu-mobile">
+                                    <label class="language-selector">You are currently located:</label>
+                                                                            <div id="locale-mobile-menu-wrap" class="select-styled-wrap"></div>
+                                    
+                                                                            <div id="language-mobile-menu-wrap" class="select-styled-wrap"></div>
+                                    
+                                    <button id="changeConfirm-mobile">Submit</button>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <form id="main-site-search" class="right product-search" action="/en_US/search/" role="search">
+                    <div class="search-wrap input-wrap">
+                        <input id="header-search" class="input-search" name="q" type="text" placeholder="" value="" autocomplete="off">
+                        <input class="input-submit" type="submit" value="">
+                        <label for="header-search">
+                        Product, TV Model, and Zip</label>
+                    </div>
+
+                    <div id="autocompleteContainer">
+                        <div id="autocomplete" class="clearfix">
+                            <div id="searchproducts" class="left third">
+                                <h2>Popular Products</h2>
+
+                            </div>
+                            <div id="searchTvs" class="center third">
+                                <h2>Find Products for these TVs</h2>
+
+                            </div>
+                            <div id="searchrecommendations" class="right third">
+                                <h2>Recommendations</h2>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    
+	<article class="privacy-policy-page">
+
+		<header class="page-header">
+			<div class="site-centered clearfix">
+				<h1>
+					Privacy Policy
+				</h1>
+			</div>
+		</header>
+
+		<div class="site-centered clearfix">
+
+			<!-- Navigation Map -->
+<!-- OneTrust Privacy Notice start -->
+  
+  <!-- Container in which the privacy notice will be rendered -->
+  <div id="otnotice-2028b04e-1c2c-41dc-a6ea-27834ca2afa7" class="otnotice"><div class="otnotice-content"><ul class="otnotice-menu"><li class="otnotice-menu-section"><a href="#otnotice-section-df16873f-d948-40e1-bedc-59f7d862c9db">PRIVACY POLICY – YOUR PRIVACY RIGHTS </a></li><li class="otnotice-menu-section"><a href="#otnotice-section-a35388a0-4a17-47d2-99a0-5f36e1cbbf2a">SCOPE</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-56b87a5d-577a-45f8-b417-342581014bdf">TYPES OF PERSONAL INFORMATION WE COLLECT</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-ddb288db-42c7-4bae-9905-71b836684276">HOW WE COLLECT YOUR PERSONAL INFORMATION</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-9940f79d-034c-4494-8bf5-79ffb5b84613">HOW WE USE YOUR PERSONAL INFORMATION</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-42e169ef-ec5c-4f76-a5d5-53bfd33e6ae9">HOW WE SHARE YOUR PERSONAL INFORMATION</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-f5724c26-081f-454e-953a-164180107418">CHILDREN UNDER 16</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-116b070d-97e0-41ef-9c36-a6087213dd67">CHOICES REGARDING YOUR INFORMATION</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-03004dc0-b341-4ee1-b27e-daecc3a243a9">CALIFORNIA PRIVACY NOTICE</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-907e97da-8fa5-4581-9027-69b629a97b25">SECURITY</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-d172200e-84f3-4300-82e7-9307d4a81194">STORAGE OF INFORMATION</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-033ab8d5-492d-477e-9ae6-591cbe332246">LINKS</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-14553901-a182-4232-8194-26d886fb8967">HOW TO CONTACT US</a></li><li class="otnotice-menu-section"><a href="#otnotice-section-4c22358d-65e5-4474-9eb4-c87bcb67d709">CHANGES IN POLICY</a></li></ul><div class="otnotice-sections"><section class="otnotice-section" id="otnotice-section-df16873f-d948-40e1-bedc-59f7d862c9db"><h2 class="otnotice-section-header">PRIVACY POLICY – YOUR PRIVACY RIGHTS </h2><div class="otnotice-section-content"><p>&nbsp;Effective Date: June 15, 2020. Last Updated: June 15, 2020</p></div></section><section class="otnotice-section" id="otnotice-section-a35388a0-4a17-47d2-99a0-5f36e1cbbf2a"><h2 class="otnotice-section-header">SCOPE</h2><div class="otnotice-section-content"><p>This Privacy Policy (“Policy”) describes how Legrand North and Central America, LLC (“Legrand,” “we,” or “us”) treats personal information we collect about you, including through our websites, applications, and platforms where the Policy is located (the “Platform”).</p><p>If you are a California resident, please <a href="#CCPA">click here</a> to view our CALIFORNIA PRIVACY NOTICE. If you are an EU resident, please <a href="https://www.legrand.fr/politique-de-confidentialite">click here</a> for Legrand’s EU Privacy Policy.</p></div></section><section class="otnotice-section" id="otnotice-section-56b87a5d-577a-45f8-b417-342581014bdf"><h2 class="otnotice-section-header">TYPES OF PERSONAL INFORMATION WE COLLECT</h2><div class="otnotice-section-content"><p>Legrand collects personal information from you and about you. Here are some examples of the personal information we may collect:</p><p><br></p><ul><li><strong>Identifying Information. </strong>For example, we may collect your name and nickname, mailing address, unique personal identifiers, online identifiers, telephone and/or mobile number and email address.</li><li><strong>Payment Information.</strong> For example, we may collect your credit card number and billing address. We may also collect your social security number for customer reimbursements.</li><li><strong>Account Information. </strong>If you create an account with us, we may collect your account log-in or name, customer ID, and your password.</li><li><strong>Social Media Information.</strong> We may collect personal information you post on our social media pages. We may also collect your social media profile information and personal information posted on your page.</li><li><strong>Employment Information. </strong>For example, if you apply for a job with us, we collect the personal information you include in your application. For example, this may include the name and address of your employer and your employment history. We may also collect information about your education history.</li><li><strong>Information You Post or Submit. </strong>We may collect personal information you post in a public space on our Platform. We may collect personal information when you send us a message through the “Contact Us” page or similar features on our Platform. If you call into customer service support, we may keep a recording of the conversation for training and quality assurance purposes.</li><li><strong>Demographic Information. </strong>We may collect your age, gender and location/zip code, marital status, income range, and details about your home e.g., if you rent or own, square footage, room descriptions.</li><li><strong>Commercial Information and Inferences. </strong>We may collect personal information that could identify you and relates to the products or services in which you are interested, or have considered or purchased. We may also collect personal information about your shopping habits, product feedback and preferences, or consuming history or tendencies. If you are making a purchase on behalf of your employer or company, we may collect information about that business and your role.</li><li><strong>Product Information.</strong> We may collect some information from our products. This may include your name, email address, physical location, and internal IP address. We may also collect your device’s username and password as well as information regarding how you use our products, e.g., telemetry data, information on your settings, offline/online status. We may also collect information about how you use our products, including device placement within the home and product setup information.</li><li><strong>Device Information. </strong>For example, we may collect the type of device you use to access our Platform. We may also collect your browser information, device identifier, hardware or firmware version, MAC or IP address, or mobile operating system.</li><li><strong>Location Information.</strong> For example, we may collect precise location information from your device. This may include information about your exact location when you use our Platform.</li><li><strong>Internet Information. </strong>If you use our website, we may collect information about the browser you are using or your browsing or search history. We might look at what site you came from, or what site you visit when you leave us. We may also collect information about how you interact with an advertisement. We may also use a function in HTML emails to track which users open emails and which links they click.</li></ul></div></section><section class="otnotice-section" id="otnotice-section-ddb288db-42c7-4bae-9905-71b836684276"><h2 class="otnotice-section-header">HOW WE COLLECT YOUR PERSONAL INFORMATION</h2><div class="otnotice-section-content"><p>Legrand collects your personal information in different ways. Below are some examples of how we may collect your personal information.</p><p><br></p><p class="ql-indent-1"><strong>Directly From You.</strong> For example, when you:</p><p class="ql-indent-2">Register for an account (either on one of our Websites or through one of our product apps).</p><p class="ql-indent-2">Purchase a product.</p><p class="ql-indent-2">Place a product in your shopping cart or save a product in your online shopping cart.</p><p class="ql-indent-2">Sign up to “get the latest information” or other LNCA newsletters or updates.</p><p class="ql-indent-2">Install and utilize our product.</p><p class="ql-indent-2">Register for a product warranty or submit a warranty claim.</p><p class="ql-indent-2">Submit a request to, or engage with, our customer service team or technical support team, including through the chat feature on one of our websites. </p><p class="ql-indent-2">Provide your information at a trade show or event we host or participate in.</p><p class="ql-indent-2">Participate in a promotion or sweepstakes.</p><p class="ql-indent-2">Interact with our social media pages.</p><p class="ql-indent-2">Apply for a job through our Platform.</p><p class="ql-indent-2">Participate in interactive features of the Platform.</p><p class="ql-indent-2">Fill out a form on our Platform, e.g., signing up for product updates and special offers or submitting a product review.</p><p class="ql-indent-2">Sign up for training through Legrand AV University or attend a webinar.</p><p class="ql-indent-2">Otherwise communicate with us.</p><p class="ql-indent-1"><strong>Passively.</strong> For example, when you:</p><p class="ql-indent-2">Visit or use our Platform on any device, e.g. browsing a website, using a mobile application to manage a connected device.</p><p class="ql-indent-2">Enable location-based features on our Platform.</p><p class="ql-indent-2">We may also collect personal information about users over time and across different websites, apps and devices when you use the Platform. Third parties also collect personal information this way on our Platform.&nbsp;</p><p class="ql-indent-1"><strong>From Third Parties.</strong> We may receive personal information about you from other sources. For example, this may include receiving personal information from:</p><p class="ql-indent-2">Our business partners, including online advertising networks and third-parties that collect and aggregate product reviews.</p><p class="ql-indent-2">Social media sites, including Facebook, Twitter, YouTube, Pinterest, LinkedIn, Snapchat and Instagram.</p><p class="ql-indent-1"><strong>By Combining Information.</strong> For example, we may:</p><p class="ql-indent-2">Combine personal information that we collect offline with personal information we collect through our Platform. </p><p class="ql-indent-2">Combine personal information we collect about you from the different devices you use to access our Platform.</p><p class="ql-indent-2">Combine personal information we get from third parties with information we already have about you.&nbsp;</p></div></section><section class="otnotice-section" id="otnotice-section-9940f79d-034c-4494-8bf5-79ffb5b84613"><h2 class="otnotice-section-header">HOW WE USE YOUR PERSONAL INFORMATION</h2><div class="otnotice-section-content"><p>Examples of how we may use your personal information include:</p><p><br></p><ul><li><strong>To Provide Our Products and Services. </strong>This could include providing online commerce capabilities, fulfilling your requests for products or services, and processing payments, purchases or other transactions.</li><li><strong>To Provide Shopping and Product Support and Respond to Warranty Claims. </strong>This may include information necessary to assist with product purchasing, respond to a product support issue, or process a warranty claim. </li><li><strong>To Process Transactions. </strong>This could include sending you related information, including confirmation notices and invoices.</li><li><strong>To Provide You with Updates. </strong>This may include sending you technical notices, update notices, security alerts and support and administrative messages.</li><li><strong>To Improve Our Products and Services.</strong> We may use your personal information to make our Platform, products and services better. We may also use your personal information to customize your experience with us.</li><li><strong>To Understand Your Interests. </strong>For example, we may use your personal information to better understand what products interest you. This may include monitoring and analyzing trends, usage and activities in connection with your use of the Platform or Legrand devices.</li><li><strong>To Respond to Your Requests or Questions. </strong>This may include responding to your feedback.</li><li><strong>To Communicate with You. </strong>We may communicate with you about your account or our relationship. We may also contact you about this Policy or our Platform terms and conditions.</li><li><strong>To Host Events and Webinars. </strong>We may hold in-person and virtual discussions and tutorial to share information about product features, hold product installation trainings, etc.</li><li><strong>For Marketing Purposes.</strong> We may provide you with information about new products and special offers. We might use your personal information to serve you ads about products and offers. We might tell you about new features or updates. These might be third party offers or products we think you might find interesting. We may also use your personal information to send you electronic communications, including through email. We and our partners may engage in interest-based advertising using information gathered across multiple websites, devices, or other platforms. For more information about your choices related to these communications, see the Choices&nbsp;section below.</li><li><strong>For Security Purposes.</strong> This could include protecting our company and consumers who use our products and services. It may also include protecting our Platform or investigating a potential fraud.</li><li><strong>To Send Alert Notifications.</strong> If you use our mobile apps to manage a connected device, we may send you push notifications and alerts via text and email based on service configurations and thresholds or if a device goes offline.</li><li><strong>As Otherwise Permitted by Law or As We May Notify You.</strong></li></ul></div></section><section class="otnotice-section" id="otnotice-section-42e169ef-ec5c-4f76-a5d5-53bfd33e6ae9"><h2 class="otnotice-section-header">HOW WE SHARE YOUR PERSONAL INFORMATION</h2><div class="otnotice-section-content"><p>We may share your personal information in the following ways:</p><p><br></p><ul><li><strong>Internally. </strong>We may share your personal information with our parent company, affiliates and subsidiaries.</li><li><strong>On our Platform.</strong> For example, we may publically display personal information you post on our social media sites.</li><li><strong>With Our Service Providers. </strong>We may share your personal information with third parties who perform services on our behalf. For example, this may include service providers that:</li><li class="ql-indent-1">Send emails of text messages on our behalf.</li><li class="ql-indent-1">Provide logistic support, such as product shipment or delivery.</li><li class="ql-indent-1">Assist in provide customer support services.</li><li class="ql-indent-1">Help us run our Platform, including vendors that provide cloud computing services.</li><li class="ql-indent-1">Provide security to our Platform and data collected by LNCA.</li><li class="ql-indent-1">Provide data analytics support, including third-party platforms that help us store and organize consumer data. This may include third parties that provide data back-up services.</li><li class="ql-indent-1">Process payments on our behalf.</li><li class="ql-indent-1">Help us serve advertisements, including digital advertisements.</li><li><strong>With Our Business Partners. </strong>For example, we may also share personal information with social media sites, advertisers, media buying agencies, advertising networks and advertising service providers. </li><li><strong>With Third Parties for Marketing Purposes. </strong>We may contract with third-party advertising companies and social media companies to display ads on our Websites. These companies may use cookies and similar technologies to try to tailor the ads you see online to your interests based on your activity over time across our Service and other sites, or your interaction with our emails. These ads are known as "interest-based advertisements."</li><li>With Any Successors to All or Part of Our Business or One of Our Brands. For example, if Legrand merges with, acquires or is acquired, or sells a brand or part of its business to another business entity. This may include an asset sale, corporate reorganization or other change of control. We may sell or transfer our customer personal information as an asset or as part of a larger transaction action.</li><li><strong>To Comply with the Law or To Protect Ourselves. </strong>For example, this could include responding to a court order or subpoena. It could also include sharing personal information if a government agency or investigatory body requests. We might share personal information when we are investigating a potential fraud. </li><li><strong>For Other Reasons We May Describe to You at the Time of Collection.&nbsp;</strong></li></ul></div></section><section class="otnotice-section" id="otnotice-section-f5724c26-081f-454e-953a-164180107418"><h2 class="otnotice-section-header">CHILDREN UNDER 16</h2><div class="otnotice-section-content"><p>The Platform where this Policy is located are meant for adults. We do not knowingly collect personally identifiable data from persons under the age of 16, and strive to comply with the provisions of COPPA (The Children’s Online Privacy Protection Act). If you are a parent or legal guardian and think your child under 16 has provided us with personal information, please contact us <a href="https://privacyportal.onetrust.com/webform/4aa8bac5-47ac-4750-be6d-8cdf58c13ae1/8bd0f10a-29b7-49fd-9d1f-d695cdbfad6a" rel="noopener noreferrer" target="_blank">here</a>. You can also write to us at the address listed at the end of this website Policy. Please mark your inquiries “COPPA Information Request.” Parents, you can learn more about how to protect children's privacy on-line&nbsp;<a href="https://www.consumer.ftc.gov/articles/0031-protecting-your-childs-privacy-online" rel="noopener noreferrer" target="_blank">here</a>.</p></div></section><section class="otnotice-section" id="otnotice-section-116b070d-97e0-41ef-9c36-a6087213dd67"><h2 class="otnotice-section-header">CHOICES REGARDING YOUR INFORMATION</h2><div class="otnotice-section-content"><p>You have certain choices about how we use your personal information. Certain choices you make are browser and device specific.</p><p><br></p><p><strong>Marketing Communications:</strong></p><p>You can opt out of receiving our marketing communications. Note that you will still receive transactional messages from us, including information about your account and responses to your inquiries. To opt out of receiving our marketing communications, you can follow the instructions contained in the communication.</p><p><br></p><p><strong>Cookies &amp; Other Tracking Technologies:</strong></p><ul><li>Your browser may give you the ability to control cookies or other tracking tools. How you do so depend on the type of tool. Certain browsers can be set to reject browser cookies. To control flash cookies, which we may use on certain websites from time to time, you can go <a href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html" rel="noopener noreferrer" target="_blank">here</a>.&nbsp;Why?&nbsp;Because flash cookies cannot be controlled through your browser settings.</li></ul><p><br></p><p><strong>Our Do Not Track Policy:</strong></p><ul><li>Some browsers have “do not track” features that allow you to tell a website not to track you. These features are not all uniform. We do not currently respond to those signals.&nbsp;If you block cookies, certain features on our sites may not work.&nbsp;If you block or reject cookies, not all of the tracking described here will stop.</li></ul></div></section><section class="otnotice-section" id="otnotice-section-03004dc0-b341-4ee1-b27e-daecc3a243a9"><h2 class="otnotice-section-header">CALIFORNIA PRIVACY NOTICE</h2><div class="otnotice-section-content"><p>The California Consumer Privacy Act (“CCPA”) requires us to make specific disclosures about how we collect, use and share the personal information of California residents who are subject to CCPA (“California Consumer Personal Information”). CCPA also grants such California residents certain rights related to their personal information.</p><p><br></p><p>This section of our Privacy Policy explains our online and offline collection of California Consumer Personal Information, and includes instructions for California residents who wish to exercise their rights under CCPA. Note that this section does not apply to the personal information of California residents that we collect in the employment context or in certain business transactions. This section applies only to information that is collected or stored by Legrand and does not include information that is collected by users of Legrand’s products and stored locally or in media controlled by users.</p><p><br></p><ul><li>We collect California Personal Information as described in the “HOW WE COLLECT YOUR PERSONAL INFORMATION” section of this Policy</li><li>We use the California Personal Information we collect for “business purposes” and “commercial purposes” as these terms are defined in CCPA. These purposes are as described in the “HOW WE USE YOUR PERSONAL INFORMATION” section of this Policy.</li><li>We share California Personal Information we collect with third parties as described in the “HOW WE SHARE PERSONAL INFORMATION” section of this Policy.</li><li>In the past 12 months, we may have “sold” (as this term is defined in CCPA) the following categories of California Personal Information to third parties: identifiers (e.g., online identifiers and internet protocol addresses); internet or other electronic network activity information; commercial information and geolocation information. We note that the “sale” of such categories of personal information occurs primarily through exchanging this information with media and advertising companies through our use of cookies and our online advertising practices.</li><li><strong>California resident rights under CCPA. </strong>Subject to certain exclusions included in CCPA, and as relevant to our operations, California residents have the rights listed below. We may take steps to verify your identity, as permitted or required under CCPA, before we process your request.</li><li class="ql-indent-1"><strong>Access.</strong> This means that you may request that we disclose to you the categories and specific pieces of personal information we have collected about you.</li><li class="ql-indent-1"><strong>Deletion.</strong> This means that you may request that we delete any personal information about you which we have collected from you.</li><li class="ql-indent-1"><strong>Notice. </strong>This means that you may request that we disclose the categories of personal information we collect about you; the sources from which such personal information is collected; the “business” or “commercial” purposes (as these terms are defined in CCPA) for collecting this personal information; the categories of third parties with whom the business shares personal information; and the specific pieces of personal information we have collected about you.</li><li class="ql-indent-1"><strong>Opt-Out. </strong>This means you can request that we not “sell” “personal information” to third parties. If you would like to opt-out of allowing us to “sell” your “personal information,” please click <a href="https://privacyportal.onetrust.com/webform/4aa8bac5-47ac-4750-be6d-8cdf58c13ae1/8bd0f10a-29b7-49fd-9d1f-d695cdbfad6a" rel="noopener noreferrer" target="_blank">here </a>or follow the instructions below.</li><li class="ql-indent-1"><strong>Equal prices and services. </strong>This means that we are prohibited from discriminating against you if you exercise your rights under CCPA.</li><li><strong>California residents who wish to exercise their rights under this section may submit an inquiry to us through the webform accessible </strong><a href="https://privacyportal.onetrust.com/webform/4aa8bac5-47ac-4750-be6d-8cdf58c13ae1/8bd0f10a-29b7-49fd-9d1f-d695cdbfad6a" rel="noopener noreferrer" target="_blank"><strong>here</strong></a><strong>. You may also call us, toll-free, at [insert]. Please indicate you are a California resident making a “CCPA” request. California residents may also appoint an agent to make such requests on their behalf. If an agent submits a request on your behalf, we may ask the agent to provide additional information to verify the authenticity of the request.</strong></li></ul><p class="MsoNormal ql-align-justify"><br></p><p>Cal. Civ. Code 1798.83 (the “Shine the Light” law) grants our California resident customers the right to ask us one time each year if we have shared personal information with third parties for their direct marketing purposes. To make a request, please send us an email at [insert email address] or&nbsp;write to us at the address listed below. Indicate in your email or letter that you are a California resident making a “California Shine the Light” inquiry.</p><p class="MsoListParagraphCxSpLast"><br></p><p class="MsoListParagraphCxSpLast"><br></p>
+
+
+
+
+
+
+<table style="width:100%">
+  <tbody><tr>
+    <th>We may collect this category of California Consumer Personal Information.</th>
+    <th>Do we use and share this category of personal information for “business purposes?”</th>
+    <th>Do we use and share this category of personal information for “commercial purposes?”</th>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Identifiers</span></td>
+    <td>YES</td>
+    <td>YES</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Customer records containing personal information</span></td>
+    <td>YES</td>
+    <td>YES</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Characteristics of protected classifications under California or federal law</span></td>
+    <td>YES</td>
+    <td>NO</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Commercial information</span></td>
+    <td>YES</td>
+    <td>YES</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Internet or other electronic network activity information</span></td>
+    <td>YES</td>
+    <td>YES</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Geolocation data</span></td>
+    <td>YES</td>
+    <td>NO</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Audio, electronic or similar information</span></td>
+    <td>YES</td>
+    <td>NO</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Professional or employment-related information</span></td>
+    <td>YES</td>
+    <td>NO</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Non-public personal education information</span></td>
+    <td>YES</td>
+    <td>NO</td>
+  </tr>
+  <tr>
+    <td><span style="font-weight:bold">Inferences drawn from the above categories of information to create a profile about preferences</span></td>
+    <td>YES</td>
+    <td>YES</td>
+  </tr>
+</tbody></table></div></section><section class="otnotice-section" id="otnotice-section-907e97da-8fa5-4581-9027-69b629a97b25"><h2 class="otnotice-section-header">SECURITY</h2><div class="otnotice-section-content"><p>The Internet is not 100% secure. We cannot promise that your use of our Platform will be completely safe. We encourage you to use caution when using the Internet. We use reasonable means to safeguard personal information under our control.&nbsp;A username and password are needed to access certain areas of the Legrand Platform. It is your responsibility to protect your username and password.</p></div></section><section class="otnotice-section" id="otnotice-section-d172200e-84f3-4300-82e7-9307d4a81194"><h2 class="otnotice-section-header">STORAGE OF INFORMATION</h2><div class="otnotice-section-content"><p>Information we maintain may be stored in or outside of the United States. If you live outside of the United States, you understand and agree that we may transfer your personal information to the United States. This Platform is intended for use in the United States and is subject to the laws of the United States, which may not provide the same level of protections as those in your own country.</p></div></section><section class="otnotice-section" id="otnotice-section-033ab8d5-492d-477e-9ae6-591cbe332246"><h2 class="otnotice-section-header">LINKS</h2><div class="otnotice-section-content"><p>Our Platform may contain links to other third party sites that are not governed by this Policy. If you click on a link to a third party site, you will be taken to a site we do not control.&nbsp;We are not responsible for the privacy practices used by third party sites. We suggest that you read the privacy policies of those sites carefully. We are not responsible for these third party sites.</p></div></section><section class="otnotice-section" id="otnotice-section-14553901-a182-4232-8194-26d886fb8967"><h2 class="otnotice-section-header">HOW TO CONTACT US</h2><div class="otnotice-section-content"><p>If you have any questions, comments or concerns with respect to our privacy practices or this Policy, or wish to update your information, please feel free to contact us <a href="https://privacyportal.onetrust.com/webform/4aa8bac5-47ac-4750-be6d-8cdf58c13ae1/8bd0f10a-29b7-49fd-9d1f-d695cdbfad6a" rel="noopener noreferrer" target="_blank">here</a>. You may also write to us at the following address:</p><p><br></p><p class="ql-indent-1">Legrand North and Central America</p><p class="ql-indent-1">60 Woodlawn Street</p><p class="ql-indent-1">West Hartford, CT 06110</p></div></section><section class="otnotice-section" id="otnotice-section-4c22358d-65e5-4474-9eb4-c87bcb67d709"><h2 class="otnotice-section-header">CHANGES IN POLICY</h2><div class="otnotice-section-content"><p>From time to time, we may change our Policy. We will notify you of any material changes to our Policy as required by law. We will also post an updated copy on our Platform. Please check our Platform periodically for updates.&nbsp;</p></div></section></div><div class="otnotice-version"></div></div></div>
+  
+  
+  
+  
+    
+  <!-- OneTrust Privacy Notice end -->
+
+		</div>
+
+	</article>
+
+
+
+    <footer class="site-footer">
+        <div class="site-footer-top site-wrapper">
+
+            <nav class="site-footer-nav clearfix site-centered" aria-label="Footer Expanded Navigation">
+                <ul class="full">
+                    <li>
+                        <a title="Products" href="/en_US/products/">Products</a>
+                        <ul>
+                                                            <li><a title="Mounts" href="/en_US/products/mounts/">Mounts</a></li>
+                                                            <li><a title="Furniture" href="/en_US/products/furniture/">Furniture</a></li>
+                                                            <li><a title="Racks" href="/en_US/products/racks/">Racks</a></li>
+                                                            <li><a title="Speaker Stands" href="/en_US/products/speaker-stands/">Speaker Stands</a></li>
+                                                            <li><a title="Accessories" href="/en_US/products/accessories/">Accessories</a></li>
+                                                                                        <li><a title="Designed for Sonos" href="/en_US/designed-for-sonos/">Designed for Sonos</a></li>
+                                                    </ul>
+                    </li>
+                                        <li>
+                        <a title="Learn" href="/en_US/learn/">Learn</a>
+                        <ul>
+                            <li><a title="Why Mount" href="/en_US/learn/why-mount/">Why Mount</a></li>
+                                                            <li><a title="Which Solution" href="/en_US/learn/which-solution/">Which Solution</a></li>
+                                <li><a title="Product Technologies" href="/en_US/learn/product-technologies/">Product Technologies</a></li>
+                                                        <li><a title="TV Safety" href="/en_US/learn/tv-safety/">TV Safety</a></li>
+                                                                                                <li><a title="EcoSystem" href="/en_US/learn/ecosystem/">EcoSystem</a></li>
+                                                                
+                                                        <li><a title="Recycle" href="/en_US/learn/recycle/">Recycle</a></li>
+                                                            <li><a title="Picking The Right Mount" href="http://info.sanus.com/the-ultimate-guide-to-picking-and-installing-a-tv-mount" target="_self">Picking The Right Mount</a></li>
+                                <li><a title="Installing Your Mount" href="/en_US/learn/installing-your-mount/" target="_self">Installing Your Mount</a></li>
+                                                                                        <li><a title="Blog" href="/en_US/blog/">Blog</a></li>
+                                                    </ul>
+                    </li>
+                                        <li>
+                        <a title="Tools" href="/en_US/tools/">Tools</a>
+                        <ul>
+                            <li><a title="MountFinder" href="/en_US/mountfinder/">MountFinder</a></li>
+                            <li><a title="HeightFinder" href="/en_US/heightfinder/">HeightFinder</a></li>
+                                                                                                                </ul>
+                    </li>
+                                            <li>
+                            <a title="Media" href="/en_US/media/">Media</a>
+                            <ul>
+                                <li><a title="Image Library Access" href="/en_US/media/image-library-access/">Image Library Access</a></li>
+                                <li><a title="Brand Assets" href="/en_US/media/brand-assets/">Brand Assets</a></li>
+                                <li><a title="Ad Campaign Assets" href="/en_US/media/ad-campaign-assets/">Ad Campaign Assets</a></li>
+                                <li><a title="Literature" href="/en_US/media/literature/">Literature</a></li>
+                                <li><a title="News Articles" href="/en_US/media/category/news-articles/">News Articles</a></li>
+                                <li><a title="Press Releases" href="/en_US/media/category/press-releases/">Press Releases</a></li>
+                                <li><a title="Awards" href="/en_US/media/category/awards/">Awards</a></li>
+                            </ul>
+                        </li>
+                                        <li>
+                        <a title="Support" href="/en_US/support/">Support</a>
+                        <ul>
+                                                    <li><a title="Product Registration" href="/en_US/registration/">Product Registration</a></li>
+                                                                                    <li><a title="Warranty Information" href="/en_US/warranty-information/">Warranty Information</a></li>
+                            
+                        </ul>
+                    </li>
+                                    </ul>
+                <ul class="sub-links left">
+                                            <li><a title="Brands" href="/en_US/brands/">Brands</a></li>
+                                                                <li><a title="Promotional" href="/en_US/promo/">Promotional</a></li>
+                                        <li><a title="Contact" href="/en_US/contact/">Contact</a></li>
+                                            <li><a title="Store Locator" href="/en_US/stores/">Store Locator</a></li>
+                                                            <li><a title="Corporate Information" href="/en_US/corporate-information/">Corporate Information</a></li>                    <li><a title="Privacy Policy" href="/en_US/privacy-policy/">Privacy Policy</a></li>
+                                        <li><a title="Terms &amp; Conditions" href="/en_US/terms-conditions/">Terms &amp; Conditions</a></li>                </ul>
+                
+            </nav>
+            
+        </div>
+
+        <div class="site-social-bottom site-wrapper">
+            <div class="site-centered social-list-nav" aria-label="Social media navigation">
+                            <p>FOLLOW US FOR EXCLUSIVE OFFERS AND PROMOTIONS</p>
+                <ul>
+                    <li><a class="facebook" title="Facebook" href="http://facebook.com/SanusSystems/" target="_blank" aria-label="Link to SANUS Facebook account">Facebook</a></li>
+                    <li><a class="twitter" title="Twitter" href="http://twitter.com/sanussystems/" target="_blank" aria-label="Link to SANUS Twitter account">Twitter</a></li>
+                    <li><a class="youtube" title="YouTube" href="http://youtube.com/sanussystems/" target="_blank" aria-label="Link to SANUS YouTube account">YouTube</a></li>
+                    <li><a class="pinterest" title="Pinterest" href="http://pinterest.com/sanus/" target="_blank" aria-label="Link to SANUS Pinterest account">Pinterest</a></li>
+                </ul>
+                                <!-- OneTrust Cookies Settings button start -->
+<button id="ot-sdk-btn" class="ot-sdk-show-settings"> Cookie&nbsp;Settings</button>
+<!-- OneTrust Cookies Settings button end -->
+            </div>
+            
+        </div>
+        
+
+        <div class="site-footer-bottom site-wrapper">
+            <div class="site-centered">
+                <p class="full">© 2021 Legrand AV. All rights reserved.</p>
+            </div>
+        </div>
+                <button class="chat-btn" onclick="openChat()" title="Live Chat">Live Chat</button>
+            </footer>
+    
+
+    </div>
+    <!-- jQuery -->
+    
+     <!-- added to support jquery address -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+        
+    
+    
+
+    
+        
+        
+      
+    
+    
+    
+
+    <!--fire below pixel on click event-->
+    
+    
+        
+    
+    
+    
+        
+       
+    
+
+</body></html>

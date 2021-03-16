@@ -53,10 +53,8 @@ class Converter(Module):
         
         jobs = filter(None, set([r["processed_policy"] for r in self.records]))
 
-        if p is None:
-            plain = [self.plain_webpage(j) for j in jobs]
-        else:
-            plain = p.map(self.plain_webpage, jobs)
+        plain = [self.plain_webpage(j) for j in jobs] \
+                if p is None else p.map(self.plain_webpage, jobs)
 
         for item in self.records:
             for policy, plain_policy in plain:
@@ -69,9 +67,6 @@ class Converter(Module):
 
     @classmethod
     def plain_webpage(cls, item):
-
-        if item is None:
-            return item, None
 
         with open(os.path.abspath(item), "r", encoding="utf-8") as f:
             text = f.read()
@@ -92,6 +87,10 @@ class Converter(Module):
             text = r[0].sub(r[1], text)
 
         policy = os.path.join(os.path.abspath(config.plain_policies), f"{os.path.basename(item)}.txt")
+
+        if len(text) < 2000:
+            return item, None
+
         with open(policy, "w", encoding="utf-8") as f:
             f.write(text)
 

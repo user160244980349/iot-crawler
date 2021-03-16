@@ -5,6 +5,7 @@ import re
 from multiprocessing import Pool
 
 from bs4 import BeautifulSoup
+from tools.arrays import flatten_list
 from html_sanitizer import Sanitizer
 
 import config
@@ -22,7 +23,7 @@ class Sanitization(Module):
     ]
 
     tags = [
-        "select", "option", "button", "style", "script", "form"
+        # "select", "option", "button", "style", "script", "form"
     ]
 
     indentation = re.compile(r'^(\s*)', re.MULTILINE)
@@ -39,10 +40,8 @@ class Sanitization(Module):
 
         jobs = filter(None, set([r["original_policy"] for r in self.records]))
 
-        if p is None:
-            sanitized = [self.clean_webpage(j) for j in jobs]
-        else:
-            sanitized = p.map(self.clean_webpage, jobs)
+        sanitized = [self.clean_webpage(j) for j in jobs] \
+                    if p is None else p.map(self.clean_webpage, jobs)
 
         for item in self.records:
             for policy, sanitized_policy, stats in sanitized:
@@ -127,7 +126,10 @@ class Sanitization(Module):
 
     @classmethod
     def prettify(cls, soup, indent_width=4):
-        return cls.indentation.sub(r"\1" * indent_width, soup.prettify())
+        try:
+            return cls.indentation.sub(r"\1" * indent_width, soup.prettify())
+        except (AttributeError, ValueError):
+            return ""
 
     @classmethod
     def remove_tags(cls, soup, **kwargs):

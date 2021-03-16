@@ -8,12 +8,12 @@ from crawler.modules.websites import Websites
 
 modules = [
 
-    Products(),
+    # Products(),
     # Websites(),
     # Policies(),
     # Downloader(),
-    # Sanitization(),
-    # Converter(),
-    # Efficiency(),
+    Sanitization(),
+    Converter(),
+    Efficiency(),
 
 ]

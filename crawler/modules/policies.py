@@ -27,10 +27,8 @@ class Policies(Module):
 
         jobs = filter(None, set([r["website"] for r in self.records]))
 
-        if p is None:
-            privacy_policies = [self.scrap_policies_urls(j) for j in jobs]
-        else:
-            privacy_policies = p.map(self.scrap_policies_urls, jobs)
+        privacy_policies = [self.scrap_policies_urls(j) for j in jobs] \
+                           if p is None else p.map(self.scrap_policies_urls, jobs)
 
         for item in self.records:
             for website, policy in privacy_policies:
@@ -52,14 +50,18 @@ class Policies(Module):
         )
 
     def template1(self, website, soup):
-        refs = soup.findAll("a")
 
-        for r in reversed(refs):
-            if self.privacy_link.match(self.sanitize_a.sub("", r.text.lower())):
+        try:
+            refs = soup.findAll("a")
+            for r in reversed(refs):
+                if self.privacy_link.match(self.sanitize_a.sub("", r.text.lower())):
 
-                m = self.href.match(r.get("href"))
-                if m is not None:
-                    return f"https://{self.http.sub('', website)}{m.group(5)}"
+                    m = self.href.match(r.get("href"))
+                    if m is not None:
+                        return f"http://{self.http.sub('', website)}{m.group(5)}"
+
+        except (AttributeError, TypeError):
+            self.logger.error("Policy is not found")
 
     @classmethod
     def scrap_policies_urls_base(cls, website_url, templates):

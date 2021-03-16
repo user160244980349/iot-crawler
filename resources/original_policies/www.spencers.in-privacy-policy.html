@@ -1,0 +1,825 @@
+<html lang="en-US">
+    <body data-container="body" class="cms-privacy-policy cms-page-view page-layout-1column" aria-busy="false">
+        <!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+    
+
+
+    
+<!-- BEGIN GOOGLE ANALYTICS CODE -->
+
+<!-- END GOOGLE ANALYTICS CODE -->
+<div class="popup-overlay"></div>
+<div class="filters-applied hidden-xs">
+    <div class="ajax_loader_image">
+        <img style="padding: 10px;" class="ajax_loading" src="https://media.spencers.in/static/version1613418532/frontend/Embitel/spencers/en_US/images/ajax-loader.gif" width="100" height="100">
+    </div>
+</div>
+<div class="page-wrapper"><header class="page-header"><div class="header content"><div class="right_header col-sm-4 pull-right no-padding">
+    <div data-block="minicart" class="minicart-wrapper">
+        <span class="mini_cart">
+            <a class="action showcart" href="https://www.spencers.in/checkout/cart/" data-bind="scope: 'minicart_content'">
+                <span class="text">My Cart </span>
+                <span class="counter qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
+                    <span class="counter-number"><!-- ko text: getCartParam('summary_count') -->0<!-- /ko --></span>
+                    <span class="counter-label">
+                    <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+                    </span>
+                </span>
+            </a>
+        </span>
+                    
+                
+        
+    <div class="block block-minicart" data-role="dropdownDialog" style="">
+                <h2 data-bind="scope: 'minicart_content'">
+                    <!-- ko ifnot: getCartParam('summary_count') -->
+                    My Cart                    <!-- /ko -->
+
+                    <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+                </h2>
+                <div class="minicart-scroll enscroll" style="width: 90px; padding-right: 10px; outline: currentcolor none medium; overflow: hidden;" tabindex="0">
+                    <div id="minicart-content-wrapper" data-bind="scope: 'minicart_content'">
+                        <!-- ko template: getTemplate() -->
+<div class="block-title">
+    <strong>
+        <span class="text"><!-- ko i18n: 'My Cart' --><span>My Cart</span><!-- /ko --></span>
+        <span class="qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false },
+                       attr: { title: $t('Items in Cart') }" title="Items in Cart">
+            <!-- ko text: getCartParam('summary_count') -->0<!-- /ko -->
+        </span>
+    </strong>
+</div>
+
+<div class="block-content">
+    <button type="button" id="btn-minicart-close" class="action close" data-action="close" data-bind="attr: { title: $t('Close') }" title="Close">
+        <span><!-- ko i18n: 'Close' --><span>Close</span><!-- /ko --></span>
+    </button>
+
+    <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+
+    <!-- ko ifnot: getCartParam('summary_count') -->
+        <div class="emp_msg subtitle empty" data-bind="visible: closeSidebar()">
+            <!-- ko i18n: 'Looks like your cart is empty' --><span>Looks like your cart is empty</span><!-- /ko -->
+        </div>
+        <!-- ko if: getCartParam('cart_empty_message') --><!-- /ko -->
+    <!-- /ko -->
+
+    <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
+
+    <div id="minicart-widgets" class="minicart-widgets">
+        <!-- ko foreach: getRegion('promotion') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!-- /ko -->
+    </div>
+</div>
+<!-- ko foreach: getRegion('sign-in-popup') --><!-- /ko -->
+<!-- /ko -->
+                    </div>
+                    <div id="empty-cart-content" data-bind="scope: 'minicart_content'">
+                        <!-- ko ifnot: getCartParam('summary_count') -->
+                        <div class="empty-img" style="text-align:center">
+                            <img alt="" src="https://media.spencers.in/static/version1613418532/frontend/Embitel/spencers/en_US/images/cart_not_registered.png">
+                            <div>Its time to start Shopping!</div>
+                        </div>
+                                                <!-- /ko -->
+                    </div>
+                </div>
+                <div data-bind="scope: 'minicart_content'">
+                    <!-- ko ifnot: getCartParam('summary_count') -->
+                    <div class="minicart-scroll view_my_acount" data-bind="scope: 'minicart_content'">
+                        <div class="my_acount_drop"><a tabindex="0" href="https://www.spencers.in/">Continue Shopping</a></div>
+                    </div>
+                    <!-- /ko -->
+                </div>
+                                    </div></div>
+    <div class="resp_search_icon visible-xs"></div>
+    <div class="header_icons pull-right">
+        <!--<div class="profile_img h_icons">
+            <span class="profile_icon sprite_header">&nbsp;</span>
+        </div>-->
+        <div class="customer-wrapper hidden-xs">
+            <div class="panel header">
+    <ul class="header links">
+        <li class="customer-welcome" id="update_customer_data">
+            <span class="customer-name" role="link" tabindex="0">
+                <button type="button" tabindex="-1" data-action="customer-menu-toggle" class="action switch">
+                    <span>Change</span>
+                </button>
+            </span>
+			<div class="customer-menu" data-target="dropdown">
+				<div class="triangle"></div>
+				<div class="dropdown-menu my_dropdown drop_accounts" style="display: block;">
+					<h2>My Account</h2>
+					<div class="content_drop_acount innerscroll enscroll" style="width: 90px; padding-right: 10px; outline: currentcolor none medium; overflow: hidden;" tabindex="0">
+						<div class="nr">
+							<img alt="product image" src="https://media.spencers.in/static/version1613418532/frontend/Embitel/spencers/en_US/images/not_registered_door.png">
+							<div>Not logged in or registered yet? <br> Join over 2,000 customers <span>@Spencer's</span>  </div>      
+						</div>
+						<div class="benefits">
+							<div>Makes fine living affordable</div>
+							<span>Flexible Payment Terms</span>
+							<span class="two">Delivery Tracking Guarenteed</span>
+
+						</div>
+						<div class="reg">
+							<a tabindex="0" class="myAnchor social-login" href="#social-login-popup" data-effect="mfp-move-from-top"> Register</a>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="view_my_acount">
+						<div class="my_acount_drop"><a tabindex="0" href="#social-login-popup" class="myAnchor social-login" data-effect="mfp-move-from-top">Log In</a></div>
+						<span id="logged_in" class="hidden" data-value="0"></span>
+					</div>
+				</div>
+			</div>
+        </li>
+    </ul>
+</div>
+        </div>
+
+
+        <div data-block="order-link" class="track_order h_icons">
+            <span class="sprite_header track_order_icon" id="minicart-orders">&nbsp;</span>
+            <div class="triangle02"></div>
+            
+
+            
+        <div class="block block-order dropdown-menu my_dropdown" data-role="dropdownDialog" style="">
+                <!--**********Static contnt here******-->
+				<div id="nonlogin_track_order">
+                    <h2>Tracking Order</h2>
+                    <div class="order_track enscroll" style="width: 90px; padding-right: 10px; outline: currentcolor none medium; overflow: hidden;" tabindex="0">
+                        <div class="nr">
+                            <div>You have no order to track.<br>  Please Login  or Register. </div>      
+                        </div>
+                        <div class="reg">
+                            <a tabindex="0" class="myAnchor show-reg-popup" href="javascript:void(0)" data-effect="mfp-move-from-top">Register</a>
+                        </div>
+                    </div>
+                    <div class="view_my_acount">
+                        <div class="my_acount_drop"><a tabindex="0" class="myAnchor login-authentication" href="javascript:void(0)" data-effect="mfp-move-from-top">Log In</a></div>
+                    </div>
+				</div>
+				<div id="minicart-orders-details"></div>
+                <!--**********Static contnt here******-->
+            </div></div>  
+        
+        
+        <div data-block="more-link" class="more h_icons dropdown">
+            <span class="showmore sprite_header more_icon">&nbsp;</span>
+            <div class="triangle04"></div>
+            
+            
+        <div class="block block-more dropdown-menu my_dropdown" data-role="dropdownDialog" style="">
+                <h2>More</h2>
+                <div class="content_drop_acount enscroll" style="width: 90px; padding-right: 10px; outline: currentcolor none medium; overflow: hidden;" tabindex="0">
+                    <div class="account_more_wrap">
+                        <ul class="col-sm-12">
+                            <li class="col-sm-6">
+                                <div class="my-account-item">
+                                    <a tabindex="0" href="https://www.spencers.in/shoppinglist/">
+                                        <div class=" sprite_header_2 img_top_drop"></div>
+                                        <p>Shopping List</p>
+                                        <span id="shoppinglist_items_count">
+					0 item</span>
+                                    </a>
+                                    <div class="border_hr"></div>
+                                </div>
+                            </li>
+                            <li class="col-sm-6">
+                                <div class="my-account-item">
+                                    <a tabindex="0" href="https://www.spencers.in/offers/">
+                                        <div class="sprite_header_3 img_top_drop_2"></div>
+                                        <p>Offers</p>
+                                        <span class="no_count"></span>
+                                    </a>
+                                    <div class="border_hr"></div>
+                                </div>
+                            </li>
+                            <li class="col-sm-6">
+                                <div class="my-account-item">
+                                    <a tabindex="0" href="https://www.spencers.in/spencer-kitchen.html/">
+                                        <div class="sprite_header_3 img_top_drop_3"></div>
+                                        <p>Spencer's Kitchen</p>
+                                        <span id="customer_recipes_count">0 New Recipe</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="col-sm-6">
+                                <div class="my-account-item">
+                                    <a tabindex="0" href="https://www.spencers.in/blog.html/">
+                                        <div class="sprite_header_3 img_top_drop_4"></div>
+                                        <p>Expert Corner</p>
+                                        <span class="no_count"></span>
+                                    </a> 
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div></div>
+    </div>
+</div>
+
+<span data-action="toggle-nav" class="action nav-toggle"><span>Toggle Nav</span></span>
+<div class="col-md-3 col-sm-2 col-xs-6" itemscope="" itemtype="http://schema.org/Organization">
+    
+    
+   
+    
+     
+   <a id="website" class="logo" href="https://www.spencers.in/" title="Spencer's Retail">
+        <img itemprop="logo" src="https://media.spencers.in/media/logo/stores/1/logo.png" alt="Spencer's Retail">
+    </a>
+        
+    
+    <a itemprop="url" href="https://www.spencers.in/" title="Spencer's Retail"></a>
+</div>
+
+<div class="block block-search col-md-5 col-sm-6 nselek">
+    <div class="block block-title"><strong>Search</strong></div>
+    <div class="block block-content" itemscope="" itemtype="https://schema.org/WebSite">
+        
+        <div class="search_bar_label"><span class="search_icon"></span>I'm looking for</div>
+        <form class="form minisearch" id="search_mini_form" action="https://www.spencers.in/catalogsearch/result/" method="get" itemscope="" itemtype="https://schema.org/SearchAction">
+            <div class="field search">
+                <!--<label class="label" for="search" data-role="minisearch-label">
+                    <span>Search</span>
+                </label>-->
+                <div class="control">
+                    
+                    <input id="search" type="text" name="q" value="" placeholder="" class="input-text" maxlength="30" role="combobox" aria-haspopup="false" aria-autocomplete="both" autocomplete="off" itemprop="query-input" data-block="autocomplete-form">
+                    <div class="search_bottom_border hidden-xs"></div>
+                    <div class="trending_recent_content">
+                        <div class="trending_recent_content_inner enscroll" style="width: 90px; padding-right: 10px; outline: currentcolor none medium; overflow: hidden;" tabindex="0">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="nested">
+    <a class="action advanced" href="https://www.spencers.in/catalogsearch/advanced/" data-action="advanced-search">
+        Advanced Search    </a>
+</div>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="cross_clr">x</div>
+                <button type="submit" title="Go" class="action search go_it" id="action_search_go_it" disabled="">
+                    <span>Go</span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div id="search_autocomplete" class="search-autocomplete"></div>
+</div>
+
+
+<ul class="compare wrapper"><li class="item link compare" data-bind="scope: 'compareProducts'" data-role="compare-products-link">
+    <a class="action compare no-display" title="Compare Products" data-bind="attr: {'href': compareProducts().listUrl}, css: {'no-display': !compareProducts().count}">
+        Compare Products        <span class="counter qty" data-bind="text: compareProducts().countCaption"></span>
+    </a>
+</li>
+
+</ul></div>        <div class="sections nav-sections">
+    <div class="section-items nav-sections-items" role="tablist" style="width: 270px; padding-right: 10px; outline: currentcolor none medium; overflow: hidden;" tabindex="0">
+        <div data-role="content" id="store.menu" class="section-item-content nav-sections-item-content" role="tabpanel" aria-hidden="false">
+            <nav class="navigation" id="nav-sec" data-action="navigation">
+                <ul class="nav store_account visible-xs">
+                    <li>
+                        <a href="https://www.spencers.in/storelocator/">
+                            <div class="header_store_icon"></div>
+                            <span class="current_mobile_store">Quest Mall Hyper</span>
+                        </a>
+                    </li>
+
+
+                        <li>
+                            
+                        </li>
+
+                        <li>
+                            
+    
+
+                            <a tabindex="0" href="javascript:void(0)" class="action login myAnchor mob_log_login">
+                               <div class="acLogo"></div>Log In</a>
+
+                    </li>
+                </ul>
+                <ul id="ui-id-4" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="menu" tabindex="0">
+<li class="level0 nav-1 first level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-5" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/fashion_women.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/fashion_women.png"></imgalt></div><span>Womens Fashion</span></a></li><li class="level0 nav-2 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-6" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/fashion_men.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/fashion_men.png"></imgalt></div><span>Mens Fashion</span></a></li><li class="level0 nav-3 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-7" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/fashion_kids.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/fashion_kids.png"></imgalt></div><span>Kids Fashion</span></a></li><li class="level0 nav-4 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-8" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/liquor.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/liquor.png"></imgalt></div><span>Liquor</span></a></li><li class="level0 nav-5 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-9" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/fruits_vegetables.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/fruits_vegetables.png"></imgalt></div><span>Fruits &amp; Vegetables</span></a></li><li class="level0 nav-6 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-10" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/groceries_stagples.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/groceries_stagples.png"></imgalt></div><span>Groceries &amp; Staples</span></a></li><li class="level0 nav-7 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-11" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/home_dining.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/home_dining.png"></imgalt></div><span>Home &amp; Dining</span></a></li><li class="level0 nav-8 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-12" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/electrical_electronics.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/electrical_electronics.png"></imgalt></div><span>Electricals &amp; Electronics</span></a></li><li class="level0 nav-9 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-13" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/organic_foods.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/organic_foods.png"></imgalt></div><span>Organic Food</span></a></li><li class="level0 nav-10 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-14" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/bakery_eggs_dairy.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/bakery_eggs_dairy.png"></imgalt></div><span>Bakery | Eggs &amp; Dairy</span></a></li><li class="level0 nav-11 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-15" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/coffee_tea_beverages.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/coffee_tea_beverages.png"></imgalt></div><span>Coffee | Tea &amp; Beverages</span></a></li><li class="level0 nav-12 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-16" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/packaged_foods.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/packaged_foods.png"></imgalt></div><span>Packaged Food</span></a></li><li class="level0 nav-13 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-17" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/pet_care.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/pet_care.png"></imgalt></div><span>Pet Care</span></a></li><li class="level0 nav-14 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-18" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/imported_gourmet.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/imported_gourmet.png"></imgalt></div><span>Imported &amp; Gourmet</span></a></li><li class="level0 nav-15 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-19" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/fish_meat.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/fish_meat.png"></imgalt></div><span>Fish &amp; Meat</span></a></li><li class="level0 nav-16 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-20" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/baby_care.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/baby_care.png"></imgalt></div><span>Baby Care</span></a></li><li class="level0 nav-17 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-21" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/personal_care.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/personal_care.png"></imgalt></div><span>Personal Care</span></a></li><li class="level0 nav-18 level-top parent ui-menu-item" role="presentation"><a href="javascript:void(0)" class="dropdown-toggle level-top ui-corner-all" aria-haspopup="true" id="ui-id-22" tabindex="-1" role="menuitem"><span class="ui-menu-icon ui-icon ui-icon-carat-1-e"></span><div class="level-top-cat-icon"><img src="https://www.spencers.in/media/catalog/category/v1/bathroom_cleaning.png"><imgalt src="https://www.spencers.in/media/catalog/category/v1/bathroom_cleaning.png"></imgalt></div><span>Bathroom &amp; Cleaning</span></a></li><li class="level0 nav-19 last level-top ui-menu-item" role="presentation"><a href="https://www.spencers.in/back-to-office.html" class="dropdown-toggle level-top ui-corner-all" id="ui-id-23" tabindex="-1" role="menuitem"><div class="level-top-cat-icon"><img src="https://media.spencers.in/static/version1613418532/frontend/Embitel/spencers/en_US/images/category-placeholder.png"><imgalt src="https://media.spencers.in/static/version1613418532/frontend/Embitel/spencers/en_US/images/category-placeholder.png"></imgalt></div><span>Back To Office</span></a></li>                                    </ul>
+                <div class="nav-static-links">
+<ul>
+<li class="nav-offers"><a tabindex="0" href="https://www.spencers.in/offers/"><span class="sprite_header sprite_menu_icons_10"></span><span class="icon_menu"> Offers</span></a></li>
+<li class="nav-spens-kitchen"><a tabindex="0" href="https://www.spencers.in/spencer-kitchen.html/"><span class="sprite_header sprite_menu_icons_11"></span><span class="icon_menu">Spencer's Kitchen</span></a></li>
+<li class="nav-shopping-list"><a tabindex="0" href="https://www.spencers.in/shoppinglist/"><span class="sprite_header sprite_menu_icons_12 "></span><span class="icon_menu">Shopping List</span></a></li>
+<li><a tabindex="0" href="https://www.spencers.in/blog.html/">Blog</a></li>
+</ul>                </div>
+            </nav>
+        </div>
+    </div><div style="position: absolute; z-index: 1; margin: 0px; padding: 0px; opacity: 0; display: none; left: 288px; top: 2301.33px;"><div style="position: relative; height: 2779px;" class="enscroll-track track3"><a style="position: absolute; z-index: 1; height: 2779px; top: 0px;" href="" class="handle3"><div class="top"></div><div class="bottom"></div></a></div></div>
+</div>	
+    <div class="sub_header_main">
+    <div class="sub_header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 no-padding">
+                    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-2 category_no_padding_responsive">
+                        <div class="catgeory_wrap">
+                            <div class="catg no-padding btn_catgory hamburger" data-toggle="offcanvas">
+                                Categories <span class="cat_nav_trigger"><span class="caret_arr">&nbsp;</span><span class="cros">&nbsp;</span></span>
+                            </div>
+                            <!--<div class="inner-toggle-nav hidden-xs">-->
+                            
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-6 col-xs-5 no-padding">
+                        <div class="page_link">
+                            <ul>
+<li class="nav-offers"><a tabindex="0" href="https://www.spencers.in/offers/"><span class="sprite_header sprite_menu_icons_10"></span><span class="icon_menu"> Offers</span></a></li>
+<li class="nav-spens-kitchen"><a tabindex="0" href="https://www.spencers.in/spencer-kitchen.html/"><span class="sprite_header sprite_menu_icons_11"></span><span class="icon_menu">Spencer's Kitchen</span></a></li>
+<li class="nav-shopping-list"><a tabindex="0" href="https://www.spencers.in/shoppinglist/"><span class="sprite_header sprite_menu_icons_12 "></span><span class="icon_menu">Shopping List</span></a></li>
+<li><a tabindex="0" href="https://www.spencers.in/blog.html/">Blog</a></li>
+</ul>                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 no-padding no_padding_right_resp_location">
+                        <div class="location_heading">
+                            <ul>
+                                <li><a href="https://www.spencers.in/storelocator/">Store Locator</a></li>
+                                <li><a href="#social-login-popup" class="social-login" data-effect="mfp-move-from-top">Serving Store:<span id="current_store">Quest Mall Hyper</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header><div class="spacing-top"></div>
+<div class="breadcrumbs">
+    <ul class="items">
+                    <li class="item home">
+                            <a href="https://www.spencers.in/" title="Go to Home Page">
+                    Home                </a>
+                        </li>
+                    <li class="item cms_page">
+                            <strong>Privacy Policy</strong>
+                        </li>
+            </ul>
+</div>
+<main id="maincontent" class="page-main"><a id="contentarea" tabindex="-1"></a>
+<div class="page-title-wrapper">
+    <h1 class="page-title">
+        <span class="base" data-ui-id="page-title-wrapper">Privacy Policy</span>    </h1>
+    <div class="headding visible-xs">
+    <a class="page-title" href="javascript:history.back()">Privacy Policy</a>
+</div>
+</div>
+<div class="page messages"><div data-placeholder="messages"></div>
+<div id="success"></div>
+<div data-bind="scope: 'messages'">
+    <div data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages"></div>
+    <div data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages"></div>
+</div>
+
+</div><div class="columns"><div class="column main"><div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: block;">
+    
+    <!-- ko template: getTemplate() -->
+
+
+
+<!-- /ko -->
+    
+</div>
+
+
+
+    <div id="social-login-popup" class="white-popup mfp-with-anim mfp-hide" data-backdrop="static" data-keyboard="false">
+        
+
+        <div class="modal-dialog login_modal_dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="loginFormPopup">
+                <div class="row">
+                    <div id="mainloginPopup" class="mainloginPopup" style="display: block;">
+                        <div class="col-xs-12 col-sm-2 col-md-2 leftloginMenu">
+                            <ul class="nav nav-tabs tabs-left" id="login_links">
+                                <li>
+                                    <a id="delivery_location_popup" data-toggle="tab" href="#back">
+                                        <div class="sprite_sprint_login_signup login_signup_back_arrow"></div>
+                                    </a>
+                                </li>
+                                <li class="action login_tab active"><a data-toggle="tab" href="#login"><i class="action login sprite_sprint_login_signup loginIcon"></i><span class="action login">Login</span></a>
+                                </li>
+                                <!--<div class="actions-toolbar">
+                                                <div class="primary"><a class="action create" href="javascript:void(0);"><span>Create New Account?</span></a></div>
+                                            </div>-->
+                                <li class="signup_tab"><a data-toggle="tab" href="#signup"><i class="action create sprite_sprint_login_signup singupIcon"></i><span class="action create">Sign Up</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 midloginImg"> <img alt="" src="https://media.spencers.in/static/version1613418532/frontend/Embitel/spencers/en_US/images/login_img.jpg"> </div>
+                        <div class="col-xs-12 col-sm-7 col-md-7 loginForm social-login block-container authentication">
+                            <div class="tab-content block social-login-customer-authentication col-mp" id="social-login-authentication">
+                                <!--<div class="block-title">
+                                    <span id="block-customer-login-heading" role="heading" aria-level="2">Registered Customers</span>
+                                </div>-->
+                                <h1 class="login-title">
+                                    Login                                </h1>
+                                <div class="block-content" aria-labelledby="block-customer-login-heading">
+                                    <form class="form-customer-login" id="social-form-login" novalidate="novalidate">
+                                                                                <fieldset class="fieldset login" data-hasrequired="* Required Fields">
+                                            <div class="field email required">
+                                                <div class="control">
+                                                    <input name="username" id="email" type="text" maxlength="40" placeholder="Email or Phone" class="input-text" value="" autocomplete="off" title="Email" data-validate="{required:true, 'validate-email-phone':true}" aria-required="true">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="field password required">
+                                                <div class="control">
+                                                    <input name="password" id="pass" type="password" maxlength="30" value="" placeholder="Password" class="input-text" autocomplete="off" title="Password" data-validate="{required:true, 'validate-password':true}" aria-required="true">
+                                                    
+                                                </div>
+                                            </div>
+                                                                                        <!-- BLOCK social-login-captcha --><!-- /BLOCK social-login-captcha -->                                            <div class="loginRemember">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" name="persistent_remember_me" id="RememberMe" class="">
+                                                    <label for="RememberMe">Remember Me</label>
+                                                </div>
+                                            </div>
+                                            <div class="actions-toolbar">
+                                                <div class="login-btn primary">
+                                                    <button type="button" class="action login primary" id="bnt-social-login-authentication"><span>Login</span></button>
+                                                <div class="social-login-ajax-loading"></div>
+                                                </div>
+                                                
+                                                <div class="secondary"><a class="action remind" href="javascript:void(0);"><span>Forgot Your Password?</span></a></div>
+                                            </div>
+                                            <div class="form-group text-center loginor"> <span>Or</span> </div>
+                                            <div class="loginSocial">
+                                                <span class="col-sm-12 col-xs-12">Login with</span>
+                                                <span class="col-sm-12 col-xs-12">
+                                                        <div class="block social-login-authentication-channel">
+        <div class="block-content">
+                            <div class="col-sm-6 col-xs-6 actions-toolbar social-btn facebook-login col-sm-push-1">
+                    <a class="btn-block btn-social btn-facebook">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                </div>
+                            <div class="col-sm-6 col-xs-6 actions-toolbar social-btn google-login">
+                    <a class="btn-block btn-social btn-google">
+                        <span class="fa fa-google"></span>
+                    </a>
+                </div>
+                    </div>
+    </div>
+    
+
+                                                    <!--<span class="col-sm-6 col-xs-6 col-sm-push-1"><em class="facebook_sprite col-sm-12 col-xs-6"></em></span>
+
+
+                                                    <span class="col-sm-6 col-xs-6">  <em class="google_sprite col-sm-12 col-xs-6"></em></span>--></span>
+
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                                                    </div>
+
+
+
+
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+        
+        
+
+        
+
+        
+        <div class="col-xs-12 col-sm-7 col-md-7 tab-content social-login block-container delivery">  
+    <div class="block col-mp mp-12">
+        <div class="block-content">
+			<form class="form-customer-login" id="social-form-delivery" novalidate="novalidate">
+				<div class="loginWelShow forgotview" style="display: block;">
+					<h2 class="welcome-name"></h2>
+					<div class="form-group membership"> Your membership <strong>#<span>78354758</span></strong> is linked. </div>
+					<h3>Select Delivery Location</h3>
+                                        <div id="results"></div>
+					<div class="form-group text-center loginor"> <span>Or</span> </div>
+					<div class="row search_section_div">
+						<div class="col-xs-10 col-md-7 col-sm-8">
+						
+						
+						
+						
+							<div class="form-group" id="delivery">
+                                                            
+								<input id="autocomplete-locate" class="sign_up_form pinCode locateme" name="locate-address" placeholder="Enter delivery location" value="" data-validate="{required:true}" type="text">
+                                                                <p id="locate_error"></p>
+                                                                        
+							</div>
+						</div>
+                                            <div class="col-xs-2 col-md-5 col-sm-4 no_padding mobileLocate"> <a class="locateIcon locatebtn2 sprite_sprint_login_signup" href="javascript:void(0);" onclick="getLocationDelivery1()"><span class="hidden-xs">Locate Me</span></a> </div>
+					</div>
+                                        
+					<div class="form-group text-center no_margin_bottomnew">
+						<button class="primary action deliveryBtn SelectDeliveryStore2" type="button">Select Delivery Store</button>
+						
+						
+                                                
+					</div>
+					
+				</div>
+			</form>
+        </div>
+    </div>
+</div>
+
+        
+    
+     </div>
+    <div style="clear: both"></div>
+ <div style="clear: both"></div><div class="inner-container terms_and_conditions">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<ul class="listStyle mobileMarginTop">
+<li>
+<p>Omnipresent Retail India Private Limited (ORIPL)&nbsp;acknowledge your faith and we endeavor to maintain and secure your privacy at highest standards. ORIPL recognizes that your privacy is important to you and that you have a right to keep your personal information confidential.&nbsp; ORIPL&nbsp;warrants that the information about you is used and shared for the purpose of increasing your shopping experience better. ORIPL&nbsp;appreciates your trust&nbsp;and uses the information carefully and sensibly.&nbsp; ORIPL may change its privacy policy from time to time and may display the same on their website. Your visit on the website is deemed to be your acceptance for the terms and conditions and practices described in privacy policy and in case you disapprove the terms and conditions then you should immediately cease to use the website. Our objective is to have a better shopping experience to our customers and customers of our affiliates. The Privacy Policy is to be read with Terms of use.</p>
+</li>
+<li>
+<p>ORIPL may collect the name, mobile number, age, email address and demographic information of the user / customer. This notice denotes illustrative list of our privacy policy. Please note the privacy policy is subject to change from time to time, you are requested to visit the site at regular intervals.  </p>
+</li>
+<li>
+<p>What we collect: ORIPL receives and stores the information you entered on website. You will be having sole right to provide the information&nbsp;and you are not under any obligation to provide any other information, except the details required for delivery.&nbsp; The information will be used for responding to your requests and attending your calls.&nbsp; ORIPL may use the information pertaining to demographic and profile to address any issues relating to service and sale and also to increase your shopping experience.</p>
+</li>
+<li>
+<p>Please note that you can choose not to divulge any information.&nbsp; However, you will not be able to use the features or services. The information is collected only to provide a delightful customer experience based on the behavior and purchase pattern of the customer. If you post any message, complaint, feedback then we retain the information to redress the disputes and to provide a resolution. The personal details like email address, name, phone number, credit &amp; debit card information are generally collected. Any sensitive personal information is collected is for the lawful purpose and shall be used for the purpose for which it is collected.</p>
+</li>
+<li>
+<p>Information and Sharing of information: We collect your information relating to your profile in order to improve our service and offerings, during the process we identify your IP address to collect information. We use this information to customize our offerings to your specific needs. We are free to disclose the information to any law enforcement authority during course of their requirement or as it may require under any law in force. The information may also used by our group companies to provide you their offerings. We may also share your information to our affiliate companies for better customer satisfaction.</p>
+</li>
+<li>
+<p>Grievance Officer under Information Technology Act 2000 Name: Arpita Chatterjee, Designation: Senior Manager Customer Care, Email ID: arpita.chatterjee@rpsg.in, Contact no: 033-24871195, Address: RPSG House, 2/4 Judges Court Road, Alipore, Kolkata 700 027 In case of any complaints as a result of access or usage of the instant website you can reach out to the above person.</p>
+</li>
+</ul>
+</div>
+</div>
+<!--End-row--></div></div></div></main><footer class="page-footer"><div class="footer content"><div class="col-md-12 col-sm-12 footer_inner">
+<div class="hidden-xs col-md-2 footer_block_1 display_none">
+<h3>Products</h3>
+<ul>
+<li class="first">
+<h3><a class="myAnchor" tabindex="0" href="https://www.spencers.in/fruits-vegetables.html/">Fruits &amp; Vegetables</a></h3>
+<h3></h3>
+</li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/groceries-staples.html/">Groceries &amp; Staples</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/organic.html/">Organic</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/bakery-eggs-dairy.html/">Bakery &amp; Eggs &amp; Dairy</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/coffee-tea-beverages.html/">Coffee &amp;Tea &amp; Beverages</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/packaged-food.html/">Packaged Food</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/imported-gourmet.html/">Imported &amp; Gourmet</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/fish-meat.html/">Fish &amp; Meat</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/baby-care.html/">Baby Care</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/personal-care.html/">Personal Care</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/bathroom-cleaning.html/">Bathroom &amp; Cleaning</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/home-dining.html/">Home &amp; Dining</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/electricals-electronics.html/">Electricals &amp; Electronics</a></li>
+<li class="last"><a class="myAnchor" tabindex="0" href="https://www.spencers.in/pet-care.html/">Pet Care</a></li>
+</ul>
+</div>
+<div class="hidden-xs col-md-2 footer_block_1 display_none">
+<h3>Smart Rewards</h3>
+<ul><!--<li class="first"><a class="myAnchor" tabindex="0" href="http://yvm.spencersretail.com/smartrewards/">Member Login</a></li>-->
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/smart_rewards_about_program/">About the Program</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/smart_reward_benefits/">Benefits</a></li>
+<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/smart_reward_registration_process/">Join the Program</a></li>
+<!--<li><a class="myAnchor" tabindex="0" href="https://www.spencers.in/smart_rewards_faqs/">FAQs</a></li>--> <!--<li><a class="myAnchor" tabindex="0" href="http://www.spencersretail.com/innovations-0">Card Activation</a></li>--> <!--<li><a class="myAnchor" tabindex="0" href="http://yvm.spencersretail.com/smartrewards/card_request.php">Request a Card</a></li>-->
+<li class="last"><a tabindex="0"></a></li>
+</ul>
+</div>
+<div class="hidden-xs col-md-2 footer_block_1 display_none">
+<h3>Gift Cards</h3>
+<ul>
+<li class="first"><a class="myAnchor show-login-popup" tabindex="0" href="https://www.spencers.in/about_giftcard/">About Gift Card</a></li>
+<li class="first"><a class="myAnchor show-login-popup" tabindex="0" href="https://www.spencers.in/giftcard_benifits/">Gift Card Benefits</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/gift-card-terms-and-conditons/">Terms &amp; Conditions</a></li>
+<li><a class="show-login-popup" tabindex="0" href="https://www.spencers.in/customercredit/#giftcard/">Buy Spencer’s Gift Card</a></li>
+<li class="last"><a class="myAnchor show-login-popup" tabindex="0" href="https://www.spencers.in/customercredit/#giftcard/">My Gift Card Balance </a></li>
+</ul>
+</div>
+<div class="hidden-xs col-md-2 footer_block_1 display_none">
+<h3>About Us</h3>
+<ul>
+<li class="first"><a tabindex="0" href="https://www.spencers.in/about_us/">About Us</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/heritage/">Heritage</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/differentiators/">Differentiators</a></li>
+<li><a class="myAnchor" tabindex="0" href="http://www.spencersretail.com/innovations-0">Innovations</a></li>
+<li><a class="myAnchor" tabindex="0" href="http://www.spencersretail.com/awards">Awards</a></li>
+<li><a class="myAnchor" tabindex="0" href="http://www.spencersretail.com/milestones">Milestones</a></li>
+<li><a class="myAnchor" tabindex="0" href="http://corporate.spencersretail.com/">Corporate Login</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/faq/">FAQs</a></li>
+<li class="last"><a tabindex="0" href="https://www.spencers.in/newsroom/">Media Room</a></li>
+<!--li><a tabindex="0" href="https://www.spencers.in/investor_relations/">Investor Relations</a></li-->
+<li><a tabindex="0" href="https://www.spencers.in/what-we-sell/">What we sell?</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/spencers-smart-rewards/">Spencer's Smart Rewards</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/partner-with-us/">Partner with Us</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/privacy-policy/">Privacy Policy</a></li>
+<li><a tabindex="0" href="https://www.spencers.in/terms-and-conditions/">Terms &amp; Conditions</a></li>
+<li class="last"><a tabindex="0" href="https://www.spencers.in/join-us/">Join Us</a></li>
+</ul>
+</div>
+<div class="col-md-4 footer_block_2">
+<h3>Contact Us</h3>
+<span class="hidden">Spencer’s</span>
+<div class="footer_block_2_inner"><span class="footer_block_2_inner_icon_1"><i class="fa fa-envelope-o"></i></span>
+<p>E-mail: <a tabindex="0" href="mailto:customercare.spencers@rp-sg.in">customercare@spencers.in</a></p>
+</div>
+<div class="footer_block_2_inner"><span class="footer_block_2_inner_icon_2"><i class="fa fa-volume-control-phone"></i></span>
+<p class="telephone">Telephone: <span>18001030134</span><br><span class="time">9am to 9pm everyday</span></p>
+</div>
+<div class="footer_block_2_inner"><span class="footer_block_2_inner_icon_1">&nbsp;</span>
+<!--p>For Business Queries: <a tabindex="0" href="no_page_found.php">Click here</a></p-->
+</div>
+<div class="footer_block_2_inner_2">
+<h3>Subscribe to our Newsletter</h3>
+<div class="block newsletter">
+    <div class="title"><strong>Newsletter</strong></div>
+    <div class="content">
+        <form class="form subscribe" novalidate="novalidate" action="https://www.spencers.in/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <label class="label" for="newsletter"><span>Sign Up for Our Newsletter:</span></label>
+                <div class="control">
+                    <input name="email" type="email" id="newsletter" placeholder="Your Email" data-validate="{required:true, 'validate-email':true}">
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action subscribe primary" title="Subscribe" type="submit">
+                    <span></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+    <p class="news_know_more_link"><a class="know_more show-login-popup" href="javascript:void(0)">Know More</a></p> 
+</div>
+</div>
+</div>
+<div class="col-md-12 col-sm-12">
+<div class="col-md-8 footer_block_1 footer_payment">
+<h3>Payment</h3>
+<ul>
+<li><em class="sprite_footer_new sprite-icon-visa" data-toggle="tooltip" data-placement="top" data-original-title="VISA"></em></li>
+<li><em class="sprite_footer_new sprite-icon---mastercard" title="" data-toggle="tooltip" data-placement="top" data-original-title="Master Card"></em></li>
+<li><em class="sprite_footer_new sprite-icon---cod" title="" data-toggle="tooltip" data-placement="top" data-original-title="Maestro Card"></em></li>
+<li><em class="sprite_footer_new sprite-icon---american" title="" data-toggle="tooltip" data-original-title="American Express"></em></li>
+<li><em class="sprite_footer_new sprite-icon---rupay" title="" data-toggle="tooltip" data-original-title="RuPay"></em></li>
+<li><em class="sprite_footer_new sprite-icon---sodexo" title="" data-toggle="tooltip" data-original-title="Sodexo"></em></li>
+<li><em class="sprite_footer_new sprite-icon---sp_wallet" title="" data-toggle="tooltip" data-original-title="Spencer's Wallet"></em></li>
+<!--<li><em class="sprite_footer_new sprite-icon---sp_points" title="" data-toggle="tooltip" data-original-title="Spencer's SRC Points"></em></li>-->
+<li><em class="sprite_footer_new sprite-icon---paytm" title="" data-toggle="tooltip" data-original-title="Paytm"></em></li>
+<li><em class="sprite_footer_new sprite-icon---internet_banking" title="" data-toggle="tooltip" data-original-title="Internet Banking"></em></li>
+<li><em class="sprite_footer_new sprite-icon---cash_delivery" title="" data-toggle="tooltip" data-original-title="Cash on Delivery"></em></li>
+<li><em class="sprite_footer_new sprite-icon---card_delivery" title="" data-toggle="tooltip" data-original-title="Card on Delivery"></em></li>
+</ul>
+</div>
+<div class="col-md-4 footer_block_1 footer_social_icon">
+<h3>Connect</h3>
+<div class="social_inner"><span>  <a href="https://www.facebook.com/Spencers-Retail-312259792207315" target="_blank"><em class="sprite sprite-icon-fb" title="" data-toggle="tooltip" data-original-title="Facebook"></em></a> <a href="https://twitter.com/Spencers_Retail" target="_blank"><em class="sprite sprite-icon-twitter " title="" data-toggle="tooltip" data-original-title="Twitter"></em></a> <a href="https://www.instagram.com/spencersretail" target="_blank"><em class="insta_icon " title="" data-toggle="tooltip" data-original-title="Instagram"></em></a> </span></div>
+</div>
+</div>
+<div class="col-md-12 col-sm-12 footer_text">
+<ul>
+<li><strong>Convenience at its best</strong>: With 30,000+ products in store, Spencer’s offers you the convenience of ordering online and getting all your products delivered right at your doorstep in a maximum of 3 hours. Get all your online grocery shopping done in a matter of minutes.</li>
+</ul>
+<br>
+<ul>
+<li><strong>You Name It, We Have It</strong>: Spencer’s meets all your grocery and home-based needs across categories like <a class="myAnchor" tabindex="0" href="https://www.spencers.in/fruits-vegetables.html/">Fruits &amp; Vegetables</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/groceries-staples.html/">Groceries &amp; Staples</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/organic.html/">Organic</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/bakery-eggs-dairy.html/">Bakery &amp; Eggs &amp; Dairy</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/coffee-tea-beverages.html/">Coffee &amp;Tea &amp; Beverages</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/packaged-food.html/">Packaged Food</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/imported-gourmet.html/">Imported &amp; Gourmet</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/fish-meat.html/">Fish &amp; Meat</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/baby-care.html/">Baby Care</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/personal-care.html/">Personal Care</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/bathroom-cleaning.html/">Bathroom &amp; Cleaning</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/home-dining.html/">Home &amp; Dining</a></li>
+</ul>
+<br>
+<ul>
+<li><strong>Our Service Locations</strong>: With a constantly growing network, Spencer’s is currently providing its service to the cities of <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-kolkata/">Kolkata</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-noida/"> Noida</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-gurgaon/"> Gurgaon</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-delhi/"> Delhi</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-ghaziabad/"> Ghaziabad</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-chennai/"> Chennai</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-hyderabad/"> Hyderabad</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-lucknow/">Lucknow</a>, <a class="myAnchor" tabindex="0" href="https://www.spencers.in/grocery-shopping-vizag/">Vizag</a>.</li>
+</ul>
+<br>
+<ul>
+<li><strong>Payment Options</strong>: There are a number of cashless payment options that are available to customers like Net Banking, PayTM, Card on Delivery that make it convenient for everyone to pay. Avail of great online grocery offers and discounts by ordering online and making your life easy and simple.</li>
+</ul>
+</div>
+<p id="UTM"></p>
+
+
+</div></footer>
+<!-- Facebook Pixel Code -->
+
+
+<!-- End Facebook Pixel Code -->
+
+<div class="footer_copyright">
+<div class="footer content">
+<div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-xs-13">
+<p>Copyright © Spencer's Retail 2020</p>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-xs-13"></div>
+</div>
+</div>
+</div></div><!-- Account links -->
+    
+
+
+
+
+<div class="modals-wrapper"><!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<aside class="modal-popup popup-authentication
+           modal-slide
+           _inner-scroll" data-role="modal" data-type="popup" tabindex="0">
+    <div data-role="focusable-start" tabindex="0"></div>
+    <div class="modal-inner-wrap" data-role="focusable-scope">
+        <header class="modal-header">
+            
+            <button class="action-close" data-role="closeBtn" type="button">
+                <span>Close</span>
+            </button>
+        </header>
+        <div class="modal-content" data-role="content"><div class="block-authentication" data-bind="afterRender: setModalElement, blockLoader: isLoading" style="">
+    <div class="block block-new-customer" data-bind="attr: {'data-label': $t('or')}" data-label="or">
+        <div class="block-title">
+            <strong id="block-new-customer-heading" role="heading" aria-level="2" data-bind="i18n: 'Checkout out as a new customer'">Checkout out as a new customer</strong>
+        </div>
+        <div class="block-content" aria-labelledby="block-new-customer-heading">
+            <p data-bind="i18n: 'Creating an account has many benefits:'">Creating an account has many benefits:</p>
+            <ul>
+                <li data-bind="i18n: 'See order and shipping status'">See order and shipping status</li>
+                <li data-bind="i18n: 'Track order history'">Track order history</li>
+                <li data-bind="i18n: 'Check out faster'">Check out faster</li>
+            </ul>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <a class="action action-register primary" data-bind="attr: {href: registerUrl}" href="https://www.spencers.in/customer/account/create/">
+                        <span data-bind="i18n: 'Create an Account'">Create an Account</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block block-customer-login" data-bind="attr: {'data-label': $t('or')}" data-label="or">
+        <div class="block-title">
+            <strong id="block-customer-login-heading" role="heading" aria-level="2" data-bind="i18n: 'Checkout out using your account'">Checkout out using your account</strong>
+        </div>
+        <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+        <!-- ko foreach: getRegion('before') --><!-- /ko -->
+        <div class="block-content" aria-labelledby="block-customer-login-heading">
+            <form class="form form-login" method="post" data-bind="submit:login" id="login-form">
+                <div class="fieldset login" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}" data-hasrequired="* Required Fields">
+                    <div class="field email required">
+                        <label class="label" for="email"><span data-bind="i18n: 'Email Address'">Email Address</span></label>
+                        <div class="control">
+                            <input name="username" id="email" type="email" class="input-text" data-bind="attr: {autocomplete: autocomplete}" data-validate="{required:true, 'validate-email':true}" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="field password required">
+                        <label for="pass" class="label"><span data-bind="i18n: 'Password'">Password</span></label>
+                        <div class="control">
+                            <input name="password" type="password" class="input-text" id="pass" data-bind="attr: {autocomplete: autocomplete}" data-validate="{required:true}" autocomplete="off">
+                        </div>
+                    </div>
+                    <!-- ko foreach: getRegion('additional-login-form-fields') --><!-- /ko -->
+                    </div>
+                    <div class="actions-toolbar">
+                        
+                        <div class="primary">
+                            <button type="submit" class="action action-login secondary" name="send" id="send2">
+                                <span data-bind="i18n: 'Sign In'">Sign In</span>
+                            </button>
+                        </div>
+                        <div class="secondary">
+                            <a class="action" data-bind="attr: {href: forgotPasswordUrl}" href="https://www.spencers.in/customer/account/forgotpassword/">
+                                <span data-bind="i18n: 'Forgot Your Password?'">Forgot Your Password?</span>
+                            </a>
+                        </div>
+                    </div>
+                </form></div>
+            
+        </div>
+    </div></div>
+        
+    </div>
+    <div data-role="focusable-end" tabindex="0"></div>
+</aside></div></body></html>

@@ -7,16 +7,13 @@ from bs4 import BeautifulSoup
 from selenium.common.exceptions import WebDriverException
 
 import config
+from tools.arrays import flatten_list
 from crawler.product import Product
 from crawler.web.driver import Driver
 from tools.exceptions import CaptchaException
 
 
 class Plugin:
-
-    @staticmethod
-    def flatten_list(list_of_lists):
-        return [item for sub_list in list_of_lists for item in sub_list]
 
     def __init__(self, keywords, pages, sync=False):
         self.keywords = keywords
@@ -54,17 +51,11 @@ class Plugin:
         for keyword in self.keywords:
             search_urls = self.gen_search_urls(self.to_query.sub("+", keyword), self.pages)
 
-            if p is None or self.sync:
-                items_urls = [self.scrap_products(url) for url in search_urls]
-            else:
-                items_urls = p.map(self.scrap_products, search_urls)
+            items_urls = flatten_list([self.scrap_products(url) for url in search_urls] \
+                         if p is None or self.sync else p.map(self.scrap_products, search_urls))
 
-            items_urls = self.flatten_list(items_urls)
-
-            if p is None or self.sync:
-                found_items = [self.get_product(product) for product in items_urls]
-            else:
-                found_items = p.map(self.get_product, items_urls)
+            found_items = [self.get_product(product) for product in items_urls] \
+                          if p is None or self.sync else p.map(self.get_product, items_urls)
 
             products = [Product(keyword=d[0], url=d[1], manufacturer=d[2])
                         for d in [(keyword, *item) for item in found_items]]

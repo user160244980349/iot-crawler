@@ -112,7 +112,7 @@ class GoogleEngine(Engine):
                     if w3 is None:
                         w3 = ""
 
-                    best_url = f"https://{w3}{m.group(4)}{m.group(5)}"
+                    best_url = f"http://{w3}{m.group(4)}{m.group(5)}"
                     best_similarity = sim
 
         return best_url

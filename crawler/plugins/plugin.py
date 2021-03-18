@@ -7,9 +7,9 @@ from bs4 import BeautifulSoup
 from selenium.common.exceptions import WebDriverException
 
 import config
-from tools.arrays import flatten_list
 from crawler.product import Product
 from crawler.web.driver import Driver
+from tools.arrays import flatten_list
 from tools.exceptions import CaptchaException
 
 
@@ -48,14 +48,16 @@ class Plugin:
         except FileNotFoundError:
             pass
 
+        Product.counter = len(self.items)
+
         for keyword in self.keywords:
             search_urls = self.gen_search_urls(self.to_query.sub("+", keyword), self.pages)
 
             items_urls = flatten_list([self.scrap_products(url) for url in search_urls] \
-                         if p is None or self.sync else p.map(self.scrap_products, search_urls))
+                                          if p is None or self.sync else p.map(self.scrap_products, search_urls))
 
             found_items = [self.get_product(product) for product in items_urls] \
-                          if p is None or self.sync else p.map(self.get_product, items_urls)
+                if p is None or self.sync else p.map(self.get_product, items_urls)
 
             products = [Product(keyword=d[0], url=d[1], manufacturer=d[2])
                         for d in [(keyword, *item) for item in found_items]]

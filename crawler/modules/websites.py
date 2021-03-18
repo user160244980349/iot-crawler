@@ -22,7 +22,7 @@ class Websites(Module):
                     if r['manufacturer'] is not None])
 
         webs = [self.scrap_sites_urls(*j) for j in jobs] \
-                if p is None else p.starmap(self.scrap_sites_urls, jobs)
+            if p is None else p.starmap(self.scrap_sites_urls, jobs)
 
         for item in self.records:
             for manufacturer, keyword, site in webs:

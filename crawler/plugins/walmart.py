@@ -9,7 +9,6 @@ from crawler.web.driver import Driver
 
 
 class Walmart(Plugin):
-
     sanitize_label = re.compile(r"[^\w]|[_]")
     sanitize_value = re.compile(r"[^\w ]|[_]")
     manufacturer = re.compile(r"^manufacturer$", flags=re.IGNORECASE)

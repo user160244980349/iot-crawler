@@ -5,11 +5,11 @@ import re
 from multiprocessing import Pool
 
 from bs4 import BeautifulSoup
-from tools.arrays import flatten_list
 from html_sanitizer import Sanitizer
 
 import config
 from crawler.modules.module import Module
+from tools.arrays import flatten_list
 
 
 class Sanitization(Module):
@@ -41,13 +41,12 @@ class Sanitization(Module):
         jobs = filter(None, set([r["original_policy"] for r in self.records]))
 
         sanitized = [self.clean_webpage(j) for j in jobs] \
-                    if p is None else p.map(self.clean_webpage, jobs)
+            if p is None else p.map(self.clean_webpage, jobs)
 
         for item in self.records:
-            for policy, sanitized_policy, stats in sanitized:
+            for policy, sanitized_policy in sanitized:
                 if policy == item["original_policy"]:
                     item["processed_policy"] = sanitized_policy
-                    item["statistics"] = stats
 
     def bootstrap(self):
         with open(os.path.abspath(config.downloaded_json), "r") as f:
@@ -73,16 +72,6 @@ class Sanitization(Module):
         sanitized = Sanitizer(settings=config.sanitizer_settings).sanitize(str(soup))
         fresh_soup = BeautifulSoup(sanitized, "lxml")
 
-        stats = {
-            "length": len(str(fresh_soup)),
-            "table": len(soup.findAll("table")),
-            "ol": len(fresh_soup.findAll("ol")),
-            "ul": len(fresh_soup.findAll("ul")),
-            "li": len(fresh_soup.findAll("li")),
-            "p": len(fresh_soup.findAll("p")),
-            "br": len(fresh_soup.findAll("br")),
-        }
-
         sanitized_policy = os.path.abspath(os.path.join(config.processed_policies,
                                                         os.path.basename(item)))
 
@@ -95,7 +84,7 @@ class Sanitization(Module):
                            f"{cls.prettify(fresh_soup.body)}\n"
                            f"</html>")
 
-        return item, sanitized_policy, stats
+        return item, sanitized_policy
 
     @classmethod
     def bs4_aggressive_remove(cls, element):

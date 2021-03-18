@@ -28,7 +28,7 @@ class Policies(Module):
         jobs = filter(None, set([r["website"] for r in self.records]))
 
         privacy_policies = [self.scrap_policies_urls(j) for j in jobs] \
-                           if p is None else p.map(self.scrap_policies_urls, jobs)
+            if p is None else p.map(self.scrap_policies_urls, jobs)
 
         for item in self.records:
             for website, policy in privacy_policies:

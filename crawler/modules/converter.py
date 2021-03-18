@@ -40,9 +40,10 @@ class Converter(Module):
     local_regexps = [(re.compile(s[0], flags=re.MULTILINE | re.IGNORECASE), s[1]) for s in local_subs]
     empty_tag = re.compile(r"^[ \n]*$")
 
-    def __init__(self):
+    def __init__(self, threshold=2000):
         super(Converter, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
+        self.threshold = threshold
 
     def bootstrap(self):
         with open(os.path.abspath(config.sanitized_json), "r") as f:
@@ -50,11 +51,11 @@ class Converter(Module):
 
     def run(self, p: Pool = None):
         self.logger.info("Converting to plain text")
-        
+
         jobs = filter(None, set([r["processed_policy"] for r in self.records]))
 
         plain = [self.plain_webpage(j) for j in jobs] \
-                if p is None else p.map(self.plain_webpage, jobs)
+            if p is None else p.map(self.plain_webpage, jobs)
 
         for item in self.records:
             for policy, plain_policy in plain:
@@ -65,30 +66,29 @@ class Converter(Module):
         with open(os.path.abspath(config.plain_json), "w") as f:
             json.dump(self.records, f, indent=2)
 
-    @classmethod
-    def plain_webpage(cls, item):
+    def plain_webpage(self, item):
 
         with open(os.path.abspath(item), "r", encoding="utf-8") as f:
             text = f.read()
 
         soup = BeautifulSoup(text, "lxml")
 
-        cls.walk(soup, preprocess=(cls.replace_a,))
-        cls.walk(soup, preprocess=(cls.mark_li,))
-        cls.walk(soup, preprocess=(cls.unwrap_accents,))
-        cls.walk(soup, postprocess=(cls.wrap_rawtext,))
-        cls.walk(soup, preprocess=(cls.clear_paragraphs,))
-        cls.walk(soup, postprocess=(cls.unwrap_nested,))
-        cls.walk(soup, preprocess=(cls.remove_empty,))
+        self.walk(soup, preprocess=(self.replace_a,))
+        self.walk(soup, preprocess=(self.mark_li,))
+        self.walk(soup, preprocess=(self.unwrap_accents,))
+        self.walk(soup, postprocess=(self.wrap_rawtext,))
+        self.walk(soup, preprocess=(self.clear_paragraphs,))
+        self.walk(soup, postprocess=(self.unwrap_nested,))
+        self.walk(soup, preprocess=(self.remove_empty,))
 
         text = Sanitization.prettify(soup, indent_width=0)
 
-        for r in cls.global_regexps:
+        for r in self.global_regexps:
             text = r[0].sub(r[1], text)
 
         policy = os.path.join(os.path.abspath(config.plain_policies), f"{os.path.basename(item)}.txt")
 
-        if len(text) < 2000:
+        if len(text) < self.threshold:
             return item, None
 
         with open(policy, "w", encoding="utf-8") as f:

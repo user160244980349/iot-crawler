@@ -1,10 +1,8 @@
-import json
 import logging
 import os
 from multiprocessing import Pool
 
 import active_plugins
-import config
 from crawler.modules.module import Module
 
 

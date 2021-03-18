@@ -3,6 +3,8 @@ import logging
 import os
 from multiprocessing import Pool
 
+from bs4 import BeautifulSoup
+
 import config
 from crawler.modules.module import Module
 
@@ -40,12 +42,27 @@ class Efficiency(Module):
         self.products_statistics()
         self.websites_statistics()
 
+        jobs = [r for r in self.records if None not in (r["original_policy"],
+                                                        r["processed_policy"],
+                                                        r["plain_policy"])]
+
+        results = [self.policy_statistics(j) for j in jobs] \
+            if p is None else p.map(self.policy_statistics, jobs)
+
+        for item in self.records:
+            for stats, original_policy in results:
+                if original_policy == item["original_policy"]:
+                    item["statistics"] = stats
+
     def bootstrap(self):
-        with open(os.path.abspath(config.sanitized_json), "r") as f:
+        with open(os.path.abspath(config.plain_json), "r", encoding="utf-8") as f:
             self.records = json.load(f)
 
     def finish(self):
-        with open(os.path.abspath(config.metrics_json), "w") as f:
+        with open(os.path.abspath(config.plain_json), "w", encoding="utf-8") as f:
+            json.dump(self.records, f, indent=2)
+
+        with open(os.path.abspath(config.metrics_json), "w", encoding="utf-8") as f:
             json.dump(self.metrics, f, indent=2)
 
     def products_statistics(self):
@@ -81,3 +98,22 @@ class Efficiency(Module):
             self.metrics["unique"]["websites"] / self.metrics["unique"]["manufacturers"]
         self.metrics["unique"]["percentile_policies"] = \
             self.metrics["unique"]["policies"] / self.metrics["unique"]["manufacturers"]
+
+    @staticmethod
+    def policy_statistics(product):
+
+        with open(os.path.abspath(product["original_policy"]), "r", encoding="utf-8") as f:
+            original_policy = BeautifulSoup(f.read(), "lxml")
+
+        with open(os.path.abspath(product["processed_policy"]), "r", encoding="utf-8") as f:
+            sanitized_policy = BeautifulSoup(f.read(), "lxml")
+
+        return {
+                   "length": len(str(sanitized_policy)),
+                   "table": len(original_policy.findAll("table")),
+                   "ol": len(sanitized_policy.findAll("ol")),
+                   "ul": len(sanitized_policy.findAll("ul")),
+                   "li": len(sanitized_policy.findAll("li")),
+                   "p": len(sanitized_policy.findAll("p")),
+                   "br": len(sanitized_policy.findAll("br")),
+               }, product["original_policy"]

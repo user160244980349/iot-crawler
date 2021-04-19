@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+from pprint import pprint
 from multiprocessing import Pool
 
 from bs4 import BeautifulSoup
@@ -10,6 +11,13 @@ from crawler.modules.module import Module
 
 
 class Efficiency(Module):
+
+    h = 0
+    p = 0
+    li = 0
+    ol = 0
+    ul = 0
+    table = 0
 
     def __init__(self):
         super(Efficiency, self).__init__()
@@ -53,6 +61,28 @@ class Efficiency(Module):
             for stats, original_policy in results:
                 if original_policy == item["original_policy"]:
                     item["statistics"] = stats
+
+        h = 0
+        p = 0
+        li = 0
+        ol = 0
+        ul = 0
+        table = 0
+
+        for item in {r[1]: r[0] for r in results}.values():
+            h += item["headings"]
+            p += item["paragraphs"]
+            li += item["list items"]
+            ol += item["ordered lists"]
+            ul += item["unordered lists"]
+            table += item["tables"]
+
+        print(f"h {h / 592}")
+        print(f"p {p / 592}")
+        print(f"li {li / 592}")
+        print(f"ol {ol / 592}")
+        print(f"ul {ul / 592}")
+        print(f"table {table / 592}")
 
     def bootstrap(self):
         with open(os.path.abspath(config.plain_json), "r", encoding="utf-8") as f:
@@ -99,8 +129,8 @@ class Efficiency(Module):
         self.metrics["unique"]["percentile_policies"] = \
             self.metrics["unique"]["policies"] / self.metrics["unique"]["manufacturers"]
 
-    @staticmethod
-    def policy_statistics(product):
+    @classmethod
+    def policy_statistics(cls, product):
 
         with open(os.path.abspath(product["original_policy"]), "r", encoding="utf-8") as f:
             original_policy = BeautifulSoup(f.read(), "lxml")
@@ -108,12 +138,43 @@ class Efficiency(Module):
         with open(os.path.abspath(product["processed_policy"]), "r", encoding="utf-8") as f:
             sanitized_policy = BeautifulSoup(f.read(), "lxml")
 
+        with open(os.path.abspath(product["plain_policy"]), "r", encoding="utf-8") as f:
+            plain_policy = f.read()
+
+        paragraphs = plain_policy.split("\n")
+        paragraphs = [p for p in paragraphs if p != ""]
+        pars, heads = cls.count_headings(paragraphs)
+
         return {
                    "length": len(str(sanitized_policy)),
-                   "table": len(original_policy.findAll("table")),
-                   "ol": len(sanitized_policy.findAll("ol")),
-                   "ul": len(sanitized_policy.findAll("ul")),
-                   "li": len(sanitized_policy.findAll("li")),
-                   "p": len(sanitized_policy.findAll("p")),
-                   "br": len(sanitized_policy.findAll("br")),
+                   "list items": len(sanitized_policy.findAll("li")),
+                   "ordered lists": len(sanitized_policy.findAll("ol")),
+                   "unordered lists": len(sanitized_policy.findAll("ul")),
+                   "tables": len(original_policy.findAll("table")),
+                   "paragraphs": pars,
+                   "headings": heads,
                }, product["original_policy"]
+
+    @staticmethod
+    def count_headings(paragraphs):
+        pars, heads = 0, 0
+
+        stack = 0
+
+        import re
+        for p in paragraphs:
+
+            if re.match(r"(\{list item\})", p) is None and stack > 0:
+                stack -= 1
+
+            if re.match(r"(\{number list\})|(\{bullet list\})", p) is not None:
+                stack += 1
+                continue
+
+            if stack == 0:
+                if len(p) < 100:
+                    heads += 1
+                else:
+                    pars += 1
+
+        return pars, heads

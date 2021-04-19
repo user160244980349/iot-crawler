@@ -8,8 +8,8 @@ modules = [
     # Websites(),
     # Policies(),
     # Downloader(),
-    Sanitization(),
-    Converter(),
+    # Sanitization(),
+    # Converter(),
     Efficiency(),
 
 ]

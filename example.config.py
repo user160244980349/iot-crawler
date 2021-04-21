@@ -6,8 +6,9 @@ from html_sanitizer.sanitizer import \
     target_blank_noopener, tag_replacer, \
     italic_span_to_em, bold_span_to_strong
 
-# Paths to resources
+# Paths to resources (set of resources_abs is sufficient)
 resources_abs = os.path.abspath("../iot-dataset")
+
 products_json = f"{resources_abs}/json/products.json"
 websites_json = f"{resources_abs}/json/websites.json"
 policies_json = f"{resources_abs}/json/policies.json"

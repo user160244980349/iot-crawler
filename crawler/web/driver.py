@@ -44,7 +44,11 @@ class _DriverInstance:
         self._service_log_path = os.path.join(os.path.abspath(self.config["log_path"]))
         self._check_installation()
 
-        self._profile = webdriver.FirefoxProfile(os.path.abspath(self.config['profile_path']))
+        try:
+            self._profile = webdriver.FirefoxProfile(os.path.abspath(self.config['profile_path']))
+        except Exception:
+            self._profile = webdriver.FirefoxProfile()
+
         if self.config["no_cache"]:
             self._profile.set_preference("browser.cache.disk.enable", False)
             self._profile.set_preference("browser.cache.memory.enable", False)

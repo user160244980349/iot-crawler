@@ -10,7 +10,7 @@ modules = [
     # Policies(),
     Downloader(),
     Sanitization(),
-    # Converter(),
+    Converter(),
     # Efficiency(),
 
 ]

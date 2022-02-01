@@ -9,10 +9,10 @@ modules = [
     # Products(),
     # Websites(),
     # Policies(),
-    Downloader(),
-    Sanitization(),
-    Converter(),
+    # Downloader(),
+    # Sanitization(),
+    # Converter(),
     # Efficiency(),
-    # Migrate(),
+    Migrate(),
 
 ]

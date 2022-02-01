@@ -8,6 +8,7 @@ from html_sanitizer.sanitizer import \
 
 # Paths to resources (set of resources_abs is sufficient)
 resources_abs = os.path.abspath("../iot-dataset")
+deploy_abs = os.path.abspath("../iot-dataset-deploy")
 
 products_json = f"{resources_abs}/json/products.json"
 websites_json = f"{resources_abs}/json/websites.json"

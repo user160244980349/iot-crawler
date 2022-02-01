@@ -25,27 +25,6 @@ def init():
     if not os.path.exists(plp):
         os.makedirs(plp)
 
-    with open(os.path.abspath(config.products_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)
-
-    with open(os.path.abspath(config.websites_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)
-
-    with open(os.path.abspath(config.policies_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)
-
-    with open(os.path.abspath(config.downloaded_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)
-
-    with open(os.path.abspath(config.sanitized_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)
-
-    with open(os.path.abspath(config.converted_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)
-
-    with open(os.path.abspath(config.plain_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)
-
     with open(os.path.abspath(config.explicit_json), "w", encoding="utf-8") as f:
         json.dump([
             {
@@ -54,6 +33,3 @@ def init():
                 "policy": "https://mi.com/global/about/privacy/"
             }
         ], f, indent=2)
-
-    with open(os.path.abspath(config.metrics_json), "w", encoding="utf-8") as f:
-        json.dump(list(), f, indent=2)

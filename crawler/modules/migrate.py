@@ -1,9 +1,12 @@
-from hashlib import md5
+import json
+import logging
+import shutil
+from distutils.dir_util import copy_tree
 from multiprocessing import Pool
 
-from mysql.connector import connect, Error
 import os
 
+import config
 from crawler.modules.module import Module
 
 
@@ -18,33 +21,24 @@ class Migrate(Module):
     def run(self, p: Pool = None):
 
         try:
+            if not os.path.exists(config.deploy_abs):
+                os.makedirs(config.deploy_abs)
 
-            path = os.path.abspath(os.path.join("./plain_policies"))
-            fs = []
-            for dir_path, dir_names, file_names in os.walk(path):
-                fs.extend([os.path.join(dir_path, f) for f in file_names])
+            shutil.copyfile(config.plain_json, os.path.join(config.deploy_abs, "plain.json"))
 
-            names = []
-            contents = []
-            hashes = []
+            with open(os.path.abspath(os.path.join(config.deploy_abs, "plain.json")), "r") as f:
+                self.records.extend(json.load(f))
+                for r in self.records:
+                    r["original_policy"] = None
+                    r["processed_policy"] = None
+                    if r["plain_policy"] is not None:
+                        r["plain_policy"] = os.path.join("plain_policies", r["plain_policy"].split('\\')[-1:][0])
 
-            for f in fs:
-                with open(f, "r", encoding="utf-8") as fl:
-                    c = fl.read()
-                    names.append(os.path.basename(f))
-                    contents.append(c)
-                    hashes.append(md5(c.encode()).hexdigest())
+            with open(os.path.abspath(os.path.join(config.deploy_abs, "plain.json")), "w") as f:
+                json.dump(self.records, f, indent=2)
 
-            with connect(host="localhost",
-                         user="iot_annotation",
-                         password="secret") as connection:
+            copy_tree(config.plain_policies, os.path.join(config.deploy_abs, "plain_policies"))
+            shutil.make_archive("../iot-dataset", "zip", os.path.abspath(config.deploy_abs))
 
-                data = ", ".join(f"('{n}', '{c}', '{h}')" for n, c, h in list(zip(names, contents, hashes)))
-
-                with connection.cursor() as cursor:
-                    cursor.execute("USE iot_annotation;")
-                    cursor.execute(f"INSERT INTO `texts` (`name`, `content`, `hash`) VALUES {data};")
-                    connection.commit()
-
-        except Error as e:
+        except Exception as e:
             print(e)

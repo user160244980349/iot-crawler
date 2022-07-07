@@ -14,7 +14,7 @@ modules = [
     # Sanitization(),
     # Converter(),
     # Efficiency(),
-    FixAbsPaths(),
+    # FixAbsPaths(),
     Pack(),
 
 ]

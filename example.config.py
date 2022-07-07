@@ -15,7 +15,6 @@ websites_json = f"{resources_abs}/json/websites.json"
 policies_json = f"{resources_abs}/json/policies.json"
 downloaded_json = f"{resources_abs}/json/downloaded.json"
 sanitized_json = f"{resources_abs}/json/sanitized.json"
-converted_json = f"{resources_abs}/json/converted.json"
 plain_json = f"{resources_abs}/json/plain.json"
 explicit_json = f"{resources_abs}/explicit.json"
 metrics_json = f"{resources_abs}/metrics.json"
@@ -23,6 +22,8 @@ metrics_json = f"{resources_abs}/metrics.json"
 original_policies = f"{resources_abs}/original_policies"
 processed_policies = f"{resources_abs}/processed_policies"
 plain_policies = f"{resources_abs}/plain_policies"
+
+lockfile = f"./.init.lock"
 
 # Subprocesses count, 0 for all available
 sub_proc_count = 6

@@ -6,10 +6,10 @@ import active_plugins
 from crawler.modules.module import Module
 
 
-class Products(Module):
+class Urls(Module):
 
     def __init__(self):
-        super(Products, self).__init__()
+        super(Urls, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
 
     def bootstrap(self):

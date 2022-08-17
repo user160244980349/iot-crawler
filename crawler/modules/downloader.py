@@ -15,9 +15,19 @@ from tools.text import url_to_name
 
 class Downloader(Module):
 
-    def __init__(self):
+    def __init__(self,
+                 pj=config.policies_json,
+                 ej=config.explicit_json,
+                 dj=config.downloaded_json,
+                 op=config.original_policies):
+
         super(Downloader, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
+
+        self.policies_json = pj
+        self.explicit_json = ej
+        self.downloaded_json = dj
+        self.original_policies = op
 
     def run(self, p: Pool = None):
         self.logger.info("Download")
@@ -35,21 +45,20 @@ class Downloader(Module):
 
     def bootstrap(self):
 
-        with open(os.path.abspath(config.policies_json), "r") as f:
+        with open(os.path.abspath(self.policies_json), "r") as f:
             self.records.extend(json.load(f))
 
-        with open(os.path.abspath(config.explicit_json), "r") as f:
+        with open(os.path.abspath(self.explicit_json), "r") as f:
             explicit = json.load(f)
             Product.counter = len(self.records)
             explicit = [Product(**item) for item in explicit]
             self.records.extend(explicit)
 
     def finish(self):
-        with open(os.path.abspath(config.downloaded_json), "w") as f:
+        with open(os.path.abspath(self.downloaded_json), "w") as f:
             json.dump(self.records, f, indent=2)
 
-    @classmethod
-    def get_policy(cls, policy_url):
+    def get_policy(self, policy_url):
 
         logger = logging.getLogger(f"pid={os.getpid()}")
 
@@ -69,7 +78,7 @@ class Downloader(Module):
                 if net_error > config.max_error_attempts:
                     return policy_url, None, None
 
-        policy = os.path.abspath(os.path.join(config.original_policies,
+        policy = os.path.abspath(os.path.join(self.original_policies,
                                               url_to_name(policy_url)))
 
         with open(policy, "w", encoding="utf-8") as f:

@@ -19,9 +19,14 @@ class Efficiency(Module):
     ul = 0
     table = 0
 
-    def __init__(self):
+    def __init__(self,
+                 pj=config.plain_json,
+                 mj=config.metrics_json):
         super(Efficiency, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
+
+        self.plain_json = pj
+        self.metrics_json = mj
 
         self.metrics = {
             "items_total": 0,
@@ -85,14 +90,14 @@ class Efficiency(Module):
         print(f"table {table / 592}")
 
     def bootstrap(self):
-        with open(os.path.abspath(config.plain_json), "r", encoding="utf-8") as f:
+        with open(os.path.abspath(self.plain_json), "r", encoding="utf-8") as f:
             self.records = json.load(f)
 
     def finish(self):
-        with open(os.path.abspath(config.plain_json), "w", encoding="utf-8") as f:
+        with open(os.path.abspath(self.plain_json), "w", encoding="utf-8") as f:
             json.dump(self.records, f, indent=2)
 
-        with open(os.path.abspath(config.metrics_json), "w", encoding="utf-8") as f:
+        with open(os.path.abspath(self.metrics_json), "w", encoding="utf-8") as f:
             json.dump(self.metrics, f, indent=2)
 
     def products_statistics(self):

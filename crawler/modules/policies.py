@@ -13,14 +13,19 @@ from crawler.web.driver import Driver
 
 
 class Policies(Module):
-    sanitize_a = re.compile(r"[^\w]")
-    privacy_link = re.compile(r"privacy(policy)?")
     href = re.compile(r"^((https?://)?(www\.)?([\w.\-_]+)\.\w+)?(.*$)")
     http = re.compile("(https?:(//)?)")
 
-    def __init__(self):
+    def __init__(self,
+                 privacy_links=(r"privacy(policy)?",),
+                 wj=config.websites_json,
+                 pj=config.policies_json):
+
         super(Policies, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
+        self.privacy_links = [re.compile(pl) for pl in privacy_links]
+        self.websites_json = wj
+        self.policies_json = pj
 
     def run(self, p: Pool = None):
         self.logger.info("Searching policies")
@@ -36,11 +41,11 @@ class Policies(Module):
                     item["policy"] = policy
 
     def bootstrap(self):
-        with open(os.path.abspath(config.websites_json), "r") as f:
+        with open(os.path.abspath(self.websites_json), "r") as f:
             self.records = json.load(f)
 
     def finish(self):
-        with open(os.path.abspath(config.policies_json), "w") as f:
+        with open(os.path.abspath(self.policies_json), "w") as f:
             json.dump(self.records, f, indent=2)
 
     def scrap_policies_urls(self, website_url):
@@ -54,8 +59,7 @@ class Policies(Module):
         try:
             refs = soup.findAll("a")
             for r in reversed(refs):
-                if self.privacy_link.match(self.sanitize_a.sub("", r.text.lower())):
-
+                if any((pl.match(r.text.lower()) for pl in self.privacy_links)):
                     m = self.href.match(r.get("href"))
                     if m is not None:
                         return f"http://{self.http.sub('', website)}{m.group(5)}"

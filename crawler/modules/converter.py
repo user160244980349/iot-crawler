@@ -12,8 +12,9 @@ from crawler.modules.sanitizer import Sanitization
 
 
 class Converter(Module):
+
     local_subs = [
-        (r"[^a-z0-9,.:;\\/\-\n\s\(\)\{\}*?!\[\]]", ""),
+        (r"[^а-яa-z0-9,.:;\\/\-\n\s\(\)\{\}*?!\[\]]", ""),
         (r"\n+", ""),
         (r"\s+", " "),
         (r"^[\n ]+", ""),
@@ -40,13 +41,22 @@ class Converter(Module):
     local_regexps = [(re.compile(s[0], flags=re.MULTILINE | re.IGNORECASE), s[1]) for s in local_subs]
     empty_tag = re.compile(r"^[ \n]*$")
 
-    def __init__(self, threshold=2000):
+    def __init__(self,
+                 threshold=2000,
+                 sj=config.sanitized_json,
+                 pj=config.plain_json,
+                 pl=config.plain_policies):
+
         super(Converter, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
+
         self.threshold = threshold
+        self.sanitized_json = sj
+        self.plain_json = pj
+        self.plain_policies = pl
 
     def bootstrap(self):
-        with open(os.path.abspath(config.sanitized_json), "r") as f:
+        with open(os.path.abspath(self.sanitized_json), "r") as f:
             self.records = json.load(f)
 
     def run(self, p: Pool = None):
@@ -63,7 +73,7 @@ class Converter(Module):
                     item["plain_policy"] = plain_policy
 
     def finish(self):
-        with open(os.path.abspath(config.plain_json), "w") as f:
+        with open(os.path.abspath(self.plain_json), "w") as f:
             json.dump(self.records, f, indent=2)
 
     def plain_webpage(self, item):
@@ -86,7 +96,7 @@ class Converter(Module):
         for r in self.global_regexps:
             text = r[0].sub(r[1], text)
 
-        policy = os.path.join(os.path.abspath(config.plain_policies), f"{os.path.basename(item)}.txt")
+        policy = os.path.join(os.path.abspath(self.plain_policies), f"{os.path.basename(item)}.txt")
 
         if len(text) < self.threshold:
             return item, None

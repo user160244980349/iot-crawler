@@ -29,10 +29,19 @@ class Sanitization(Module):
     indentation = re.compile(r'^(\s*)', re.MULTILINE)
     split_html_attrs = re.compile(r"\W")
 
-    def __init__(self):
+    def __init__(self,
+                 dj=config.downloaded_json,
+                 sj=config.sanitized_json,
+                 pp=config.processed_policies,
+                 sc=config.sanitizer_settings):
 
         super(Sanitization, self).__init__()
         self.logger = logging.getLogger(f"pid={os.getpid()}")
+
+        self.downloaded_json = dj
+        self.sanitized_json = sj
+        self.processed_policies = pp
+        self.sanitizer_settings = sc
 
     def run(self, p: Pool = None):
 
@@ -49,15 +58,14 @@ class Sanitization(Module):
                     item["processed_policy"] = sanitized_policy
 
     def bootstrap(self):
-        with open(os.path.abspath(config.downloaded_json), "r") as f:
+        with open(os.path.abspath(self.downloaded_json), "r") as f:
             self.records.extend(json.load(f))
 
     def finish(self):
-        with open(os.path.abspath(config.sanitized_json), "w") as f:
+        with open(os.path.abspath(self.sanitized_json), "w") as f:
             json.dump(self.records, f, indent=2)
 
-    @classmethod
-    def clean_webpage(cls, item):
+    def clean_webpage(self, item):
 
         if item is None:
             return item, None, None
@@ -67,13 +75,14 @@ class Sanitization(Module):
 
         soup = BeautifulSoup(html, "lxml")
 
-        cls.bs4_aggressive_remove(soup)
+        self.bs4_aggressive_remove(soup)
 
-        sanitized = Sanitizer(settings=config.sanitizer_settings).sanitize(str(soup))
+        sanitized = Sanitizer(settings=self.sanitizer_settings).sanitize(str(soup))
         fresh_soup = BeautifulSoup(sanitized, "lxml")
 
-        sanitized_policy = os.path.abspath(os.path.join(config.processed_policies,
-                                                        os.path.basename(item)))
+        sanitized_policy = os.path.abspath(
+            os.path.join(self.processed_policies, os.path.basename(item))
+        )
 
         with open(sanitized_policy, "w", encoding="utf-8") as output_f:
             output_f.write(f"<html>\n"
@@ -81,7 +90,7 @@ class Sanitization(Module):
                            f"\t<meta charset=\"utf-8\"/>\n"
                            f"\t<title></title>\n"
                            f"</head>\n"
-                           f"{cls.prettify(fresh_soup.body)}\n"
+                           f"{self.prettify(fresh_soup.body)}\n"
                            f"</html>")
 
         return item, sanitized_policy

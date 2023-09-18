@@ -1,26 +1,29 @@
 import json
+import logging
 import os
 import re
 from multiprocessing import Pool
 
 from bs4 import BeautifulSoup
-from selenium.common.exceptions import WebDriverException
 
-import config
 from crawler.product import Product
 from crawler.web.driver import Driver
 from tools.arrays import flatten_list
-from tools.exceptions import CaptchaException
 
 
 class Plugin:
 
-    def __init__(self, keywords, pages, sync=False):
+    def __init__(self, keywords, pages, products_json,
+                 cooldown=0., random_cooldown=0.):
         self.keywords = keywords
         self.pages = pages
-        self.sync = sync
+        self.products_json = products_json
         self.to_query = re.compile(r"\s+")
-        self.items = []
+        self.records = []
+        self.cooldown = cooldown
+        self.random_cooldown = random_cooldown
+
+        self.logger = logging.getLogger(f"pid={os.getpid()}")
 
     def gen_search_urls(self, keyword, pages):
         raise NotImplementedError("Scraper is not implemented!")
@@ -31,72 +34,36 @@ class Plugin:
     def get_product(self, url):
         raise NotImplementedError("Scraper is not implemented!")
 
-    def on_captcha_exception(self):
-        raise NotImplementedError("Scraper is not implemented!")
-
-    def on_webdriver_exception(self):
-        raise NotImplementedError("Scraper is not implemented!")
-
-    def captcha(self, markup):
-        return False
-
     def scrap(self, p: Pool = None):
-
         try:
-            with open(os.path.abspath(config.products_json), "r") as f:
-                self.items = json.load(f)
+            with open(os.path.relpath(self.products_json), "r") as f:
+                self.records = json.load(f)
         except FileNotFoundError:
             pass
 
-        Product.counter = len(self.items)
+        Product.counter = len(self.records)
 
         for keyword in self.keywords:
-            search_urls = self.gen_search_urls(self.to_query.sub("+", keyword), self.pages)
+            search_urls = self.gen_search_urls(self.to_query.sub("+", keyword))
 
-            items_urls = flatten_list([self.scrap_products(url) for url in search_urls] \
-                                          if p is None or self.sync else p.map(self.scrap_products, search_urls))
+            items_urls = flatten_list(p.map(self.scrap_products, search_urls))
+            found_items = p.map(self.get_product, items_urls)
+            products = [Product(keyword=k, url=u, manufacturer=m)
+                        for k, u, m in
+                        [(keyword, *item) for item in found_items]]
 
-            found_items = [self.get_product(product) for product in items_urls] \
-                if p is None or self.sync else p.map(self.get_product, items_urls)
+            self.records.extend(products)
 
-            products = [Product(keyword=d[0], url=d[1], manufacturer=d[2])
-                        for d in [(keyword, *item) for item in found_items]]
-
-            self.items.extend(products)
-
-        with open(os.path.abspath(config.products_json), "w") as f:
-            json.dump(self.items, f, indent=2)
+        with open(os.path.relpath(self.products_json), "w") as f:
+            json.dump(self.records, f, indent=2)
 
     def scrap_page(self, url, templates):
-
-        driver = Driver()
-        net_error = 0
-
-        markup = ""
-        while True:
-
-            try:
-                markup = driver.get(url)
-
-                if self.captcha(markup):
-                    raise CaptchaException()
-
-                break
-
-            except WebDriverException:
-                self.on_webdriver_exception()
-                net_error += 1
-                if net_error > config.max_error_attempts:
-                    break
-
-            except CaptchaException:
-                self.on_captcha_exception()
-                net_error += 1
-                if net_error > config.max_captcha_attempts:
-                    break
-
-        soup = BeautifulSoup(markup, "lxml").find("body")
-        for t in templates:
-            match = t(soup)
-            if match is not None:
-                return match
+        Driver().get(url, cooldown=self.cooldown,
+                     random_cooldown=self.random_cooldown)
+        markup = Driver().source()
+        if markup:
+            soup = BeautifulSoup(markup, "lxml").find("body")
+            for t in templates:
+                match = t(soup)
+                if match is not None:
+                    return match

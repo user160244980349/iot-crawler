@@ -1,7 +1,8 @@
+# Engines for mining IoT privacy policies
 from crawler.engines.google import GoogleEngine
 
 engines = [
 
-    GoogleEngine(sim=.7, delay=2., random_delay=2.)
+    GoogleEngine(similarity_threshold=.7, cooldown=2., random_cooldown=2.)
 
 ]

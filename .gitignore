@@ -1,5 +1,5 @@
-# Resources
-/resources/.driver
+# Gecko
+.driver
 
 # External libraries
 /venv
@@ -15,9 +15,3 @@ config.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
-# DB files
-*.db
-
-# Init lock file
-.init.lock

@@ -1,5 +1,4 @@
 import json
-import logging
 import os
 import re
 from multiprocessing import Pool
@@ -7,7 +6,6 @@ from multiprocessing import Pool
 from bs4 import BeautifulSoup
 from html_sanitizer import Sanitizer
 
-import config
 from crawler.modules.module import Module
 from tools.arrays import flatten_list
 
@@ -26,22 +24,29 @@ class Sanitization(Module):
         # "select", "option", "button", "style", "script", "form"
     ]
 
+    ignored_tags = ["html", "body", "title", "head", "header"]
+
     indentation = re.compile(r'^(\s*)', re.MULTILINE)
     split_html_attrs = re.compile(r"\W")
 
-    def __init__(self):
+    processed_policies = None
+    sanitizer_settings = None
 
+    def __init__(self, downloaded_json, sanitized_json, processed_policies,
+                 sanitizer_settings):
         super(Sanitization, self).__init__()
-        self.logger = logging.getLogger(f"pid={os.getpid()}")
+
+        self.downloaded_json = downloaded_json
+        self.sanitized_json = sanitized_json
+        Sanitization.processed_policies = processed_policies
+        Sanitization.sanitizer_settings = sanitizer_settings
 
     def run(self, p: Pool = None):
-
         self.logger.info("Sanitization")
 
         jobs = filter(None, set([r["original_policy"] for r in self.records]))
 
-        sanitized = [self.clean_webpage(j) for j in jobs] \
-            if p is None else p.map(self.clean_webpage, jobs)
+        sanitized = p.map(self.clean_webpage, jobs)
 
         for item in self.records:
             for policy, sanitized_policy in sanitized:
@@ -49,18 +54,17 @@ class Sanitization(Module):
                     item["processed_policy"] = sanitized_policy
 
     def bootstrap(self):
-        with open(os.path.abspath(config.downloaded_json), "r") as f:
+        with open(os.path.relpath(self.downloaded_json), "r") as f:
             self.records.extend(json.load(f))
 
     def finish(self):
-        with open(os.path.abspath(config.sanitized_json), "w") as f:
+        with open(os.path.relpath(self.sanitized_json), "w") as f:
             json.dump(self.records, f, indent=2)
 
     @classmethod
     def clean_webpage(cls, item):
-
         if item is None:
-            return item, None, None
+            return item, None
 
         with open(item, "r", encoding="utf-8") as input_f:
             html = input_f.read()
@@ -69,11 +73,13 @@ class Sanitization(Module):
 
         cls.bs4_aggressive_remove(soup)
 
-        sanitized = Sanitizer(settings=config.sanitizer_settings).sanitize(str(soup))
+        sanitized = Sanitizer(settings=cls.sanitizer_settings).sanitize(
+            str(soup))
         fresh_soup = BeautifulSoup(sanitized, "lxml")
 
-        sanitized_policy = os.path.abspath(os.path.join(config.processed_policies,
-                                                        os.path.basename(item)))
+        sanitized_policy = os.path.relpath(
+            os.path.join(cls.processed_policies, os.path.basename(item))
+        )
 
         with open(sanitized_policy, "w", encoding="utf-8") as output_f:
             output_f.write(f"<html>\n"
@@ -88,7 +94,6 @@ class Sanitization(Module):
 
     @classmethod
     def bs4_aggressive_remove(cls, element):
-
         try:
             s = list(element.get("class"))
         except TypeError:
@@ -105,7 +110,7 @@ class Sanitization(Module):
         m = [i in cls.words for i in s]
 
         if (True in m or element.name in cls.tags) \
-                and element.name not in ("html", "body", "title", "head"):
+                and element.name not in cls.ignored_tags:
             cls.remove_tags(element)
             element.extract()
             return

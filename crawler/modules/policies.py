@@ -4,12 +4,36 @@ import os
 import re
 from multiprocessing import Pool
 
-from bs4 import BeautifulSoup
-from selenium.common.exceptions import WebDriverException
-
 import config
 from crawler.modules.module import Module
 from crawler.web.driver import Driver
+from tools.hashable_dict import HashableDict
+
+from selenium.common.exceptions import WebDriverException
+from bs4 import BeautifulSoup
+
+
+def split_data(data, chunks):
+    ld = len(data)
+    return [[data[i] for i in range(ch, ld, chunks)] for ch in range(chunks)]
+
+
+def _count_generator(reader):
+    b = reader(1024 * 1024)
+    while b:
+        yield b
+        b = reader(1024 * 1024)
+
+
+def get_file_size(file):
+    size = 0
+    try:
+        with open(file, 'rb') as fp:
+            c_generator = _count_generator(fp.raw.read)
+            size = sum(buffer.count(b'\n') for buffer in c_generator)
+    except FileNotFoundError:
+        pass
+    return size
 
 
 class Policies(Module):
@@ -18,9 +42,13 @@ class Policies(Module):
     href = re.compile(r"^((https?://)?(www\.)?([\w.\-_]+)\.\w+)?(.*$)")
     http = re.compile("(https?:(//)?)")
 
-    def __init__(self):
+    def __init__(self, websites_json, policies_json, link_matcher):
+
         super(Policies, self).__init__()
-        self.logger = logging.getLogger(f"pid={os.getpid()}")
+
+        self.link_matcher = link_matcher
+        self.websites_json = websites_json
+        self.policies_json = policies_json
 
     def run(self, p: Pool = None):
         self.logger.info("Searching policies")
@@ -36,11 +64,12 @@ class Policies(Module):
                     item["policy"] = policy
 
     def bootstrap(self):
-        with open(os.path.abspath(config.websites_json), "r") as f:
+        with open(os.path.relpath(self.websites_json), "r") as f:
             self.records = json.load(f)
+            self.records = [HashableDict(r) for r in self.records]
 
     def finish(self):
-        with open(os.path.abspath(config.policies_json), "w") as f:
+        with open(os.path.relpath(self.policies_json), "w") as f:
             json.dump(self.records, f, indent=2)
 
     def scrap_policies_urls(self, website_url):
@@ -50,7 +79,6 @@ class Policies(Module):
         )
 
     def template1(self, website, soup):
-
         try:
             refs = soup.findAll("a")
             for r in reversed(refs):
@@ -72,10 +100,12 @@ class Policies(Module):
         net_error = 0
         policy_url = None
 
+        markup = None
         while True:
             logger.info(f"Getting for policy to {website_url}")
             try:
-                markup = driver.get(website_url)
+                driver.get(website_url)
+                markup = driver.source()
                 break
 
             except WebDriverException:
@@ -87,7 +117,7 @@ class Policies(Module):
                 net_error += 1
                 if net_error > config.max_error_attempts:
                     return website_url, policy_url
-
+        
         soup = BeautifulSoup(markup, "lxml").find("body")
 
         for t in templates:

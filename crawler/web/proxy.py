@@ -24,7 +24,8 @@ class _Proxy:
 
     @staticmethod
     def get_ip():
-        return _Proxy.ip.search(requests.get('http://icanhazip.com/').text).group(0)
+        return _Proxy.ip.search(
+            requests.get('http://icanhazip.com/').text).group(0)
 
     def __init__(self, conf, file=None):
 

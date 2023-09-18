@@ -1,6 +1,28 @@
-IOT Devices Privacy Policies
+Web crawler for  privacy policies mining
+----------------------------------------
+
+This project is devoted to privacy policies mining and is now adopted for IoT
+privacy
+policies in English mining and for mining of websites privacy policies in
+Russian.
+
+
+How To
+------
+
+1. Copy `example.config.py` to `config.py` and make sure the temp dir under webdriver settings is reachable within your system.
+1. Make virtual environment (recommended) with `python -m venv venv`.
+1. Activate the virtual environment with `source venv/bin/activate`.
+1. Execute `pip install -r requirements.txt`.
+1. Execute `python main.py`.
+
+
+Nuances which can take place
 ----------------------------
-This project is used to be an instrument for datasets creation
+
+- The 4 config files i.e. `active_engines.py`, `active_modules.py`, `active_plugins.py` and `example.config.py` contain recommended settings to run the program and see what it actually does.
+- The previous version of the crawler was outdated, an update has been provided.
+- The marketplaces and other websites constantly improve their antiautomated usage capabilities, so it might turn that crawler is stuck on captcha (despite some counter arguments were delivered to overcome the issues).
 
 
 Check list
@@ -42,6 +64,11 @@ Check list
         - [ ] Subsections yes/no how many and how long
     - [x] Manually added policies
 
+- [ ] MailRuTop
+    - [ ] header is not a p tag
+    - [ ] more keywords to search
+    - [ ] more templates for sanitization
+
 Bugs
 ----
 
@@ -52,7 +79,19 @@ Bugs
 - [x] Reset headless mode after restart session
 - [x] Change user agent on each request
 - [x] Multiprocessing on scrapping causes captcha
-- [ ] Deadlock on exit
+- [x] Deadlock on exit
+- [ ] Some encodings in Russian
+
+MailRuTop
+---------
+
+Many categories are available for search. Configurable keywords for privacy
+policies search.
+
+IOT Devices Privacy Policies
+----------------------------
+
+This project is used to be an instrument for datasets creation
 
 Marketplaces
 ------------
